@@ -39,9 +39,9 @@ function Navbar() {
             
               </button>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="#">a</a></li>
+                <li><a class="dropdown-item" href="#">b</a></li>
+                <li><a class="dropdown-item" href="#">c</a></li>
               </ul>
             </div>
 
