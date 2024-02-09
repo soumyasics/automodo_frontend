@@ -1,10 +1,10 @@
-.loginMech-img {
+.loginUser-img {
     width: 100%;
     margin: 0%;
     margin-left: 0%;
   }
   
-  .loginMech-head{
+  .loginUser-head{
     position: relative;
     top: 8px;
     font-weight: 100;
@@ -13,14 +13,14 @@
     margin-top: 10rem;
     color:  #1A728E ;
   }
-  .loginMech-label{
+  .loginUser-label{
     position: relative;
     left: 40rem;
     top: -2rem;
     margin-top: 8px;
     color: #1A728E;
   }
-  .loginMech-input{
+  .loginUser-input{
     position: relative;
     left: 30rem;
     margin-top: 60px;
@@ -28,25 +28,25 @@
     width: 20rem;
     height: 2.5rem;
   }
-   .loginMech-input::placeholder{
+   .loginUser-input::placeholder{
     text-indent: 2rem;
     font-weight: lighter;
    }
-   .loginMech-Areset{
+   .loginUser-Areset{
     position: relative;
     left: 39rem;
     top: 6px;
    }
-   .loginMech-Asignup{
+   .loginUser-Asignup{
     position: relative;
     left: 56rem;
     top: -1rem;
    }
-   .loginMech-a{
+   .loginUser-a{
     text-decoration: none;
     color:#1A728E ;
    }
-   .loginMech-btn{
+   .loginUser-btn{
     background-color: #1A728E;
     width: 9rem;
     height: 30px;
