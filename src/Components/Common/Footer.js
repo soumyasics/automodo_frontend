@@ -1,6 +1,7 @@
 import React from 'react'
 import './Footer.css'
 import Logo from '../../Assets/footer_logo.png'
+import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
@@ -8,23 +9,23 @@ function Footer() {
       <footer className='footer-main'>
       <div >
         <div> 
-          <img className='footer-logo col-6' src={Logo} alt='Logo-footer' />
+          <img className='footer-logo' src={Logo} alt='Logo-footer' />
         </div>
         <div className='footer-flex'>
           <div>
-            <a className='footer-a' href='#'>Home</a>
+            <Link className='footer-a' to='/'>Home</Link>
           </div>
           <div>
-            <a className='footer-a' href='#'>About us</a>
+            <Link className='footer-a' to='/'>About us</Link>
           </div>
           <div>
-            <a className='footer-a' href='#'>Gallery</a>
+            <Link className='footer-a'to='/'>Gallery</Link>
           </div>
           <div>
-            <a className='footer-a' href='#'>Jobs</a>
+            <Link className='footer-a' to='/'>Jobs</Link>
           </div>
           <div>
-            <a className='footer-a' href='#'>Contact us</a>
+            <Link className='footer-a' to='/'>Contact us</Link>
           </div>
         </div>
       </div>

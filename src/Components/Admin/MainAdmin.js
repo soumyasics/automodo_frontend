@@ -13,6 +13,14 @@ import Polygon from '../../Assets/poly.png'
 import Fourarrow from '../../Assets/fourarrow.png'
 import Car from '../../Assets/carrep.png'
 import Ellipse from '../../Assets/Ellipse.png'
+import Img1 from '../../Assets/img1.png'
+import Img2 from '../../Assets/img2.png'
+import Img3 from '../../Assets/img3.png'
+import Img4 from '../../Assets/img4.png'
+import Img5 from '../../Assets/img5.png'
+import Img6 from '../../Assets/img6.png'
+import Img7 from '../../Assets/img7.png'
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
@@ -66,13 +74,35 @@ function MainAdmin() {
           <p className='trustworthy-title1'>Briefly introduce your vetted and qualified mechanics or partner garages.<br/>
            Mention certifications, experience, and positive customer reviews.</p>
         </div>
-        <div className='icons-flex'>
-          <img src={HeadPhone}  alt='icons'/>
-          <img src={Arrow}  alt='icons'/>
-          <img src={Rectangle}  alt='icons'/>
-          <img src={Arrow}  alt='icons'/>
-          <img src={Car}  alt='icons'/>
+
+        <div className='icon-div'>
+          <img className='icon-headph' src={HeadPhone}  alt='icons'/>
+          <img  className='icon-ellipse1' src={Ellipse}  alt='icons'/>
+          <img  className='icon-arrow1' src={Arrow}  alt='icons'/>
+          <img className='icon-rectangle' src={Rectangle}  alt='icons'/>
+          <img className='icon-polygon' src={Polygon}  alt='icons'/>
+          <img  className='icon-fourarrow' src={Fourarrow}  alt='icons'/>
+          <img  className='icon-ellipse2' src={Ellipse}  alt='icons'/>
+          <img  className='icon-arrow2' src={Arrow}  alt='icons'/>
+          <img  className='icon-carrep' src={Car}  alt='icons'/>
         </div>
+        <h2 className='howdo-title'>How we do</h2>
+        <p className='howdo-details'>Briefly introduce your vetted and qualified mechanics or partner garages.<br/>
+         Mention certifications, experience, and positive customer reviews.</p>
+        <div>
+
+          <div className='row image-div'>
+          <img  className='col-4' src={Img1}  alt='CarImg'/>
+          <img  className='col-4' src={Img2}  alt='CarImg'/>
+          <img  className='col-4' src={Img3}  alt='CarImg'/>
+          <img  className='col-4' src={Img4}  alt='CarImg'/>
+          <img  className='col-4' src={Img5}  alt='CarImg'/>
+          <img  className='col-4' src={Img6}  alt='CarImg'/>
+          <img  className='col-12' src={Img7}  alt='CarImg'/>
+          </div>
+
+        </div>
+       
       </div>
     </div>
   )
