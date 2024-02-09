@@ -162,6 +162,10 @@ margin-top: -10rem;
   font-weight: lighter;
 }
 
+.schedule-btn:hover{
+  background-color:#1A728E;
+}
+
 .trustworthy-title{
   color: #13517E;
   margin-top: 5rem;
