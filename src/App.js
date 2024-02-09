@@ -9,12 +9,15 @@ import Pageheading from './Components/Admin/Pageheading';
 import LoginUser from './Components/User/LoginUser';
 import LoginWorkshop from './Components/Workshop/LoginWorkshop';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import AdminTable from './Components/Admin/AdminTable';
 function App() {
   return (
 
     <BrowserRouter>
     <Routes>
       <Route path='/' element={[<Navbar/>,<MainAdmin/>,<Footer/>]}/>
+      <Route path='' element={[<Navbar/>,<AdminTable/>,<Footer/>]}/>
+
     </Routes>
     </BrowserRouter>
   );
