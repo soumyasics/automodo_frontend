@@ -137,3 +137,43 @@ margin-top: -10rem;
 .conv-details{
   margin: 3rem;
 }
+
+.schedule-title{
+  color:#13517E;
+}
+
+.schedule-details{
+  color: #13517E;
+  font-weight: lighter;
+}
+
+.schedule-details1{
+  color:#13517E ;
+}
+
+.schedule-btn{
+  margin-top: 2rem;
+  background-color: #FCD006;
+  width: 10rem;
+  height: 2.5rem;
+  border-radius: 2px;
+  border: transparent;
+  color: white;
+  font-weight: lighter;
+}
+
+.trustworthy-title{
+  color: #13517E;
+  margin-top: 5rem;
+  margin-left: 27rem;
+}
+
+.trustworthy-title1{
+  margin-top: 0;
+  color:#13517E ;
+  text-align: center;
+  font-size: large;
+  font-weight: lighter;
+  margin-left: -10rem;
+}
+
