@@ -8,19 +8,15 @@ import SignupMechanic from './Components/Mechanic/SignupMech';
 import Pageheading from './Components/Admin/Pageheading';
 import LoginUser from './Components/User/LoginUser';
 import LoginWorkshop from './Components/Workshop/LoginWorkshop';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 function App() {
   return (
-    <div>
-      <Navbar/>
-      {/* <SignupMechanic/> */}
-      {/* <LoginMechanic/> */}
-      
-      {/* <LoginUser/> */}
-      {/* <LoginWorkshop/> */}
-      <Pageheading/>
 
-     
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={[<Navbar/>,<MainAdmin/>,<Footer/>]}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
