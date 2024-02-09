@@ -13,32 +13,6 @@ function AdminTable() {
           <h1 className='table-title'>Table</h1>
           <p className='table-details'>This is a sample table</p>
         </div>
-        {/* <table className='table-table' border={1}>
-          <tr>
-            <th><div className='table-heading'>Sl</div></th>
-            <th><div className='table-heading'>Item</div></th>
-            <th><div className='table-heading'>Category</div></th>
-            <th><div className='table-heading'>Descriptions</div></th>
-            <th><div className='table-heading'>About</div></th>
-            <th><div className='table-heading'>From</div></th>
-            <th><div className='table-heading'>To</div></th>
-            <th><div className='table-heading'>Actions</div></th>
-          </tr>
-          
-          <tr>
-            <td><div className='table-data'>1</div></td>
-            <td><div className='table-data'>Name</div></td>
-            <td><div className='table-data'>Cat 1</div></td>
-            <td><div className='table-data'>This is the great...</div></td>
-            <td><div className='table-data'>Fine to do the description...</div></td>
-            <td><div className='table-data'>Today</div></td>
-            <td><div className='table-data'>Tomorrow</div></td>
-            <td><Link to='/' style={{color:'black'}}>Edit</Link></td>
-          </tr>
-        </table> */}
-
-
-
       <table className='table-table' border={1}>
           <tr>
             <th className='table-heading'>Sl</th>
