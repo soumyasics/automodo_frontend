@@ -10,8 +10,8 @@ import LoginUser from './Components/User/LoginUser';
 import LoginWorkshop from './Components/Workshop/LoginWorkshop';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AdminTable from './Components/Admin/AdminTable';
-import SignupWorkshop from './Components/Workshop/signupWorkshop';
 import SignupUser from './Components/User/SignupUser';
+import SignupWorkshop from './Components/Workshop/signupWorkshop'
 function App() {
   return (
 
@@ -24,9 +24,9 @@ function App() {
       <Route path='/' element={[<Navbar/>,<LoginWorkshop/>,<Footer/>]}/> 
       <Route path='/' element={[<Navbar/>,<SignupMechanic/>,<Footer/>]}/>
        <Route path='/' element={[<Navbar/>,<SignupWorkshop/>,<Footer/>]}/>
-       <Route path='/' element={[<Navbar/>,<SignupUser/>,<Footer/>]}/>
-    </Routes>
-    </BrowserRouter>
+     </Routes>
+     </BrowserRouter>
+
   );
 }
 
