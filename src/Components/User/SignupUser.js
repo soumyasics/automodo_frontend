@@ -75,7 +75,10 @@ function SignupUser() {
           <input className='signupUser-input' type='password' placeholder=' Confirm Password'></input>
         </div>
         <div>
-          <a className='signupUser-a'href='#'>Already have an account, Login</a>
+         <p className='signupUser-p'>Already have an account,</p>
+        </div>
+        <div>
+        <a className='signupUser-a'href='#'>Login</a>
         </div>
         <div>
           <button className='signupUser-btn' type='siubmit'>Sign In</button>

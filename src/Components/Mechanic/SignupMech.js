@@ -75,7 +75,10 @@ function SignupMech() {
           <input className='signupMech-input' type='password' placeholder=' Confirm Password'></input>
         </div>
         <div>
-          <a className='signupMech-a'href='#'>Already have an account, Login</a>
+         <p className='signupMech-p'>Already have an account,</p>
+        </div>
+        <div>
+        <a className='signupMech-a'href='#'>Login</a>
         </div>
         <div>
           <button className='signupMech-btn' type='siubmit'>Sign In</button>
