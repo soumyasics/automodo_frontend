@@ -6,7 +6,7 @@ import signUp_logo from'../../Assets/signUpbtnlogo.png'
 
 function SignupWorkshop() {
   return (
-    <div>
+    <div className='signupWorkshop-main'>
         <div>
         <img className="signupWorkshop-img"src={Signin_image} alt='Signin_image'/>
         </div>
@@ -75,7 +75,10 @@ function SignupWorkshop() {
           <input className='signupWorkshop-input' type='password' placeholder=' Confirm Password'></input>
         </div>
         <div>
-          <a className='signupWorkshop-a'href='#'>Already have an account, Login</a>
+         <p className='signupWorkshop-p'>Already have an account,</p>
+        </div>
+        <div>
+        <a className='signupWorkshop-a'href='#'>Login</a>
         </div>
         <div>
           <button className='signupWorkshop-btn' type='siubmit'>Sign In</button>

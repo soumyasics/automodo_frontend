@@ -6,7 +6,7 @@ import signUp_logo from'../../Assets/signUpbtnlogo.png'
 
 function SignupMech() {
   return (
-    <div>
+    <div className='signupMech-main'>
         <div>
         <img className="signupMech-img"src={Signin_image} alt='Signin_image'/>
         </div>
@@ -75,7 +75,10 @@ function SignupMech() {
           <input className='signupMech-input' type='password' placeholder=' Confirm Password'></input>
         </div>
         <div>
-          <a className='signupMech-a'href='#'>Already have an account, Login</a>
+         <p className='signupMech-p'>Already have an account,</p>
+        </div>
+        <div>
+        <a className='signupMech-a'href='#'>Login</a>
         </div>
         <div>
           <button className='signupMech-btn' type='siubmit'>Sign In</button>

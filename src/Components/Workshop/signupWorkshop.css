@@ -48,8 +48,8 @@
    .signupWorkshop-a{
     text-decoration: none;
     position: relative;
-    left: 35rem;
-    top: 2rem;
+    left: 50rem;
+    top: -1.7rem;
     font-size: 18px;
     color: #1A728E;
    }
@@ -73,3 +73,15 @@
     left: 40rem;
     top: 2rem;
    }
+   .signupWorkshop-main{
+    position: relative;
+    bottom: 2rem;
+   }
+   .signupWorkshop-p{
+    position: relative;
+    left:37rem ;
+    top: 1rem;
+    font-size: 18px;
+    color: #1A728E;
+   }
+

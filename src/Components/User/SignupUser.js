@@ -6,7 +6,7 @@ import signUp_logo from'../../Assets/signUpbtnlogo.png'
 
 function SignupUser() {
   return (
-    <div>
+    <div className='signupUser-main'>
         <div>
         <img className="signupUser-img"src={Signin_image} alt='Signin_image'/>
         </div>
@@ -75,7 +75,10 @@ function SignupUser() {
           <input className='signupUser-input' type='password' placeholder=' Confirm Password'></input>
         </div>
         <div>
-          <a className='signupUser-a'href='#'>Already have an account, Login</a>
+         <p className='signupUser-p'>Already have an account,</p>
+        </div>
+        <div>
+        <a className='signupUser-a'href='#'>Login</a>
         </div>
         <div>
           <button className='signupUser-btn' type='siubmit'>Sign In</button>
