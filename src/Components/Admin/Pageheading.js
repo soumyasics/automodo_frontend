@@ -5,7 +5,7 @@ import './Pageheading.css'
 
 function Pageheading() {
   return (
-    <div>
+    <div className='pageheadAdmin-main'>
         <div>
         <img className="pageheadAdmin-img"src={Signin_image} alt='Signin_image'/>
         </div>

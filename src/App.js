@@ -10,16 +10,27 @@ import LoginUser from './Components/User/LoginUser';
 import LoginWorkshop from './Components/Workshop/LoginWorkshop';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AdminTable from './Components/Admin/AdminTable';
+import SignupUser from './Components/User/SignupUser';
+import SignupWorkshop from './Components/Workshop/signupWorkshop'
 function App() {
   return (
+    
+     <BrowserRouter>
+     <Routes>
+       <Route path='/' element={[<Navbar/>,<MainAdmin/>,<Footer/>]}/> 
+       <Route path='/' element={[<Navbar/>,<Pageheading/>,<Footer/>]}/> 
+       <Route path='/' element={[<Navbar/>,<LoginUser/>,<Footer/>]}/> 
+       <Route path='/' element={[<Navbar/>,<LoginMechanic/>,<Footer/>]}/> 
+       <Route path='/' element={[<Navbar/>,<LoginWorkshop/>,<Footer/>]}/>  
+       <Route path='/' element={[<Navbar/>,<SignupUser/>,<Footer/>]}/>
+       <Route path='/' element={[<Navbar/>,<SignupMechanic/>,<Footer/>]}/>
+       <Route path='/' element={[<Navbar/>,<SignupWorkshop/>,<Footer/>]}/>
+       <Route path='' element={[<Navbar/>,<MainAdmin/>,<Footer/>]}/>
+       <Route path='' element={[<Navbar/>,<AdminTable/>,<Footer/>]}/>
+     </Routes>
+     </BrowserRouter>
 
-    <BrowserRouter>
-    <Routes>
-      <Route path='/' element={[<Navbar/>,<MainAdmin/>,<Footer/>]}/>
-      <Route path='' element={[<Navbar/>,<AdminTable/>,<Footer/>]}/>
 
-    </Routes>
-    </BrowserRouter>
   );
 }
 
