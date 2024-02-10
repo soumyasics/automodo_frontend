@@ -4,6 +4,7 @@ import Navbar_logo from '../../Assets/footer_logo.png'
 import drop_pic from '../../Assets/droppic.png'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
@@ -16,19 +17,19 @@ function Navbar() {
           
           <ul className='nav-position'>
             <div>
-              <li className='navbar-li'><a className='nav-ahref'href='#'>Home</a></li>
+              <li className='navbar-li'><Link className='nav-ahref'to='/'>Home</Link></li>
             </div>
             <div>
-              <li className='navbar-li'><a className='nav-ahref'href='#'>About us</a></li>
+              <li className='navbar-li'><Link className='nav-ahref'to='/'>About us</Link></li>
             </div>
             <div>
-              <li className='navbar-li'><a className='nav-ahref'href='#'>Gallery</a></li>
+              <li className='navbar-li'><Link className='nav-ahref'to='/'>Gallery</Link></li>
             </div>
             <div>
-              <li className='navbar-li'><a className='nav-ahref'href='#'>Jobs</a></li>
+              <li className='navbar-li'><Link className='nav-ahref'to='/'>Jobs</Link></li>
             </div>
             <div>
-              <li className='navbar-li'><a className='nav-ahref' href='#'>Contact us</a></li>
+              <li className='navbar-li'><Link className='nav-ahref' to='/'>Contact us</Link></li>
             </div>
             <div>
               <img className='dropdown_pic'src={drop_pic} alt='dropdown_pic'/>
