@@ -1,7 +1,7 @@
 import React from 'react'
 import Signin_image from '../../Assets/signin_image.png'
 import './loginUser.css'
-import signUp_logo from'../../Assets/signUpbtnlogo.png'
+import SignupLogo from'../../Assets/signUpbtnlogo.png'
 
 function LoginUser() {
   return (
@@ -16,11 +16,11 @@ function LoginUser() {
         </div>
         <div>
           <label className='loginUser-label'>Username</label>
-          <input className='loginMech-input' type='text' placeholder='Username'></input>
+          <input className='loginUser-input' type='text' placeholder='Username'></input>
         </div>
         <div>
           <label className='loginUser-label'>Password</label>
-          <input className='loginMech-input' type='password' placeholder='Password'></input>
+          <input className='loginUser-input' type='password' placeholder='Password'></input>
         </div>
         <div className='loginUser-Areset'>
         <a className='loginUser-a' href='#'>Reset Password </a>
@@ -29,8 +29,8 @@ function LoginUser() {
           <a className='loginUser-a' href='#'>Signup</a>
         </div>
         <div>
-          <button className='loginUser-btn' type='siubmit'>Sign In</button>
-          <img  className="signupBtn-logo"src={signUp_logo} alt='signUp_logo'/>
+          <button className='loginUser-btn' type='siubmit'>Sign In  <img className='signupLogo1' src={SignupLogo} /></button>
+          
         </div>
         </div>
       </body>

@@ -6,7 +6,7 @@ import signUp_logo from'../../Assets/signUpbtnlogo.png'
 
 function SignupMech() {
   return (
-    <div className='signupMech-main'>
+    <div >
         <div>
         <img className="signupMech-img"src={Signin_image} alt='Signin_image'/>
         </div>

@@ -21,10 +21,8 @@
     color: #1A728E;
   }
   .loginUser-input{
-    position: relative;
-    left: 30rem;
+    margin-left: 34rem;
     margin-top: 60px;
-    margin-left: 5rem;
     width: 20rem;
     height: 2.5rem;
   }
@@ -58,9 +56,8 @@
     border: transparent;
     border: #1A728E;
    }
-   .signupBtn-logo{
-    width: 13px;
-    height: 10px;
-    position: relative;
-    left: 42.5rem;
+  
+   .signupLogo1{
+    width: 1rem;
+    margin-left: .5rem;
    }

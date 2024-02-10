@@ -1,7 +1,7 @@
 import React from 'react'
 import Signin_image from '../../Assets/signin_image.png'
 import './LoginMech.css'
-import signUp_logo from'../../Assets/signUpbtnlogo.png'
+import SignupLogo from'../../Assets/signUpbtnlogo.png'
 
 function LoginMechanic() {
   return (
@@ -29,9 +29,10 @@ function LoginMechanic() {
           <a className='loginMech-a' href='#'>Signup</a>
         </div>
         <div>
-          <button className='loginMech-btn' type='siubmit'>Sign In</button>
-          <img  className="signupBtn-logo"src={signUp_logo} alt='signUp_logo'/>
+          <button className='loginMech-btn' type='submit'>Sign In <img className='signupLogo' src={SignupLogo} /></button>
+       
         </div>
+        
         </div>
       </body>
       
