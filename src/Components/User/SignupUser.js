@@ -6,7 +6,7 @@ import signUp_logo from'../../Assets/signUpbtnlogo.png'
 
 function SignupUser() {
   return (
-    <div className='signupUser-main'>
+    <div >
         <div>
         <img className="signupUser-img"src={Signin_image} alt='Signin_image'/>
         </div>

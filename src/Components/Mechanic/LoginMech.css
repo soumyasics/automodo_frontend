@@ -50,17 +50,16 @@
     background-color: #1A728E;
     width: 9rem;
     height: 30px;
-    position: relative;
-    left: 45rem;
     color: white;
     font-weight: 100;
     padding: 2px 4px 4px 2px;
     border: transparent;
-    border: #1A728E;
+    border-radius: 3px;
+    margin-left: 45rem;
+
    }
-   .signupBtn-logo{
-    width: 13px;
-    height: 10px;
-    position: relative;
-    left: 42.5rem;
+   
+   .signupLogo{
+    width: 1rem;
+    margin-left: .5rem;
    }

@@ -1,7 +1,7 @@
 import React from 'react'
 import Signin_image from '../../Assets/signin_image.png'
 import './loginWorkshop.css'
-import signUp_logo from'../../Assets/signUpbtnlogo.png'
+import SignupLogo from'../../Assets/signUpbtnlogo.png'
 
 
 function LoginWorkshop() {
@@ -30,8 +30,8 @@ function LoginWorkshop() {
           <a className='loginWorkshop-a' href='#'>Signup</a>
         </div>
         <div>
-          <button className='loginWorkshop-btn' type='siubmit'>Sign In</button>
-          <img  className="signupBtn-logo"src={signUp_logo} alt='signUp_logo'/>
+          <button className='loginWorkshop-btn' type='siubmit'>Sign In  <img className='signupLogo2' src={SignupLogo} /></button>
+
         </div>
         </div>
       </body>
