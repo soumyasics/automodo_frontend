@@ -66,6 +66,13 @@
     border: transparent;
     border: #1A728E;
    }
+   .signupWorkshop-btn:hover{
+    background-color: #0a4a5e;
+   }
+
+   .signupWorkshop-btn:active{
+    background-color: #84bdcf;
+   }
    .signupBtn-logo{
     width: 13px;
     height: 10px;

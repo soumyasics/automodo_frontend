@@ -58,6 +58,14 @@
     border: transparent;
     border: #1A728E;
    }
+
+   .loginWorkshop-btn:hover{
+    background-color: #0a4a5e;
+   }
+
+   .loginWorkshop-btn:active{
+    background-color: #84bdcf;
+   }
    .signupBtn-logo{
     width: 13px;
     height: 10px;
