@@ -56,6 +56,14 @@
     border: transparent;
     border: #1A728E;
    }
+
+   .loginUser-btn:hover{
+    background-color: #0a4a5e;
+   }
+
+   .loginUser-btn:active{
+    background-color: #84bdcf;
+   }
   
    .signupLogo1{
     width: 1rem;

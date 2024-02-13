@@ -58,6 +58,13 @@
     margin-left: 45rem;
 
    }
+   .loginMech-btn:hover{
+    background-color: #0a4a5e;
+   }
+
+   .loginMech-btn:active{
+    background-color: #84bdcf;
+   }
    
    .signupLogo{
     width: 1rem;
