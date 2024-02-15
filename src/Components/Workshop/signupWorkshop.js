@@ -95,10 +95,7 @@ function SignupWorkshop() {
           <button className='signupWorkshop-btn' type='siubmit'>Sign In</button>
           <img className="signupBtn-logo"src={signUp_logo} alt='signUp_logo'/>
         </div>
-        
         </div>
-
-
         </div>
         </div>
         
