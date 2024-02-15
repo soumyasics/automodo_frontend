@@ -27,6 +27,16 @@ setErrors(prevErrors => ({
     }
     return '';
   };
+  const validateNumber =(fieldName,value)=>{
+
+    if (!value.trim()) {
+      return `${fieldName} is required`;
+  }
+
+    else if(value.toString().length!==10){
+      return `${fieldName}  10 digits required`;
+ }
+  }
   
   let signup=(a)=>{
     a.preventDefault()
@@ -40,7 +50,7 @@ setErrors(prevErrors => ({
       errors.city= validateField('city', data.city);
       errors.state= validateField('state', data.state);
       errors.nationality= validateField('nationality', data.nationality);
-      errors.number= validateField('number', data.number);
+      errors.number= validateNumber('number', data.number);
       errors.password = validateField('password', data.password);
       errors.confpassword= validateField('confirm password', data.confpassword);
 
