@@ -35,7 +35,7 @@ let signin=(a)=>{
       let formIsValid = true;
 
       errors.username= validateField('username', data.username);
-      errors.password = validateField('password', data.username);
+      errors.password = validateField('password', data.password);
 
       setErrors(errors);
 
