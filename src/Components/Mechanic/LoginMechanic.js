@@ -35,7 +35,7 @@ let signin=(a)=>{
       let formIsValid = true;
 
       errors.username= validateField('username', data.username);
-      errors.password = validateField('password', data.username);
+      errors.password = validateField('password', data.password);
 
       setErrors(errors);
 
@@ -58,13 +58,13 @@ let signin=(a)=>{
           <label className='loginMech-label'>Username</label>
           <input className='loginMech-input'  name='username' value={data.username}  onChange={change} type='text' placeholder='Username'/>
           {errors.username && (
-                <div className="text-danger">{errors.username}</div>
+                <div className="text-danger input-validation">{errors.username}</div>
               )}
         </div>
         <div>
           <label className='loginMech-label'>Password</label>
           <input className='loginMech-input' name='password'  value={data.password}  onChange={change}  type='password' placeholder='Password'/>{errors.password && (
-                <div className="text-danger ">{errors.password}</div>
+                <div className="text-danger input-validation ">{errors.password}</div>
               )}
         </div>
         <div className='loginMech-Areset'>

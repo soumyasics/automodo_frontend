@@ -5,17 +5,44 @@ import SignupLogo from'../../Assets/signUpbtnlogo.png'
 
 function LoginUser() {
 
-const [State,SetState]=useState({username:'',password:''})
+const [data,SetData]=useState({username:'',password:''})
+const [errors, setErrors] = useState({ username: '', password: '' });
 
 const change=(b)=>{
-  SetState({...State,[b.target.name]:b.target.value})
+  const { name, value } = b.target;
+  SetData(prevData => ({
+      ...prevData,
+      [name]: value
+  }));
+  setErrors(prevErrors => ({
+    ...prevErrors,
+    [name]: ''
+}));
+  
 }
+const validateField = (fieldName, value) => {
+  if (!value.trim()) {
+      return `${fieldName} is required`;
+  }
+  return '';
+};
+
 
 let signin=(a)=>{
   a.preventDefault()
-  console.log(State)
-}
+  let errors = {};
+  let formIsValid = true;
 
+  errors.username= validateField('username', data.username);
+  errors.password = validateField('password', data.password);
+
+  setErrors(errors);
+
+  if (formIsValid) {
+      console.log("data", data);
+  }
+}
+  
 
   return (
     <div >
@@ -30,11 +57,17 @@ let signin=(a)=>{
         </div>
         <div>
           <label className='loginUser-label'>Username</label>
-          <input className='loginUser-input' name='username'  onChange={change}  type='text' placeholder='Username'></input>
+          <input className='loginUser-input' name='username' value={data.username} onChange={change}  type='text' placeholder='Username'/>
+          {errors.username && (
+                <div className="text-danger input-validation">{errors.username}</div>
+              )}
         </div>
         <div>
           <label className='loginUser-label'>Password</label>
-          <input className='loginUser-input' name='password'  onChange={change}  type='password' placeholder='Password'></input>
+          <input className='loginUser-input' name='password' value={data.password}  onChange={change}  type='password' placeholder='Password'/>
+          {errors.password && (
+                <div className="text-danger input-validation">{errors.password}</div>
+              )}
         </div>
         <div className='loginUser-Areset'>
         <a className='loginUser-a' href='#'>Reset Password </a>
