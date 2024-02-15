@@ -68,38 +68,38 @@ function SignupMech() {
           <div className='signupMech-submain col-2'>
         <div>
           <label className='signupMech-label'>Name</label>
-          <input className='signupMech-input' type='text' placeholder='Name' name='username' onChange={change} /> {errors.username && (
-                <div className="text-danger">{errors.username}</div>
+          <input className='signupMech-input' type='text' placeholder='Name' name='username' value={data.username} onChange={change} /> {errors.username && (
+                <div className="text-danger signupMech-validation">{errors.username}</div>
               )}
         </div>
         <div>
           <label className='signupMech-label'>Age</label>
-          <input className='signupMech-input' type='number' placeholder='Age' name='age' onChange={change} /> {errors.age && (
-                <div className="text-danger">{errors.age}</div>
+          <input className='signupMech-input' type='number' placeholder='Age' name='age' value={data.age} onChange={change} /> {errors.age && (
+                <div className="text-danger signupMech-validation">{errors.age}</div>
               )}
         </div>
         <div>
           <label className='signupMech-label'>Email</label>
-          <input className='signupMech-input' type='email' placeholder='Email' name='email' onChange={change}/> {errors.email && (
-                <div className="text-danger">{errors.email}</div>
+          <input className='signupMech-input' type='email' placeholder='Email' name='email' value={data.email} onChange={change}/> {errors.email && (
+                <div className="text-danger signupMech-validation">{errors.email}</div>
               )}
          </div>
         <div>
           <label className='signupMech-label'>Street</label>
-          <input className='signupMech-input' type='text' placeholder='Street' name='street' onChange={change}/> {errors.street && (
-                <div className="text-danger">{errors.street}</div>
+          <input className='signupMech-input' type='text' placeholder='Street' name='street'  value={data.street} onChange={change}/> {errors.street && (
+                <div className="text-danger signupMech-validation">{errors.street}</div>
               )}
         </div>
         <div>
           <label className='signupMech-label'>City</label>
-          <input className='signupMech-input' type='text' placeholder='City' name='city' onChange={change} /> {errors.city && (
-                <div className="text-danger">{errors.city}</div>
+          <input className='signupMech-input' type='text' placeholder='City' name='city' value={data.city} onChange={change} /> {errors.city && (
+                <div className="text-danger signupMech-validation">{errors.city}</div>
               )}
         </div>
         <div>
           <label className='signupMech-label'>State</label>
-          <input className='signupMech-input' type='text' placeholder='State' name='state' onChange={change}/> {errors.state && (
-                <div className="text-danger">{errors.state}</div>
+          <input className='signupMech-input' type='text' placeholder='State' name='state' value={data.state} onChange={change}/> {errors.state && (
+                <div className="text-danger signupMech-validation">{errors.state}</div>
               )}
           {/* <select className='signupMech-select' name="nationlity">
           <option></option>
@@ -111,8 +111,8 @@ function SignupMech() {
         </div>
         <div>
           <label className='signupMech-label'>Nationality</label>
-          <input className='signupMech-input' type='nationality' placeholder='Nationality' name='nationality' onChange={change} /> {errors.nationality && (
-                <div className="text-danger">{errors.nationality}</div>
+          <input className='signupMech-input' type='nationality' placeholder='Nationality' name='nationality' value={data.nationality} onChange={change} /> {errors.nationality && (
+                <div className="text-danger signupMech-validation">{errors.nationality}</div>
               )}
           {/* <select className='signupMech-select1' name="nationlity">
           <option></option>
@@ -123,26 +123,26 @@ function SignupMech() {
         </div>
         <div>
           <label className='signupMech-label'>Phone Number</label>
-          <input className='signupMech-input' type='number' placeholder='Phone Number' name='number' onChange={change}/> {errors.number && (
-                <div className="text-danger">{errors.number}</div>
+          <input className='signupMech-input' type='number' placeholder='Phone Number' name='number' value={data.number} onChange={change}/> {errors.number && (
+                <div className="text-danger signupMech-validation">{errors.number}</div>
               )}
         </div>
         <div>
           <label className='signupMech-label'>Liscense Number</label>
-          <input className='signupMech-input' type='number' placeholder='License Number' name='license' onChange={change}/> {errors.license && (
-                <div className="text-danger">{errors.license}</div>
+          <input className='signupMech-input' type='number' placeholder='License Number' name='license' value={data.license} onChange={change}/> {errors.license && (
+                <div className="text-danger signupMech-validation">{errors.license}</div>
               )}
         </div>
         <div>
           <label className='signupMech-label'>Password</label>
-          <input className='signupMech-input' type='password' placeholder='Password' name='password' onChange={change} /> {errors.password && (
-                <div className="text-danger">{errors.password}</div>
+          <input className='signupMech-input' type='password' placeholder='Password' name='password' value={data.password} onChange={change} /> {errors.password && (
+                <div className="text-danger signupMech-validation">{errors.password}</div>
               )}
         </div>
         <div>
           <label className='signupMech-label'> Confirm Password</label>
-          <input className='signupMech-input' type='password' placeholder=' Confirm Password' name='confpassword' onChange={change}/> {errors.confpassword && (
-                <div className="text-danger">{errors.confpassword}</div>
+          <input className='signupMech-input' type='password' placeholder=' Confirm Password' name='confpassword' value={data.confpassword} onChange={change}/> {errors.confpassword && (
+                <div className="text-danger signupMech-validation">{errors.confpassword}</div>
               )}
         </div>
         <div>
