@@ -5,15 +5,43 @@ import SignupLogo from'../../Assets/signUpbtnlogo.png'
 
 function LoginMechanic() {
 
-  const [State,SetState]=useState({username:'',password:''})
+  const [data,SetData]=useState({username:'',password:''})
+  const [errors, setErrors] = useState({ username: '', password: '' });
 
 const change=(b)=>{
-  SetState({...State,[b.target.name]:b.target.value})
+  
+  const { name, value } = b.target;
+  SetData(prevData => ({
+      ...prevData,
+      [name]: value
+  }));
+  setErrors(prevErrors => ({
+    ...prevErrors,
+    [name]: ''
+}));
 }
+
+const validateField = (fieldName, value) => {
+  if (!value.trim()) {
+      return `${fieldName} is required`;
+  }
+  return '';
+};
 
 let signin=(a)=>{
   a.preventDefault()
-  console.log(State)
+
+  let errors = {};
+      let formIsValid = true;
+
+      errors.username= validateField('username', data.username);
+      errors.password = validateField('password', data.username);
+
+      setErrors(errors);
+
+      if (formIsValid) {
+          console.log("data", data);
+      }
 }
   return (
     <div>
@@ -28,11 +56,16 @@ let signin=(a)=>{
         </div>
         <div>
           <label className='loginMech-label'>Username</label>
-          <input className='loginMech-input'  name='username'  onChange={change} type='text' placeholder='Username'></input>
+          <input className='loginMech-input'  name='username' value={data.username}  onChange={change} type='text' placeholder='Username'/>
+          {errors.username && (
+                <div className="text-danger">{errors.username}</div>
+              )}
         </div>
         <div>
           <label className='loginMech-label'>Password</label>
-          <input className='loginMech-input' name='password'  onChange={change}  type='password' placeholder='Password'></input>
+          <input className='loginMech-input' name='password'  value={data.password}  onChange={change}  type='password' placeholder='Password'/>{errors.password && (
+                <div className="text-danger ">{errors.password}</div>
+              )}
         </div>
         <div className='loginMech-Areset'>
         <a className='loginMech-a' href='#'>Reset Password </a>
