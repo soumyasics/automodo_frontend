@@ -28,6 +28,36 @@ const validateField = (fieldName, value) => {
   return '';
 };
 
+const validatePassword =(fieldName,value)=>{
+ var erorrsPassword=[]
+  if (!value.trim()) {
+    erorrsPassword.push(`${fieldName} is required and include any`);
+}
+
+   if(value.search(/[\!\@\#\$\%\^\&\*\(\)\_\+\.\,\;\:\-]/) < 0){
+    erorrsPassword.push(`special character ,`);
+}
+
+   if (value.length < 7) {
+    erorrsPassword.push(`length minimum 8 ,`);
+  }
+   if (value.search(/[a-z]/) < 0) {
+    erorrsPassword.push(`one small letter ,`);
+  }
+  if (value.search(/[A-Z]/) < 0) {
+  erorrsPassword.push(`one capital letter ,`);
+  }
+  if (value.search(/[0-9]/) < 0) {
+    erorrsPassword.push(`and any number.`);
+  }
+  if (erorrsPassword.length > 0) {
+    return `${erorrsPassword.join("\n")}`;
+}
+return true;
+}
+
+
+
 let signin=(a)=>{
   a.preventDefault()
 
@@ -35,13 +65,22 @@ let signin=(a)=>{
       let formIsValid = true;
 
       errors.username= validateField('username', data.username);
-      errors.password = validateField('password', data.password);
+      errors.password = validatePassword('password', data.password);
 
       setErrors(errors);
 
       if (formIsValid) {
           console.log("data", data);
       }
+}
+
+const showPassword=()=> {
+  var x = document.getElementById("myPassword");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
 }
   return (
     <div>
@@ -60,12 +99,15 @@ let signin=(a)=>{
           {errors.username && (
                 <div className="text-danger input-validation">{errors.username}</div>
               )}
+             
         </div>
         <div>
           <label className='loginMech-label'>Password</label>
-          <input className='loginMech-input' name='password'  value={data.password}  onChange={change}  type='password' placeholder='Password'/>{errors.password && (
+          <input className='loginMech-input' name='password' id='myPassword' value={data.password}  onChange={change}  type='password' placeholder='Password'/>
+          {errors.password && (
                 <div className="text-danger input-validation ">{errors.password}</div>
               )}
+               {/* <input type="checkbox" onclick={showPassword} />Show Password */}
         </div>
         <div className='loginMech-Areset'>
         <a className='loginMech-a' href='#'>Reset Password </a>
