@@ -28,7 +28,6 @@ const validateField = (fieldName, value) => {
   return '';
 };
 
-
 let signin=(a)=>{
   a.preventDefault()
 

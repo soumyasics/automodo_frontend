@@ -28,34 +28,6 @@ const validateField = (fieldName, value) => {
   return '';
 };
 
-const validatePassword =(fieldName,value)=>{
- var erorrsPassword=[]
-  if (!value.trim()) {
-    erorrsPassword.push(`${fieldName} is required and include any`);
-}
-
-   if(value.search(/[\!\@\#\$\%\^\&\*\(\)\_\+\.\,\;\:\-]/) < 0){
-    erorrsPassword.push(`special character ,`);
-}
-
-   if (value.length < 7) {
-    erorrsPassword.push(`length minimum 8 ,`);
-  }
-   if (value.search(/[a-z]/) < 0) {
-    erorrsPassword.push(`one small letter ,`);
-  }
-  if (value.search(/[A-Z]/) < 0) {
-  erorrsPassword.push(`one capital letter ,`);
-  }
-  if (value.search(/[0-9]/) < 0) {
-    erorrsPassword.push(`and any number.`);
-  }
-  if (erorrsPassword.length > 0) {
-    return `${erorrsPassword.join("\n")}`;
-}
-return true;
-}
-
 
 
 let signin=(a)=>{
@@ -65,7 +37,7 @@ let signin=(a)=>{
       let formIsValid = true;
 
       errors.username= validateField('username', data.username);
-      errors.password = validatePassword('password', data.password);
+      errors.password = validateField('password', data.password);
 
       setErrors(errors);
 
