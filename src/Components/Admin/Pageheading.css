@@ -5,21 +5,13 @@
 }
 .pageheadAdmin-head{
     color: #1A728E ;
-    position: relative;
-    left: 18rem;
-    top: 10rem;
+   margin-left: 18rem;
     font-weight: 300;
 }
 .pageheadAdmin-para{
-    position: relative;
-    left: 18rem;
-    top: 12rem;
-    margin-right: 10%;
+   
+    margin-left: 18rem;
     color: #1A728E;
     text-align: justify;
-    margin-right: 60%;
-}
-.pageheadAdmin-main{
-    position: relative;
-    bottom: 20rem;
+    width: 50rem;
 }
