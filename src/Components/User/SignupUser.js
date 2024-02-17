@@ -37,6 +37,34 @@ setErrors(prevErrors => ({
       return `${fieldName}  10 digits required`;
  }
   }
+  const validatePassword =(fieldName,value)=>{
+    var erorrsPassword=[]
+     if (!value.trim()) {
+       erorrsPassword.push(`${fieldName} is required and include any`);
+   }
+   
+      if(value.search(/[\!\@\#\$\%\^\&\*\(\)\_\+\.\,\;\:\-]/) < 0){
+       erorrsPassword.push(`special character ,`);
+   }
+   
+      if (value.length < 7) {
+       erorrsPassword.push(`length minimum 8 ,`);
+     }
+      if (value.search(/[a-z]/) < 0) {
+       erorrsPassword.push(`one small letter ,`);
+     }
+     if (value.search(/[A-Z]/) < 0) {
+     erorrsPassword.push(`one capital letter ,`);
+     }
+     if (value.search(/[0-9]/) < 0) {
+       erorrsPassword.push(`and any number.`);
+     }
+     if (erorrsPassword.length > 0) {
+       return `${erorrsPassword.join("\n")}`;
+   }
+   return true;
+   }
+   
   
   let signup=(a)=>{
     a.preventDefault()
@@ -51,7 +79,7 @@ setErrors(prevErrors => ({
       errors.state= validateField('state', data.state);
       errors.nationality= validateField('nationality', data.nationality);
       errors.number= validateNumber('number', data.number);
-      errors.password = validateField('password', data.password);
+      errors.password = validatePassword('password', data.password);
       errors.confpassword= validateField('confirm password', data.confpassword);
 
       setErrors(errors);
