@@ -15,12 +15,14 @@ SetData(prevData => ({
     ...prevData,
     [name]: value
 }));
+
+
 setErrors(prevErrors => ({
   ...prevErrors,
   [name]: ''
 }));
   }
-  console.log(data);
+  
 
   const validateField = (fieldName, value) => {
     if (!value.trim()) {
@@ -69,7 +71,7 @@ setErrors(prevErrors => ({
   
   let signup=(a)=>{
     a.preventDefault()
-    axiosInstance.post()
+    axiosInstance.post('https://jsonplaceholder.typicode.com/posts',data)
            .then((res)=>{
             console.log(res)
             if(res.status==201){
@@ -94,7 +96,7 @@ setErrors(prevErrors => ({
       errors.password = validatePassword('password', data.password);
       
       setErrors(errors);
-
+      console.log(data);
       if (formIsValid) {
           console.log("data", data);
       }
@@ -144,14 +146,14 @@ setErrors(prevErrors => ({
 
         <div>
           <label className='signupUser-label' >Gender</label><br/>
-          <input className='gender-btn' id='Idgender1' type='radio' name='gender'/>
+          <input className='gender-btn' id='Idgender1' type='radio' name='gender'  onChange={change}/>
           <label  className='gender-btn' for='Idgender1'>Male</label>
-          <input  className='gender-btn' id='Idgender2' type='radio' name='gender'/>
+          <input  className='gender-btn' id='Idgender2' type='radio' name='gender'  onChange={change}/>
           <label className='gender-btn' for='Idgender2'>Female</label>
         </div>
         <div>
         <label className='signupUser-label' >Image</label><br/>
-          <input  className='gender-btn' type='file' name='image'/>
+          <input  className='gender-btn' type='file' name='image'  onChange={change}/>
         </div>
        
         <div>
