@@ -78,7 +78,7 @@ let signin=(a)=>{
           <a className='loginWorkshop-a' href='#'>Signup</a>
         </div>
         <div>
-          <button className='loginWorkshop-btn' type='siubmit'>Sign In  <img className='signupLogo2' src={SignupLogo} /></button>
+          <button className='loginWorkshop-btn' type='submit'>Sign In  <img className='signupLogo2' src={SignupLogo} /></button>
 
         </div>
         </div>
