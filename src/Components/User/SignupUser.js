@@ -6,8 +6,8 @@ import signUp_logo from'../../Assets/signUpbtnlogo.png'
 
 function SignupUser() {
 
-  const [data,SetData]=useState({firstname:'',lastname:'',email:'',number:'',password:'',confpassword:''})
-  const [errors, setErrors] = useState({firstname:'',lastname:'',email:'',number:'',password:'',confpassword:''});
+  const [data,SetData]=useState({firstname:'',lastname:'',email:'',contact:'',gender:'',image:'null',password:'',confpassword:''})
+  const [errors, setErrors] = useState({firstname:'',lastname:'',email:'',contact:'',password:'',confpassword:''});
 
   const change=(b)=>{
     const { name, value } = b.target;
@@ -74,7 +74,7 @@ setErrors(prevErrors => ({
       errors.firstname= validateField('firstname', data.firstname);
       errors.lastname= validateField('lastname', data.lastname);
       errors.email= validateField('email', data.email);
-      errors.number= validateNumber('number', data.number);
+      errors.contact= validateNumber('contact', data.contact);
       errors.password = validatePassword('password', data.password);
       errors.confpassword= validateField('confirm password', data.confpassword);
 
@@ -121,9 +121,9 @@ setErrors(prevErrors => ({
        
         <div>
           <label className='signupUser-label'>Contact Number</label>
-          <input className='signupUser-input' type='number' placeholder='Contact Number' name='number'value={data.number} onChange={change} />
-          {errors.number && (
-                <div className="text-danger signupUser-validation">{errors.number}</div>
+          <input className='signupUser-input' type='number' placeholder='Contact Number' name='contact'value={data.contact} onChange={change} />
+          {errors.contact && (
+                <div className="text-danger signupUser-validation">{errors.contact}</div>
               )}
         </div>
 
@@ -133,6 +133,10 @@ setErrors(prevErrors => ({
           <label  className='gender-btn' for='Idgender1'>Male</label>
           <input  className='gender-btn' id='Idgender2' type='radio' name='gender'/>
           <label className='gender-btn' for='Idgender2'>Female</label>
+        </div>
+        <div>
+        <label className='signupUser-label' >Image</label><br/>
+          <input  className='gender-btn' type='file' name='image'/>
         </div>
        
         <div>
