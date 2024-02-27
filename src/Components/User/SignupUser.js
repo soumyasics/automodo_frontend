@@ -6,8 +6,8 @@ import signUp_logo from'../../Assets/signUpbtnlogo.png'
 
 function SignupUser() {
 
-  const [data,SetData]=useState({username:'',age:'',email:'',street:'',city:'',state:'',nationality:'',number:'',password:'',confpassword:''})
-  const [errors, setErrors] = useState({username:'',age:'',email:'',street:'',city:'',state:'',nationality:'',number:'',password:'',confpassword:''});
+  const [data,SetData]=useState({firstname:'',lastname:'',email:'',contact:'',gender:'',image:'null',password:'',confpassword:''})
+  const [errors, setErrors] = useState({firstname:'',lastname:'',email:'',contact:'',password:'',confpassword:''});
 
   const change=(b)=>{
     const { name, value } = b.target;
@@ -71,14 +71,10 @@ setErrors(prevErrors => ({
     let errors = {};
       let formIsValid = true;
 
-      errors.username= validateField('username', data.username);
-      errors.age= validateField('age', data.age);
+      errors.firstname= validateField('firstname', data.firstname);
+      errors.lastname= validateField('lastname', data.lastname);
       errors.email= validateField('email', data.email);
-      errors.street= validateField('street', data.street);
-      errors.city= validateField('city', data.city);
-      errors.state= validateField('state', data.state);
-      errors.nationality= validateField('nationality', data.nationality);
-      errors.number= validateNumber('number', data.number);
+      errors.contact= validateNumber('contact', data.contact);
       errors.password = validatePassword('password', data.password);
       errors.confpassword= validateField('confirm password', data.confpassword);
 
@@ -102,17 +98,17 @@ setErrors(prevErrors => ({
         <div className='row'>
           <div className='signupUser-submain col-2'>
         <div>
-          <label className='signupUser-label'>Name</label>
-          <input className='signupUser-input' type='text' placeholder='Name' name='username'value={data.username} onChange={change} />
-          {errors.username && (
-                <div className="text-danger signupUser-validation">{errors.username}</div>
+          <label className='signupUser-label'>First Name</label>
+          <input className='signupUser-input' type='text' placeholder='Firstname' name='firstname'value={data.firstname} onChange={change} />
+          {errors.firstname && (
+                <div className="text-danger signupUser-validation">{errors.firstname}</div>
               )}
         </div>
         <div>
-          <label className='signupUser-label'>Age</label>
-          <input className='signupUser-input' type='number' placeholder='Age' name='age'value={data.age} onChange={change} />
-          {errors.age && (
-                <div className="text-danger signupUser-validation">{errors.age}</div>
+          <label className='signupUser-label'>Last Name</label>
+          <input className='signupUser-input' type='text' placeholder='Lastname' name='lastname'value={data.lastname} onChange={change} />
+          {errors.lastname && (
+                <div className="text-danger signupUser-validation">{errors.lastname}</div>
               )}
         </div>
         <div>
@@ -122,51 +118,12 @@ setErrors(prevErrors => ({
                 <div className="text-danger signupUser-validation">{errors.email}</div>
               )}
          </div>
+       
         <div>
-          <label className='signupUser-label'>Street</label>
-          <input className='signupUser-input' type='text' placeholder='Street' name='street'value={data.street} onChange={change} />
-          {errors.street && (
-                <div className="text-danger signupUser-validation">{errors.street}</div>
-              )}
-        </div>
-        <div>
-          <label className='signupUser-label'>City</label>
-          <input className='signupUser-input' type='text' placeholder='City' name='city'value={data.city} onChange={change} />
-          {errors.city && (
-                <div className="text-danger signupUser-validation">{errors.city}</div>
-              )}
-        </div>
-        <div>
-          <label className='signupUser-label'>State</label>
-          <input className='signupUser-input' type='text' placeholder='State' name='state'value={data.state}onChange={change} />
-          {errors.state && (
-                <div className="text-danger signupUser-validation">{errors.state}</div>
-              )}
-          {/* <select className='signupUser-select' name="nationlity">
-          <option></option>
-            <option>Kerala</option>
-            <option>TamilNadu</option>
-            <option>Karnataka</option>
-            <option>Maharashtra</option>
-            </select> */}
-        </div>
-        <div>
-          <label className='signupUser-label'>Nationality</label>
-          <input className='signupUser-input' type='nationality' placeholder='Nationality' name='nationality'value={data.nationality} onChange={change} />{errors.nationality && (
-                <div className="text-danger signupUser-validation">{errors.nationality}</div>
-              )}
-          {/* <select className='signupUser-select1' name="nationlity">
-          <option></option>
-            <option>India</option>
-            <option>UK</option>
-            <option>China</option>
-        </select> */}
-        </div>
-        <div>
-          <label className='signupUser-label'>Phone Number</label>
-          <input className='signupUser-input' type='number' placeholder='Phone Number' name='number'value={data.number} onChange={change} />
-          {errors.number && (
-                <div className="text-danger signupUser-validation">{errors.number}</div>
+          <label className='signupUser-label'>Contact Number</label>
+          <input className='signupUser-input' type='number' placeholder='Contact Number' name='contact'value={data.contact} onChange={change} />
+          {errors.contact && (
+                <div className="text-danger signupUser-validation">{errors.contact}</div>
               )}
         </div>
 
@@ -176,6 +133,10 @@ setErrors(prevErrors => ({
           <label  className='gender-btn' for='Idgender1'>Male</label>
           <input  className='gender-btn' id='Idgender2' type='radio' name='gender'/>
           <label className='gender-btn' for='Idgender2'>Female</label>
+        </div>
+        <div>
+        <label className='signupUser-label' >Image</label><br/>
+          <input  className='gender-btn' type='file' name='image'/>
         </div>
        
         <div>
