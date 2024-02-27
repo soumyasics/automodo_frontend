@@ -71,10 +71,14 @@ setErrors(prevErrors => ({
   
   let signup=(a)=>{
     a.preventDefault()
-    axiosInstance.post('https://jsonplaceholder.typicode.com/posts',data)
+    axiosInstance.post('/registerCustomer',data,{
+      headers: {
+        "Content-Type": "multipart/form-data",
+      }
+    })
            .then((res)=>{
             console.log(res)
-            if(res.status==201){
+            if(res.status==200){
                 alert('succesfully registered')
                }
                else{
