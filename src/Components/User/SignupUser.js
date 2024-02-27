@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import './signupUser.css'
 import Signin_image from '../../Assets/signin_image.png'
 import signUp_logo from'../../Assets/signUpbtnlogo.png'
-
+import axiosInstance from '../../Baseurl'
 
 function SignupUser() {
 
-  const [data,SetData]=useState({firstname:'',lastname:'',email:'',contact:'',gender:'',image:'null',password:'',confpassword:''})
-  const [errors, setErrors] = useState({firstname:'',lastname:'',email:'',contact:'',password:'',confpassword:''});
+  const [data,SetData]=useState({firstname:'',lastname:'',email:'',contact:'',gender:'',image:'null',password:''})
+  const [errors, setErrors] = useState({firstname:'',lastname:'',email:'',contact:'',password:''});
 
   const change=(b)=>{
     const { name, value } = b.target;
@@ -69,6 +69,21 @@ setErrors(prevErrors => ({
   
   let signup=(a)=>{
     a.preventDefault()
+    axiosInstance.post()
+           .then((res)=>{
+            console.log(res)
+            if(res.status==201){
+                alert('succesfully registered')
+               }
+               else{
+                alert('failed')
+               }
+           })
+           .catch((error)=>{
+            console.log(error)
+
+           })
+           
     let errors = {};
       let formIsValid = true;
 
@@ -77,8 +92,7 @@ setErrors(prevErrors => ({
       errors.email= validateField('email', data.email);
       errors.contact= validateNumber('contact', data.contact);
       errors.password = validatePassword('password', data.password);
-      errors.confpassword= validateField('confirm password', data.confpassword);
-
+      
       setErrors(errors);
 
       if (formIsValid) {
@@ -145,13 +159,6 @@ setErrors(prevErrors => ({
           <input className='signupUser-input' type='password' placeholder='Password' name='password'value={data.password} onChange={change} />
           {errors.password && (
                 <div className="text-danger signupUser-validation">{errors.password}</div>
-              )}
-        </div>
-        <div>
-          <label className='signupUser-label'> Confirm Password</label>
-          <input className='signupUser-input' type='password' placeholder=' Confirm Password' name='confpassword'value={data.confpassword} onChange={change} />
-          {errors.confpassword && (
-                <div className="text-danger signupUser-validation">{errors.confpassword}</div>
               )}
         </div>
         <div>
