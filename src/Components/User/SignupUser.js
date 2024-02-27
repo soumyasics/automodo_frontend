@@ -20,6 +20,7 @@ setErrors(prevErrors => ({
   [name]: ''
 }));
   }
+  console.log(data);
 
   const validateField = (fieldName, value) => {
     if (!value.trim()) {
