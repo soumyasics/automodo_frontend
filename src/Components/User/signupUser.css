@@ -97,3 +97,11 @@
     position: relative;
     left: 36rem;
    }
+
+   .gender-btn{
+    position: relative;
+    left: 35rem;
+    top: 4rem;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+   }
