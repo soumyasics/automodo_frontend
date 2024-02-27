@@ -126,6 +126,14 @@ setErrors(prevErrors => ({
                 <div className="text-danger signupUser-validation">{errors.number}</div>
               )}
         </div>
+
+        <div>
+          <label className='signupUser-label' >Gender</label><br/>
+          <input className='gender-btn' id='Idgender1' type='radio' name='gender'/>
+          <label  className='gender-btn' for='Idgender1'>Male</label>
+          <input  className='gender-btn' id='Idgender2' type='radio' name='gender'/>
+          <label className='gender-btn' for='Idgender2'>Female</label>
+        </div>
        
         <div>
           <label className='signupUser-label'>Password</label>

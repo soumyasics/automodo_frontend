@@ -164,7 +164,7 @@ function SignupWorkshop() {
         </div>
         <div>
           <label className='signupWorkshop-label'>Phone Number</label>
-          <input className='signupWorkshop-input' type='number' placeholder='Phone Number'value={data.number} name='number' onChange={change}/>
+          <input className='signupWorkshop-input' type='number' placeholder='Phone Number' value={data.number} name='number' onChange={change}/>
           {errors.number && (
                 <div className="text-danger signupWorkshop-validation">{errors.number}</div>
               )}
@@ -178,7 +178,7 @@ function SignupWorkshop() {
         </div>
         <div>
           <label className='signupWorkshop-label'>Password</label>
-          <input className='signupWorkshop-input' type='password' placeholder='Password'value={data.password} name='password' onChange={change}/>
+          <input className='signupWorkshop-input' type='password' placeholder='Password' value={data.password} name='password' onChange={change}/>
           {errors.password && (
                 <div className="text-danger signupWorkshop-validation">{errors.password}</div>
               )}
