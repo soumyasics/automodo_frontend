@@ -17,14 +17,14 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path='/' element={[<Navbar/>,<MainAdmin/>,<Footer/>]}/>
-      <Route path='/1' element={[<Navbar/>,<AdminTable/>,<Footer/>]}/>
-      <Route path='/2' element={[<Navbar/>,<Pageheading/>,<Footer/>]}/>
-      <Route path='/3' element={[<Navbar/>,<LoginUser/>,<Footer/>]}/>
-      <Route path='/4' element={[<Navbar/>,<LoginMechanic/>,<Footer/>]}/>
-      <Route path='/5' element={[<Navbar/>,<LoginWorkshop/>,<Footer/>]}/> 
-      <Route path='/6' element={[<Navbar/>,<SignupUser/>,<Footer/>]}/>
-      <Route path='/7' element={[<Navbar/>,<SignupMechanic/>,<Footer/>]}/>
-       <Route path='/8' element={[<Navbar/>,<SignupWorkshop/>,<Footer/>]}/>
+      <Route path='/table-format' element={[<Navbar/>,<AdminTable/>,<Footer/>]}/>
+      <Route path='/page-heading' element={[<Navbar/>,<Pageheading/>,<Footer/>]}/>
+      <Route path='/user-login' element={[<Navbar/>,<LoginUser/>,<Footer/>]}/>
+      <Route path='/mechanic-login' element={[<Navbar/>,<LoginMechanic/>,<Footer/>]}/>
+      <Route path='/workshop-login' element={[<Navbar/>,<LoginWorkshop/>,<Footer/>]}/> 
+      <Route path='/user-signup' element={[<Navbar/>,<SignupUser/>,<Footer/>]}/>
+      <Route path='/mechanic-signup' element={[<Navbar/>,<SignupMechanic/>,<Footer/>]}/>
+       <Route path='/workshop-signup' element={[<Navbar/>,<SignupWorkshop/>,<Footer/>]}/>
        
      </Routes>
      </BrowserRouter>
