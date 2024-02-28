@@ -12,7 +12,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AdminTable from './Components/Admin/AdminTable';
 import SignupUser from './Components/User/SignupUser';
 import SignupWorkshop from './Components/Workshop/signupWorkshop'
+import ForgotpassUser from './Components/User/ForgotpassUser';
 import AdminDashboard from './Components/Admin/AdminDashboard';
+
 function App() {
   return (
     <BrowserRouter>
@@ -25,11 +27,13 @@ function App() {
       <Route path='/workshop-login' element={[<Navbar/>,<LoginWorkshop/>,<Footer/>]}/> 
       <Route path='/user-signup' element={[<Navbar/>,<SignupUser/>,<Footer/>]}/>
       <Route path='/mechanic-signup' element={[<Navbar/>,<SignupMechanic/>,<Footer/>]}/>
-      <Route path='/workshop-signup' element={[<Navbar/>,<SignupWorkshop/>,<Footer/>]}/>
+       <Route path='/workshop-signup' element={[<Navbar/>,<SignupWorkshop/>,<Footer/>]}/>
+       <Route path='/forgotUser-login'element={[<Navbar/>,<ForgotpassUser/>,<Footer/>]}/>
       <Route path='/admin-dash' element={[<Navbar/>,<AdminDashboard/>,<Footer/>]}/>
        
      </Routes>
      </BrowserRouter>
+   
 
   );
 }
