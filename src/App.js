@@ -12,7 +12,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AdminTable from './Components/Admin/AdminTable';
 import SignupUser from './Components/User/SignupUser';
 import SignupWorkshop from './Components/Workshop/signupWorkshop'
+import ForgotpassUser from './Components/User/ForgotpassUser';
 import AdminDashboard from './Components/Admin/AdminDashboard';
+
 function App() {
   return (
     <BrowserRouter>
@@ -30,6 +32,7 @@ function App() {
        
      </Routes>
      </BrowserRouter>
+   
 
   );
 }
