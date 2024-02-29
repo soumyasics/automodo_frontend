@@ -75,13 +75,4 @@
   background-color: #84bdcf;
  }
 
-.sidebar-dash-btnflex{
-  display: flex;
-  flex-direction: column;
-}
 
-.sidebar-heading{
-  color: white;
-  text-transform: uppercase;
-  text-align: center;
-}
