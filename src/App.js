@@ -15,6 +15,11 @@ import SignupWorkshop from './Components/Workshop/signupWorkshop'
 import ForgotpassUser from './Components/User/ForgotpassUser';
 import AdminDashboard from './Components/Admin/AdminDashboard';
 
+import Workshopsidebar from './Components/Workshop/Adminsidebar';
+import Workshopmain from './Components/Workshop/Workshopmain';
+
+
+
 function App() {
   return (
     <BrowserRouter>
@@ -28,8 +33,15 @@ function App() {
       <Route path='/user-signup' element={[<Navbar/>,<SignupUser/>,<Footer/>]}/>
       <Route path='/mechanic-signup' element={[<Navbar/>,<SignupMechanic/>,<Footer/>]}/>
       <Route path='/workshop-signup' element={[<Navbar/>,<SignupWorkshop/>,<Footer/>]}/>
-      <Route path='/admin-dashboard' element={[<Navbar/>,<AdminDashboard/>,<Footer/>]}/>
-       
+
+
+
+      <Route path='/workshop-sidebar' element={[<Navbar/>,<Workshopsidebar/>,<Footer/>]}/>
+      <Route path='/workshop-dashboard' element={[<Navbar/>,<Workshopmain data="workshopdashboard"/>,<Footer/>]}/>
+
+
+      
+
      </Routes>
      </BrowserRouter>
    
