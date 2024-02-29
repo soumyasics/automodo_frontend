@@ -71,23 +71,7 @@ setErrors(prevErrors => ({
   
   let signup=(a)=>{
     a.preventDefault()
-    axiosInstance.post('/registerCustomer',data,{
-      headers: {
-        "Content-Type": "multipart/form-data",
-      }
-    })
-           .then((res)=>{
-            console.log(res)
-            if(res.status==200){
-                alert('succesfully registered')
-               }
-               else{
-                alert('failed')
-               }
-           })
-           .catch((error)=>{
-            console.log(error)
-           })
+   
            
     let errors = {};
       let formIsValid = true;
@@ -102,6 +86,24 @@ setErrors(prevErrors => ({
       console.log(data);
       if (formIsValid) {
           console.log("data", data);
+
+          axiosInstance.post('/registerCustomer',data,{
+            headers: {
+              "Content-Type": "multipart/form-data",
+            }
+          })
+                 .then((res)=>{
+                  console.log(res)
+                  if(res.status==200){
+                      alert('succesfully registered')
+                     }
+                     else{
+                      alert('failed')
+                     }
+                 })
+                 .catch((error)=>{
+                  console.log(error)
+                 })
       }
   }
   return (

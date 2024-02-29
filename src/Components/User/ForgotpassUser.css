@@ -10,19 +10,19 @@
     font-weight: 100;
     font-size: 35px;
     text-align: center;
-    margin-top: 10rem;
+    margin-top: 5rem;
     color:  #1A728E ;
   }
   .forgotUser-label{
     position: relative;
     left: 39rem;
-     top: 3.5rem; 
+     top: 2rem; 
     margin-top: 3px;
     color: #1A728E;
   }
   .forgotUser-input{
     margin-left: 39rem;
-    margin-top: 60px;
+    margin-top: 40px;
     width: 20rem;
     height: 2.5rem;
   }
@@ -37,10 +37,10 @@
     height: 30px;
     position: relative;
     left: 44rem;
-    top:1rem;
+    top:1.5rem;
     color: white;
     font-weight: 100;
-    padding: 2px 4px 4px 2px;
+    padding: 3px 4px 4px 3px;
     border: transparent;
     border: #1A728E;
    }

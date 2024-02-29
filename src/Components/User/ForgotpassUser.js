@@ -57,7 +57,7 @@ let signin=(a)=>{
       
       <div className='forgotUser-main '>
         <div>
-          <h2 className='forgotUser-head'>Sign In</h2>
+          <h2 className='forgotUser-head'>Reset Password</h2>
         </div>
         <div className='row'>
         <div className='forggtUser-submain col-2'>
@@ -84,7 +84,7 @@ let signin=(a)=>{
         </div>
        
         <div>
-          <button className='forgotUser-btn' type='submit'>Sign In  <img className='signupLogo1' src={SignupLogo} /></button>
+          <button className='forgotUser-btn' type='submit'>Reset password <img className='signupLogo1' src={SignupLogo} /></button>
           
         </div>
         </div>

@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Signin_image from '../../Assets/signin_image.png'
 import './loginUser.css'
 import SignupLogo from'../../Assets/signUpbtnlogo.png'
+import  axiosInstance from '../../Baseurl'
+
 
 function LoginUser() {
 
@@ -40,6 +42,24 @@ let signin=(a)=>{
 
   if (formIsValid) {
       console.log("data", data);
+      axiosInstance.post('/loginCust',data,{
+
+      })
+      .then((res)=>{
+        console.log(res)
+        if(res.status==200){
+            alert('succesfully registered')
+           }
+           else{
+            alert('failed')
+           }
+       })
+       .catch((error)=>{
+        console.log(error)
+       })
+
+
+
   }
 }
   
