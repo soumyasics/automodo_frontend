@@ -13,6 +13,8 @@ import AdminTable from './Components/Admin/AdminTable';
 import SignupUser from './Components/User/SignupUser';
 import SignupWorkshop from './Components/Workshop/signupWorkshop'
 import AdminDashboard from './Components/Admin/AdminDashboard';
+import Workshopsidebar from './Components/Workshop/Adminsidebar';
+import Workshopmain from './Components/Workshop/Workshopmain';
 function App() {
   return (
     <BrowserRouter>
@@ -27,7 +29,13 @@ function App() {
       <Route path='/mechanic-signup' element={[<Navbar/>,<SignupMechanic/>,<Footer/>]}/>
       <Route path='/workshop-signup' element={[<Navbar/>,<SignupWorkshop/>,<Footer/>]}/>
       <Route path='/admin-dash' element={[<Navbar/>,<AdminDashboard/>,<Footer/>]}/>
-       
+
+
+      <Route path='/workshop-sidebar' element={[<Navbar/>,<Workshopsidebar/>,<Footer/>]}/>
+      <Route path='/workshop-dashboard' element={[<Navbar/>,<Workshopmain data="workshopdashboard"/>,<Footer/>]}/>
+
+
+      
      </Routes>
      </BrowserRouter>
 
