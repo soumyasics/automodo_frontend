@@ -1,0 +1,22 @@
+
+.MechanicList-flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  color:hsla(0, 0%, 100%, 0.738);
+  font-size: large;
+  border-top: 1px solid gray;
+  
+}
+
+.MechanicList-heading{
+ text-align: center;
+ margin: 2rem;
+ color: white;
+}
+
+
+
+
+

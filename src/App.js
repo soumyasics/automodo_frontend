@@ -12,6 +12,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AdminTable from './Components/Admin/AdminTable';
 import SignupUser from './Components/User/SignupUser';
 import SignupWorkshop from './Components/Workshop/signupWorkshop'
+import ForgotpassUser from './Components/User/ForgotpassUser';
 import AdminDashboard from './Components/Admin/AdminDashboard';
 import Workshopsidebar from './Components/Workshop/Adminsidebar';
 import Workshopmain from './Components/Workshop/Workshopmain';
@@ -38,6 +39,7 @@ function App() {
       
      </Routes>
      </BrowserRouter>
+   
 
   );
 }
