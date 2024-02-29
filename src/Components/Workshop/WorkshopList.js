@@ -18,7 +18,7 @@ function WorkshopList() {
   return (
     <div>
       <div>
-        <h3 className=' WorkshopList-heading'>WORKSHOP LIST :</h3>
+        <h3 className=' WorkshopList-heading'>WORKSHOP LIST</h3>
         {Userz.map((b)=>{
           return(
           <div className=' WorkshopList-flex'>

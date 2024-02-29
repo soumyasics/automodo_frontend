@@ -18,7 +18,7 @@ function UserList() {
   return (
     <div>
       <div>
-        <h3 className='usersList-heading'>USERS LIST :</h3>
+        <h3 className='usersList-heading'>USERS LIST</h3>
         {Userz.map((b)=>{
           return(
           <div className='ban-flex'>

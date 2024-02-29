@@ -73,7 +73,7 @@ function AdminDashboard() {
       <div className='row'>
         <div className='col-3'>
           <div className='sidebar-admin row'>
-            <h3 >Admin</h3>
+            <h3 className='sidebar-heading'>Admin</h3>
             <hr/>
             <div className='sidebar-dash-btnflex'>
             <button className='sidebar-dash-btn' onClick={clickUser}>User</button>
@@ -119,7 +119,7 @@ function AdminDashboard() {
       <div className='row'>
         <div className='col-3'>
           <div className='sidebar-admin row'>
-            <h3 >Admin</h3>
+            <h3 className='sidebar-heading'>Admin</h3>
             <hr/>
             <div className='sidebar-dash-btnflex'>
             <button className='sidebar-dash-btn' onClick={clickUser}>User</button>

@@ -18,7 +18,7 @@ function MechanicList() {
   return (
     <div>
       <div>
-        <h3 className='MechanicList-heading'>MECHANIC LIST :</h3>
+        <h3 className='MechanicList-heading'>MECHANIC LIST</h3>
         {Userz.map((b)=>{
           return(
           <div className='MechanicList-flex'>
