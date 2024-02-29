@@ -29,7 +29,9 @@ function App() {
       <Route path='/mechanic-signup' element={[<Navbar/>,<SignupMechanic/>,<Footer/>]}/>
       <Route path='/workshop-signup' element={[<Navbar/>,<SignupWorkshop/>,<Footer/>]}/>
       <Route path='/admin-dashboard' element={[<Navbar/>,<AdminDashboard/>,<Footer/>]}/>
-       
+      <Route path='/admin-dashboard/:id' element={[<Navbar/>,<AdminDashboard/>,<Footer/>]}/>
+      <Route path='/forgotpassword' element={[<Navbar/>,<ForgotpassUser/>,<Footer/>]}/>
+      
      </Routes>
      </BrowserRouter>
    
