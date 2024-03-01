@@ -6,9 +6,9 @@ function MechanicList() {
   const [Users,SetUsers]=useState([]);
 
  useEffect(()=>{
-  axiosInstance.post('/viewCustomers',Users)
+  axiosInstance.post('/viewMechanics',Users)
   .then((res)=>{
-    SetUsers(res.data)
+    SetUsers(res.data.data)
   })
   .catch((err)=>{
     console.log(err)

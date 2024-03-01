@@ -1,30 +1,30 @@
 import React, { useEffect, useState } from "react";
 import "./Workshopdashboard.css";
-import axios from "axios";
+import axiosInstance from '../../Baseurl'
 import { Link } from "react-router-dom";
 
 function Workshopdashboard() {
-  const [Users, SetUsers] = useState([]);
+  const [Users,SetUsers]=useState([]);
 
-  useEffect(() => {
-    axios
-      .get("https://api.escuelajs.co/api/v1/users")
-      .then((res) => {
-        SetUsers(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-  console.log(Users);
+ useEffect(()=>{
+  axiosInstance.post('/viewCustomers',Users)
+  .then((res)=>{
+    SetUsers(res.data.data)
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
+ },[])
+ console.log(Users)
 
   return (
     
     <div>
+      <div className="col-8" style={{ marginLeft: "50px" }}>
      {Users.map((b)=>{
           return(
-            <div className="col-8" style={{ marginLeft: "20px" }}>
-            <div className="reader_profile_account_info">
+            
+            <div className="reader_profile_account_info" style={{width:"60rem" }}>
             <div className="reader_profile_account_info_details row">
               <div className="col-7  reader_profile_account_info_fulldetails ">
                 <p>Account Info</p>
@@ -39,7 +39,7 @@ function Workshopdashboard() {
                 </div>
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p className="col-4">Email</p>
-                  <p>kjrhfurfhr</p>
+                  <p>{b.email}</p>
                 </div>
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p className="col-4">Street</p>
@@ -96,8 +96,9 @@ function Workshopdashboard() {
               </div>
             </div>
           </div>
-          </div>
+         
           )})}
+           </div>
    </div>
   );
 }
