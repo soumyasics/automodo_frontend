@@ -10,47 +10,47 @@ function Workshopdashboard() {
           <div className="col-7  reader_profile_account_info_fulldetails ">
             <p>Account Info</p>
             <div className="reader_profile_account_info_fulldetails_box mb-3">
-              <p>First Name</p>
+              <p className="col-6">Shop Name</p>
               <p>rkfhrkufjrfr</p>
             </div>
             <div className="reader_profile_account_info_fulldetails_box mb-3">
-              <p>Last Name</p>
+              <p className="col-6">Owner Name</p>
               <p>rfjhrjfrjr</p>
             </div>
             <div className="reader_profile_account_info_fulldetails_box mb-3">
-              <p>Gender</p>
+              <p className="col-4">Email</p>
               <p>kjrhfurfhr</p>
             </div>
             <div className="reader_profile_account_info_fulldetails_box mb-3">
-              <p>Age</p>
+              <p className="col-4">Street</p>
               <p>ejfbhjherh</p>
             </div>
             <div className="reader_profile_account_info_fulldetails_box mb-3">
-              <p>Street</p>
+              <p className="col-4">City</p>
               <p>rfhrufrf</p>
             </div>
             <div className="reader_profile_account_info_fulldetails_box mb-3">
-              <p>City</p>
+              <p className="col-4">State</p>
               <p>fkjhfjkrf</p>
             </div>
             <div className="reader_profile_account_info_fulldetails_box mb-3">
-              <p>State</p>
+              <p className="col-6">Nationality</p>
               <p>fkjrhkfjrf</p>
             </div>
             <div className="reader_profile_account_info_fulldetails_box mb-3">
-              <p>Pincode</p>
+              <p className="col-4">Number</p>
               <p>iheriuirfmnf</p>
             </div>
             <div className="reader_profile_account_info_fulldetails_box mb-3">
-              <p>Nationality</p>
-              <p>fjbrhjgfrhj</p>
+              <p className="col-4">Reg No</p>
+              <p >fjbrhjgfrhjsdfhdu</p>
             </div>
-            <div className="reader_profile_account_info_fulldetails_box mb-3">
-              <p>Contact</p>
+            {/* <div className="reader_profile_account_info_fulldetails_box mb-3">
+              <p></p>
               <p>hbfrjbrfr</p>
-            </div>
+            </div> */}
 
-            <div className="reader_profile_account_info_fulldetails_box mb-3">
+            {/* <div className="reader_profile_account_info_fulldetails_box mb-3">
               <p>Email</p>
               <p
                 style={{
@@ -61,7 +61,7 @@ function Workshopdashboard() {
               >
                 frbfrhjr
               </p>
-            </div>
+            </div> */}
 
             <div className="reader_profile_account_info_editbtn ">
               <Link to="">
