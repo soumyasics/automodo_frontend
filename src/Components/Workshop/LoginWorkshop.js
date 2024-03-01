@@ -7,8 +7,8 @@ import axiosInstance from '../../Baseurl'
 
 function LoginWorkshop() {
 
-  const [data,SetData]=useState({username:'',password:''})
-  const [errors, setErrors] = useState({ username: '', password: '' });
+  const [data,SetData]=useState({email:'',password:''})
+  const [errors, setErrors] = useState({ email: '', password: '' });
 
 
 const change=(b)=>{
@@ -36,7 +36,7 @@ let signin=(a)=>{
   let errors = {};
   let formIsValid = true;
 
-  errors.username= validateField('username', data.username);
+  errors.email= validateField('email', data.email);
   errors.password = validateField('password', data.password);
 
   setErrors(errors);
@@ -67,10 +67,10 @@ let signin=(a)=>{
           <h2 className='loginWorkshop-head'>Sign In</h2>
         </div>
         <div>
-          <label className='loginWorkshop-label'>Username</label>
-          <input className='loginWorkshop-input' name='username' value={data.username} onChange={change}  type='text' placeholder='Username'/>
-          {errors.username && (
-                <div className="text-danger input-validation">{errors.username}</div>
+          <label className='loginWorkshop-label'>Email</label>
+          <input className='loginWorkshop-input' name='email' value={data.email} onChange={change}  type='text' placeholder='E-mail'/>
+          {errors.email && (
+                <div className="text-danger input-validation">{errors.email}</div>
               )}
         </div>
         <div>
