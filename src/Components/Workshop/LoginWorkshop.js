@@ -59,7 +59,7 @@ let signin=(a)=>{
         </div>
         <div>
           <label className='loginWorkshop-label'>Email</label>
-          <input className='loginWorkshop-input' name='email' value={data.email} onChange={change}  type='text' placeholder='E-mail'/>
+          <input className='loginWorkshop-input1' name='email' value={data.email} onChange={change}  type='text' placeholder='E-mail'/>
           {errors.email && (
                 <div className="text-danger input-validation">{errors.email}</div>
               )}
