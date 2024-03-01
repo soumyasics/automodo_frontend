@@ -1,33 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import './UserList.css';
-import axios from 'axios'
+import axiosInstance from '../../Baseurl'
 
 function UserList() {
-  const [Userz,SetUserz]=useState([]);
+  const [Users,SetUsers]=useState([]);
 
  useEffect(()=>{
-  axios.get('https://api.escuelajs.co/api/v1/users')
+  axiosInstance.post('/viewCustomers',Users)
   .then((res)=>{
-    SetUserz(res.data)
+    SetUsers(res.data.data)
   })
   .catch((err)=>{
     console.log(err)
   })
  },[])
- console.log(Userz)
+ console.log(Users)
   return (
     <div>
       <div>
         <h3 className='usersList-heading'>USERS LIST :</h3>
-        {Userz.map((b)=>{
+        {Users.map((b)=>{
           return(
           <div className='ban-flex'>
-            <div>
+            {/* <div>
              <p>{b.id}</p>
              </div>
              <div>
               {'Name : '+b.name}
-              </div>
+              </div> */}
               <div>
               {'Email : '+b.email}
               </div>

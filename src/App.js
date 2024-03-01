@@ -53,8 +53,6 @@ function App() {
       <Route path='/workshop-dashboard' element={[<Navbar/>,<Workshopmain data="workshopdashboard"/>,<Footer/>]}/>
 
 
-      
-
      </Routes>
      </BrowserRouter>
    
