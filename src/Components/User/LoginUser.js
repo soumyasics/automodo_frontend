@@ -2,11 +2,14 @@ import React, { useState } from 'react'
 import Signin_image from '../../Assets/signin_image.png'
 import './loginUser.css'
 import SignupLogo from'../../Assets/signUpbtnlogo.png'
+import  axiosInstance from '../../Baseurl'
+
 
 function LoginUser() {
+  let formIsValid = true;
 
-const [data,SetData]=useState({username:'',password:''})
-const [errors, setErrors] = useState({ username: '', password: '' });
+const [data,SetData]=useState({email:'',password:''})
+const [errors, setErrors] = useState({ email: '', password: '' });
 
 const change=(b)=>{
   const { name, value } = b.target;
@@ -22,6 +25,7 @@ const change=(b)=>{
 }
 const validateField = (fieldName, value) => {
   if (!value.trim()) {
+    formIsValid=false
       return `${fieldName} is required`;
   }
   return '';
@@ -31,15 +35,30 @@ const validateField = (fieldName, value) => {
 let signin=(a)=>{
   a.preventDefault()
   let errors = {};
-  let formIsValid = true;
-
-  errors.username= validateField('username', data.username);
+formIsValid=true
+  errors.email= validateField('email', data.email);
   errors.password = validateField('password', data.password);
 
   setErrors(errors);
-
+console.log(formIsValid);
   if (formIsValid) {
       console.log("data", data);
+      axiosInstance.post('/loginCust',data)
+      .then((res)=>{
+        console.log(res)
+        if(res.data.status==200){
+            alert('succesfully login')
+           }
+           else{
+            alert('failed')
+           }
+       })
+       .catch((error)=>{
+        console.log(error)
+       })
+
+
+
   }
 }
   
@@ -57,9 +76,9 @@ let signin=(a)=>{
         </div>
         <div>
           <label className='loginUser-label'>Username</label>
-          <input className='loginUser-input' name='username' value={data.username} onChange={change}  type='text' placeholder='Username'/>
-          {errors.username && (
-                <div className="text-danger input-validation">{errors.username}</div>
+          <input className='loginUser-input' name='email' value={data.email} onChange={change}  type='text' placeholder='Username'/>
+          {errors.email && (
+                <div className="text-danger input-validation">{errors.email}</div>
               )}
         </div>
         <div>

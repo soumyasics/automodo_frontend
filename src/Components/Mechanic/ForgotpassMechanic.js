@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import Signin_image from '../../Assets/signin_image.png'
-import './ForgotpassUser.css'
+import './ForgotpassMechanic.css'
 import SignupLogo from'../../Assets/signUpbtnlogo.png'
 
-function ForgotpassUser() {
+function ForgotpassMechanic() {
     const [data,SetData]=useState({email:'',newpassword:'',confirmpassword:''})
 const [errors, setErrors] = useState({ email: '', newpassword: '',confirmpassword:'' });
 
@@ -52,39 +52,39 @@ let signin=(a)=>{
     <div >
       <form onSubmit={signin}>
       <div>
-        <img className="forgotUser-img"src={Signin_image} alt='Signin_image'/>
+        <img className="forgotMechanic-img"src={Signin_image} alt='Signin_image'/>
       </div>
       
-      <div className='forgotUser-main '>
+      <div className='forgotMechanic-main '>
         <div>
-          <h2 className='forgotUser-head'>Reset Password</h2>
+          <h2 className='forgotMechanic-head'>Reset Password</h2>
         </div>
         <div className='row'>
-        <div className='forggtUser-submain col-2'>
+        <div className='forgotMechanic-submain col-2'>
         <div>
-          <label  className='forgotUser-label'>E-mail</label>
-          <input className='forgotUser-input' name='email' value={data.email} onChange={change}   type='email' placeholder='Email'/>
+          <label  className='forgotMechanic-label'>E-mail</label>
+          <input className='forgotMechanic-input' name='email' value={data.email} onChange={change}   type='email' placeholder='Email'/>
           {errors.email && (
                 <div className="text-danger input-validation">{errors.email}</div>
               )}
         </div>
         <div>
-          <label className='forgotUser-label'>New Password</label>
-          <input className='forgotUser-input' name='newpassword' value={data.newpassword} onChange={change} type='password' placeholder='New Password'/>
+          <label className='forgotMechanic-label'>New Password</label>
+          <input className='forgotMechanic-input' name='newpassword' value={data.newpassword} onChange={change} type='password' placeholder='New Password'/>
           {errors.newpassword && (
                 <div className="text-danger input-validation">{errors.newpassword}</div>
               )}
         </div>
         <div>
-          <label className='forgotUser-label'>Confirm Password</label>
-          <input className='forgotUser-input' name='confirmpassword'value={data.confirmpassword} onChange={change}  type='password' placeholder=' Re-enter Password'/>
+          <label className='forgotMechanic-label'>Confirm Password</label>
+          <input className='forgotMechanic-input' name='confirmpassword'value={data.confirmpassword} onChange={change}  type='password' placeholder=' Re-enter Password'/>
           {errors.confirmpassword && (
                 <div className="text-danger input-validation">{errors.confirmpassword}</div>
               )}
         </div>
        
         <div>
-          <button className='forgotUser-btn' type='submit'>Reset password <img className='signupLogo1' src={SignupLogo} /></button>
+          <button className='forgotMechanic-btn' type='submit'>Reset password <img className='signupLogo1' src={SignupLogo} /></button>
           
         </div>
         </div>
@@ -97,4 +97,4 @@ let signin=(a)=>{
   )
 }
 
-export default ForgotpassUser
+export default ForgotpassMechanic

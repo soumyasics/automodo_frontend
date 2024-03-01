@@ -17,6 +17,9 @@ import AdminDashboard from './Components/Admin/AdminDashboard';
 
 import Workshopsidebar from './Components/Workshop/Adminsidebar';
 import Workshopmain from './Components/Workshop/Workshopmain';
+import ForgotpassWorkshop from './Components/Workshop/ForgotpassWorkshop';
+import ForgotpassMechanic from './Components/Mechanic/ForgotpassMechanic';
+
 import Adminnav from './Components/Admin/Adminnav';
 
 
@@ -40,12 +43,12 @@ function App() {
       {/* Workshop */}
       <Route path='/workshop-login' element={[<Navbar/>,<LoginWorkshop/>,<Footer/>]}/> 
       <Route path='/workshop-signup' element={[<Navbar/>,<SignupWorkshop/>,<Footer/>]}/>
+      <Route path='/admin-dashboard' element={[<Navbar/>,<AdminDashboard/>,<Footer/>]}/>
+      <Route path='/forgotpass-user' element={[<Navbar/>,<ForgotpassUser/>,<Footer/>]}/>
+      <Route path='/forgotpass-workshop' element={[<Navbar/>,<ForgotpassWorkshop/>,<Footer/>]}/>
+      <Route path='/forgotpass-mechanic' element={[<Navbar/>,<ForgotpassMechanic/>,<Footer/>]}/>
       <Route path='/workshop-sidebar' element={[<Navbar/>,<Workshopsidebar/>,<Footer/>]}/>
       <Route path='/workshop-dashboard' element={[<Navbar/>,<Workshopmain data="workshopdashboard"/>,<Footer/>]}/>
-
-      {/* Admin */}
-      <Route path='/admin-dashboard' element={[<Adminnav/>,<AdminDashboard/>,<Footer/>]}/>
-      <Route path='/admin-nav' element={<Adminnav/>}/>
 
 
       
