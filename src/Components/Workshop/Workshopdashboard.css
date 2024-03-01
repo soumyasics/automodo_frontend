@@ -40,7 +40,7 @@
       /* margin: auto; */
       margin-left: 30px;
       border-radius: 7px;
-      min-height: 40px;
+      min-height: 50px;
   }
   .reader_profile_account_info_fulldetails_box p{
       color: #000;
@@ -52,6 +52,11 @@
   line-height: normal;
   text-transform: capitalize;
   padding: 0 30px;
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-Width: 100%;
+  word-Break: "break-all",
   }
   
   .reader_profile_account_info_editbtn{
