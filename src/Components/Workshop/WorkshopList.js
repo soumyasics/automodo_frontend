@@ -1,34 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import './WorkshopList.css';
-import  axiosInstance from '../../Baseurl'
+import axios from 'axios'
 
 function WorkshopList() {
-  const [Users,SetUsers]=useState([]);
+  const [Userz,SetUserz]=useState([]);
 
  useEffect(()=>{
-  axiosInstance.post('/viewWorkshopReqs',Users,)
-      .then((res)=>{
-        console.log(res)
-        SetUsers(res.data.data)
-       })
-       .catch((error)=>{
-        console.log(error)
-       })
+  axios.get('https://api.escuelajs.co/api/v1/users')
+  .then((res)=>{
+    SetUserz(res.data)
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
  },[])
- console.log(Users)
+ console.log(Userz)
   return (
     <div>
       <div>
-        <h3 className=' WorkshopList-heading'>WORKSHOP LIST</h3>
-        {Users.map((b)=>{
+        <h3 className=' WorkshopList-heading'>WORKSHOP LIST :</h3>
+        {Userz.map((b)=>{
           return(
           <div className=' WorkshopList-flex'>
-            {/* <div>
+            <div>
              <p>{b.id}</p>
-             </div> */}
-             {/* <div>
+             </div>
+             <div>
               {'Name : '+b.name}
-              </div> */}
+              </div>
               <div>
               {'Email : '+b.email}
               </div>

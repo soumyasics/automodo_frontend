@@ -20,6 +20,7 @@ import Img4 from '../../Assets/img4.png'
 import Img5 from '../../Assets/img5.png'
 import Img6 from '../../Assets/img6.png'
 import Img7 from '../../Assets/img7.png'
+import imghome from '../../Assets/homepic.png'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
@@ -36,7 +37,7 @@ function MainAdmin() {
         </div>
       </div>
       <div>
-        <img className='main-img' src={mainImg}  alt='mainimage'/>
+        <img className='main-img' src={imghome}  alt='mainimage'/>
       </div>
       <div>
         <h2 className='main-category'>Popular Category</h2>

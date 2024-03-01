@@ -3,6 +3,7 @@ import './signupUser.css'
 import Signin_image from '../../Assets/signin_image.png'
 import signUp_logo from'../../Assets/signUpbtnlogo.png'
 import axiosInstance from '../../Baseurl'
+import { useNavigate } from 'react-router-dom'
 
 function SignupUser() {
 
@@ -67,7 +68,7 @@ setErrors(prevErrors => ({
    }
    return true;
    }
-   
+   const navigate=useNavigate()
   
   let signup=(a)=>{
     a.preventDefault()
@@ -80,6 +81,7 @@ setErrors(prevErrors => ({
             console.log(res)
             if(res.status==200){
                 alert('succesfully registered')
+                navigate("/user-login")
                }
                else{
                 alert('failed')

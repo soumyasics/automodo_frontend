@@ -4,6 +4,7 @@ import Navbar_logo from '../../Assets/footer_logo.png'
 import drop_pic from '../../Assets/droppic.png'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import imglogo from "../../Assets/logo.png"
 import { Link } from 'react-router-dom'
 
 function Navbar() {
@@ -11,12 +12,12 @@ function Navbar() {
     <div >
         <nav className='nav-main'>
           <div>
-            <img className='navbar-logo' src={Navbar_logo} alt='Navbar_logo'/>
+            <img className='' src={imglogo} alt='' width="60px" height="60px" style={{marginLeft:"190px",marginTop:"20px",}}/>
           </div>
           
           
           <ul className='nav-position'>
-            <div>
+              <div>
               <li className='navbar-li'><Link className='nav-ahref'to='/'>Home</Link></li>
             </div>
             <div>
