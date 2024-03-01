@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Signin_image from '../../Assets/signin_image.png'
 import './loginWorkshop.css'
 import SignupLogo from'../../Assets/signUpbtnlogo.png'
+import axiosInstance from '../../Baseurl'
 
 
 function LoginWorkshop() {
@@ -42,6 +43,14 @@ let signin=(a)=>{
 
   if (formIsValid) {
       console.log("data", data);
+
+      axiosInstance.post(`loginworkshops`,data)
+      .then((res)=>{
+          console.log(res);
+      })
+      .catch((err)=>{
+        console.log(err);
+      })
   }
 }
 
