@@ -75,8 +75,8 @@ console.log(formIsValid);
           <h2 className='loginUser-head'>Sign In</h2>
         </div>
         <div>
-          <label className='loginUser-label'>Username</label>
-          <input className='loginUser-input' name='email' value={data.email} onChange={change}  type='text' placeholder='Username'/>
+          <label className='loginUser-label'>Email</label>
+          <input className='loginUser-input1' name='email' value={data.email} onChange={change}  type='text' placeholder='Email'/>
           {errors.email && (
                 <div className="text-danger input-validation">{errors.email}</div>
               )}
