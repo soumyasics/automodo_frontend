@@ -21,6 +21,7 @@ import ForgotpassWorkshop from './Components/Workshop/ForgotpassWorkshop';
 import ForgotpassMechanic from './Components/Mechanic/ForgotpassMechanic';
 
 import Adminnav from './Components/Admin/Adminnav';
+import AboutUs from './Components/Common/AboutUs';
 
 
 
@@ -31,6 +32,7 @@ function App() {
       <Route path='/' element={[<Navbar/>,<MainAdmin/>,<Footer/>]}/>
       <Route path='/table-format' element={[<Navbar/>,<AdminTable/>,<Footer/>]}/>
       <Route path='/page-heading' element={[<Navbar/>,<Pageheading/>,<Footer/>]}/>
+      <Route path='/Aboutus' element={[<Navbar/>,<AboutUs/>,<Footer/>]}/>
 
       {/* user */}
       <Route path='/user-login' element={[<Navbar/>,<LoginUser/>,<Footer/>]}/>
