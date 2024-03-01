@@ -1,10 +1,10 @@
-.forgotUser-img {
+.forgotWorkshop-img {
     width: 100%;
     margin: 0%;
     margin-left: 0%;
   }
   
-  .forgotUser-head{
+  .forgotWorkshop-head{
     position: relative;
     top: 8px;
     font-weight: 100;
@@ -13,25 +13,25 @@
     margin-top: 5rem;
     color:  #1A728E ;
   }
-  .forgotUser-label{
+  .forgotWorkshop-label{
     position: relative;
     left: 39rem;
      top: 2rem; 
     margin-top: 3px;
     color: #1A728E;
   }
-  .forgotUser-input{
+  .forgotWorkshop-input{
     margin-left: 39rem;
     margin-top: 40px;
     width: 20rem;
     height: 2.5rem;
   }
-   .forgotUser-input::placeholder{
+   .forgotWorkshop-input::placeholder{
     text-indent: 2rem;
     font-weight: lighter;
    }
   
-   .forgotUser-btn{
+   .forgotWorkshop-btn{
     background-color: #1A728E;
     width: 9rem;
     height: 30px;
@@ -45,11 +45,11 @@
     border: #1A728E;
    }
 
-   .forgotUser-btn:hover{
+   .forgotWorkshop-btn:hover{
     background-color: #0a4a5e;
    }
 
-   .forgotUser-btn:active{
+   .forgotWorkshop-btn:active{
     background-color: #84bdcf;
    }
   
