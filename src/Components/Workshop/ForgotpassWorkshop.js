@@ -43,7 +43,7 @@ let signin=(a)=>{
  if(data.newpassword !==data.confirmpassword){
   setErrors(prevErrors => ({
     ...prevErrors,
-    confirmpassword: 'newpassword and confirmpassword should be same'
+    confirmpassword: 'new password and confirm password should be same'
 }));
 
  }
