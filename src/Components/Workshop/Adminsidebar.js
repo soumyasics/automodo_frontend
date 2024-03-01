@@ -5,7 +5,7 @@ import {Link} from "react-router-dom"
 
 function Adminsidebar() {
   return (
-    <div className='col-3' style={{margin:"20px"}}>
+    <div className='col-3' style={{marginLeft:"20px"}}>
     <div className="admin_profile_sidebar">
 {/* <div className="reader_profile_sidebar_img mt-5">
 <Link to=''><img src={""} alt="profile_picture" /></Link>

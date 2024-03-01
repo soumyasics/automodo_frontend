@@ -2,13 +2,15 @@ import React, { useState } from 'react'
 import './SignupMech.css'
 import Signin_image from '../../Assets/signin_image.png'
 import signUp_logo from'../../Assets/signUpbtnlogo.png'
+import axiosInstance from '../../Baseurl'
+
 
 
 function SignupMech() {
 
-  const [data,SetData]=useState({firstname:'',lastname:'',email:'',contact:'',aadhar:'',gender:'',password:'',image:'null',certificate:'null'});
-
+  const [data,SetData]=useState({firstname:'',lastname:'',email:'',contact:'',aadhar:'',gender:'',password:'',image:'null',certificate:'null', shopid:''});
   const [errors, setErrors] = useState({firstname:'',lastname:'',email:'',contact:'',aadhar:'',password:''});
+  let formIsValid;
 
 
   const change=(b)=>{
@@ -25,6 +27,7 @@ function SignupMech() {
 
   const validateField = (fieldName, value) => {
     if (!value.trim()) {
+      formIsValid=false
         return `${fieldName} is required`;
     }
     return '';
@@ -33,10 +36,12 @@ function SignupMech() {
   const validateNumber =(fieldName,value)=>{
 
     if (!value.trim()) {
+      formIsValid=false
       return `${fieldName} is required`;
   }
 
     else if(value.toString().length!==10){
+      formIsValid=false
       return `${fieldName}  10 digits required`;
  }
   }
@@ -45,26 +50,33 @@ function SignupMech() {
 const validatePassword =(fieldName,value)=>{
   var erorrsPassword=[]
    if (!value.trim()) {
+    formIsValid=false
      erorrsPassword.push(`${fieldName} is required and include any`);
  }
  
     if(value.search(/[\!\@\#\$\%\^\&\*\(\)\_\+\.\,\;\:\-]/) < 0){
+      formIsValid=false
      erorrsPassword.push(`special character ,`);
  }
  
     if (value.length < 7) {
+      formIsValid=false
      erorrsPassword.push(`length minimum 8 ,`);
    }
     if (value.search(/[a-z]/) < 0) {
+      formIsValid=false
      erorrsPassword.push(`one small letter ,`);
    }
    if (value.search(/[A-Z]/) < 0) {
+    formIsValid=false
    erorrsPassword.push(`one capital letter ,`);
    }
    if (value.search(/[0-9]/) < 0) {
+    formIsValid=false
      erorrsPassword.push(`and any number.`);
    }
    if (erorrsPassword.length > 0) {
+    formIsValid=false
      return `${erorrsPassword.join("\n")}`;
  }
  return true;
@@ -85,10 +97,31 @@ const validatePassword =(fieldName,value)=>{
       
 
       setErrors(errors);
+      console.log(formIsValid);
 
       if (formIsValid) {
           console.log("data", data);
+          if (formIsValid) {
+            console.log("data", data);
+            axiosInstance.post('/addMechanic',data,{
+              headers: {
+                "Content-Type": "multipart/form-data",
+              }
+            })
+        .then((res)=>{
+          console.log(res)
+          if(res.data.status==200){
+              alert('succesfully registered')
+             }
+             else{
+              alert('failed')
+             }
+         })
+         .catch((error)=>{
+          console.log(error)
+         })
       }
+    }
   }
   return (
     <div >

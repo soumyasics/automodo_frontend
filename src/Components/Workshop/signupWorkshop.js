@@ -7,10 +7,11 @@ import axiosInstance from '../../Baseurl'
 
 
 function SignupWorkshop() {
-  let formIsValid = true;
+  
 
   const [data,SetData]=useState({name:'',contact:'',email:'',city:'',district:'',aadhar:'',password:'',image:'null',regno:''})
   const [errors, setErrors] = useState({name:'',contact:'',email:'',city:'',district:'',aadhar:'',password:'',image:'',regno:''});
+  let formIsValid;
   const change=(b)=>{
     const { name, value } = b.target;
     SetData(prevData => ({
@@ -32,36 +33,45 @@ function SignupWorkshop() {
     const validateNumber =(fieldName,value)=>{
 
       if (!value.trim()) {
+        formIsValid=false
         return `${fieldName} is required`;
     }
   
       else if(value.toString().length!==10){
+        formIsValid=false
         return `${fieldName}  10 digits required`;
    }
     }
     const validatePassword =(fieldName,value)=>{
       var erorrsPassword=[]
        if (!value.trim()) {
+        formIsValid=false
          erorrsPassword.push(`${fieldName} is required and include any`);
      }
      
         if(value.search(/[\!\@\#\$\%\^\&\*\(\)\_\+\.\,\;\:\-]/) < 0){
+          formIsValid=false
          erorrsPassword.push(`special character ,`);
      }
      
         if (value.length < 7) {
+          formIsValid=false
          erorrsPassword.push(`length minimum 8 ,`);
        }
         if (value.search(/[a-z]/) < 0) {
+          formIsValid=false
          erorrsPassword.push(`one small letter ,`);
        }
        if (value.search(/[A-Z]/) < 0) {
+        formIsValid=false
        erorrsPassword.push(`one capital letter ,`);
        }
        if (value.search(/[0-9]/) < 0) {
+        formIsValid=false
          erorrsPassword.push(`and any number.`);
        }
        if (erorrsPassword.length > 0) {
+        formIsValid=false
          return `${erorrsPassword.join("\n")}`;
      }
      return true;
