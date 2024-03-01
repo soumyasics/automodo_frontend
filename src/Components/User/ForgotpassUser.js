@@ -2,10 +2,13 @@ import React, { useState } from 'react'
 import Signin_image from '../../Assets/signin_image.png'
 import './ForgotpassUser.css'
 import SignupLogo from'../../Assets/signUpbtnlogo.png'
+import axiosInstance from '../../Baseurl'
+
 
 function ForgotpassUser() {
     const [data,SetData]=useState({email:'',newpassword:'',confirmpassword:''})
 const [errors, setErrors] = useState({ email: '', newpassword: '',confirmpassword:'' });
+let formIsValid;
 
 const change=(b)=>{
   const { name, value } = b.target;
@@ -21,6 +24,7 @@ const change=(b)=>{
 }
 const validateField = (fieldName, value) => {
   if (!value.trim()) {
+    formIsValid=false
       return `${fieldName} is required`;
   }
   return '';
@@ -37,9 +41,7 @@ let signin=(a)=>{
  
   setErrors(errors);
 
-  if (formIsValid) {
-      console.log("data", data);
-  }
+ 
  if(data.newpassword !==data.confirmpassword){
   setErrors(prevErrors => ({
     ...prevErrors,
@@ -47,6 +49,23 @@ let signin=(a)=>{
 }));
 
  }
+ if (formIsValid) {
+  console.log("data", data);
+  axiosInstance.post('/forgotPwdCustomer',data)
+  .then((res)=>{
+    console.log(res)
+    if(res.data.status==200){
+        alert('password updated')
+       }
+       else{
+        alert('failed')
+       }
+   })
+   .catch((error)=>{
+    console.log(error)
+   })
+
+}
 }
   return (
     <div >
