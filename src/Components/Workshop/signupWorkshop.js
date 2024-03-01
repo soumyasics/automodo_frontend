@@ -77,6 +77,9 @@ function SignupWorkshop() {
      return true;
      }
      
+     const workshopid=localStorage.getItem("workshopid")
+     console.log(workshopid);
+
   
   let signup=(a)=>{
     a.preventDefault()

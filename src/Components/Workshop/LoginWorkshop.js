@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Signin_image from '../../Assets/signin_image.png'
 import './loginWorkshop.css'
 import SignupLogo from'../../Assets/signUpbtnlogo.png'
+import axiosInstance from '../../Baseurl'
+import { useNavigate } from 'react-router-dom'
 
 
 function LoginWorkshop() {
@@ -9,7 +11,7 @@ function LoginWorkshop() {
   const [data,SetData]=useState({email:'',password:''})
   const [errors, setErrors] = useState({ email: '', password: '' });
 
-
+const navigate=useNavigate()
 const change=(b)=>{
   const { name, value } = b.target;
   SetData(prevData => ({
@@ -42,6 +44,29 @@ let signin=(a)=>{
 
   if (formIsValid) {
       console.log("data", data);
+
+      axiosInstance.post(`loginworkshops`,data)
+      .then((result) => {
+        console.log("data entered", result);
+        if (result.data.status == 200) {
+          localStorage.setItem("workshopid", result.data.data._id);
+          console.log("workshopid", result.data.data._id);
+          alert("login Sucessfully...");
+          navigate("")
+         
+        } else if (result.data.status==401) {
+            alert("password mismatch")
+        }else if(result.data.status==400){
+          alert("user not found")
+        }
+        else  {
+          alert(result.data.msg)
+        }
+      })
+    
+      .catch((err)=>{
+        console.log(err);
+      })
   }
 }
 
