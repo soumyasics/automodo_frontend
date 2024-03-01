@@ -81,7 +81,8 @@ const validatePassword =(fieldName,value)=>{
  }
  return true;
  }
- 
+ const shopid=localStorage.getItem("workshopid")
+ console.log(shopid,);
   
   let signup=(a)=>{
     a.preventDefault()
@@ -96,6 +97,8 @@ const validatePassword =(fieldName,value)=>{
       errors.password = validatePassword('password', data.password);
       
 
+    
+
       setErrors(errors);
       console.log(formIsValid);
 
@@ -103,7 +106,7 @@ const validatePassword =(fieldName,value)=>{
           console.log("data", data);
           if (formIsValid) {
             console.log("data", data);
-            axiosInstance.post('/addMechanic',data,{
+            axiosInstance.post(`/addMechanic/${shopid}`,data,{
               headers: {
                 "Content-Type": "multipart/form-data",
               }

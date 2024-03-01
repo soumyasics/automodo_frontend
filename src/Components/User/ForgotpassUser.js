@@ -43,6 +43,7 @@ let signin=(a)=>{
 
  
  if(data.newpassword !==data.confirmpassword){
+  formIsValid=false
   setErrors(prevErrors => ({
     ...prevErrors,
     confirmpassword: 'newpassword and confirmpassword should be same'
