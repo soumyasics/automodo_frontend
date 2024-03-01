@@ -32,6 +32,18 @@
     text-indent: 2rem;
     font-weight: lighter;
    }
+   .loginMech-input1{
+    position: relative;
+    left: 31.7rem;
+    margin-top: 60px;
+    margin-left: 5rem;
+    width: 20rem;
+    height: 2.5rem;
+  }
+   .loginMech-input1::placeholder{
+    text-indent: 2rem;
+    font-weight: lighter;
+   }
    .loginMech-Areset{
     position: relative;
     left: 39rem;
