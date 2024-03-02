@@ -107,7 +107,6 @@ const validatePassword =(fieldName,value)=>{
       if (formIsValid) {
           console.log("data", data);
           // if (formIsValid) {
-            console.log("data", data);
             axiosInstance.post(`/addMechanic/${shopid}`,data,{
               headers: {
                 "Content-Type": "multipart/form-data",
