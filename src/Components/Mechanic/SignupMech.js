@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import './SignupMech.css'
-import Signin_image from '../../Assets/signin_image.png'
 import signUp_logo from'../../Assets/signUpbtnlogo.png'
 import axiosInstance from '../../Baseurl'
+
+
 
 
 
@@ -106,7 +107,6 @@ const validatePassword =(fieldName,value)=>{
       if (formIsValid) {
           console.log("data", data);
           // if (formIsValid) {
-            console.log("data", data);
             axiosInstance.post(`/addMechanic/${shopid}`,data,{
               headers: {
                 "Content-Type": "multipart/form-data",
@@ -134,13 +134,11 @@ const validatePassword =(fieldName,value)=>{
   return (
     <div >
       <form onSubmit={signup}>
-        <div>
-        <img className="signupMech-img"src={Signin_image} alt='Signin_image'/>
-        </div>
+       
         
       <div className='signupMech-main'>
         <div>
-          <h2 className='signupMech-head'>Sign Up</h2>
+          <h2 className='signupMech-head'>Add Mechanic</h2>
         </div>
         <div className='row'>
           <div className='signupMech-submain col-2'>
@@ -176,19 +174,20 @@ const validatePassword =(fieldName,value)=>{
               )}
         </div>
         <div>
-          <label className='signupWorkshop-label' >Gender</label><br/>
-          <input className='gender-btn' id='Idgender1' type='radio' name='gender' value="male"  onChange={change}/>
-          <label  className='gender-btn' for='Idgender1'>Male</label>
-          <input  className='gender-btn' id='Idgender2' type='radio' name='gender' value="female" onChange={change}/>
-          <label className='gender-btn' for='Idgender2'>Female</label>
+          <label className='signupMech-label' >Gender</label><br/>
+          <div className='genderMech-btn' >
+          <input  id='Idgender1' type='radio' name='gender' value="male"  onChange={change}/>
+          <label className='genderMech-label' for='Idgender1'>Male</label>
+          <input  id='Idgender2' type='radio' name='gender' value="female" onChange={change}/>
+          <label className='genderMech-label' for='Idgender2'>Female</label></div>
         </div>
         <div>
-        <label className='signupWorkshop-label' >Image</label><br/>
-          <input  className='gender-btn' type='file' name='image'  onChange={change}/>
+        <label className='signupMech-label' >Image</label><br/>
+          <input  className='fileMech-btn' type='file' name='image'  onChange={change}/>
         </div>
         <div>
-        <label className='signupWorkshop-label' >Certificate</label><br/>
-          <input  className='gender-btn' type='file' name='certificate'  onChange={change}/>
+        <label className='signupMech-label' >Certificate</label><br/>
+          <input  className='fileMech-btn' type='file' name='certificate'  onChange={change}/>
         </div>
         <div>
           <label className='signupMech-label'>Password</label>
@@ -197,13 +196,7 @@ const validatePassword =(fieldName,value)=>{
               )}
         </div>
         <div>
-         <p className='signupMech-p'>Already have an account,</p>
-        </div>
-        <div>
-        <a className='signupMech-a'href='#'>Login</a>
-        </div>
-        <div>
-          <button className='signupMech-btn' type='siubmit'>Sign In</button>
+          <button className='signupMech-btn' type='siubmit'>Add</button>
           <img className="signupBtn-logo"src={signUp_logo} alt='signUp_logo'/>
         </div>
         

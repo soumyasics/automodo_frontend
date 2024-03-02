@@ -36,7 +36,7 @@ function Adminsidebar() {
 </Link>
 </div>
 <div className="admin_profile_sidebar_padding ">
-<Link to='' >
+<Link to='/workshop-dashboard-addMechanic' >
 <div className="admin_profile_sidebar_account_info">
   <div className="d-flex mt-2 ">
     <i class="ri-user-fill admin_profile_sidebar_icons"></i>{" "}

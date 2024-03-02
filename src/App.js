@@ -42,7 +42,7 @@ function App() {
 
       {/* Mechanic */}
       <Route path='/mechanic-login' element={[<Navbar/>,<LoginMechanic/>,<Footer/>]}/>
-      <Route path='/mechanic-signup' element={[<Navbar/>,<SignupMechanic/>,<Footer/>]}/>
+    
 
       {/* Workshop */}
       <Route path='/workshop-login' element={[<Navbar/>,<LoginWorkshop/>,<Footer/>]}/> 
@@ -52,7 +52,11 @@ function App() {
       <Route path='/forgotpass-mechanic' element={[<Navbar/>,<ForgotpassMechanic/>,<Footer/>]}/>
       <Route path='/workshop-sidebar' element={[<Navbar/>,<Workshopsidebar/>,<Footer/>]}/>
       <Route path='/workshop-dashboard' element={[<Navbar/>,<Workshopmain data="workshopdashboard"/>,<Footer/>]}/>
+
       
+
+      <Route path='/workshop-dashboard-addMechanic' element={[<Navbar/>,<Workshopmain data="addmechanic"/>,<Footer/>]}/>
+
       {/* Admin */}
       <Route path='/admin-dashboard' element={[<Adminnav/>,<AdminDashboard/>,<Footer/>]}/>
       <Route path='/req' element={<Workshopreuest/>}/>
