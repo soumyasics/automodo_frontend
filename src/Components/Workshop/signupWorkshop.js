@@ -3,6 +3,7 @@ import './signupWorkshop.css'
 import Signin_image from '../../Assets/signin_image.png'
 import signUp_logo from'../../Assets/signUpbtnlogo.png'
 import axiosInstance from '../../Baseurl'
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -77,8 +78,7 @@ function SignupWorkshop() {
      return true;
      }
      
-     const workshopid=localStorage.getItem("workshopid")
-     console.log(workshopid);
+     const navigate=useNavigate()
 
   
   let signup=(a)=>{
@@ -104,7 +104,12 @@ function SignupWorkshop() {
         console.log(res)
         if(res.data.status==200){
             alert('succesfully registered')
+            navigate("/workshop-login")
            }
+           else if(res.data.Error.code===11000){
+            alert('This workshop has already registered')
+           }
+
            else{
             alert('failed')
            }
