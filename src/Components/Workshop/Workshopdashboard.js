@@ -7,7 +7,7 @@ function Workshopdashboard() {
   const [Users,SetUsers]=useState([]);
 
  useEffect(()=>{
-  axiosInstance.post('/viewCustomers',Users)
+  axiosInstance.post(`/approveWorkshopById/:id`,Users)
   .then((res)=>{
     SetUsers(res.data.data)
   })
@@ -21,8 +21,7 @@ function Workshopdashboard() {
     
     <div>
       <div className="col-8" style={{ marginLeft: "50px" }}>
-     {Users.map((b)=>{
-          return(
+ 
             
             <div className="reader_profile_account_info" style={{width:"60rem" }}>
             <div className="reader_profile_account_info_details row">
@@ -39,7 +38,7 @@ function Workshopdashboard() {
                 </div>
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p className="col-4">Email</p>
-                  <p>{b.email}</p>
+                  <p>{Users.email}</p>
                 </div>
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p className="col-4">Street</p>
@@ -97,7 +96,7 @@ function Workshopdashboard() {
             </div>
           </div>
          
-          )})}
+        
            </div>
    </div>
   );
