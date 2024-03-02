@@ -30,6 +30,17 @@
     text-indent: 2rem;
     font-weight: lighter;
    }
+
+   .loginUser-input1{
+    margin-left: 35.7rem;
+    margin-top: 60px;
+    width: 20rem;
+    height: 2.5rem;
+  }
+   .loginUser-input1::placeholder{
+    text-indent: 2rem;
+    font-weight: lighter;
+   }
    .loginUser-Areset{
     position: relative;
     left: 39rem;

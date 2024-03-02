@@ -8,8 +8,11 @@ import axiosInstance from '../../Baseurl'
 
 
 function SignupMech() {
+  const shopid=localStorage.getItem("workshopid")
+  console.log(shopid);
+ 
 
-  const [data,SetData]=useState({firstname:'',lastname:'',email:'',contact:'',aadhar:'',gender:'',password:'',image:'null',certificate:'null', shopid:''});
+  const [data,SetData]=useState({firstname:'',lastname:'',email:'',contact:'',aadhar:'',gender:'',password:'',image:'null',certificate:'null', shopid:shopid});
   const [errors, setErrors] = useState({firstname:'',lastname:'',email:'',contact:'',aadhar:'',password:''});
   let formIsValid;
 
@@ -82,8 +85,6 @@ const validatePassword =(fieldName,value)=>{
  }
  return true;
  }
- const shopid=localStorage.getItem("workshopid")
- console.log(shopid,);
   
   let signup=(a)=>{
     a.preventDefault()
@@ -105,7 +106,7 @@ const validatePassword =(fieldName,value)=>{
 
       if (formIsValid) {
           console.log("data", data);
-          if (formIsValid) {
+          // if (formIsValid) {
             console.log("data", data);
             axiosInstance.post(`/addMechanic/${shopid}`,data,{
               headers: {
@@ -116,9 +117,13 @@ const validatePassword =(fieldName,value)=>{
           console.log(res)
           if(res.data.status==200){
               alert('succesfully registered')
+              window.location.reload(false)
+             }
+             else if(res.data.Error.code===11000){
+              alert('This mechanic has already registered')
              }
              else{
-              alert('failed')
+              alert("Failed to register")
              }
          })
          .catch((error)=>{
@@ -126,7 +131,7 @@ const validatePassword =(fieldName,value)=>{
          })
       }
     }
-  }
+  // }
   return (
     <div >
       <form onSubmit={signup}>
@@ -171,9 +176,9 @@ const validatePassword =(fieldName,value)=>{
         </div>
         <div>
           <label className='signupWorkshop-label' >Gender</label><br/>
-          <input className='gender-btn' id='Idgender1' type='radio' name='gender'  onChange={change}/>
+          <input className='gender-btn' id='Idgender1' type='radio' name='gender' value="male"  onChange={change}/>
           <label  className='gender-btn' for='Idgender1'>Male</label>
-          <input  className='gender-btn' id='Idgender2' type='radio' name='gender'  onChange={change}/>
+          <input  className='gender-btn' id='Idgender2' type='radio' name='gender' value="female" onChange={change}/>
           <label className='gender-btn' for='Idgender2'>Female</label>
         </div>
         <div>

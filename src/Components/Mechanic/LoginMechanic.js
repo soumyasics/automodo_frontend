@@ -5,8 +5,8 @@ import SignupLogo from'../../Assets/signUpbtnlogo.png'
 
 function LoginMechanic() {
 
-  const [data,SetData]=useState({username:'',password:''})
-  const [errors, setErrors] = useState({ username: '', password: '' });
+  const [data,SetData]=useState({email:'',password:''})
+  const [errors, setErrors] = useState({ email: '', password: '' });
 
 const change=(b)=>{
   
@@ -38,8 +38,8 @@ let signin=(a)=>{
   let errors = {};
       let formIsValid = true;
 
-      errors.username= validateField('username', data.username);
-      errors.password = validateField('password', data.password);
+      errors.emaile= validateField('email', data.email);
+      errors.email = validateField('email', data.password);
 
       setErrors(errors);
 
@@ -68,10 +68,10 @@ const showPassword=()=> {
           <h2 className='loginMech-head'>Sign In</h2>
         </div>
         <div>
-          <label className='loginMech-label'>Username</label>
-          <input className='loginMech-input'  name='username' value={data.username}  onChange={change} type='text' placeholder='Username'/>
-          {errors.username && (
-                <div className="text-danger input-validation">{errors.username}</div>
+          <label className='loginMech-label'>Email</label>
+          <input className='loginMech-input1'  name='username' value={data.email}  onChange={change} type='text' placeholder='Email'/>
+          {errors.email && (
+                <div className="text-danger input-validation">{errors.email}</div>
               )}
              
         </div>
