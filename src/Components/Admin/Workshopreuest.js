@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./Workshoprequest.css"
 import img from "../../Assets/cat3.png"
 import axiosInstance from '../../Baseurl'
+import { Link } from 'react-router-dom'
 
 function Workshopreuest() {
     const[data,setData]=useState([])
@@ -15,6 +16,7 @@ function Workshopreuest() {
             console.log(err);
         })
     },[])
+    console.log(data._id);
   return (
     <div className='container'>
 <div className='col-8'>
@@ -26,10 +28,11 @@ function Workshopreuest() {
             </div>
              {data.length ?(
           data.map((a)=>{
+           
               const dateTime = new  Date(a.date);
               const timeString = dateTime.toLocaleTimeString();
          return( 
-
+            <Link to={`/dashboard-workshop-approval/${data._id}`}>
             <div className='row' style={{padding:"10px"}}>
                 <div className='admin_advertiser_request' style={{ display: 'flex' }} >
                 <img src={img}  alt='images' width='130px' height='100px'/>
@@ -52,9 +55,10 @@ function Workshopreuest() {
                     
                 </div>
             </div>
-
+            
+            </Link>
       )
-  })
+    })
  ) : (
    <div>No data available</div>
  )} 
