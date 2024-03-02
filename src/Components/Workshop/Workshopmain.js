@@ -2,6 +2,7 @@ import React from 'react'
 import "./Workshopmain.css"
 import Adminsidebar from './Adminsidebar'
 import Workshopdashboard from './Workshopdashboard'
+import SignupMech from '../Mechanic/SignupMech'
 
 function Workshopmain({data}) {
   return (
@@ -11,7 +12,7 @@ function Workshopmain({data}) {
         {data === "workshopdashboard" ?(
             <Workshopdashboard/>
         )
-        :"" }
+        :<SignupMech/> }
     </div>
     </div>
   )

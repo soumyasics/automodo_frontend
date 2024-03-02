@@ -1,25 +1,25 @@
 
 .signupMech-head{
-    position: relative;
-    top: 13px;
-    font-weight: 100;
+   
+    font-weight: bold;
     font-size: 35px;
     text-align: center;
     margin-top: 5rem;
+    margin-bottom: 2rem;
     color:  #1A728E ;
   }
   .signupMech-label{
-    position: relative;
-    left: 36rem;
-    top: 3rem;
-    margin-top: 2px;
+    width: 8rem;
+   margin-left: 10rem;
+    margin-top: 0.5rem;
     color: #1A728E;
+    
   }
   .signupMech-input{
-    position: relative;
-    left: 30rem;
-    margin-top: 50px;
-    margin-left: 6rem;
+    border-color: transparent;
+   border-radius: 7px;
+    margin-top: 0.5rem;
+    margin-left: 10rem;
     width: 20rem;
     height: 2.5rem;
   }
@@ -28,36 +28,27 @@
     font-weight: lighter;
    }
    .signupMech-select1{
-    position: relative;
-    left: 52rem;
-    bottom: 2rem;
+   
+   
     background-color: transparent;
     border: transparent;
    }
    .signupMech-select{
-    position: relative;
-    left: 49rem;
-    bottom: 2rem;
+   
+   
     background-color: transparent;
     border: transparent;
    }
-   .signupMech-a{
-    text-decoration: none;
-    position: relative;
-    left: 50rem;
-    top: -1.7rem;
-    font-size: 18px;
-    color: #1A728E;
-   }
+   
    .signupMech-btn{
     background-color: #1A728E;
-    width: 9rem;
-    height: 30px;
-    position: relative;
-    left: 42rem;
-    top: 2rem;
+    border-radius: 8px;
+    width: 8rem;
+    height: 40px;
+    margin-left: 20rem;
+    margin-top: 1rem;
     color: white;
-    font-weight: 100;
+    font-weight: bold;
     padding: 2px 4px 4px 2px;
     border: transparent;
     border: #1A728E;
@@ -71,26 +62,32 @@
     background-color: #84bdcf;
    }
    
-   .signupBtn-logo{
-    width: 13px;
-    height: 10px;
-    position: relative;
-    left: 31rem;
-    top: 2rem;
    
-   }
    .signupMech-main{
-    position: relative;
-    bottom: 2rem;
+    border: 1px solid rgb(180, 179, 179);
+    border-radius: .5rem;
+    padding: 1rem;
+    background-color: #4daaece5;
+    box-shadow: 2px 2px 10px rgb(143, 144, 144);
+    margin-top: 1rem;
+    margin-left: 5rem;
+    
    }
-   .signupMech-p{
-    position: relative;
-    left:37rem ;
-    top: 1rem;
-    font-size: 18px;
-    color: #1A728E;
-   }
+  
    .signupMech-validation{
+   margin-left: 10rem;
+   width: 20rem;
+   }
+   .fileMech-btn{
     position: relative;
-    left: 36rem;
+    left: 10rem;
+    margin: 1rem;
+
+   }
+   .genderMech-btn{
+    display: flex;
+    margin-left: 10rem;
+   }
+   .genderMech-label{
+    margin: 1rem;
    }
