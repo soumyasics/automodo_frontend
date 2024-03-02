@@ -3,10 +3,10 @@ import './MechanicList.css';
 import axiosInstance from '../../Baseurl'
 
 function MechanicList() {
-  const [Users,SetUsers]=useState([]);
+  const [users,SetUsers]=useState([]);
 
  useEffect(()=>{
-  axiosInstance.post('/viewMechanics',Users)
+  axiosInstance.post('/viewMechanics',users)
   .then((res)=>{
     SetUsers(res.data.data)
   })
@@ -14,30 +14,25 @@ function MechanicList() {
     console.log(err)
   })
  },[])
- console.log(Users)
+ console.log(users)
   return (
     <div>
       <div>
         <h3 className='MechanicList-heading'>MECHANIC LIST :</h3>
-        {Users.map((b)=>{
-          return(
-          <div className='MechanicList-flex'>
-            {/* <div>
-             <p>{b.id}</p>
-             </div>
-             <div>
-              {'Name : '+b.name}
-              </div> */}
+        {users && users.length ? (
+          users.map((user) => ( // Changed the map function
+            <div className='WorkshopList-flex' key={user.id}>
               <div>
-              {'Email : '+b.email}
+                {'Email : ' + user.email}
               </div>
               <div>
-              <p>any : lorem ipsum</p>
-              </div>              
-          </div>
-          )
-        })} 
-      </div>
+                <p>any : lorem ipsum</p>
+              </div>
+            </div>
+          ))
+        ) : (
+          <div>No data available</div>
+        )}      </div>
     </div>
   )
 }

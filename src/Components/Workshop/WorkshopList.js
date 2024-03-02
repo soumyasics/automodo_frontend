@@ -3,10 +3,10 @@ import './WorkshopList.css';
 import axiosInstance from '../../Baseurl'
 
 function WorkshopList() {
-  const [Users,SetUsers]=useState([]);
+  const [users,SetUsers]=useState([]);
 
  useEffect(()=>{
-  axiosInstance.post('/viewApprovedWorkshops',Users)
+  axiosInstance.post('/viewApprovedWorkshops',users)
   .then((res)=>{
     SetUsers(res.data.data)
   })
@@ -14,30 +14,25 @@ function WorkshopList() {
     console.log(err)
   })
  },[])
- console.log(Users)
+ console.log(users)
   return (
     <div>
       <div>
         <h3 className=' WorkshopList-heading'>WORKSHOP LIST :</h3>
-        {Users.map((b)=>{
-          return(
-          <div className=' WorkshopList-flex'>
-            {/* <div>
-             <p>{b.id}</p>
-             </div>
-             <div>
-              {'Name : '+b.name}
-              </div> */}
+        {users && users.length ? (
+          users.map((user) => ( // Changed the map function
+            <div className='WorkshopList-flex' key={user.id}>
               <div>
-              {'Email : '+b.email}
+                {'Email : ' + user.email}
               </div>
               <div>
-              <p>any : lorem ipsum</p>
-              </div>              
-          </div>
-          )
-        })} 
-      </div>
+                <p>any : lorem ipsum</p>
+              </div>
+            </div>
+          ))
+        ) : (
+          <div>No data available</div>
+        )}      </div>
     </div>
   )
 }

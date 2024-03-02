@@ -32,7 +32,7 @@ function Workshopreuest() {
               const dateTime = new  Date(a.date);
               const timeString = dateTime.toLocaleTimeString();
          return( 
-            <Link to={`/dashboard-workshop-approval/${data._id}`}>
+            <Link to={`/dashboard-workshop-approval/${a._id}`} style={{textDecoration:"none",color:"black"}}>
             <div className='row' style={{padding:"10px"}}>
                 <div className='admin_advertiser_request' style={{ display: 'flex' }} >
                 <img src={img}  alt='images' width='130px' height='100px'/>
