@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import './SignupMech.css'
-import Signin_image from '../../Assets/signin_image.png'
 import signUp_logo from'../../Assets/signUpbtnlogo.png'
 import axiosInstance from '../../Baseurl'
+
+
 
 
 
@@ -129,13 +130,11 @@ const validatePassword =(fieldName,value)=>{
   return (
     <div >
       <form onSubmit={signup}>
-        <div>
-        <img className="signupMech-img"src={Signin_image} alt='Signin_image'/>
-        </div>
+       
         
       <div className='signupMech-main'>
         <div>
-          <h2 className='signupMech-head'>Sign Up</h2>
+          <h2 className='signupMech-head'>Adding Mechanic</h2>
         </div>
         <div className='row'>
           <div className='signupMech-submain col-2'>
