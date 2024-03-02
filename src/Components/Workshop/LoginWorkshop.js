@@ -2,14 +2,16 @@ import React, { useState } from 'react'
 import Signin_image from '../../Assets/signin_image.png'
 import './loginWorkshop.css'
 import SignupLogo from'../../Assets/signUpbtnlogo.png'
+import axiosInstance from '../../Baseurl'
+import { useNavigate } from 'react-router-dom'
 
 
 function LoginWorkshop() {
 
-  const [data,SetData]=useState({username:'',password:''})
-  const [errors, setErrors] = useState({ username: '', password: '' });
+  const [data,SetData]=useState({email:'',password:''})
+  const [errors, setErrors] = useState({ email: '', password: '' });
 
-
+const navigate=useNavigate()
 const change=(b)=>{
   const { name, value } = b.target;
   SetData(prevData => ({
@@ -35,13 +37,36 @@ let signin=(a)=>{
   let errors = {};
   let formIsValid = true;
 
-  errors.username= validateField('username', data.username);
+  errors.email= validateField('email', data.email);
   errors.password = validateField('password', data.password);
 
   setErrors(errors);
 
   if (formIsValid) {
       console.log("data", data);
+
+      axiosInstance.post(`loginworkshops`,data)
+      .then((result) => {
+        console.log("data entered", result);
+        if (result.data.status == 200) {
+          localStorage.setItem("workshopid", result.data.data._id);
+          console.log("workshopid", result.data.data._id);
+          alert("login Sucessfully...");
+          navigate("")
+         
+        } else if (result.data.status==401) {
+            alert("password mismatch")
+        }else if(result.data.status==400){
+          alert("user not found")
+        }
+        else  {
+          alert(result.data.msg)
+        }
+      })
+    
+      .catch((err)=>{
+        console.log(err);
+      })
   }
 }
 
@@ -58,10 +83,10 @@ let signin=(a)=>{
           <h2 className='loginWorkshop-head'>Sign In</h2>
         </div>
         <div>
-          <label className='loginWorkshop-label'>Username</label>
-          <input className='loginWorkshop-input' name='username' value={data.username} onChange={change}  type='text' placeholder='Username'/>
-          {errors.username && (
-                <div className="text-danger input-validation">{errors.username}</div>
+          <label className='loginWorkshop-label'>Email</label>
+          <input className='loginWorkshop-input1' name='email' value={data.email} onChange={change}  type='text' placeholder='E-mail'/>
+          {errors.email && (
+                <div className="text-danger input-validation">{errors.email}</div>
               )}
         </div>
         <div>

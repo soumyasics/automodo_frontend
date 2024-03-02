@@ -4,7 +4,11 @@ import img from "../../Assets/cat3.png"
 import axiosInstance from '../../Baseurl'
 import { Link } from 'react-router-dom'
 
+
+function Workshopreuest() {
+
 function Workshopreuest({url}) {
+
     const[data,setData]=useState([])
     useEffect(()=>{
         axiosInstance.post(`viewWorkshopReqs`)
@@ -13,7 +17,7 @@ function Workshopreuest({url}) {
             setData(res.data.data)
         })
         .catch((err)=>{
-        
+
             console.log(err);
         })
     },[])
@@ -29,13 +33,23 @@ function Workshopreuest({url}) {
             </div>
              {data.length ?(
           data.map((a)=>{
+
+           
+              const dateTime = new  Date(a.date);
+              const timeString = dateTime.toLocaleTimeString();
+
             //   const dateTime = new  Date(a.date);
             //   const timeString = dateTime.toLocaleTimeString();
+
          return( 
             <Link to={`/dashboard-workshop-approval/${a._id}`} style={{textDecoration:"none",color:"black"}}>
             <div className='row' style={{padding:"10px"}}>
                 <div className='admin_advertiser_request' style={{ display: 'flex' }} >
+
+                <img src={img}  alt='images' width='130px' height='100px'/>
+
                 <img src={`${url}/${a.image.filename}`}  alt='images' width='130px' height='100px'/>
+
 
                     <div>
                         

@@ -1,14 +1,20 @@
 import React, { useState } from 'react'
 import './SignupMech.css'
-import Signin_image from '../../Assets/signin_image.png'
 import signUp_logo from'../../Assets/signUpbtnlogo.png'
+import axiosInstance from '../../Baseurl'
+
+
+
 
 
 function SignupMech() {
+  const shopid=localStorage.getItem("workshopid")
+  console.log(shopid);
+ 
 
-  const [data,SetData]=useState({username:'',age:'',email:'',street:'',city:'',state:'',nationality:'',number:'',license:'',password:'',confpassword:''});
-
-  const [errors, setErrors] = useState({username:'',age:'',email:'',street:'',city:'',state:'',nationality:'',number:'',license:'',password:'',confpassword:''});
+  const [data,SetData]=useState({firstname:'',lastname:'',email:'',contact:'',aadhar:'',gender:'',password:'',image:'null',certificate:'null', shopid:shopid});
+  const [errors, setErrors] = useState({firstname:'',lastname:'',email:'',contact:'',aadhar:'',password:''});
+  let formIsValid;
 
 
   const change=(b)=>{
@@ -25,6 +31,7 @@ function SignupMech() {
 
   const validateField = (fieldName, value) => {
     if (!value.trim()) {
+      formIsValid=false
         return `${fieldName} is required`;
     }
     return '';
@@ -33,10 +40,12 @@ function SignupMech() {
   const validateNumber =(fieldName,value)=>{
 
     if (!value.trim()) {
+      formIsValid=false
       return `${fieldName} is required`;
   }
 
     else if(value.toString().length!==10){
+      formIsValid=false
       return `${fieldName}  10 digits required`;
  }
   }
@@ -45,78 +54,104 @@ function SignupMech() {
 const validatePassword =(fieldName,value)=>{
   var erorrsPassword=[]
    if (!value.trim()) {
+    formIsValid=false
      erorrsPassword.push(`${fieldName} is required and include any`);
  }
  
     if(value.search(/[\!\@\#\$\%\^\&\*\(\)\_\+\.\,\;\:\-]/) < 0){
+      formIsValid=false
      erorrsPassword.push(`special character ,`);
  }
  
     if (value.length < 7) {
+      formIsValid=false
      erorrsPassword.push(`length minimum 8 ,`);
    }
     if (value.search(/[a-z]/) < 0) {
+      formIsValid=false
      erorrsPassword.push(`one small letter ,`);
    }
    if (value.search(/[A-Z]/) < 0) {
+    formIsValid=false
    erorrsPassword.push(`one capital letter ,`);
    }
    if (value.search(/[0-9]/) < 0) {
+    formIsValid=false
      erorrsPassword.push(`and any number.`);
    }
    if (erorrsPassword.length > 0) {
+    formIsValid=false
      return `${erorrsPassword.join("\n")}`;
  }
  return true;
  }
- 
   
   let signup=(a)=>{
     a.preventDefault()
     let errors = {};
       let formIsValid = true;
 
-      errors.username= validateField('username', data.username);
-      errors.age= validateField('age', data.age);
+      errors.firstname= validateField('firstname', data.firstname);
+      errors.lastname= validateField('lastname', data.lastname);
       errors.email= validateField('email', data.email);
-      errors.street= validateField('street', data.street);
-      errors.city= validateField('city', data.city);
-      errors.state= validateField('state', data.state);
-      errors.nationality= validateField('nationality', data.nationality);
-      errors.number= validateNumber('number', data.number);
-      errors.license= validateField('license', data.license);
+      errors.aadhar= validateField('aadhar', data.aadhar);
+      errors.contact= validateNumber('contact', data.contact);
       errors.password = validatePassword('password', data.password);
-      errors.confpassword= validateField('confirm password', data.confpassword);
+      
+
+    
 
       setErrors(errors);
+      console.log(formIsValid);
 
       if (formIsValid) {
           console.log("data", data);
+          // if (formIsValid) {
+            axiosInstance.post(`/addMechanic/${shopid}`,data,{
+              headers: {
+                "Content-Type": "multipart/form-data",
+              }
+            })
+        .then((res)=>{
+          console.log(res)
+          if(res.data.status==200){
+              alert('succesfully registered')
+              window.location.reload(false)
+             }
+             else if(res.data.Error.code===11000){
+              alert('This mechanic has already registered')
+             }
+             else{
+              alert("Failed to register")
+             }
+         })
+         .catch((error)=>{
+          console.log(error)
+         })
       }
-  }
+    }
+  // }
   return (
     <div >
       <form onSubmit={signup}>
-        <div>
-        <img className="signupMech-img"src={Signin_image} alt='Signin_image'/>
-        </div>
+       
         
       <div className='signupMech-main'>
         <div>
-          <h2 className='signupMech-head'>Sign Up</h2>
+          <h2 className='signupMech-head'>Add Mechanic</h2>
         </div>
         <div className='row'>
           <div className='signupMech-submain col-2'>
         <div>
-          <label className='signupMech-label'>Name</label>
-          <input className='signupMech-input' type='text' placeholder='Name' name='username' value={data.username} onChange={change} /> {errors.username && (
-                <div className="text-danger signupMech-validation">{errors.username}</div>
+          <label className='signupMech-label'>First Name</label>
+          <input className='signupMech-input' type='text' placeholder='Firstname' name='firstname' value={data.firstname} onChange={change} /> {errors.firstname && (
+                <div className="text-danger signupMech-validation">{errors.firstname}</div>
               )}
         </div>
         <div>
-          <label className='signupMech-label'>Age</label>
-          <input className='signupMech-input' type='number' placeholder='Age' name='age' value={data.age} onChange={change} /> {errors.age && (
-                <div className="text-danger signupMech-validation">{errors.age}</div>
+          <label className='signupMech-label'>Last Name</label>
+          <input className='signupMech-input' type='text' placeholder='Last name' name='lastname' value={data.lastname} onChange={change} /> {errors.lastname && (
+                <div className="text-danger signupMech-validation">{errors.lastname}</div>
               )}
         </div>
         <div>
@@ -125,54 +160,34 @@ const validatePassword =(fieldName,value)=>{
                 <div className="text-danger signupMech-validation">{errors.email}</div>
               )}
          </div>
+       
         <div>
-          <label className='signupMech-label'>Street</label>
-          <input className='signupMech-input' type='text' placeholder='Street' name='street'  value={data.street} onChange={change}/> {errors.street && (
-                <div className="text-danger signupMech-validation">{errors.street}</div>
+          <label className='signupMech-label'>Contact Number</label>
+          <input className='signupMech-input' type='number' placeholder='Contact Number' name='contact' value={data.contact} onChange={change}/> {errors.contact && (
+                <div className="text-danger signupMech-validation">{errors.contact}</div>
               )}
         </div>
         <div>
-          <label className='signupMech-label'>City</label>
-          <input className='signupMech-input' type='text' placeholder='City' name='city' value={data.city} onChange={change} /> {errors.city && (
-                <div className="text-danger signupMech-validation">{errors.city}</div>
+          <label className='signupMech-label'>Aadhar Number</label>
+          <input className='signupMech-input' type='number' placeholder='Aadhar Number' name='aadhar' value={data.aadhar} onChange={change}/> {errors.aadhar && (
+                <div className="text-danger signupMech-validation">{errors.aadhar}</div>
               )}
         </div>
         <div>
-          <label className='signupMech-label'>State</label>
-          <input className='signupMech-input' type='text' placeholder='State' name='state' value={data.state} onChange={change}/> {errors.state && (
-                <div className="text-danger signupMech-validation">{errors.state}</div>
-              )}
-          {/* <select className='signupMech-select' name="nationlity">
-          <option></option>
-            <option>Kerala</option>
-            <option>TamilNadu</option>
-            <option>Karnataka</option>
-            <option>Maharashtra</option>
-            </select> */}
+          <label className='signupMech-label' >Gender</label><br/>
+          <div className='genderMech-btn' >
+          <input  id='Idgender1' type='radio' name='gender' value="male"  onChange={change}/>
+          <label className='genderMech-label' for='Idgender1'>Male</label>
+          <input  id='Idgender2' type='radio' name='gender' value="female" onChange={change}/>
+          <label className='genderMech-label' for='Idgender2'>Female</label></div>
         </div>
         <div>
-          <label className='signupMech-label'>Nationality</label>
-          <input className='signupMech-input' type='nationality' placeholder='Nationality' name='nationality' value={data.nationality} onChange={change} /> {errors.nationality && (
-                <div className="text-danger signupMech-validation">{errors.nationality}</div>
-              )}
-          {/* <select className='signupMech-select1' name="nationlity">
-          <option></option>
-            <option>India</option>
-            <option>UK</option>
-            <option>China</option>
-        </select> */}
+        <label className='signupMech-label' >Image</label><br/>
+          <input  className='fileMech-btn' type='file' name='image'  onChange={change}/>
         </div>
         <div>
-          <label className='signupMech-label'>Phone Number</label>
-          <input className='signupMech-input' type='number' placeholder='Phone Number' name='number' value={data.number} onChange={change}/> {errors.number && (
-                <div className="text-danger signupMech-validation">{errors.number}</div>
-              )}
-        </div>
-        <div>
-          <label className='signupMech-label'>Liscense Number</label>
-          <input className='signupMech-input' type='number' placeholder='License Number' name='license' value={data.license} onChange={change}/> {errors.license && (
-                <div className="text-danger signupMech-validation">{errors.license}</div>
-              )}
+        <label className='signupMech-label' >Certificate</label><br/>
+          <input  className='fileMech-btn' type='file' name='certificate'  onChange={change}/>
         </div>
         <div>
           <label className='signupMech-label'>Password</label>
@@ -181,19 +196,7 @@ const validatePassword =(fieldName,value)=>{
               )}
         </div>
         <div>
-          <label className='signupMech-label'> Confirm Password</label>
-          <input className='signupMech-input' type='password' placeholder=' Confirm Password' name='confpassword' value={data.confpassword} onChange={change}/> {errors.confpassword && (
-                <div className="text-danger signupMech-validation">{errors.confpassword}</div>
-              )}
-        </div>
-        <div>
-         <p className='signupMech-p'>Already have an account,</p>
-        </div>
-        <div>
-        <a className='signupMech-a'href='#'>Login</a>
-        </div>
-        <div>
-          <button className='signupMech-btn' type='siubmit'>Sign In</button>
+          <button className='signupMech-btn' type='siubmit'>Add</button>
           <img className="signupBtn-logo"src={signUp_logo} alt='signUp_logo'/>
         </div>
         
