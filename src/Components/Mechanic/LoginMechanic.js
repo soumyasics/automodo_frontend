@@ -65,7 +65,7 @@ const showPassword=()=> {
      
       <div className='loginMech-main'>
         <div>
-          <h2 className='loginMech-head'>Sign In</h2>
+          <h2 className='loginMech-head'>Mechanic Sign In</h2>
         </div>
         <div>
           <label className='loginMech-label'>Email</label>
@@ -83,14 +83,14 @@ const showPassword=()=> {
               )}
                {/* <input type="checkbox" onclick={showPassword} />Show Password */}
         </div>
-        <div className='loginMech-Areset'>
+        {/* <div className='loginMech-Areset'>
         <a className='loginMech-a' href='#'>Reset Password </a>
-        </div>
-        <div className='loginMech-Asignup'>
+        </div> */}
+        {/* <div className='loginMech-Asignup'>
           <a className='loginMech-a'  href='#'>Signup</a>
-        </div>
+        </div> */}
         <div>
-          <button className='loginMech-btn' type='submit'>Sign In <img className='signupLogo' src={SignupLogo} /></button>
+          <button className='loginMech-btn' type='submit' style={{marginTop:"20px",}}>Sign In <img className='signupLogo' src={SignupLogo} /></button>
        
         </div>
         

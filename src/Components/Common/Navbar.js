@@ -21,7 +21,7 @@ function Navbar() {
               <li className='navbar-li'><Link className='nav-ahref'to='/'>Home</Link></li>
             </div>
             <div>
-              <li className='navbar-li'><Link className='nav-ahref'to='/'>About us</Link></li>
+              <li className='navbar-li'><Link className='nav-ahref'to='/Aboutus'>About us</Link></li>
             </div>
             <div>
               <li className='navbar-li'><Link className='nav-ahref'to='/'>Gallery</Link></li>
@@ -36,15 +36,8 @@ function Navbar() {
               <img className='dropdown_pic'src={drop_pic} alt='dropdown_pic'/>
             </div>
             <div>
-            <div class="dropdown">
-              <button className="btn btn-secondary dropdown-toggle navdrop-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">a</a></li>
-                <li><a class="dropdown-item" href="#">b</a></li>
-                <li><a class="dropdown-item" href="#">c</a></li>
-              </ul>
+            <div>
+              <li className='navbar-li'><Link className='nav-ahref' to='/user-login'>Login</Link></li>
             </div>
 
             </div>

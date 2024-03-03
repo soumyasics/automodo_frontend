@@ -24,7 +24,12 @@ import Adminnav from './Components/Admin/Adminnav';
 import AboutUs from './Components/Common/AboutUs';
 import Workshopreuest from './Components/Admin/Workshopreuest';
 import WorkshopRequestApproval from './Components/Admin/WorkshopRequestApproval';
+import Loginnav from './Components/Common/Loginnav'
+import Userhomenav from './Components/Common/Userhomenav';
+import Viewservices from './Components/User/Viewservices';
+import Adminlogin from './Components/Admin/Adminlogin';
 
+const url = "http://localhost:4010";
 
 
 function App() {
@@ -37,30 +42,36 @@ function App() {
       <Route path='/Aboutus' element={[<Navbar/>,<AboutUs/>,<Footer/>]}/>
 
       {/* user */}
-      <Route path='/user-login' element={[<Navbar/>,<LoginUser/>,<Footer/>]}/>
+      <Route path='/user-login' element={[<Loginnav/>,<LoginUser/>,<Footer/>]}/>
       <Route path='/user-signup' element={[<Navbar/>,<SignupUser/>,<Footer/>]}/>
+      <Route path='/userhome' element={[<Userhomenav/>,<MainAdmin/>,<Footer/>]}/>
+      <Route path='/viewservices' element={[<Userhomenav/>,<Viewservices/>,<Footer/>]}/>
 
       {/* Mechanic */}
-      <Route path='/mechanic-login' element={[<Navbar/>,<LoginMechanic/>,<Footer/>]}/>
+      <Route path='/mechanic-login' element={[<Loginnav/>,<LoginMechanic/>,<Footer/>]}/>
     
 
       {/* Workshop */}
-      <Route path='/workshop-login' element={[<Navbar/>,<LoginWorkshop/>,<Footer/>]}/> 
-      <Route path='/workshop-signup' element={[<Navbar/>,<SignupWorkshop/>,<Footer/>]}/>
-      <Route path='/forgotpass-user' element={[<Navbar/>,<ForgotpassUser/>,<Footer/>]}/>
-      <Route path='/forgotpass-workshop' element={[<Navbar/>,<ForgotpassWorkshop/>,<Footer/>]}/>
-      <Route path='/forgotpass-mechanic' element={[<Navbar/>,<ForgotpassMechanic/>,<Footer/>]}/>
-      <Route path='/workshop-sidebar' element={[<Navbar/>,<Workshopsidebar/>,<Footer/>]}/>
-      <Route path='/workshop-dashboard' element={[<Navbar/>,<Workshopmain data="workshopdashboard"/>,<Footer/>]}/>
+      <Route path='/workshop-login' element={[<Loginnav/>,<LoginWorkshop/>,<Footer/>]}/> 
+      <Route path='/workshop-signup' element={[<Adminnav/>,<SignupWorkshop/>,<Footer/>]}/>
+      <Route path='/forgotpass-user' element={[<Adminnav/>,<ForgotpassUser/>,<Footer/>]}/>
+      <Route path='/forgotpass-workshop' element={[<Adminnav/>,<ForgotpassWorkshop/>,<Footer/>]}/>
+      <Route path='/forgotpass-mechanic' element={[<Adminnav/>,<ForgotpassMechanic/>,<Footer/>]}/>
+      <Route path='/workshop-sidebar' element={[<Adminnav/>,<Workshopsidebar/>,<Footer/>]}/>
+      <Route path='/workshop-dashboard' element={[<Adminnav/>,<Workshopmain data="workshopdashboard"/>,<Footer/>]}/>
+      <Route path='/workshop-dashboard-addMechanic' element={[<Adminnav/>,<Workshopmain data="addmechanic"/>,<Footer/>]}/>
+      <Route path='/workshop-dashboard-addservice' element={[<Adminnav/>,<Workshopmain data="addservice"/>,<Footer/>]}/>
 
-      
-
-      <Route path='/workshop-dashboard-addMechanic' element={[<Navbar/>,<Workshopmain data="addmechanic"/>,<Footer/>]}/>
 
       {/* Admin */}
+      <Route path='/admin-login' element={[<Loginnav/>,<Adminlogin/>,<Footer/>]}/>
       <Route path='/admin-dashboard' element={[<Adminnav/>,<AdminDashboard/>,<Footer/>]}/>
       <Route path='/req' element={<Workshopreuest/>}/>
-      <Route path='/dashboard-workshop-approval/:id' element={[<Navbar/>,<WorkshopRequestApproval/>,<Footer/>]}/>
+      <Route path='/dashboard-workshop-approval/:id' element={[<Navbar/>,<WorkshopRequestApproval url={url}/>,<Footer/>]}/>
+
+      <Route path='/nav' element={<Loginnav/>}/>
+      
+
 
      </Routes>
      </BrowserRouter>
