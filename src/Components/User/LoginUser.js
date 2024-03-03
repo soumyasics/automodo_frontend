@@ -3,6 +3,7 @@ import Signin_image from '../../Assets/signin_image.png'
 import './loginUser.css'
 import SignupLogo from'../../Assets/signUpbtnlogo.png'
 import  axiosInstance from '../../Baseurl'
+import { useNavigate } from 'react-router-dom'
 
 
 function LoginUser() {
@@ -30,7 +31,7 @@ const validateField = (fieldName, value) => {
   }
   return '';
 };
-
+const navigate=useNavigate()
 
 let signin=(a)=>{
   a.preventDefault()
@@ -48,6 +49,7 @@ console.log(formIsValid);
         console.log(res)
         if(res.data.status==200){
             alert('succesfully login')
+            navigate("/userhome")
            }
            else{
             alert('failed')
@@ -72,7 +74,7 @@ console.log(formIsValid);
       
       <div className='loginUser-main'>
         <div>
-          <h2 className='loginUser-head'>Sign In</h2>
+          <h2 className='loginUser-head'>User Sign In</h2>
         </div>
         <div>
           <label className='loginUser-label'>Email</label>
@@ -92,7 +94,7 @@ console.log(formIsValid);
         <a className='loginUser-a' href='#'>Reset Password </a>
         </div>
         <div className='loginUser-Asignup'>
-          <a className='loginUser-a' href='#' >Signup</a>
+          <a className='loginUser-a' href='/user-signup' >Signup</a>
         </div>
         <div>
           <button className='loginUser-btn' type='submit'>Sign In  <img className='signupLogo1' src={SignupLogo} /></button>

@@ -1,0 +1,11 @@
+.viewservices-box {
+    background-color: rgb(67, 168, 230);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+  }
+  
+  .viewservices-box p {
+    margin: 5px 0;
+  }

@@ -2,20 +2,24 @@ import React, { useEffect, useState } from "react";
 import "./Workshopdashboard.css";
 import axiosInstance from '../../Baseurl'
 import { Link } from "react-router-dom";
+import img from "../../Assets/cat2.png"
 
-function Workshopdashboard() {
+
+function Workshopdashboard({url}) {
+  const id=localStorage.getItem("workshopid")
+  console.log(id);
   const [Users,SetUsers]=useState([]);
 
  useEffect(()=>{
-  axiosInstance.post(`/approveWorkshopById/:id`,Users)
+  axiosInstance.post(`viewWorkshopById/${id}`,Users)
   .then((res)=>{
-    SetUsers(res.data.data)
+    console.log(res);
+     SetUsers(res.data.data)
   })
   .catch((err)=>{
     console.log(err)
   })
  },[])
- console.log(Users)
 
   return (
     
@@ -30,39 +34,36 @@ function Workshopdashboard() {
     
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p className="col-6">Shop Name</p>
-                  <p>rkfhrkufjrfr</p>
+                  <p>{Users.name}</p>
                 </div>
-                <div className="reader_profile_account_info_fulldetails_box mb-3">
+                {/* <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p className="col-6">Owner Name</p>
                   <p>rfjhrjfrjr</p>
-                </div>
+                </div> */}
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p className="col-4">Email</p>
                   <p>{Users.email}</p>
                 </div>
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
-                  <p className="col-4">Street</p>
-                  <p>ejfbhjherh</p>
+                  <p className="col-4">Aadhar</p>
+                  <p>{Users.aadhar}</p>
                 </div>
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p className="col-4">City</p>
-                  <p>rfhrufrf</p>
+                  <p>{Users.city}</p>
                 </div>
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
-                  <p className="col-4">State</p>
-                  <p>fkjhfjkrf</p>
+                  <p className="col-4">District</p>
+                  <p>{Users.district}</p>
                 </div>
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
-                  <p className="col-6">Nationality</p>
-                  <p>fkjrhkfjrf</p>
+                  <p className="col-6">Contact</p>
+                  <p>{Users.contact}</p>
                 </div>
-                <div className="reader_profile_account_info_fulldetails_box mb-3">
-                  <p className="col-4">Number</p>
-                  <p>iheriuirfmnf</p>
-                </div>
+              
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p className="col-4">Reg No</p>
-                  <p>fjbrhjgfrhjsdfhdu</p>
+                  <p>{Users.regno}</p>
                 </div>
                 {/* <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p></p>
@@ -91,7 +92,9 @@ function Workshopdashboard() {
                 </div>
               </div>
               <div className="col-5 reader_profile_account_info_image">
-                <img src={""} />
+              {Users && Users.image && Users.image.filename && (
+    <img src={`${url}/${Users.image.filename}`} />
+)}
               </div>
             </div>
           </div>
