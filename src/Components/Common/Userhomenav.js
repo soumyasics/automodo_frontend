@@ -15,13 +15,16 @@ function Userhomenav() {
       
       <ul className='nav-position'>
         <div>
-          <li className='navbar-li'><Link className='nav-ahref'to=''>Home</Link></li>
+          <li className='navbar-li'><Link className='nav-ahref'to='/userhome'>Home</Link></li>
         </div>
         <div>
           <li className='navbar-li'><Link className='nav-ahref'to='/Aboutus'>About us</Link></li>
         </div>
          <div>
           <li className='navbar-li'><Link className='nav-ahref'to='/viewservices'>View Services</Link></li>
+        </div>
+        <div>
+          <li className='navbar-li'><Link className='nav-ahref'to='/user-profile'>Profile</Link></li>
         </div>
        {/* <div>
           <li className='navbar-li'><Link className='nav-ahref'to='/'>Jobs</Link></li>

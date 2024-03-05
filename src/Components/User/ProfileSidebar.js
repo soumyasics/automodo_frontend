@@ -1,87 +1,87 @@
 import React from 'react'
-import "./Adminsidebar.css"
+import "./ProfileSidebar.css"
 import {Link} from "react-router-dom"
 
 
-function Adminsidebar() {
+function ProfileSidebar(){
   return (
     <div className='col-3' style={{marginLeft:"20px"}}>
-    <div className="admin_profile_sidebar">
+    <div className="user_profile_sidebar">
 {/* <div className="reader_profile_sidebar_img mt-5">
 <Link to=''><img src={""} alt="profile_picture" /></Link>
 <div className="reader_profile_sidebar_camerabg">
 <Link to=''><i class="ri-camera-line"></i></Link>
 </div>
 </div> */}
-<div className="admin_profile_sidebar_title">
-<p>Admin</p>
+<div className="user_profile_sidebar_title">
+<p>PROFILE</p>
 </div>
 {/* <div className="admin_profile_sidebar_settings admin_profile_sidebar_padding ">
 <i class="ri-settings-3-fill reader_profile_sidebar_icons"></i>
 <p>Settings</p>
 </div> */}
 <hr />
-<div className="admin_profile_sidebar_padding ">
-<Link to='/workshop-dashboard' >
-  <div className="admin_profile_sidebar_account_info">
+<div className="user_profile_sidebar_padding ">
+<Link to='/user-profile' >
+  <div className="user_profile_sidebar_account_info">
     <div className="d-flex mt-2">
-      <i class="ri-dashboard-line admin_profile_sidebar_icons"></i>
-      <p> Dashboard</p>
+      <i class="ri-dashboard-line user_profile_sidebar_icons"></i>
+      <p>Profile</p>
     </div>
 
     <div className="mt-2">
-      <i class="ri-arrow-right-s-line admin_profile_sidebar_icons"></i>
+      <i class="ri-arrow-right-s-line user_profile_sidebar_icons"></i>
     </div>
   </div>
 </Link>
 </div>
-<div className="admin_profile_sidebar_padding ">
-<Link to='/workshop-dashboard-addMechanic' >
-<div className="admin_profile_sidebar_account_info">
+<div className="user_profile_sidebar_padding ">
+<Link to='/' >
+<div className="user_profile_sidebar_account_info">
   <div className="d-flex mt-2 ">
-    <i class="ri-user-fill admin_profile_sidebar_icons"></i>{" "}
-    <p> Add Mechanic</p>
+    <i class="ri-user-fill user_profile_sidebar_icons"></i>{" "}
+    <p> Null</p>
   </div>
 
   <div className="mt-2">
-    <i class="ri-arrow-right-s-line admin_profile_sidebar_icons"></i>
+    <i class="ri-arrow-right-s-line user_profile_sidebar_icons"></i>
   </div>
 </div>
 </Link>
 
 </div>
 
-<div className="admin_profile_sidebar_padding ">
-<Link to='/workshop-dashboard-addservice' >
-<div className="admin_profile_sidebar_account_info">
+<div className="user_profile_sidebar_padding ">
+<Link to='/' >
+<div className="user_profile_sidebar_account_info">
   <div className="d-flex mt-2 ">
-    <i class="ri-advertisement-fill admin_profile_sidebar_icons"></i>{" "}
-    <p> Add services</p>
+    <i class="ri-advertisement-fill user_profile_sidebar_icons"></i>{" "}
+    <p>Null</p>
   </div>
 
   <div className="mt-2">
-    <i class="ri-arrow-right-s-line admin_profile_sidebar_icons"></i>
+    <i class="ri-arrow-right-s-line user_profile_sidebar_icons"></i>
   </div>
 </div>
 </Link>
 
 </div>
-<div className="admin_profile_sidebar_padding ">
-<Link to='/workshop-dashboard-myservices' >
-<div className="admin_profile_sidebar_account_info">
+<div className="user_profile_sidebar_padding ">
+<Link to='/' >
+<div className="user_profile_sidebar_account_info">
   <div className="d-flex mt-2 ">
-    <i class="ri-sticky-note-line admin_profile_sidebar_icons"></i>{" "}
-    <p> View My Services</p>
+    <i class="ri-sticky-note-line user_profile_sidebar_icons"></i>{" "}
+    <p>NUll</p>
   </div>
 
   <div className="mt-2">
-    <i class="ri-arrow-right-s-line admin_profile_sidebar_icons"></i>
+    <i class="ri-arrow-right-s-line user_profile_sidebar_icons"></i>
   </div>
 </div>
 </Link>
 
 </div>
-<div className="admin_profile_sidebar_padding ">
+<div className="user_profile_sidebar_padding ">
 {/* <Link to='' >
 <div className="admin_profile_sidebar_account_info">
   <div className="d-flex mt-2">
@@ -96,7 +96,7 @@ function Adminsidebar() {
 </Link> */}
 
 </div>
-<div className="admin_profile_sidebar_padding ">
+<div className="user_profile_sidebar_padding ">
 {/* <Link to= '' >
 <div className="admin_profile_sidebar_account_info">
   <div className="d-flex mt-2">
@@ -111,16 +111,16 @@ function Adminsidebar() {
 </Link> */}
 
 </div>
-<div className="admin_profile_sidebar_padding ">
+<div className="user_profile_sidebar_padding ">
 <Link to='' >
-<div className="admin_profile_sidebar_account_info">
+<div className="user_profile_sidebar_account_info">
   <div className="d-flex mt-2">
-    <i class="ri-mail-volume-line admin_profile_sidebar_icons"></i>
+    <i class="ri-mail-volume-line user_profile_sidebar_icons"></i>
     <p> </p>
   </div>
 
   <div className="mt-2">
-    <i class="ri-arrow-right-s-line admin_profile_sidebar_icons"></i>
+    <i class="ri-arrow-right-s-line user_profile_sidebar_icons"></i>
     <p></p>
   </div>
 </div>
@@ -140,22 +140,22 @@ function Adminsidebar() {
 </Link> */}
 
 </div>
-<div className="admin_profile_sidebar_padding ">
+<div className="user_profile_sidebar_padding ">
 <Link to='' >
-<div className="admin_profile_sidebar_account_info">
+<div className="user_profile_sidebar_account_info">
   <div className="d-flex mt-2">
-    <i class="ri-error-warning-fill admin_profile_sidebar_icons"></i>
+    <i class="ri-error-warning-fill user_profile_sidebar_icons"></i>
     <p> Privacy & Security</p>
   </div>
 
   <div className="mt-2">
-    <i class="ri-arrow-right-s-line admin_profile_sidebar_icons"></i>
+    <i class="ri-arrow-right-s-line user_profile_sidebar_icons"></i>
   </div>
 </div>
 </Link>
 
 </div>
-<Link to='' ><div className="admin_profile_sidebar_logoybtn mt-4 mb-4">
+<Link to='' ><div className="user_profile_sidebar_logoybtn mt-4 mb-4">
 <button className="btn btn-secondary" >
   <i class="ri-logout-box-r-line"></i> logout
 </button>
@@ -167,4 +167,4 @@ function Adminsidebar() {
   )
 }
 
-export default Adminsidebar
+export default ProfileSidebar

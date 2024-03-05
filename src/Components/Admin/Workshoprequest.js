@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom'
 
 
 
-function Workshopreuest({url}) {
+function Workshoprequest({url}) {
 
     const[data,setData]=useState([])
     useEffect(()=>{
-        axiosInstance.post(`viewWorkshopReqs`)
+        axiosInstance.post(`/viewWorkshopReqs`,data)
         .then((res)=>{
             console.log(res);
             setData(res.data.data)
@@ -21,6 +21,7 @@ function Workshopreuest({url}) {
         })
     },[])
     console.log(data._id);
+    
   return (
     <div className='container'>
 <div className='col-8'>
@@ -81,6 +82,6 @@ function Workshopreuest({url}) {
 </div>
     </div>
   )
-}
 
-export default Workshopreuest
+}
+export default Workshoprequest
