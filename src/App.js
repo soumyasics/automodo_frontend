@@ -22,7 +22,7 @@ import ForgotpassMechanic from './Components/Mechanic/ForgotpassMechanic';
 
 import Adminnav from './Components/Admin/Adminnav';
 import AboutUs from './Components/Common/AboutUs';
-import Workshopreuest from './Components/Admin/Workshopreuest';
+import Workshopreuest from './Components/Admin/Workshoprequest';
 import WorkshopRequestApproval from './Components/Admin/WorkshopRequestApproval';
 
 
@@ -31,6 +31,7 @@ function App() {
   return (
     <BrowserRouter>
     <Routes>
+
       <Route path='/' element={[<Navbar/>,<MainAdmin/>,<Footer/>]}/>
       <Route path='/table-format' element={[<Navbar/>,<AdminTable/>,<Footer/>]}/>
       <Route path='/page-heading' element={[<Navbar/>,<Pageheading/>,<Footer/>]}/>
@@ -52,9 +53,6 @@ function App() {
       <Route path='/forgotpass-mechanic' element={[<Navbar/>,<ForgotpassMechanic/>,<Footer/>]}/>
       <Route path='/workshop-sidebar' element={[<Navbar/>,<Workshopsidebar/>,<Footer/>]}/>
       <Route path='/workshop-dashboard' element={[<Navbar/>,<Workshopmain data="workshopdashboard"/>,<Footer/>]}/>
-
-      
-
       <Route path='/workshop-dashboard-addMechanic' element={[<Navbar/>,<Workshopmain data="addmechanic"/>,<Footer/>]}/>
 
       {/* Admin */}
