@@ -82,6 +82,6 @@ function Workshoprequest({url}) {
 </div>
     </div>
   )
+
 }
-}
-export default Workshopreuest
+export default Workshoprequest

@@ -29,6 +29,8 @@ import Userhomenav from './Components/Common/Userhomenav';
 import Viewservices from './Components/User/Viewservices';
 import Adminlogin from './Components/Admin/Adminlogin';
 import Bookservice from './Components/User/Bookservice';
+import SparepartsWorkshop from './Components/Workshop/SparepartsWorkshop';
+import UserProfileMain from './Components/User/UserProfileMain';
 
 const url = "http://localhost:4010";
 
@@ -49,6 +51,7 @@ function App() {
       <Route path='/userhome' element={[<Userhomenav/>,<MainAdmin/>,<Footer/>]}/>
       <Route path='/viewservices' element={[<Userhomenav/>,<Viewservices/>,<Footer/>]}/>
       <Route path='/bookservices/:id' element={[<Userhomenav/>,<Bookservice url={url}/>,<Footer/>]}/>
+      <Route path='/user-profile' element={[<Userhomenav/>,<UserProfileMain  data="viewprof"/>,<Footer/>]}/>
 
 
       {/* Mechanic */}
@@ -66,6 +69,7 @@ function App() {
       <Route path='/workshop-dashboard-addMechanic' element={[<Adminnav/>,<Workshopmain data="addmechanic"/>,<Footer/>]}/>
       <Route path='/workshop-dashboard-addservice' element={[<Adminnav/>,<Workshopmain data="addservice"/>,<Footer/>]}/>
       <Route path='/workshop-dashboard-myservices' element={[<Adminnav/>,<Workshopmain data="myservices"/>,<Footer/>]}/>
+      <Route path='/workshop-spareparts' element={[<Adminnav/>,<SparepartsWorkshop/>,<Footer/>]}/>
 
 
       {/* Admin */}
@@ -73,7 +77,6 @@ function App() {
       <Route path='/admin-dashboard' element={[<Adminnav/>,<AdminDashboard/>,<Footer/>]}/>
       <Route path='/req' element={<Workshopreuest/>}/>
       <Route path='/dashboard-workshop-approval/:id' element={[<Navbar/>,<WorkshopRequestApproval url={url}/>,<Footer/>]}/>
-
       <Route path='/nav' element={<Loginnav/>}/>
       
 
