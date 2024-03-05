@@ -28,6 +28,7 @@ import Loginnav from './Components/Common/Loginnav'
 import Userhomenav from './Components/Common/Userhomenav';
 import Viewservices from './Components/User/Viewservices';
 import Adminlogin from './Components/Admin/Adminlogin';
+import Bookservice from './Components/User/Bookservice';
 
 const url = "http://localhost:4010";
 
@@ -39,13 +40,15 @@ function App() {
       <Route path='/' element={[<Navbar/>,<MainAdmin/>,<Footer/>]}/>
       <Route path='/table-format' element={[<Navbar/>,<AdminTable/>,<Footer/>]}/>
       <Route path='/page-heading' element={[<Navbar/>,<Pageheading/>,<Footer/>]}/>
-      <Route path='/Aboutus' element={[<Navbar/>,<AboutUs/>,<Footer/>]}/>
+      <Route path='/Aboutus' element={[<AboutUs/>,<Footer/>]}/>
 
       {/* user */}
       <Route path='/user-login' element={[<Loginnav/>,<LoginUser/>,<Footer/>]}/>
       <Route path='/user-signup' element={[<Navbar/>,<SignupUser/>,<Footer/>]}/>
       <Route path='/userhome' element={[<Userhomenav/>,<MainAdmin/>,<Footer/>]}/>
       <Route path='/viewservices' element={[<Userhomenav/>,<Viewservices/>,<Footer/>]}/>
+      <Route path='/bookservices/:id' element={[<Userhomenav/>,<Bookservice url={url}/>,<Footer/>]}/>
+
 
       {/* Mechanic */}
       <Route path='/mechanic-login' element={[<Loginnav/>,<LoginMechanic/>,<Footer/>]}/>
@@ -61,6 +64,7 @@ function App() {
       <Route path='/workshop-dashboard' element={[<Adminnav/>,<Workshopmain data="workshopdashboard"/>,<Footer/>]}/>
       <Route path='/workshop-dashboard-addMechanic' element={[<Adminnav/>,<Workshopmain data="addmechanic"/>,<Footer/>]}/>
       <Route path='/workshop-dashboard-addservice' element={[<Adminnav/>,<Workshopmain data="addservice"/>,<Footer/>]}/>
+      <Route path='/workshop-dashboard-myservices' element={[<Adminnav/>,<Workshopmain data="myservices"/>,<Footer/>]}/>
 
 
       {/* Admin */}

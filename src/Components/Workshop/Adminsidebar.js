@@ -67,18 +67,18 @@ function Adminsidebar() {
 
 </div>
 <div className="admin_profile_sidebar_padding ">
-{/* <Link to='' >
+<Link to='/workshop-dashboard-myservices' >
 <div className="admin_profile_sidebar_account_info">
   <div className="d-flex mt-2 ">
     <i class="ri-sticky-note-line admin_profile_sidebar_icons"></i>{" "}
-    <p> Requests</p>
+    <p> View My Services</p>
   </div>
 
   <div className="mt-2">
     <i class="ri-arrow-right-s-line admin_profile_sidebar_icons"></i>
   </div>
 </div>
-</Link> */}
+</Link>
 
 </div>
 <div className="admin_profile_sidebar_padding ">

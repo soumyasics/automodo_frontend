@@ -51,8 +51,11 @@ console.log(formIsValid);
             alert('succesfully login')
             navigate("/userhome")
            }
+           else if(res.data.status==401){
+            alert('Incorrect Password ')
+           }
            else{
-            alert('failed')
+            alert(res.data.msg)
            }
        })
        .catch((error)=>{
