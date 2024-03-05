@@ -52,7 +52,7 @@ let signin=(a)=>{
           localStorage.setItem("workshopid", result.data.data._id);
           console.log("workshopid", result.data.data._id);
           alert("login Sucessfully...");
-          navigate("")
+          navigate("/workshop-dashboard")
          
         } else if (result.data.status==401) {
             alert("password mismatch")
@@ -80,7 +80,7 @@ let signin=(a)=>{
      
       <div className='loginWorkshop-main'>
         <div>
-          <h2 className='loginWorkshop-head'>Sign In</h2>
+          <h2 className='loginWorkshop-head'>Workshop Sign In</h2>
         </div>
         <div>
           <label className='loginWorkshop-label'>Email</label>
@@ -100,7 +100,7 @@ let signin=(a)=>{
         <a className='loginWorkshop-a' href='#'>Reset Password </a>
         </div>
         <div className='loginWorkshop-Asignup'>
-          <a className='loginWorkshop-a' href='#'>Signup</a>
+          <a className='loginWorkshop-a' href='/workshop-signup'>Signup</a>
         </div>
         <div>
           <button className='loginWorkshop-btn' type='submit'>Sign In  <img className='signupLogo2' src={SignupLogo} /></button>

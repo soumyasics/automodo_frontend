@@ -5,7 +5,6 @@ import axiosInstance from '../../Baseurl'
 import { Link } from 'react-router-dom'
 
 
-function Workshopreuest() {
 
 function Workshoprequest({url}) {
 

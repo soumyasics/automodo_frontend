@@ -40,7 +40,7 @@ function Adminsidebar() {
 <div className="admin_profile_sidebar_account_info">
   <div className="d-flex mt-2 ">
     <i class="ri-user-fill admin_profile_sidebar_icons"></i>{" "}
-    <p> User</p>
+    <p> Add Mechanic</p>
   </div>
 
   <div className="mt-2">
@@ -52,11 +52,11 @@ function Adminsidebar() {
 </div>
 
 <div className="admin_profile_sidebar_padding ">
-<Link to='' >
+<Link to='/workshop-dashboard-addservice' >
 <div className="admin_profile_sidebar_account_info">
   <div className="d-flex mt-2 ">
     <i class="ri-advertisement-fill admin_profile_sidebar_icons"></i>{" "}
-    <p> Advertiser</p>
+    <p> Add services</p>
   </div>
 
   <div className="mt-2">
@@ -67,11 +67,11 @@ function Adminsidebar() {
 
 </div>
 <div className="admin_profile_sidebar_padding ">
-<Link to='' >
+<Link to='/workshop-dashboard-myservices' >
 <div className="admin_profile_sidebar_account_info">
   <div className="d-flex mt-2 ">
     <i class="ri-sticky-note-line admin_profile_sidebar_icons"></i>{" "}
-    <p> Requests</p>
+    <p> View My Services</p>
   </div>
 
   <div className="mt-2">
@@ -82,7 +82,7 @@ function Adminsidebar() {
 
 </div>
 <div className="admin_profile_sidebar_padding ">
-<Link to='' >
+{/* <Link to='' >
 <div className="admin_profile_sidebar_account_info">
   <div className="d-flex mt-2">
     <i class="ri-file-user-fill admin_profile_sidebar_icons"></i>
@@ -93,7 +93,7 @@ function Adminsidebar() {
     <i class="ri-arrow-right-s-line admin_profile_sidebar_icons"></i>
   </div>
 </div>
-</Link>
+</Link> */}
 
 </div>
 <div className="admin_profile_sidebar_padding ">
@@ -116,7 +116,7 @@ function Adminsidebar() {
 <div className="admin_profile_sidebar_account_info">
   <div className="d-flex mt-2">
     <i class="ri-mail-volume-line admin_profile_sidebar_icons"></i>
-    <p> Subscriptions Plans</p>
+    <p> </p>
   </div>
 
   <div className="mt-2">
