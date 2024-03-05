@@ -5,7 +5,7 @@ import './AdminDashboard.css';
 import UserList from '../User/UserList';
 import MechanicList from '../Mechanic/MechanicList';
 import WorkshopList from '../Workshop/WorkshopList';
-import Workshopreuest from './Workshopreuest';
+import Workshoprequest from './Workshoprequest';
 function AdminDashboard() {
 
   const[State,setState]=useState(1)
@@ -199,7 +199,8 @@ function AdminDashboard() {
            </div>
           </div>
         
-         <Workshopreuest/>
+         <Workshoprequest/>
+     
       
         </div>
       </div>
