@@ -28,6 +28,8 @@ import Loginnav from './Components/Common/Loginnav'
 import Userhomenav from './Components/Common/Userhomenav';
 import Viewservices from './Components/User/Viewservices';
 import Adminlogin from './Components/Admin/Adminlogin';
+import SparepartsList from './Components/User/SparepartsList';
+import SpareIndividualpage from './Components/User/SpareIndividualpage';
 
 const url = "http://localhost:4010";
 
@@ -46,6 +48,9 @@ function App() {
       <Route path='/user-signup' element={[<Navbar/>,<SignupUser/>,<Footer/>]}/>
       <Route path='/userhome' element={[<Userhomenav/>,<MainAdmin/>,<Footer/>]}/>
       <Route path='/viewservices' element={[<Userhomenav/>,<Viewservices/>,<Footer/>]}/>
+      <Route path='/Sparepartslist' element={[<Userhomenav/>,<SparepartsList/>,<Footer/>]}/>
+      <Route path='/SparepartsInd/:id' element={[<Userhomenav/>,<SpareIndividualpage/>,<Footer/>]}/>
+
 
       {/* Mechanic */}
       <Route path='/mechanic-login' element={[<Loginnav/>,<LoginMechanic/>,<Footer/>]}/>
