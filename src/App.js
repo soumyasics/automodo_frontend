@@ -29,6 +29,7 @@ import Userhomenav from './Components/Common/Userhomenav';
 import Viewservices from './Components/User/Viewservices';
 import Adminlogin from './Components/Admin/Adminlogin';
 import Bookservice from './Components/User/Bookservice';
+import Paymentservice from './Components/User/Paymentservice';
 
 const url = "http://localhost:4010";
 
@@ -48,6 +49,7 @@ function App() {
       <Route path='/userhome' element={[<Userhomenav/>,<MainAdmin/>,<Footer/>]}/>
       <Route path='/viewservices' element={[<Userhomenav/>,<Viewservices/>,<Footer/>]}/>
       <Route path='/bookservices/:id' element={[<Userhomenav/>,<Bookservice url={url}/>,<Footer/>]}/>
+      <Route path='/paymentservice/:id' element={[<Userhomenav/>,<Paymentservice url={url}/>,<Footer/>]}/>
 
 
       {/* Mechanic */}

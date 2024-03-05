@@ -20,6 +20,7 @@ function Bookservice({url}) {
             console.log(err);
         })
     },[])
+    console.log(data._id);
 
   return (
     <div className=" contributer_addnews_main">
@@ -166,9 +167,9 @@ function Bookservice({url}) {
             </div>
           </div>
           <div className="coontributor_button">
-            <button type="submit" className="btn btn-primary">
+          <Link to={`/paymentservice/${data._id}`}>  <button type="submit" className="btn btn-primary">
               Book Service
-            </button>
+            </button></Link>
           </div>
         </form>
       </div>
