@@ -20,7 +20,7 @@ function Viewservicerequest() {
         })
     },[])
   return (
-    <div className='container' style={{margin:"20px"}}>
+    <div className='' style={{margin:"20px"}}>
     <div className='col-8'>
                 <div className='row' >
                     <div className='col'>
@@ -42,7 +42,7 @@ function Viewservicerequest() {
     
     
              return( 
-               // <Link to={`/${a?._id}`} style={{textDecoration:"none",color:"black"}}>
+                <Link to={`/workshop-singlereq/${a?._id}`} style={{textDecoration:"none",color:"black"}}>
                 <div className='row' style={{padding:"10px"}}>
                     <div className='admin_advertiser_request' style={{ display: 'flex',width:"1000px" }} >
     
@@ -78,7 +78,7 @@ function Viewservicerequest() {
                     </div>
                 </div>
                 
-              //  </Link>
+                </Link>
           )
         })
      ) : (
