@@ -65,6 +65,7 @@ function App() {
       <Route path='/SparepartsInd/:id' element={[<Userhomenav/>,<SpareIndividualpage/>,<Footer/>]}/>
       <Route path='/bookservices/:id' element={[<Userhomenav/>,<Bookservice url={url}/>,<Footer/>]}/>
       <Route path='/user-profile' element={[<Userhomenav/>,<UserProfileMain  data="viewprof"/>,<Footer/>]}/>
+      <Route path='/user-profile-edit/:id' element={[<Userhomenav/>,<UserProfileMain  data="editprof"/>,<Footer/>]}/>
       <Route path='/paymentservice/:id' element={[<Userhomenav/>,<Paymentservice url={url}/>,<Footer/>]}/>
 
 

@@ -77,7 +77,7 @@ function UserProfile({url}) {
                 
     
                 <div className="reader_profile_account_info_editbtn ">
-                  <Link to="">
+                  <Link to={`/user-profile-edit/${userid}`}>
                     <button className="btn btn-primary">Edit Profile</button>
                   </Link>
                 </div>
