@@ -2,22 +2,24 @@ import React, { useEffect, useState } from "react";
 import './UserProfile.css'
 import axiosInstance from '../../Baseurl'
 import { Link } from "react-router-dom";
+import img from "../../Assets/cat2.png"
 
 function UserProfile({url}) {
-  const id=localStorage.getItem("workshopid")
-  console.log(id);
-  const [Users,SetUsers]=useState([]);
+  const userid=localStorage.getItem("userid")
+  console.log(userid+"userid");
 
- useEffect(()=>{
-  axiosInstance.post(`/viewCustById/${id}`,Users)
-  .then((res)=>{
-    console.log(res);
-     SetUsers(res.data.data)
-  })
-  .catch((err)=>{
-    console.log(err)
-  })
- },[])
+  const[data,setdata]=useState({})
+
+  useEffect(()=>{
+    axiosInstance.post(`/viewCustById/${userid}`)
+    .then((res)=>{
+      console.log(res);
+      setdata(res.data.data)
+    })
+    .catch((err)=>{
+      console.log(err);
+    })
+  },[])
 
  
 
@@ -26,7 +28,6 @@ function UserProfile({url}) {
     <div>
       <div className="col-8" style={{ marginLeft: "50px" }}>
  
-            
             <div className="reader_profile_account_info" style={{width:"60rem" }}>
             <div className="reader_profile_account_info_details row">
               <div className="col-7  reader_profile_account_info_fulldetails ">
@@ -34,7 +35,7 @@ function UserProfile({url}) {
     
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p className="col-6">Name</p>
-                  <p>{Users.firstname} {Users.lastname}</p>
+                  <p>{data?.firstname} {data?.lastname}</p>
                 </div>
                 {/* <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p className="col-6">Owner Name</p>
@@ -42,22 +43,19 @@ function UserProfile({url}) {
                 </div> */}
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p className="col-4">Email</p>
-                  <p>{Users.email}</p>
+                  <p>{data?.email}</p>
                 </div>
                
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p className="col-4">Gender</p>
-                  <p>{Users.gender=='On' ?'Male':'Female'}</p>
+                  <p>{data?.gender}</p>
                 </div>
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p className="col-6">Contact</p>
-                  <p>{Users.contact}</p>
+                  <p>{data?.contact}</p>
                 </div>
               
-                <div className="reader_profile_account_info_fulldetails_box mb-3">
-                  <p className="col-4">Image</p>
-                  <image src={Users.image} alt='profile Picture' />
-                </div>
+                
                 {/* <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p></p>
                   <p>hbfrjbrfr</p>
@@ -84,10 +82,14 @@ function UserProfile({url}) {
                   </Link>
                 </div>
               </div>
+              <div className="col-4">
+            
+                  <img src={`${url}/${data?.image?.filename}`} alt='profile Picture' style={{paddingTop:"80px"}} width="350px" height="400px"/>
+              </div>
               <div className="col-5 reader_profile_account_info_image">
-              {Users && Users.image && Users.image.filename && (
+              {/* {Users && Users.image && Users.image.filename && (
     <img src={`${url}/${Users.image.filename}`} />
-)}
+)} */}
               </div>
             </div>
           </div>

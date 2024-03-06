@@ -5,6 +5,8 @@ import Workshopdashboard from './Workshopdashboard'
 import SignupMech from '../Mechanic/SignupMech'
 import Addservice from './Addservice'
 import Viewmyservices from './Viewmyservices'
+import Viewservicerequest from './Viewservicerequest'
+import SparepartsWorkshop from './SparepartsWorkshop'
 
 const url = "http://localhost:4010";
 
@@ -18,8 +20,10 @@ function Workshopmain({data}) {
             <Workshopdashboard url={url}/>
         ):data=="addservice"?(
           <Addservice/>
-        ):data=="myservices"?(
-          <Viewmyservices/>
+        ):data=="viewrequest"?(
+          <Viewservicerequest/>
+        ):data=="addspareparts"?(
+          <SparepartsWorkshop/>
         )
         :<SignupMech/> }
     </div>

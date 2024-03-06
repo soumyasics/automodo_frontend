@@ -69,10 +69,10 @@ function SparepartsWorkshop() {
   }
   
   return (
-    <div>
+    <div className='col-8'>
       <form onSubmit={AddItem}>
         <div>
-        <img className="spareparts-img"src={Signin_image} alt='Signin_image'/>
+        {/* <img className="spareparts-img"src={Signin_image} alt='Signin_image'/> */}
         </div>
         
       <div className='spareparts-main'>

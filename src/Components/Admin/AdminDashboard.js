@@ -6,6 +6,7 @@ import UserList from '../User/UserList';
 import MechanicList from '../Mechanic/MechanicList';
 import WorkshopList from '../Workshop/WorkshopList';
 import Workshoprequest from './Workshoprequest';
+const url = "http://localhost:4010";
 function AdminDashboard() {
 
   const[State,setState]=useState(1)
@@ -199,7 +200,7 @@ function AdminDashboard() {
            </div>
           </div>
         
-         <Workshoprequest/>
+         <Workshoprequest url={url}/>
      
       
         </div>

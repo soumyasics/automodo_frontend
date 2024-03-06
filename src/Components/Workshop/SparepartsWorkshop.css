@@ -1,6 +1,6 @@
 .textarea-spareparts{
   position: relative;
-  left: 30rem;
+  left: 10rem;
   margin-top: 50px;
   margin-left: 6rem;
   width: 320px;
@@ -23,14 +23,14 @@
 }
 .spareparts-label{
   position: relative;
-  left: 36rem;
+  left: 16rem;
   top: 3rem;
   margin-top: 2px;
   color: #1A728E;
 }
 .spareparts-input{
   position: relative;
-  left: 30rem;
+  left: 10rem;
   margin-top: 50px;
   margin-left: 6rem;
   width: 20rem;
@@ -67,7 +67,7 @@
   width: 9rem;
   height: 30px;
   position: relative;
-  left: 42rem;
+  left: 22rem;
   top: 2rem;
   color: white;
   font-weight: 100;

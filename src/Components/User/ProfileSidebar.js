@@ -1,9 +1,34 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./ProfileSidebar.css"
 import {Link} from "react-router-dom"
+import axiosInstance from '../../Baseurl';
 
 
 function ProfileSidebar(){
+
+  const userid=localStorage.getItem("userid")
+  console.log(userid+"userid");
+
+  const[data,setdata]=useState({})
+
+  useEffect(()=>{
+    axiosInstance.post(`/viewCustById/${userid}`)
+    .then((res)=>{
+      console.log(res);
+      setdata(res.data.data)
+    })
+    .catch((err)=>{
+      console.log(err);
+    })
+  },[])
+
+  const[readerid,setReaderid]=useState(null);
+  const handleLogout = () => {
+    localStorage.removeItem("userid");
+    setReaderid(null);
+  };
+  
+
   return (
     <div className='col-3' style={{marginLeft:"20px"}}>
     <div className="user_profile_sidebar">
@@ -14,7 +39,7 @@ function ProfileSidebar(){
 </div>
 </div> */}
 <div className="user_profile_sidebar_title">
-<p>PROFILE</p>
+<p>{data?.firstname} {data?.lastname}</p>
 </div>
 {/* <div className="admin_profile_sidebar_settings admin_profile_sidebar_padding ">
 <i class="ri-settings-3-fill reader_profile_sidebar_icons"></i>
@@ -155,11 +180,13 @@ function ProfileSidebar(){
 </Link>
 
 </div>
-<Link to='' ><div className="user_profile_sidebar_logoybtn mt-4 mb-4">
-<button className="btn btn-secondary" >
+<Link to='/' >
+  <div className="user_profile_sidebar_logoybtn mt-4 mb-4">
+<button className="btn btn-secondary" onClick={handleLogout}>
   <i class="ri-logout-box-r-line"></i> logout
 </button>
-</div></Link>
+</div>
+</Link>
 </div>
 
 </div>

@@ -14,10 +14,13 @@ function SignupUser() {
 
   const change=(b)=>{
     const { name, value } = b.target;
-SetData(prevData => ({
-    ...prevData,
-    [name]: value
-}));
+    if(b.target.name === "image"){
+      // handleImageUpload(e);
+      SetData({...data,image:b.target.files[0]});
+  }else {
+      SetData({...data,[b.target.name]:b.target.value})
+  }
+
 
 
 setErrors(prevErrors => ({
@@ -166,9 +169,9 @@ setErrors(prevErrors => ({
 
         <div>
           <label className='signupUser-label' >Gender</label><br/>
-          <input className='gender-btn' id='Idgender1' type='radio' name='gender'  onChange={change}/>
+          <input className='gender-btn' id='Idgender1' type='radio' name='gender' value='male'  onChange={change}/>
           <label  className='gender-btn' for='Idgender1'>Male</label>
-          <input  className='gender-btn' id='Idgender2' type='radio' name='gender'  onChange={change}/>
+          <input  className='gender-btn' id='Idgender2' type='radio' name='gender' value='female'  onChange={change}/>
           <label className='gender-btn' for='Idgender2'>Female</label>
         </div>
         <div>

@@ -12,7 +12,7 @@ function Workshoprequest({url}) {
     useEffect(()=>{
         axiosInstance.post(`/viewWorkshopReqs`,data)
         .then((res)=>{
-            console.log(res);
+            console.log(res.data);
             setData(res.data.data)
         })
         .catch((err)=>{
@@ -20,9 +20,10 @@ function Workshoprequest({url}) {
             console.log(err);
         })
     },[])
-    console.log(data._id);
+    // console.log(data._id);
     
   return (
+    
     <div className='container'>
 <div className='col-8'>
             <div className='row' >
@@ -35,20 +36,18 @@ function Workshoprequest({url}) {
           data.map((a)=>{
 
            
-              const dateTime = new  Date(a.date);
-              const timeString = dateTime.toLocaleTimeString();
-
             //   const dateTime = new  Date(a.date);
             //   const timeString = dateTime.toLocaleTimeString();
 
+
          return( 
-            <Link to={`/dashboard-workshop-approval/${a._id}`} style={{textDecoration:"none",color:"black"}}>
+            <Link to={`/dashboard-workshop-approval/${a?._id}`} style={{textDecoration:"none",color:"black"}}>
             <div className='row' style={{padding:"10px"}}>
                 <div className='admin_advertiser_request' style={{ display: 'flex' }} >
 
-                <img src={img}  alt='images' width='130px' height='100px'/>
+                {/* <img src={img}  alt='images' width='130px' height='100px'/> */}
 
-                <img src={`${url}/${a.image.filename}`}  alt='images' width='130px' height='100px'/>
+                <img src={`${url}/${a.image?.filename}`}  alt='images' width='130px' height='100px'/>
 
 
                     <div>
