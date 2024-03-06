@@ -7,6 +7,7 @@ import Addservice from './Addservice'
 import Viewmyservices from './Viewmyservices'
 import Viewservicerequest from './Viewservicerequest'
 import SparepartsWorkshop from './SparepartsWorkshop'
+import Viewsinglereq from './Viewsinglereq'
 
 const url = "http://localhost:4010";
 
@@ -24,6 +25,8 @@ function Workshopmain({data}) {
           <Viewservicerequest/>
         ):data=="addspareparts"?(
           <SparepartsWorkshop/>
+        ):data=="singlerequest"?(
+          <Viewsinglereq/>
         )
         :<SignupMech/> }
     </div>

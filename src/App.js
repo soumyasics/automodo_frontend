@@ -84,6 +84,8 @@ function App() {
       <Route path='/workshop-dashboard-viewrequest' element={[<Wnav/>,<Workshopmain data="viewrequest"/>,<Footer/>]}/>
 
       <Route path='/workshop-spareparts' element={[<Wnav/>,<Workshopmain data="addspareparts"/>,<Footer/>]}/>
+      <Route path='/workshop-singlereq/:id' element={[<Wnav/>,<Workshopmain data="singlerequest"/>,<Footer/>]}/>
+
       <Route path='/workshop-editservice/:id' element={[<Wnav/>,<Editservice/>,<Footer/>]}/>
 
 
