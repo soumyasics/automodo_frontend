@@ -86,7 +86,7 @@ function Workshopdashboard({url}) {
                 
     
                 <div className="reader_profile_account_info_editbtn ">
-                  <Link to="">
+                  <Link to={`/workshop-editprofile/${id}`}>
                     <button className="btn btn-primary">Edit Profile</button>
                   </Link>
                 </div>
