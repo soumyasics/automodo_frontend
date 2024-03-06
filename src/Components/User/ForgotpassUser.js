@@ -3,11 +3,13 @@ import Signin_image from '../../Assets/signin_image.png'
 import './ForgotpassUser.css'
 import SignupLogo from'../../Assets/signUpbtnlogo.png'
 import axiosInstance from '../../Baseurl'
+import { useNavigate } from 'react-router-dom'
 
 
 function ForgotpassUser() {
-    const [data,SetData]=useState({email:'',newpassword:'',confirmpassword:''})
-const [errors, setErrors] = useState({ email: '', newpassword: '',confirmpassword:'' });
+  const navigate=useNavigate()
+    const [data,SetData]=useState({email:'',password:'',confirmpassword:''})
+const [errors, setErrors] = useState({ email: '', password: '',confirmpassword:'' });
 let formIsValid;
 
 const change=(b)=>{
@@ -37,16 +39,16 @@ let signin=(a)=>{
   let formIsValid = true;
 
   errors.email= validateField('email', data.email);
-  errors.newpassword = validateField('newpassword', data.newpassword);
+  errors.password = validateField('password', data.password);
  
   setErrors(errors);
 
  
- if(data.newpassword !==data.confirmpassword){
+ if(data.password !==data.confirmpassword){
   formIsValid=false
   setErrors(prevErrors => ({
     ...prevErrors,
-    confirmpassword: 'newpassword and confirmpassword should be same'
+    confirmpassword: 'password and confirmpassword should be same'
 }));
 
  }
@@ -57,9 +59,10 @@ let signin=(a)=>{
     console.log(res)
     if(res.data.status==200){
         alert('password updated')
+        navigate("/user-login")
        }
-       else{
-        alert('failed')
+       else if(res.data.status==500){
+        alert("Customer not found")
        }
    })
    .catch((error)=>{
@@ -90,9 +93,9 @@ let signin=(a)=>{
         </div>
         <div>
           <label className='forgotUser-label'>New Password</label>
-          <input className='forgotUser-input' name='newpassword' value={data.newpassword} onChange={change} type='password' placeholder='New Password'/>
-          {errors.newpassword && (
-                <div className="text-danger input-validation">{errors.newpassword}</div>
+          <input className='forgotUser-input' name='password' value={data.password} onChange={change} type='password' placeholder='New Password'/>
+          {errors.password && (
+                <div className="text-danger input-validation">{errors.password}</div>
               )}
         </div>
         <div>

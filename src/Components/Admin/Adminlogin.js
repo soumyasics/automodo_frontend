@@ -11,7 +11,7 @@ function Adminlogin() {
         password:""
     })
 const username="admin"
-const password="admin123#"
+const password="admin123"
 
 const changefn=((a)=>{
     setdata({

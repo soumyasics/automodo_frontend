@@ -13,12 +13,17 @@ function SignupWorkshop() {
   const [data,SetData]=useState({name:'',contact:'',email:'',city:'',district:'',aadhar:'',password:'',image:'null',regno:''})
   const [errors, setErrors] = useState({name:'',contact:'',email:'',city:'',district:'',aadhar:'',password:'',image:'',regno:''});
   let formIsValid;
+
   const change=(b)=>{
     const { name, value } = b.target;
-    SetData(prevData => ({
-        ...prevData,
-        [name]: value
-    }));
+
+    if(b.target.name === "image"){
+      // handleImageUpload(e);
+      SetData({...data,image:b.target.files[0]});
+  }else {
+      SetData({...data,[b.target.name]:b.target.value})
+  }
+  console.log(data);
     setErrors(prevErrors => ({
       ...prevErrors,
       [name]: ''
@@ -99,7 +104,11 @@ function SignupWorkshop() {
 
       if (formIsValid) {
           console.log("data", data);
-          axiosInstance.post('/registerWorkshop',data)
+          axiosInstance.post('/registerWorkshop',data,{
+            headers: {
+                "Content-Type": "multipart/form-data",
+              },
+        })
       .then((res)=>{
         console.log(res)
         if(res.data.status==200){

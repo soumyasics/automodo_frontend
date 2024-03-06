@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import icon from "../../Assets/payment.jpg";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axiosInstance from "../../Baseurl";
 
 function Paymentservice() {
@@ -11,7 +11,6 @@ console.log(userid+"userid");
 
   const[form,setform]=useState({
     custid:localStorage.getItem("userid"),
-    serviceid:"",
     servicedate:"",
     name:"",
     number:"",
@@ -20,6 +19,21 @@ console.log(userid+"userid");
     year:""
 
   })
+  const [formData, setFormData] = useState({
+    number: '',
+    cdnumber: '',
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+      numberError: '',
+      cdnumberError: ''
+    });
+  };
+
 
   useEffect(() => {
     axiosInstance
@@ -39,16 +53,34 @@ console.log(userid+"userid");
 })
   })
   console.log(form);
-
+const navigate=useNavigate()
   const submitfn=((a)=>{
     a.preventDefault()
-    axiosInstance.post(`bookaService/${id}`)
+    if (formData.number.length !== 16) {
+      setFormData({ ...formData, numberError: 'Card number must be 16 digits.' });
+      return;
+    }
+    // Validation for CVV
+    if (formData.cdnumber.length < 3) {
+      setFormData({ ...formData, cdnumberError: 'CVV must be at least 3 digits.' });
+      return;
+    }
+
+    axiosInstance.post(`bookaService/${id}`,form)
     .then((res) => {
         console.log(res);
+        if(res.data.status==200){
+            alert("Service booked succesfully")
+            navigate("/viewservices")
+        }
+        else{
+            alert("error in booking")
+        }
       })
       .catch((err) => {
         console.log(err);
       });
+
 
 
   })
@@ -115,11 +147,14 @@ console.log(userid+"userid");
                           placeholder="Your Name"
                           name="number"
                           value={form.number}
-                          onChange={changefn}
-
+                          onChange={(e) => {
+                            handleInputChange(e);
+                            changefn(e)
+                          }}
+        
                           required
                         />
-
+                       <p style={{color: 'red'}}>{formData.numberError}</p>
                         <label for="cardNo">Card Number</label>
                       </div>
                     </div>
@@ -133,10 +168,13 @@ console.log(userid+"userid");
                           required
                           name="cdnumber"
                           value={form.cdnumber}
-                          onChange={changefn}
+                          onChange={(e) => {
+                            handleInputChange(e);
+                            changefn(e)
+                          }}
 
                         />
-
+                       <p style={{color: 'red'}}>{formData.cdnumberError}</p>
                         <label for="email">CVV</label>
                       </div>
                     </div>
