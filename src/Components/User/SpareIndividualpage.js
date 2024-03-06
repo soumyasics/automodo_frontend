@@ -23,6 +23,8 @@ function SpareIndividualpage() {
   console.log(state)
 function Addcount(){
   SetCount(Count++)
+
+
 }
 function Subcount(){
   SetCount(Count--)
@@ -35,13 +37,13 @@ function Subcount(){
           class="carousel slide col-5  "
         >
           <div class="carousel-inner " >
-            <div class="carousel-item active caro-change" >
+            <div class="carousel-item active spareindcaro-change" >
               <img src={state.image} class="d-block w-100 spareindprod-img" alt="..." />
             </div>
-            <div class="carousel-item caro-change">
+            <div class="carousel-item spareindcaro-change">
               <img src={state.image} class="d-block w-100 spareindprod-img" alt="..." />
             </div>
-            <div class="carousel-item caro-change">
+            <div class="carousel-item spareindcaro-change">
               <img src={state.image} class="d-block w-100 spareindprod-img" alt="..." />
             </div>
           </div>
@@ -52,7 +54,7 @@ function Subcount(){
             data-bs-slide="prev"
           >
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span class="visually-hidden" >Previous</span>
           </button>
           <button
             class="carousel-control-next"
@@ -103,9 +105,10 @@ function Subcount(){
             </div>
             <hr style={{ width: '50rem' }} />
 <div>
-  <button onClick={Addcount}>Add Count</button>
-  <button onClick={Subcount}>Sub Count</button>
-  <p>{Count}</p>
+  <button className='spareind-btn' onClick={Addcount}>+</button><br/>
+  <p className='spareind-count'> Spare count: {Count}</p>
+  <button  className='spareind-btn'onClick={Subcount}>-</button>
+ 
 </div>
           </div>
         </div>
