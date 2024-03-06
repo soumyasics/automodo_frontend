@@ -48,11 +48,16 @@ console.log(formIsValid);
       .then((res)=>{
         console.log(res)
         if(res.data.status==200){
+          localStorage.setItem("userid", res.data.data._id);
+
             alert('succesfully login')
             navigate("/userhome")
            }
+           else if(res.data.status==401){
+            alert('Incorrect Password ')
+           }
            else{
-            alert('failed')
+            alert(res.data.msg)
            }
        })
        .catch((error)=>{
@@ -91,7 +96,7 @@ console.log(formIsValid);
               )}
         </div>
         <div className='loginUser-Areset'>
-        <a className='loginUser-a' href='#'>Reset Password </a>
+        <a className='loginUser-a' href='/forgotpass-user'>Reset Password </a>
         </div>
         <div className='loginUser-Asignup'>
           <a className='loginUser-a' href='/user-signup' >Signup</a>

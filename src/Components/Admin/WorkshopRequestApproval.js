@@ -40,6 +40,24 @@ function WorkshopRequestApproval({url}) {
     })
 
   })
+  const deletefn=((e)=>{
+    e.preventDefault()
+    axiosInstance.post(`deleteWorkshopById/${id}`)
+    .then((res)=>{
+      console.log(res);
+      if(res.data.status==200){
+      alert("Deleted successfully")
+       navigate("/admin-dashboard")
+      }
+    })
+    .catch((err)=>{
+        console.log(err)
+
+    })
+
+  })
+
+
 
 return (
   <div className="col-12">
@@ -78,7 +96,7 @@ return (
       </div>{" "}
       <div className="singlecontributer-button">
       <button type="submit" className="col-3 btn btn-primary" onClick={acceptfn}>Accept</button>
-      <button type="submit" className="col-3 btn btn-danger" >Delete</button>
+      <button type="submit" className="col-3 btn btn-danger" onClick={deletefn}>Delete</button>
       </div>
     </div>
   </div>
