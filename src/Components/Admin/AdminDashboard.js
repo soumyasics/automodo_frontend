@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import axiosInstance from '../../Baseurl'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './AdminDashboard.css';
@@ -7,9 +8,41 @@ import MechanicList from '../Mechanic/MechanicList';
 import WorkshopList from '../Workshop/WorkshopList';
 import Workshoprequest from './Workshoprequest';
 const url = "http://localhost:4010";
+
 function AdminDashboard() {
 
   const[State,setState]=useState(1)
+  const[users,SetUsers]=useState({})
+  const[mech,SetMech]=useState({})
+  const[workshop,SetWorkshop]=useState({})
+ useEffect(()=>{
+  axiosInstance.post('/viewCustomers',users)
+  .then((res)=>{
+    SetUsers(res.data.data)
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
+ },[])
+ useEffect(()=>{
+  axiosInstance.post('/viewMechanics',mech)
+  .then((res)=>{
+    SetMech(res.data.data)
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
+ },[])
+
+ useEffect(()=>{
+  axiosInstance.post('/viewApprovedWorkshops',workshop)
+  .then((res)=>{
+    SetWorkshop(res.data.data)
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
+ },[])
 
   let clickUser=()=>{
    setState(1)
@@ -49,15 +82,15 @@ function AdminDashboard() {
           <div className='row'>
            <div className='col-3 dashboard-box'>
             <p>Users</p>
-            <hr/> <h5>56</h5>
+            <hr/> <h5>{users && users.length ? ( users.length) : '0'  }</h5>
            </div>
            <div className='col-3 dashboard-box'>
            <p>Mechanic</p>
-            <hr/> <h5>16</h5>
+            <hr/> <h5>{mech && mech.length ? ( mech.length) : '0'  } </h5>
            </div>
            <div className='col-3 dashboard-box'>
            <p>Workshop</p>
-            <hr/> <h5>5</h5>
+            <hr/> <h5>{workshop && workshop.length ? ( workshop.length) : '0'  }</h5>
            </div>
           </div>
         
@@ -96,15 +129,15 @@ function AdminDashboard() {
           <div className='row'>
            <div className='col-3 dashboard-box'>
             <p>Users</p>
-            <hr/> <h5>56</h5>
+            <hr/> <h5>{users && users.length ? ( users.length) : '0'  }</h5>
            </div>
            <div className='col-3 dashboard-box'>
            <p>Mechanic</p>
-            <hr/> <h5>16</h5>
+            <hr/> <h5>{mech && mech.length ? ( mech.length) : '0'  } </h5>
            </div>
            <div className='col-3 dashboard-box'>
            <p>Workshop</p>
-            <hr/> <h5>5</h5>
+            <hr/> <h5>{workshop && workshop.length ? ( workshop.length) : '0'  }</h5>
            </div>
           </div>
         
@@ -142,15 +175,15 @@ function AdminDashboard() {
           <div className='row'>
            <div className='col-3 dashboard-box'>
             <p>Users</p>
-            <hr/> <h5>56</h5>
+            <hr/> <h5>{users && users.length ? ( users.length) : '0'  }</h5>
            </div>
            <div className='col-3 dashboard-box'>
            <p>Mechanic</p>
-            <hr/> <h5>16</h5>
+            <hr/> <h5>{mech && mech.length ? ( mech.length) : '0'  } </h5>
            </div>
            <div className='col-3 dashboard-box'>
            <p>Workshop</p>
-            <hr/> <h5>5</h5>
+            <hr/> <h5>{workshop && workshop.length ? ( workshop.length) : '0'  }</h5>
            </div>
           </div>
         
@@ -188,15 +221,15 @@ function AdminDashboard() {
           <div className='row'>
            <div className='col-3 dashboard-box'>
             <p>Users</p>
-            <hr/> <h5>56</h5>
+            <hr/> <h5>{users && users.length ? ( users.length) : '0'  }</h5>
            </div>
            <div className='col-3 dashboard-box'>
            <p>Mechanic</p>
-            <hr/> <h5>16</h5>
+            <hr/> <h5>{mech && mech.length ? ( mech.length) : '0'  } </h5>
            </div>
            <div className='col-3 dashboard-box'>
            <p>Workshop</p>
-            <hr/> <h5>5</h5>
+            <hr/> <h5>{workshop && workshop.length ? ( workshop.length) : '0'  }</h5>
            </div>
           </div>
         
