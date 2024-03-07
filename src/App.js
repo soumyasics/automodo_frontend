@@ -41,6 +41,7 @@ import Wnav from './Components/Common/Wnav';
 import Viewmyservices from './Components/Workshop/Viewmyservices';
 import Editservice from './Components/Workshop/Editservice';
 import EditProfile from './Components/Workshop/EditWorkshopProfile';
+import MechanicMain from './Components/Mechanic/MechanicMain';
 
 const url = "http://localhost:4010";
 
@@ -61,8 +62,8 @@ function App() {
       <Route path='/userhome' element={[<Userhomenav/>,<MainAdmin/>,<Footer/>]}/>
       <Route path='/forgotpass-user' element={[<Adminnav/>,<ForgotpassUser/>,<Footer/>]}/>
       <Route path='/viewservices' element={[<Userhomenav/>,<Viewservices/>,<Footer/>]}/>
-      <Route path='/Sparepartslist' element={[<Userhomenav/>,<SparepartsList/>,<Footer/>]}/>
-      <Route path='/SparepartsInd/:id' element={[<Userhomenav/>,<SpareIndividualpage/>,<Footer/>]}/>
+      <Route path='/Sparepartslist' element={[<Userhomenav/>,<SparepartsList url={url}/>,<Footer/>]}/>
+      <Route path='/SparepartsInd/:id' element={[<Userhomenav/>,<SpareIndividualpage url={url}/>,<Footer/>]}/>
       <Route path='/bookservices/:id' element={[<Userhomenav/>,<Bookservice url={url}/>,<Footer/>]}/>
       <Route path='/user-profile' element={[<Userhomenav/>,<UserProfileMain  data="viewprof"/>,<Footer/>]}/>
       <Route path='/user-profile-edit/:id' element={[<Userhomenav/>,<UserProfileMain  data="editprof"/>,<Footer/>]}/>
@@ -71,7 +72,7 @@ function App() {
 
       {/* Mechanic */}
       <Route path='/mechanic-login' element={[<Loginnav/>,<LoginMechanic/>,<Footer/>]}/>
-    
+      <Route path='/mechanic-dashboard-viewrequest' element={[<Loginnav/>,<MechanicMain data="mechanicdashboard"/>,<Footer/>]}/>
 
       {/* Workshop */}
       <Route path='/workshop-login' element={[<Loginnav/>,<LoginWorkshop/>,<Footer/>]}/> 
