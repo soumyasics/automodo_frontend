@@ -67,6 +67,7 @@ function SparepartsWorkshop() {
         if(res.data.status==200){
             alert('succesfully item added')
             // navigate("/workshop-login")
+            window.location.reload ("false")
            }
           
            else{
@@ -110,7 +111,7 @@ function SparepartsWorkshop() {
        
         <div>
           <label className='spareparts-label'>Price</label>
-          <input className='spareparts-input' type='text' placeholder='Price' value={data.price} name='price' onChange={change}/>
+          <input className='spareparts-input' type='number' placeholder='Price' value={data.price} name='price' onChange={change}/>
           {errors.price && (
                 <div className="text-danger spareparts-validation">{errors.price}</div>
               )}

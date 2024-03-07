@@ -4,23 +4,37 @@ import { useParams } from 'react-router-dom'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import './SpareIndividual.css';
+import axiosInstance from '../../Baseurl';
 
 
-function SpareIndividualpage() {
+function SpareIndividualpage({url}) {
   const { id } = useParams()
+
+
+
+
   let [Count,SetCount]=useState(1)
-  const [state, setState] = useState({})
+  const [data, setdata] = useState({})
+
+
+const [order,setorder]=useState({
+  userid:"",
+  sparepartid:"",
+  count:"",
+  price:""
+})
+
   useEffect(() => {
-    axios.get(`https://fakestoreapi.com/products/${id}`)
+    axiosInstance.post(`/viewSparePartById/${id}`)
       .then((res) => {
-        setState(res.data)
+        console.log(res);
+        setdata(res.data.data)
       })
       .catch((err) => {
         console.log(err)
-
       })
   }, [])
-  console.log(state)
+  console.log(data)
 function Addcount(){
   SetCount(Count++)
 
@@ -29,6 +43,8 @@ function Addcount(){
 function Subcount(){
   SetCount(Count--)
 }
+
+console.log(data);
   return (
    
       <div className="row">
@@ -36,35 +52,11 @@ function Subcount(){
           id="carouselExample"
           class="carousel slide col-5  "
         >
-          <div class="carousel-inner " >
-            <div class="carousel-item active spareindcaro-change" >
-              <img src={state.image} class="d-block w-100 spareindprod-img" alt="..." />
-            </div>
-            <div class="carousel-item spareindcaro-change">
-              <img src={state.image} class="d-block w-100 spareindprod-img" alt="..." />
-            </div>
-            <div class="carousel-item spareindcaro-change">
-              <img src={state.image} class="d-block w-100 spareindprod-img" alt="..." />
-            </div>
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExample"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden" >Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExample"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+          
+          <div>
+            <p style={{paddingLeft:"100px",paddingTop:"20PX"}}>PartName: {data?.partName}</p>
+           <img className="card-img-top spareList-img" src={`${url}/${data.img?.filename}`} alt='images' style={{margin:"40px"}}/>
+           </div>
           <br /> <br /> <br /> <br />
           <div>
             <button className='spareindbuy-btn' type='submit'>BUY NOW</button>
@@ -72,14 +64,14 @@ function Subcount(){
         </div>
 
         <div className="col-7">
-          <div className="spareindprod-title">
-            <h2><b>{state.title}</b></h2>
+          {/* <div className="spareindprod-title">
+            <h2><b>{data?.title}</b></h2>
            
-          </div>
+          </div> */}
           <hr style={{ width: '50rem' }} />
 
           <div>
-            <p className='spareind-price'> Rs: {state.price}</p>
+            {/* <p className='spareind-price'> Rs: {state.price}</p> */}
           </div>
 
           <hr style={{ width: '50rem' }} />
@@ -90,18 +82,24 @@ function Subcount(){
             <div>
 
             <h6 className='spareind-dec'>Description : </h6>
-             <p> {state.description}</p>
+             <p> {data?.description}</p>
            
             </div>
             <hr style={{ width: '50rem' }} />
             <div>
-              <h6 className='spareind-spec'>Specifications:</h6>
-              <p>gdfbdfbdfbcbncvcvbb</p>
+              <h6 className='spareind-spec'>Shopname:</h6>
+              <p>{data.shopid?.name}</p>
+            </div>
+            <hr style={{ width: '50rem' }} />
+
+            <div>
+              <h6 className='spareind-spec'>Price:</h6>
+              <p>{data?.price}</p>
             </div>
             <hr style={{ width: '50rem' }} />
             <div>
             <h6 className='spareind-spec'>Manufacturer:</h6>
-              <p>Manufacturer</p>
+             <p>{data?.manufacturer}</p> 
             </div>
             <hr style={{ width: '50rem' }} />
 <div>

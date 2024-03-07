@@ -4,14 +4,17 @@ import './Sparepartslist.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import { Link } from 'react-router-dom';
+import axiosInstance from '../../Baseurl';
 
 
-function SparepartsList() {
+function SparepartsList({url}) {
     const [state,setState]=useState([]);
+
     useEffect(()=>{
-        axios.get('https://fakestoreapi.com/products')
+        axiosInstance.post(`viewallSpareParts`)
         .then((res)=>{
-            setState(res.data)
+            console.log(res);
+            setState(res.data.data)
         })
         .catch((error)=>{
             console.log(error)
@@ -27,19 +30,20 @@ function SparepartsList() {
         </div>
         
         <div className='row spareList-main'>
-            {state.map((c)=>{
+        {state.length ?(
+            state.map((a)=>{
                 return(
                 <div className="card col-4 spareList-col">
-                    <Link  to={`/SparepartsInd/${c.id}`}>
+                    <Link  to={`/SparepartsInd/${a._id}`}>
                      <div >
-           <img className="card-img-top spareList-img" src={c.image+" "} />
+           <img className="card-img-top spareList-img" src={`${url}/${a.img?.filename}`} alt='images'/>
            <div className="card-body">
             <div className='spareList-name'>
-            {c.title+" "}
+            {a?.partName}
             </div> 
             <hr/>
             <div className='spareList-price'>
-            {'Rs. '+c.price+" "}
+            {'Rs. '+a?.price+" "}
             </div> 
             </div> 
           </div>
@@ -47,7 +51,11 @@ function SparepartsList() {
           </div>
                 )
 
-            })}
+            })
+            ) : (
+                <div>No data available</div>
+              )}  
+         
         </div>
         
     </div>
