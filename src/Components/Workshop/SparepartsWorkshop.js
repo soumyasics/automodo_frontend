@@ -6,20 +6,28 @@ import axiosInstance from '../../Baseurl'
 import { useNavigate } from 'react-router-dom'
 
 function SparepartsWorkshop() {
+
+  const wid=localStorage.getItem("workshopid")
+  console.log(wid);
   
-  const [data,SetData]=useState({partname:'',description:'',price:'',shopid:'null',image:'null',count:'',manufacturer:''})
-  const [errors, setErrors] = useState({partname:'',description:'',price:'',shopid:'null',image:'null',count:'',manufacturer:''});
+  const [data,SetData]=useState({partName:'',description:'',price:'',shopid:wid,img:'null',count:'',manufacturer:''})
+  const [errors, setErrors] = useState({partName:'',description:'',price:'',shopid:'null',image:'null',count:'',manufacturer:''});
   let formIsValid;
+
   const change=(b)=>{
     const { name, value } = b.target;
-    SetData(prevData => ({
-        ...prevData,
-        [name]: value
-    }));
+    if(b.target.name === "img"){
+      // handleImageUpload(e);
+      SetData({...data,img:b.target.files[0]});
+  }else {
+      SetData({...data,[b.target.name]:b.target.value})
+  }
+  console.log(data);
     setErrors(prevErrors => ({
       ...prevErrors,
       [name]: ''
   }));
+
     }
     const validateField = (fieldName, value) => {
       if (!value.trim()) {
@@ -39,23 +47,26 @@ function SparepartsWorkshop() {
     let errors = {};
        formIsValid = true;
 
-      errors.partname= validateField('partname', data.partname);
+      errors.partName= validateField('partName', data.partName);
       errors.description= validateField('description', data.description);
       errors.price= validateField('price', data.price);
       errors.count= validateField('count', data.count);
-      errors.image= validateField('image', data.image);
       errors.manufacturer= validateField('manufacturer', data.manufacturer);
       setErrors(errors);
       console.log(formIsValid);
 
       if (formIsValid) {
           console.log("data", data);
-          axiosInstance.post('/',data)
+          axiosInstance.post('/addSpareParts',data,{
+            headers: {
+                "Content-Type": "multipart/form-data",
+              },
+        })
       .then((res)=>{
         console.log(res)
         if(res.data.status==200){
             alert('succesfully item added')
-            navigate("/workshop-login")
+            // navigate("/workshop-login")
            }
           
            else{
@@ -83,9 +94,9 @@ function SparepartsWorkshop() {
           <div className='spareparts-submain col-2'>
         <div>
           <label className='spareparts-label'>Spareparts Name</label>
-          <input className='spareparts-input' type='text' placeholder='Spareparts name' value={data.partname} name='partname' onChange={change}/>
-          {errors.partname&& (
-                <div className="text-danger spareparts-validation">{errors.partname}</div>
+          <input className='spareparts-input' type='text' placeholder='Spareparts name' value={data.partName} name='partName' onChange={change}/>
+          {errors.partName&& (
+                <div className="text-danger spareparts-validation">{errors.partName}</div>
               )}
         </div>
        
@@ -106,7 +117,7 @@ function SparepartsWorkshop() {
         </div>
         <div>
         <label className='spareparts-label' >Image</label><br/>
-          <input  className='spareparts-input' type='file' name='image'  onChange={change}/>
+          <input  className='spareparts-input' type='file' name='img'  onChange={change}/>
         </div>
        
      

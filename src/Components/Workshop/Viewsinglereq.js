@@ -19,18 +19,28 @@ function Viewsinglereq() {
         })
     },[])
 
-//     const dateTime = new  Date(data.bookingdate);
-//     console.log(dateTime);
-//       const dateOnly = dateTime.toISOString().split('T')[0];
-// console.log(dateOnly);
-    //  const servicedate = new  Date(data.servicedate);
-    //  const sdate = servicedate.toISOString().split('T')[0];
-
     const dateTime = new Date(data.bookingdate);
 const formattedDate = dateTime.toLocaleDateString();
 
 const servicedate = new Date(data.servicedate);
-const service = dateTime.toLocaleDateString();
+const service = servicedate.toLocaleDateString();
+
+const approvefn=((b)=>{
+    b.preventDefault()
+    axiosInstance.post(`approveBookingByWid/${id}`,data)
+    .then((res)=>{
+        console.log(res);
+        if(res.data.status==200){
+            alert("Request approved succesfully")
+        }
+        else{
+            alert("something went wrong")
+        }
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+})
 
   return (
 <div className="container viewsinglereq">
@@ -76,7 +86,7 @@ const service = dateTime.toLocaleDateString();
 
            <div className='row'>
             <div className='col-6'>
-                <button type='submit' className='btn btn-info' >Approve Request</button>
+                <button type='submit' className='btn btn-info' onClick={approvefn}>Approve Request</button>
             </div>
             <div className='col-6'>
             <button type='submit' className='btn btn-danger' >Delete Request</button>

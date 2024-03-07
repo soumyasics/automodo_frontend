@@ -31,15 +31,9 @@ function SignupMech() {
 
   const change = (b) => {
     const { name, files } = b.target;
-    // if (b.target.name === "image") {
-      // SetData({ ...data, [name]: files[0] });
-    // }
-    //  else if (b.target.name === "certificate") {
-    //   SetData({ ...data, certificate: b.target.files[0] });
-    // }
-    //  else {
+    
       SetData({ ...data, [b.target.name]: b.target.value });
-    // }
+    
 
     setErrors((prevErrors) => ({
       ...prevErrors,
@@ -54,7 +48,7 @@ function SignupMech() {
   };
 
 
-
+console.log(data);
   const validateField = (fieldName, value) => {
     if (!value.trim()) {
       formIsValid = false;
@@ -133,27 +127,27 @@ function SignupMech() {
       formData.append("aadhar", data.aadhar);
       formData.append("gender", data.gender);
       formData.append("password", data.password);
-      // formData.append("files", data.image);
-      // formData.append("files", data.certificate);
-      if (data.image) {
-        for (let i = 0; i < data.image.length; i++) {
-          formData.append("files", data.image[i]);
-        }
-      }
+       formData.append("files", data.image);
+      formData.append("files", data.certificate);
+      // if (data.image) {
+      //   for (let i = 0; i < data.image.length; i++) {
+      //     formData.append("files", data.image[i]);
+      //   }
+      // }
       
-      // Append certificate files
-      if (data.certificate) {
-        for (let i = 0; i < data.certificate.length; i++) {
-          formData.append("files", data.certificate[i]);
-        }
-      }
+      // // Append certificate files
+      // if (data.certificate) {
+      //   for (let i = 0; i < data.certificate.length; i++) {
+      //     formData.append("files", data.certificate[i]);
+      //   }
+      // }
 
       console.log("re form ", formData);
 
       console.log("data", data);
       if (formIsValid) {
         axiosInstance
-          .post(`/addMechanic/${shopid}`, data, {
+          .post(`/addMechanic/${shopid}`, formData, {
             headers: {
               "Content-Type": "multipart/form-data",
             },
