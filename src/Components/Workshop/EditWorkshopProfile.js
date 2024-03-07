@@ -75,8 +75,7 @@ function EditProfile() {
   return (
     <div>
       <form onSubmit={editfn}>
-      
- 
+
         
       <div className='editWorkshop-main'>
         <div>
