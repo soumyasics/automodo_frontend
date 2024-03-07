@@ -1,6 +1,7 @@
 import React from 'react'
 import ProfileSidebar from './ProfileSidebar';
 import UserProfile from './UserProfile';
+import UserProfileEdit from './UserProfileEdit';
 // import "./Workshopmain.css"
 // import Adminsidebar from './Adminsidebar'
 // import Workshopdashboard from './Workshopdashboard'
@@ -18,11 +19,11 @@ function UserProfileMain({data}) {
         <ProfileSidebar/>
         {data === "viewprof" ?(
             <UserProfile url={url}/>
+        )  
+        :data=="editprof"?(
+          <UserProfileEdit/>
         ):'no data'
-        
-        // :data=="addservice"?(
-        //   <Addservice/>
-        // ):data=="myservices"?(
+      // :data=="myservices"?(
         //   <Viewmyservices/>
         // )
         // :<SignupMech/>

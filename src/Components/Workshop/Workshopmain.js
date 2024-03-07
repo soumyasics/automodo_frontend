@@ -7,6 +7,7 @@ import Addservice from './Addservice'
 import Viewmyservices from './Viewmyservices'
 import Viewservicerequest from './Viewservicerequest'
 import SparepartsWorkshop from './SparepartsWorkshop'
+import EditProfile from './EditWorkshopProfile'
 import Viewsinglereq from './Viewsinglereq'
 
 const url = "http://localhost:4010";
@@ -23,6 +24,8 @@ function Workshopmain({data}) {
           <Addservice/>
         ):data=="viewrequest"?(
           <Viewservicerequest/>
+        ):data=="profileedit"?(
+          <EditProfile/>
         ):data=="addspareparts"?(
           <SparepartsWorkshop/>
         ):data=="singlerequest"?(

@@ -40,6 +40,7 @@ import Paymentservice from './Components/User/Paymentservice';
 import Wnav from './Components/Common/Wnav';
 import Viewmyservices from './Components/Workshop/Viewmyservices';
 import Editservice from './Components/Workshop/Editservice';
+import EditProfile from './Components/Workshop/EditWorkshopProfile';
 
 const url = "http://localhost:4010";
 
@@ -64,6 +65,7 @@ function App() {
       <Route path='/SparepartsInd/:id' element={[<Userhomenav/>,<SpareIndividualpage/>,<Footer/>]}/>
       <Route path='/bookservices/:id' element={[<Userhomenav/>,<Bookservice url={url}/>,<Footer/>]}/>
       <Route path='/user-profile' element={[<Userhomenav/>,<UserProfileMain  data="viewprof"/>,<Footer/>]}/>
+      <Route path='/user-profile-edit/:id' element={[<Userhomenav/>,<UserProfileMain  data="editprof"/>,<Footer/>]}/>
       <Route path='/paymentservice/:id' element={[<Userhomenav/>,<Paymentservice url={url}/>,<Footer/>]}/>
 
 
@@ -82,6 +84,9 @@ function App() {
       <Route path='/workshop-dashboard-addservice' element={[<Wnav/>,<Workshopmain data="addservice"/>,<Footer/>]}/>
       <Route path='/workshop-dashboard-myservices' element={[<Wnav/>,<Viewmyservices/>,<Footer/>]}/>
       <Route path='/workshop-dashboard-viewrequest' element={[<Wnav/>,<Workshopmain data="viewrequest"/>,<Footer/>]}/>
+      <Route path='/workshop-dashboard-viewrequest' element={[<Wnav/>,<Workshopmain data="viewrequest"/>,<Footer/>]}/>
+      <Route path='/workshop-editprofile/:id' element={[<Wnav/>,<Workshopmain data="profileedit"/>,<Footer/>]}/>
+      
 
       <Route path='/workshop-spareparts' element={[<Wnav/>,<Workshopmain data="addspareparts"/>,<Footer/>]}/>
       <Route path='/workshop-singlereq/:id' element={[<Wnav/>,<Workshopmain data="singlerequest"/>,<Footer/>]}/>
