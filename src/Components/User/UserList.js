@@ -22,11 +22,17 @@ function UserList() {
         {users && users.length ? (
           users.map((user) => ( // Changed the map function
             <div className='WorkshopList-flex' key={user.id}>
-              <div>
-                {'Email : ' + user.email}
+              <div className='userlist-box'>
+                {'Name : ' + user.firstname +' '+ user.lastname}
               </div>
               <div>
-                <p>any : lorem ipsum</p>
+              {'Number : ' + user.contact}
+              </div>
+              <div>
+              {'Email : ' + user.email}
+              </div>
+              <div>
+              <button className='user-delete-btn'>Delete</button>
               </div>
             </div>
           ))
