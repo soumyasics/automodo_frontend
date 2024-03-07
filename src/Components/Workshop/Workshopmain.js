@@ -7,8 +7,15 @@ import Addservice from './Addservice'
 import Viewmyservices from './Viewmyservices'
 import Viewservicerequest from './Viewservicerequest'
 import SparepartsWorkshop from './SparepartsWorkshop'
+
 import EditProfile from './EditWorkshopProfile'
+
+
+
 import Viewsinglereq from './Viewsinglereq'
+
+import EditProfile from './EditWorkshopProfile'
+
 
 const url = "http://localhost:4010";
 
