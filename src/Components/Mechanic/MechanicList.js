@@ -22,13 +22,22 @@ function MechanicList() {
         {users && users.length ? (
           users.map((user) => ( // Changed the map function
             <div className='WorkshopList-flex' key={user.id}>
+              <div className='mechlist-box'>
+                {'Name : ' + user.firstname+' '+user.lastname}
+              </div>
               <div>
                 {'Email : ' + user.email}
               </div>
+              
               <div>
-                <p>any : lorem ipsum</p>
+              {'Contact : ' + user.contact}
               </div>
-            </div>
+
+              <div>
+              <button className='mechanic-delete-btn'>Delete</button>
+              </div>
+              </div>
+           
           ))
         ) : (
           <div>No data available</div>

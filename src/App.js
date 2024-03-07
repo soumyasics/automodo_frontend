@@ -41,6 +41,7 @@ import Wnav from './Components/Common/Wnav';
 import Viewmyservices from './Components/Workshop/Viewmyservices';
 import Editservice from './Components/Workshop/Editservice';
 import EditProfile from './Components/Workshop/EditWorkshopProfile';
+import MechanicMain from './Components/Mechanic/MechanicMain';
 
 const url = "http://localhost:4010";
 
@@ -71,7 +72,7 @@ function App() {
 
       {/* Mechanic */}
       <Route path='/mechanic-login' element={[<Loginnav/>,<LoginMechanic/>,<Footer/>]}/>
-    
+      <Route path='/mechanic-dashboard-viewrequest' element={[<Loginnav/>,<MechanicMain data="mechanicdashboard"/>,<Footer/>]}/>
 
       {/* Workshop */}
       <Route path='/workshop-login' element={[<Loginnav/>,<LoginWorkshop/>,<Footer/>]}/> 
@@ -84,7 +85,7 @@ function App() {
       <Route path='/workshop-dashboard-addservice' element={[<Wnav/>,<Workshopmain data="addservice"/>,<Footer/>]}/>
       <Route path='/workshop-dashboard-myservices' element={[<Wnav/>,<Viewmyservices/>,<Footer/>]}/>
       <Route path='/workshop-dashboard-viewrequest' element={[<Wnav/>,<Workshopmain data="viewrequest"/>,<Footer/>]}/>
-      <Route path='/workshop-dashboard-viewrequest' element={[<Wnav/>,<Workshopmain data="viewrequest"/>,<Footer/>]}/>
+      
       <Route path='/workshop-editprofile/:id' element={[<Wnav/>,<Workshopmain data="profileedit"/>,<Footer/>]}/>
       
 
