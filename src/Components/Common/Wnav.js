@@ -29,6 +29,9 @@ function Wnav() {
           <li className='navbar-li'><Link className='nav-ahref' to='/workshop-dashboard-myservices'>View My Services</Link></li>
         </div>
         <div>
+          <li className='navbar-li'><Link className='nav-ahref' to='/workshop-viewspareparts'>View My Spareparts</Link></li>
+        </div>
+        <div>
           {/* <img className='dropdown_pic'src={drop_pic} alt='dropdown_pic'/> */}
         </div>
         <div>

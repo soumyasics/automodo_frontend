@@ -2,6 +2,7 @@ import React from 'react'
 import ProfileSidebar from './ProfileSidebar';
 import UserProfile from './UserProfile';
 import UserProfileEdit from './UserProfileEdit';
+import Userviewbookedservices from './Userviewbookedservices';
 // import "./Workshopmain.css"
 // import Adminsidebar from './Adminsidebar'
 // import Workshopdashboard from './Workshopdashboard'
@@ -22,7 +23,11 @@ function UserProfileMain({data}) {
         )  
         :data=="editprof"?(
           <UserProfileEdit/>
-        ):'no data'
+        ):data=="bookedservices"?(
+          <Userviewbookedservices/>
+        )
+        
+        :'no data'
       // :data=="myservices"?(
         //   <Viewmyservices/>
         // )

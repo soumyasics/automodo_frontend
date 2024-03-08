@@ -12,10 +12,8 @@ function UserProfileEdit()  {
   // console.log(userid+"userid");
   const { id } = useParams()
 
-  const [data,SetData]=useState({firstname:'',lastname:'',email:'',contact:'',gender:'',image:'null',password:''})
-  const [errors, setErrors] = useState({firstname:'',lastname:'',email:'',contact:'',password:''});
+  const [data,SetData]=useState({firstname:'',lastname:'',email:'',contact:'',gender:'',image:null,password:''})
 
-  let formIsValid;
 
   
 
@@ -29,14 +27,9 @@ function UserProfileEdit()  {
   }
 
  console.log(data);
-
-
-
-setErrors(prevErrors => ({
-  ...prevErrors,
-  [name]: ''
-}));
   }
+
+
   useEffect(()=>{
     axiosInstance.post(`/viewCustById/${id}`)
     .then((res)=>{
@@ -47,83 +40,23 @@ setErrors(prevErrors => ({
       console.log(err);
     })
   },[])
-  
 
-  const validateField = (fieldName, value) => {
-    if (!value.trim()) {
-      formIsValid=false
-        return `${fieldName} is required`;
-    }
-    return '';
-  };
-  const validateNumber =(fieldName,value)=>{
 
-    if (!value.trim()) {
-      formIsValid=false
-      return `${fieldName} is required`;
-  }
-
-    else if(value.toString().length!==10){
-      formIsValid=false
-      return `${fieldName}  10 digits required`;
- }
-  }
-  const validatePassword =(fieldName,value)=>{
-    var erorrsPassword=[]
-     if (!value.trim()) {
-      formIsValid=false
-       erorrsPassword.push(`${fieldName} is required and include any`);
-   }
-   
-      if(value.search(/[\!\@\#\$\%\^\&\*\(\)\_\+\.\,\;\:\-]/) < 0){
-        formIsValid=false
-       erorrsPassword.push(`special character ,`);
-   }
-   
-      if (value.length < 7) {
-        formIsValid=false
-       erorrsPassword.push(`length minimum 8 ,`);
-     }
-      if (value.search(/[a-z]/) < 0) {
-        formIsValid=false
-       erorrsPassword.push(`one small letter ,`);
-     }
-     if (value.search(/[A-Z]/) < 0) {
-      formIsValid=false
-     erorrsPassword.push(`one capital letter ,`);
-     }
-     if (value.search(/[0-9]/) < 0) {
-      formIsValid=false
-       erorrsPassword.push(`and any number.`);
-     }
-     if (erorrsPassword.length > 0) {
-      formIsValid=false
-       return `${erorrsPassword.join("\n")}`;
-   }
-   return true;
-   }
    const navigate=useNavigate()
   
   let signup=(a)=>{
     a.preventDefault()
-   
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!data.email || !emailRegex.test(data.email)) {
+      alert("Please enter a valid email address");
+      return;
+    }
+      if (!data.password || data.password.length < 6) {
+      alert("Password must be at least 6 characters long");
+      return;
+    }
            
-    let errors = {};
-       formIsValid = true;
-
-      errors.firstname= validateField('firstname', data.firstname);
-      errors.lastname= validateField('lastname', data.lastname);
-      errors.email= validateField('email', data.email);
-      errors.contact= validateNumber('contact', data.contact);
-      errors.password = validatePassword('password', data.password);
-      
-      setErrors(errors);
-      console.log(data);
-
-      if (formIsValid) {
-          console.log("data", data);
-
-          axiosInstance.post(`/editCustomerById/:${id}`,data,{
+          axiosInstance.post(`/editCustomerById/${id}`,data,{
             headers: {
               "Content-Type": "multipart/form-data",
             }
@@ -142,7 +75,7 @@ setErrors(prevErrors => ({
                   console.log(error)
                  })
       }
-  }
+  
   return (
     <div >
       <form onSubmit={signup}>
@@ -156,52 +89,37 @@ setErrors(prevErrors => ({
           <div className='user-edit-submain col-2'>
         <div>
           <label className='user-edit-label'>First Name</label>
-          <input className='user-edit-input' type='text'  name='firstname' value={data.firstname} onChange={change} />
-          {errors.firstname && (
-                <div className="text-danger user-edit-validation">{errors.firstname}</div>
-              )}
+          <input className='user-edit-input' type='text'  name='firstname' value={data.firstname} onChange={change} required title="please fill the form"/>
         </div>
         <div>
           <label className='user-edit-label'>Last Name</label>
-          <input className='user-edit-input' type='text' placeholder='Lastname' name='lastname'value={data.lastname} onChange={change} />
-          {errors.lastname && (
-                <div className="text-danger user-edit-validation">{errors.lastname}</div>
-              )}
+          <input className='user-edit-input' type='text' placeholder='Lastname' name='lastname'value={data.lastname} onChange={change} required />
         </div>
         <div>
           <label className='user-edit-label'>Email</label>
-          <input className='user-edit-input' type='email' placeholder='Email' name='email'value={data.email} onChange={change} />
-          {errors.email && (
-                <div className="text-danger user-edit-validation">{errors.email}</div>
-              )}
+          <input className='user-edit-input' type='email' placeholder='Email' name='email'value={data.email} onChange={change } required/>
          </div>
        
         <div>
           <label className='user-edit-label'>Contact Number</label>
-          <input className='user-edit-input' type='number' placeholder='Contact Number' name='contact'value={data.contact} onChange={change} />
-          {errors.contact && (
-                <div className="text-danger user-edit-validation">{errors.contact}</div>
-              )}
+          <input className='user-edit-input' type='number' placeholder='Contact Number' name='contact'value={data.contact} onChange={change}required />
         </div>
 
         <label className='user-edit-label' >Gender</label><br/>
         <div className='user-edit-genderflex'>
-          <input className='user-edit-gender-btn' id='Idgender1' type='radio' name='gender' value='male'  onChange={change}/>
+          <input className='user-edit-gender-btn' id='Idgender1' type='radio' name='gender' value='male'  onChange={change} required/>
           <label  className='user-edit-gender-btn' for='Idgender1'>Male</label>
-          <input  className='user-edit-gender-btn' id='Idgender2' type='radio' name='gender' value='female'  onChange={change}/>
+          <input  className='user-edit-gender-btn' id='Idgender2' type='radio' name='gender' value='female'  onChange={change} required/>
           <label className='user-edit-gender-btn' for='Idgender2'>Female</label>
         </div>
         <div>
         <label className='user-edit-label' >Image</label><br/>
-          <input  className='user-edit-file' type='file' name='image'  onChange={change}/>
+          <input  className='user-edit-file' type='file' name='image'  onChange={change} />
         </div>
        
         <div>
           <label className='user-edit-label'>Password</label>
           <input className='user-edit-input' type='password' placeholder='Password' name='password' onChange={change} />
-          {errors.password && (
-                <div className="text-danger user-edit-validation">{errors.password}</div>
-              )}
         </div>
     
         <div>

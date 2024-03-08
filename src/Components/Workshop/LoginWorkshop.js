@@ -52,7 +52,7 @@ let signin=(a)=>{
           localStorage.setItem("workshopid", result.data.data._id);
           console.log("workshopid", result.data.data._id);
           alert("login Sucessfully...");
-          // navigate("/workshop-dashboard-myservices")
+          navigate("/workshop-dashboard-myservices")
          
         } 
         else if (result.data.status==401) {

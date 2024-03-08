@@ -38,7 +38,6 @@ function Viewservicerequest() {
                    const servicedate = new  Date(a.servicedate);
                    const sdate = servicedate.toISOString().split('T')[0];
 
-                //   const timeString = dateTime.toLocaleTimeString();
     
     
              return( 
