@@ -1,4 +1,4 @@
-.editWorkshop-head{
+.editMechanic-head{
     font-weight: 450;
     font-size: 35px;
     text-align: center;
@@ -6,13 +6,13 @@
     color:  #1A728E ;
   
   }
-  .editWorkshop-label{
+  .editMechanic-label{
     width: 10rem;
     margin-top: 5px;
     color: #1A728E;
     font-size: larger;
   }
-  .editWorkshop-input{
+  .editMechanic-input{
     margin-top: 30px;
     margin-bottom: 1rem;
     margin-left: 6rem;
@@ -21,13 +21,13 @@
     border-radius: 5px;
     border: transparent;
   }
-   .editWorkshop-input::placeholder{
+   .editMechanic-input::placeholder{
     text-indent: 2rem;
     font-weight: lighter;
    }
   
   
-   .editWorkshop-btn{
+   .editMechanic-btn{
     background-color: #1A728E;
     width: 9rem;
     height: 30px;
@@ -40,15 +40,15 @@
     margin-top: 2rem;
    }
   
-   .editWorkshop-btn:hover{
+   .editMechanic-btn:hover{
     background-color: #0a4a5e;
    }
   
-   .editWorkshop-btn:active{
+   .editMechanic-btn:active{
     background-color: #84bdcf;
    }
    
-   .editWorkshop-main{
+   .editMechanic-main{
     border: 1px solid rgb(180, 179, 179);
     border-radius: .5rem;
     padding: 1rem;
@@ -58,19 +58,30 @@
    margin-top: 1.3rem;
    min-width: 40rem;
    }
-   .editWorkshop-p{
+   .editMechanic-p{
     font-size: 18px;
     color: #1A728E;
    }
-   .editWorkshop-validation{
+   .editMechanic-validation{
   width: 30rem;
    }
+   .mechanic-edit-gender-btn{
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+   }
+  
+   .mechanic-edit-genderflex{
+    display: flex;
+    margin-top: 1rem;
+    margin-left: 5rem;
+   }
+  
   
   
   
 
   
-   .editWorkshop-file{
+   .editMechanic-file{
     margin-top: 1rem;
     margin-left: 5rem;
    }

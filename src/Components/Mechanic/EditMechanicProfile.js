@@ -13,7 +13,7 @@ function EditMechanicProfile() {
 
 
   useEffect(()=>{
-    axiosInstance.post(`viewMechById/${id}`,data)
+    axiosInstance.post(`/viewMechById/${id}`,data)
     .then((res)=>{
       console.log(res);
        SetData(res.data.data)
@@ -65,63 +65,67 @@ const editfn = ((a) => {
          <form onSubmit={editfn}>
 
         
-<div className='editWorkshop-main'>
+<div className='editMechanic-main'>
   <div>
-    <h2 className='editWorkshop-head'>Edit Profile</h2>
+    <h2 className='editMechanic-head'>Edit Profile</h2>
   </div>
   <div className='row'>
-    <div className='editWorkshop-submain col-2'>
+    <div className='editMechanic-submain col-2'>
   <div>
-    <label className='editWorkshop-label'>Shop name</label>
-    <input className='editWorkshop-input' type='text' placeholder='Shop name' value={data.name} name='name' onChange={change}/>
+    <label className='editMechanic-label'>First Name</label>
+    <input className='editMechanic-input' type='text' placeholder='Shop name' value={data.firstname} name='name' onChange={change}/>
+
+  </div>
+  <div>
+    <label className='editMechanic-label'>Last Name</label>
+    <input className='editMechanic-input' type='text' placeholder='Shop name' value={data.lastname} name='name' onChange={change}/>
 
   </div>
  
   <div>
-    <label className='editWorkshop-label'>Email</label>
-    <input className='editWorkshop-input' type='email' placeholder='Email' value={data.email} name='email' onChange={change}/>
+    <label className='editMechanic-label'>Email</label>
+    <input className='editMechanic-input' type='email' placeholder='Email' value={data.email} name='email' onChange={change}/>
 
    </div>
- 
   <div>
-    <label className='editWorkshop-label'>City</label>
-    <input className='editWorkshop-input' type='text' placeholder='City' value={data.city} name='city' onChange={change}/>
-
-  </div>
-  <div>
-    <label className='editWorkshop-label'>District</label>
-    <input className='editWorkshop-input' type='text' placeholder='District' value={data.district} name='district' onChange={change}/>
+    <label className='editMechanic-label'>Aadhar</label>
+    <input className='editMechanic-input' type='number' placeholder='Aadhar number'value={data.aadhar} name='aadhar' onChange={change}/>
 
    
   </div>
   <div>
-    <label className='editWorkshop-label'>Aadhar</label>
-    <input className='editWorkshop-input' type='number' placeholder='Aadhar number'value={data.aadhar} name='aadhar' onChange={change}/>
-
-   
-  </div>
-  <div>
-    <label className='editWorkshop-label'>Contact Number</label>
-    <input className='editWorkshop-input' type='number' placeholder='Contact Number' value={data.contact} name='contact' onChange={change}/>
+    <label className='editMechanic-label'>Contact Number</label>
+    <input className='editMechanic-input' type='number' placeholder='Contact Number' value={data.contact} name='contact' onChange={change}/>
 
   </div>
   <div>
-    <label className='editWorkshop-label'>Register Number</label>
-    <input className='editWorkshop-input' type='number' placeholder='Register Number'value={data.regno} name='regno' onChange={change}/>
-
+  <label className='editMechanic-label' >Gender</label><br/>
+        <div className='mechanic-edit-genderflex'>
+          <input className='mechanic-edit-gender-btn' id='Idgender1' type='radio' name='gender' value='male'  onChange={change} required/>
+          <label  className='mechanic-edit-gender-btn' for='Idgender1'>Male</label>
+          <input  className='mechanic-edit-gender-btn' id='Idgender2' type='radio' name='gender' value='female'  onChange={change} required/>
+          <label className='mechanic-edit-gender-btn' for='Idgender2'>Female</label>
+        </div>
+        </div>
+  <div>
+  <div>
+  <label className='editMechanic-label' >Certificate</label><br/>
+    <input  className='editMechanic-file' type='file' name='image'  onChange={change}/>
+  </div>
+ 
   </div>
   <div>
-  <label className='editWorkshop-label' >Image</label><br/>
-    <input  className='editWorkshop-file' type='file' name='image'  onChange={change}/>
+  <label className='editMechanic-label' >Image</label><br/>
+    <input  className='editMechanic-file' type='file' name='image'  onChange={change}/>
   </div>
  
   <div>
-    <label className='editWorkshop-label'>Password</label>
-    <input className='editWorkshop-input' type='password' placeholder='Password' name='password' onChange={change}/>
+    <label className='editMechanic-label'>Password</label>
+    <input className='editMechanic-input' type='password' placeholder='Password' name='password' onChange={change}/>
 
   </div>
   <div>
-    <button className='editWorkshop-btn' type='siubmit'>Submit</button>
+    <button className='editMechanic-btn' type='siubmit'>Submit</button>
   </div>
   </div>
   </div>

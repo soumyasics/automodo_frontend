@@ -11,7 +11,7 @@ function Workshopdashboard({url}) {
   const [Users,SetUsers]=useState([]);
 
  useEffect(()=>{
-  axiosInstance.post(`viewWorkshopById/${id}`,Users)
+  axiosInstance.post(`/viewWorkshopById/${id}`,Users)
   .then((res)=>{
     console.log(res);
      SetUsers(res.data.data)

@@ -3,7 +3,7 @@ import Signin_image from '../../Assets/signin_image.png'
 import './loginWorkshop.css'
 import SignupLogo from'../../Assets/signUpbtnlogo.png'
 import axiosInstance from '../../Baseurl'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 function LoginWorkshop() {
@@ -98,7 +98,7 @@ let signin=(a)=>{
               )}
         </div>
         <div className='loginWorkshop-Areset'>
-        <a className='loginWorkshop-a' href='#'>Reset Password </a>
+        <Link className='loginUser-a' to='/forgotpass-workshop'>Reset Password </Link>
         </div>
         <div className='loginWorkshop-Asignup'>
           <a className='loginWorkshop-a' href='/workshop-signup'>Signup</a>

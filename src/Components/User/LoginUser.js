@@ -3,7 +3,7 @@ import Signin_image from '../../Assets/signin_image.png'
 import './loginUser.css'
 import SignupLogo from'../../Assets/signUpbtnlogo.png'
 import  axiosInstance from '../../Baseurl'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 function LoginUser() {
@@ -96,7 +96,7 @@ console.log(formIsValid);
               )}
         </div>
         <div className='loginUser-Areset'>
-        <a className='loginUser-a' href='/forgotpass-user'>Reset Password </a>
+        <Link className='loginUser-a' to='/forgotpass-user'>Reset Password </Link>
         </div>
         <div className='loginUser-Asignup'>
           <a className='loginUser-a' href='/user-signup' >Signup</a>

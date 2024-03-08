@@ -74,7 +74,7 @@ console.log(Users);
                 
     
                 <div className="reader_profile_account_info_editbtn ">
-                  <Link to={`//${id}`}>
+                  <Link to={`/mechanic-editprofile/${id}`}>
                     <button className="btn btn-primary">Edit Profile</button>
                   </Link>
                 </div>
