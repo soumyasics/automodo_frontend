@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 
 
 function MechanicDashboard({url}) {
-  const id=localStorage.getItem("workshopid")
+  const id=localStorage.getItem("shopid")
   console.log(id);
   const [Users,SetUsers]=useState([]);
 
  useEffect(()=>{
-  axiosInstance.post(`viewWorkshopById/${id}`,Users)
+  axiosInstance.post(`viewMechById/${id}`,Users)
   .then((res)=>{
     console.log(res);
      SetUsers(res.data.data)
@@ -20,7 +20,7 @@ function MechanicDashboard({url}) {
     console.log(err)
   })
  },[])
-
+console.log(Users);
   return (
     
     <div>
@@ -33,8 +33,8 @@ function MechanicDashboard({url}) {
                 <p>Account Info</p>
     
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
-                  <p className="col-6">Shop Name</p>
-                  <p>{Users.name}</p>
+                  <p className="col-6">Name</p>
+                  <p>{Users.firstname} {Users.lastname}</p>
                 </div>
                 {/* <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p className="col-6">Owner Name</p>
@@ -48,22 +48,10 @@ function MechanicDashboard({url}) {
                   <p className="col-4">Aadhar</p>
                   <p>{Users.aadhar}</p>
                 </div>
-                <div className="reader_profile_account_info_fulldetails_box mb-3">
-                  <p className="col-4">City</p>
-                  <p>{Users.city}</p>
-                </div>
-                <div className="reader_profile_account_info_fulldetails_box mb-3">
-                  <p className="col-4">District</p>
-                  <p>{Users.district}</p>
-                </div>
+
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p className="col-6">Contact</p>
                   <p>{Users.contact}</p>
-                </div>
-              
-                <div className="reader_profile_account_info_fulldetails_box mb-3">
-                  <p className="col-4">Reg No</p>
-                  <p>{Users.regno}</p>
                 </div>
                 {/* <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p></p>

@@ -7,6 +7,7 @@ import UserList from '../User/UserList';
 import MechanicList from '../Mechanic/MechanicList';
 import WorkshopList from '../Workshop/WorkshopList';
 import Workshoprequest from './Workshoprequest';
+import AdminEmergencyRequest from './AdminEmergencyRequest';
 const url = "http://localhost:4010";
 
 function AdminDashboard() {
@@ -57,6 +58,9 @@ function AdminDashboard() {
   let clickreq=()=>{
     setState(4)
   }
+  let clickEmergency=()=>{
+    setState(5)
+  }
 
   if(State==1){
     return(
@@ -71,7 +75,7 @@ function AdminDashboard() {
             <button className='sidebar-dash-btn' onClick={clickMechanic}>Mechanic</button>
             <button className='sidebar-dash-btn' onClick={clickWorkshop}>Workshop</button>
             <button className='sidebar-dash-btn'  onClick={clickreq}>Requests</button>
-            <button className='sidebar-dash-btn'  onClick={clickreq}>EmergencyRequests</button>
+            <button className='sidebar-dash-btn'  onClick={clickEmergency}>EmergencyRequests</button>
 
             <button className='Admin-logout'>LOG OUT</button>
             </div>
@@ -120,6 +124,7 @@ function AdminDashboard() {
             <button className='sidebar-dash-btn' onClick={clickMechanic}>Mechanic</button>
             <button className='sidebar-dash-btn' onClick={clickWorkshop}>Workshop</button>
             <button className='sidebar-dash-btn' onClick={clickreq}>Requests</button>
+            <button className='sidebar-dash-btn'  onClick={clickEmergency}>EmergencyRequests</button>
             <button className='Admin-logout'>LOG OUT</button>
             </div>
           </div>
@@ -166,6 +171,7 @@ function AdminDashboard() {
             <button className='sidebar-dash-btn' onClick={clickMechanic}>Mechanic</button>
             <button className='sidebar-dash-btn' onClick={clickWorkshop}>Workshop</button>
             <button className='sidebar-dash-btn' onClick={clickreq}>Requests</button>
+            <button className='sidebar-dash-btn'  onClick={clickEmergency}>EmergencyRequests</button>
             <button className='Admin-logout'>LOG OUT</button>
             </div>
           </div>
@@ -212,6 +218,7 @@ function AdminDashboard() {
             <button className='sidebar-dash-btn' onClick={clickMechanic}>Mechanic</button>
             <button className='sidebar-dash-btn' onClick={clickWorkshop}>Workshop</button>
             <button className='sidebar-dash-btn' onClick={clickreq}>Requests</button>
+            <button className='sidebar-dash-btn'  onClick={clickEmergency}>EmergencyRequests</button>
             <button className='Admin-logout'>LOG OUT</button>
             </div>
           </div>
@@ -245,6 +252,54 @@ function AdminDashboard() {
     )
    
   }
+  
+  if(State==5){
+    return(
+      <div>
+      <div className='row'>
+        <div className='col-3'>
+          <div className='sidebar-admin row'>
+            <h3 className='sidebar-heading'>Admin</h3>
+            <hr/>
+            <div className='sidebar-dash-btnflex'>
+            <button className='sidebar-dash-btn' onClick={clickUser}>User</button>
+            <button className='sidebar-dash-btn' onClick={clickMechanic}>Mechanic</button>
+            <button className='sidebar-dash-btn' onClick={clickWorkshop}>Workshop</button>
+            <button className='sidebar-dash-btn' onClick={clickreq}>Requests</button>
+            <button className='sidebar-dash-btn'  onClick={clickEmergency}>EmergencyRequests</button>
+            <button className='Admin-logout'>LOG OUT</button>
+            </div>
+          </div>
+         
+         
+        </div>
+  
+        <div className='col-8 AdminDash-details'>
+          <div className='row'>
+           <div className='col-3 dashboard-box'>
+            <p>Users</p>
+            <hr/> <h5>{users && users.length ? ( users.length) : '0'  }</h5>
+           </div>
+           <div className='col-3 dashboard-box'>
+           <p>Mechanic</p>
+            <hr/> <h5>{mech && mech.length ? ( mech.length) : '0'  } </h5>
+           </div>
+           <div className='col-3 dashboard-box'>
+           <p>Workshop</p>
+            <hr/> <h5>{workshop && workshop.length ? ( workshop.length) : '0'  }</h5>
+           </div>
+          </div>
+        
+         <AdminEmergencyRequest/>
+      
+        </div>
+      </div>
+     
+      </div>
+    )
+   
+  }
+
 }
 
 export default AdminDashboard
