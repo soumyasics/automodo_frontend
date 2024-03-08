@@ -45,6 +45,8 @@ import MechanicMain from './Components/Mechanic/MechanicMain';
 import Viewmyspareparts from './Components/Workshop/Viewmyspareparts';
 import Editspareparts from './Components/Workshop/Editspareparts';
 import Emergencyreq from './Components/Admin/Emergencyreq';
+import AdminEmergencyRequest from './Components/Admin/AdminEmergencyRequest';
+import AdminEmergencyView from './Components/Admin/AdminEmergencyView';
 
 const url = "http://localhost:4010";
 
@@ -109,6 +111,7 @@ function App() {
       <Route path='/dashboard-workshop-approval/:id' element={[<Adminnav/>,<WorkshopRequestApproval url={url}/>,<Footer/>]}/>
       <Route path='/nav' element={<Loginnav/>}/>
       <Route path='/admin-emg' element={[<Adminnav/>,<Emergencyreq/>,<Footer/>]}/>
+      <Route path='/dashboard-emergency-request/:id' element={[<Adminnav/>,<AdminEmergencyView url={url}/>,<Footer/>]}/>
 
 
 
