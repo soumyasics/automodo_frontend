@@ -28,7 +28,7 @@ function AdminEmergencyRequest({url}) {
 <div className='col-8'>
             <div className='row' >
                 <div className='col'>
-                    <h2>Workshop Requests</h2>
+                    <h2>Emergency Requests</h2>
                 </div>
 
             </div>
@@ -41,9 +41,9 @@ function AdminEmergencyRequest({url}) {
 
 
          return( 
-            <Link to={`/dashboard-workshop-approval/${a?._id}`} style={{textDecoration:"none",color:"black"}}>
+            <Link to={`/dashboard-emergency-request/${a?._id}`} style={{textDecoration:"none",color:"black"}}>
             <div className='row' style={{padding:"10px"}}>
-                <div className='admin_advertiser_request' style={{ display: 'flex' }} >
+                <div className='admin_emergency_request' style={{ display: 'flex' }} >
 
                 {/* <img src={img}  alt='images' width='130px' height='100px'/> */}
 
@@ -52,13 +52,13 @@ function AdminEmergencyRequest({url}) {
 
                     <div>
                         
-                    <h4 className='row'>Shop Name : {a.name}</h4>
+                    <h4 className='row'>Name : {a.name}</h4>
                     <div className='row'>
-                            <div className='col-6 work-email'>
+                            <div className='col-6 emergencywork-email'>
                             <p>Email :{a.email}</p>
 
                             </div>
-                            <div className='col-6 work-reg'>
+                            <div className='col-6 emergencywork-reg'>
                             <p id='arrow'>Reg No :{a.regno}</p>
 
                             </div>
