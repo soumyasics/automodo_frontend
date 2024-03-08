@@ -78,6 +78,8 @@ function App() {
       {/* Mechanic */}
       <Route path='/mechanic-login' element={[<Loginnav/>,<LoginMechanic/>,<Footer/>]}/>
       <Route path='/mechanic-dashboard-viewrequest' element={[<Loginnav/>,<MechanicMain data="mechanicdashboard"/>,<Footer/>]}/>
+      <Route path='/mechanic-editprofile/:id' element={[<Wnav/>,<MechanicMain data="profileedit"/>,<Footer/>]}/>
+      
 
       {/* Workshop */}
       <Route path='/workshop-login' element={[<Loginnav/>,<LoginWorkshop/>,<Footer/>]}/> 
