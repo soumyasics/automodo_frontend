@@ -3,7 +3,7 @@ import Signin_image from '../../Assets/signin_image.png'
 import './LoginMech.css'
 import SignupLogo from'../../Assets/signUpbtnlogo.png'
 import axiosInstance from '../../Baseurl'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 function LoginMechanic() {
 
   const [data,SetData]=useState({email:'',password:''})
@@ -109,12 +109,12 @@ const showPassword=()=> {
               )}
                {/* <input type="checkbox" onclick={showPassword} />Show Password */}
         </div>
-        {/* <div className='loginMech-Areset'>
-        <a className='loginMech-a' href='#'>Reset Password </a>
-        </div> */}
-        {/* <div className='loginMech-Asignup'>
+        <div className='loginMech-Areset'>
+        <Link className='loginMech-a' to='/forgotpass-mechanic'>Reset Password </Link>
+        </div> 
+         <div className='loginMech-Asignup'>
           <a className='loginMech-a'  href='#'>Signup</a>
-        </div> */}
+        </div>
         <div>
           <button className='loginMech-btn' type='submit' style={{marginTop:"20px",}}>Sign In <img className='signupLogo' src={SignupLogo} /></button>
        

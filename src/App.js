@@ -78,12 +78,14 @@ function App() {
       {/* Mechanic */}
       <Route path='/mechanic-login' element={[<Loginnav/>,<LoginMechanic/>,<Footer/>]}/>
       <Route path='/mechanic-dashboard-viewrequest' element={[<Loginnav/>,<MechanicMain data="mechanicdashboard"/>,<Footer/>]}/>
+      <Route path='/mechanic-editprofile/:id' element={[<Wnav/>,<MechanicMain data="profileedit"/>,<Footer/>]}/>
+      <Route path='/forgotpass-mechanic' element={[<Adminnav/>,<ForgotpassMechanic/>,<Footer/>]}/>
 
       {/* Workshop */}
       <Route path='/workshop-login' element={[<Loginnav/>,<LoginWorkshop/>,<Footer/>]}/> 
       <Route path='/workshop-signup' element={[<Adminnav/>,<SignupWorkshop/>,<Footer/>]}/>
       <Route path='/forgotpass-workshop' element={[<Adminnav/>,<ForgotpassWorkshop/>,<Footer/>]}/>
-      <Route path='/forgotpass-mechanic' element={[<Adminnav/>,<ForgotpassMechanic/>,<Footer/>]}/>
+      
       <Route path='/workshop-sidebar' element={[<Wnav/>,<Workshopsidebar/>,<Footer/>]}/>
       <Route path='/workshop-dashboard' element={[<Wnav/>,<Workshopmain data="workshopdashboard"/>,<Footer/>]}/>
       <Route path='/workshop-dashboard-addMechanic' element={[<Wnav/>,<Workshopmain data="addmechanic"/>,<Footer/>]}/>
