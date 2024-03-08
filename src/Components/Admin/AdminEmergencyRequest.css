@@ -1,0 +1,42 @@
+.admin_emergency_request{
+  margin-top: 30px;
+  /* margin-left: 150px; */
+      width: 900px;
+      height: 100px;
+      background-color: rgb(54, 131, 225);
+      border-radius: 20px;
+  }
+  .admin_emergency_request img{
+      padding: 10px;
+  }
+
+  /* .admin_advertiser_time{
+      padding-left: 400px;
+  } */
+  #arrow{
+      padding-top: 20px;
+  }
+  .admin_emergency_request h4{
+      padding-left: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+  }
+  .emergencywork-email p{
+      padding-top: 20px;
+      padding-left: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      /* max-width: 100px; */
+      width: 100%;
+  }
+  .emergencywork-reg p{
+      padding-left: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+      
+  }

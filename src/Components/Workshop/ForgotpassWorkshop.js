@@ -2,8 +2,12 @@ import React, { useState } from 'react'
 import Signin_image from '../../Assets/signin_image.png'
 import './ForgotpassWorkshop.css'
 import SignupLogo from'../../Assets/signUpbtnlogo.png'
+import axiosInstance from '../../Baseurl'
+import { useNavigate } from 'react-router-dom'
+
 
 function ForgotpassWorkshop() {
+  const navigate=useNavigate()
     const [data,SetData]=useState({email:'',newpassword:'',confirmpassword:''})
 const [errors, setErrors] = useState({ email: '', newpassword: '',confirmpassword:'' });
 
@@ -39,6 +43,20 @@ let signin=(a)=>{
 
   if (formIsValid) {
       console.log("data", data);
+      axiosInstance.post('/forgotPwdWorkshop',data)
+      .then((res)=>{
+        console.log(res)
+        if(res.data.status==200){
+            alert('password updated')
+            navigate("/user-login")
+           }
+           else if(res.data.status==500){
+            alert("Customer not found")
+           }
+       })
+       .catch((error)=>{
+        console.log(error)
+       })
   }
  if(data.newpassword !==data.confirmpassword){
   setErrors(prevErrors => ({
