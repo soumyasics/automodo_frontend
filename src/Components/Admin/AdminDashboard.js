@@ -71,6 +71,8 @@ function AdminDashboard() {
             <button className='sidebar-dash-btn' onClick={clickMechanic}>Mechanic</button>
             <button className='sidebar-dash-btn' onClick={clickWorkshop}>Workshop</button>
             <button className='sidebar-dash-btn'  onClick={clickreq}>Requests</button>
+            <button className='sidebar-dash-btn'  onClick={clickreq}>EmergencyRequests</button>
+
             <button className='Admin-logout'>LOG OUT</button>
             </div>
           </div>

@@ -42,6 +42,9 @@ import Viewmyservices from './Components/Workshop/Viewmyservices';
 import Editservice from './Components/Workshop/Editservice';
 import EditProfile from './Components/Workshop/EditWorkshopProfile';
 import MechanicMain from './Components/Mechanic/MechanicMain';
+import Viewmyspareparts from './Components/Workshop/Viewmyspareparts';
+import Editspareparts from './Components/Workshop/Editspareparts';
+import Emergencyreq from './Components/Admin/Emergencyreq';
 
 const url = "http://localhost:4010";
 
@@ -66,6 +69,8 @@ function App() {
       <Route path='/SparepartsInd/:id' element={[<Userhomenav/>,<SpareIndividualpage url={url}/>,<Footer/>]}/>
       <Route path='/bookservices/:id' element={[<Userhomenav/>,<Bookservice url={url}/>,<Footer/>]}/>
       <Route path='/user-profile' element={[<Userhomenav/>,<UserProfileMain  data="viewprof"/>,<Footer/>]}/>
+      <Route path='/user-viewbookedservices' element={[<Userhomenav/>,<UserProfileMain  data="bookedservices"/>,<Footer/>]}/>
+
       <Route path='/user-profile-edit/:id' element={[<Userhomenav/>,<UserProfileMain  data="editprof"/>,<Footer/>]}/>
       <Route path='/paymentservice/:id' element={[<Userhomenav/>,<Paymentservice url={url}/>,<Footer/>]}/>
 
@@ -93,6 +98,8 @@ function App() {
       <Route path='/workshop-singlereq/:id' element={[<Wnav/>,<Workshopmain data="singlerequest"/>,<Footer/>]}/>
 
       <Route path='/workshop-editservice/:id' element={[<Wnav/>,<Editservice/>,<Footer/>]}/>
+      <Route path='/workshop-viewspareparts' element={[<Wnav/>,<Viewmyspareparts url={url}/>,<Footer/>]}/>
+      <Route path='/workshop-editspareparts/:id' element={[<Wnav/>,<Editspareparts url={url}/>,<Footer/>]}/>
 
 
       {/* Admin */}
@@ -101,7 +108,8 @@ function App() {
       <Route path='/req' element={<Workshopreuest/>}/>
       <Route path='/dashboard-workshop-approval/:id' element={[<Adminnav/>,<WorkshopRequestApproval url={url}/>,<Footer/>]}/>
       <Route path='/nav' element={<Loginnav/>}/>
-      
+      <Route path='/admin-emg' element={[<Adminnav/>,<Emergencyreq/>,<Footer/>]}/>
+
 
 
      </Routes>

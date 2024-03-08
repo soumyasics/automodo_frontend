@@ -25,14 +25,11 @@ function WorkshopList() {
               <div className='workshoplist-box'>
                 {'Name : ' + user.name}
               </div>
-              <div>
+              {/* <div>
               {'Contact : ' + user.contact}
-              </div>
+              </div> */}
               <div>
               {'Email : ' + user.email}
-              </div>
-              <div>
-              {'City : ' + user.city}
               </div>
               <div>
               {'Ditrict : ' + user.district}

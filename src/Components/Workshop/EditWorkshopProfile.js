@@ -36,40 +36,30 @@ function EditProfile() {
 
 
 }
-  
+  const navigate=useNavigate()
 
   
-  const editfn=((a)=>{
-    a.preventDefault()
-
-          console.log("data", data);
-          axiosInstance.post(`/editWorkshopById/${id}`,data,{
-            headers: {
-                "Content-Type": "multipart/form-data",
-              },
-        })
-      .then((res)=>{
-        console.log(res)
-        if(res.data.status==200){
-
-            alert('Updated succesfully')
-         
-         
-
-           }
-           else if(res.data.Error.code===11000){
-            alert('This workshop has already registered')
-           }
-
-           else{
-            alert('failed')
-           }
-       })
-       .catch((error)=>{
-        console.log(error)
-       })
-
-      })
+const editfn = ((a) => {
+  a.preventDefault()
+  console.log("data", data);
+  axiosInstance.post(`/editWorkshopById/${id}`, data, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  })
+  .then((res) => {
+    console.log(res)
+    if (res.data.status == 200) {
+      alert('Updated succesfully')
+      navigate("/workshop-dashboard")
+    } else {
+      alert('failed')
+    }
+  })
+  .catch((error) => {
+    console.log(error)
+  })
+})
   
   
   return (

@@ -11,40 +11,66 @@ function SpareIndividualpage({url}) {
   const { id } = useParams()
 
 
-
-
   let [Count,SetCount]=useState(1)
   const [data, setdata] = useState({})
+  const [finprice, setfinprice] = useState(0)
 
-
-const [order,setorder]=useState({
-  userid:"",
-  sparepartid:"",
-  count:"",
-  price:""
-})
 
   useEffect(() => {
     axiosInstance.post(`/viewSparePartById/${id}`)
       .then((res) => {
         console.log(res);
         setdata(res.data.data)
+        setfinprice(res.data.data.price);
       })
       .catch((err) => {
         console.log(err)
       })
-  }, [])
+  }, [id])
+
+
   console.log(data)
-function Addcount(){
-  SetCount(Count++)
 
+const [order,setorder]=useState({
+  userid:"",
+  sparepartid:"",
+  Quantity:"",
+  price:""
+})
 
+const IncrementItem = () => {
+  if (Count < data.count) { // Check if count is less than available quantity
+    SetCount(Count + 1);
+    setfinprice(parseInt(data.price) * (Count + 1)); // Update final price
+  } else {
+    alert("No more products available");
+  }
 }
-function Subcount(){
-  SetCount(Count--)
+const DecrementItem = () => {
+  if (Count > 1) {
+    SetCount(Count - 1);
+    setfinprice(parseInt(data.price) * (Count - 1)); // Update final price
+  }
 }
 
-console.log(data);
+
+// useEffect(() => {
+//   if (Count >= 1) {
+//     setfinprice(parseInt(data.Price) * parseInt(Count))
+//   }
+//   else if (Count == 1) {
+//     setfinprice(parseInt(data.price))
+//   }
+//   else {
+//     setfinprice(parseInt(data.price))
+//   }
+// }, [data.Price, Count])
+
+
+
+
+
+
   return (
    
       <div className="row">
@@ -94,7 +120,7 @@ console.log(data);
 
             <div>
               <h6 className='spareind-spec'>Price:</h6>
-              <p>{data?.price}</p>
+              <p>{finprice}</p>
             </div>
             <hr style={{ width: '50rem' }} />
             <div>
@@ -103,9 +129,9 @@ console.log(data);
             </div>
             <hr style={{ width: '50rem' }} />
 <div>
-  <button className='spareind-btn' onClick={Addcount}>+</button><br/>
+  <button className='spareind-btn' onClick={IncrementItem}>+</button><br/>
   <p className='spareind-count'> Spare count: {Count}</p>
-  <button  className='spareind-btn'onClick={Subcount}>-</button>
+  <button  className='spareind-btn'onClick={DecrementItem}>-</button>
  
 </div>
           </div>

@@ -3,11 +3,11 @@ import './signupUser.css'
 import Signin_image from '../../Assets/signin_image.png'
 import signUp_logo from'../../Assets/signUpbtnlogo.png'
 import axiosInstance from '../../Baseurl'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function SignupUser() {
 
-  const [data,SetData]=useState({firstname:'',lastname:'',email:'',contact:'',gender:'',image:'null',password:''})
+  const [data,SetData]=useState({firstname:'',lastname:'',email:'',contact:'',gender:'',image:null,password:''})
   const [errors, setErrors] = useState({firstname:'',lastname:'',email:'',contact:'',password:''});
 
   let formIsValid;
@@ -21,7 +21,7 @@ function SignupUser() {
       SetData({...data,[b.target.name]:b.target.value})
   }
 
-
+console.log(data);
 
 setErrors(prevErrors => ({
   ...prevErrors,
@@ -190,7 +190,7 @@ setErrors(prevErrors => ({
          <p className='signupUser-p'>Already have an account,</p>
         </div>
         <div>
-        <a className='signupUser-a'href='/user-login'>Login</a>
+       <Link to="/user-login" style={{textDecoration:"none"}}><a className='signupUser-a'href=''>Login</a></Link> 
         </div>
         <div>
           <button className='signupUser-btn' type='siubmit'>Sign In</button>
