@@ -47,6 +47,8 @@ import Editspareparts from './Components/Workshop/Editspareparts';
 import Emergencyreq from './Components/Admin/Emergencyreq';
 import AdminEmergencyRequest from './Components/Admin/AdminEmergencyRequest';
 import AdminEmergencyView from './Components/Admin/AdminEmergencyView';
+import ViewServicesMechanic from './Components/Mechanic/ViewServicesMechanic';
+import IndividualServicesMechanic from './Components/Mechanic/IndividualServicesMechanic';
 
 const url = "http://localhost:4010";
 // const url= "http://hybrid.srishticampus.in:4006/"
@@ -84,6 +86,8 @@ function App() {
       <Route path='/mechanic-dashboard-viewrequest' element={[<Loginnav/>,<MechanicMain data="mechanicdashboard"/>,<Footer/>]}/>
       <Route path='/mechanic-editprofile/:id' element={[<Wnav/>,<MechanicMain data="profileedit"/>,<Footer/>]}/>
       <Route path='/forgotpass-mechanic' element={[<Adminnav/>,<ForgotpassMechanic/>,<Footer/>]}/>
+      <Route path='/view-services-mechanic' element={[<Adminnav/>,<ViewServicesMechanic/>,<Footer/>]}/>
+      <Route path='/individual-services-mechanic' element={[<Adminnav/>,<IndividualServicesMechanic/>,<Footer/>]}/>
 
       {/* Workshop */}
       <Route path='/workshop-login' element={[<Loginnav/>,<LoginWorkshop/>,<Footer/>]}/> 
