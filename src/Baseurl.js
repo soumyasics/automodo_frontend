@@ -4,7 +4,7 @@ const axiosInstance = axios.create({
 
   //server api
 
-  // baseURL: '', 
+  //  baseURL: 'http://hybrid.srishticampus.in:4006/automodo_api/', 
 
 //local api
 

@@ -49,11 +49,13 @@ import AdminEmergencyRequest from './Components/Admin/AdminEmergencyRequest';
 import AdminEmergencyView from './Components/Admin/AdminEmergencyView';
 
 const url = "http://localhost:4010";
-
+// const url= "http://hybrid.srishticampus.in:4006/"
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter
+    //  basename='/automodo_api'
+     >
     <Routes>
 
       <Route path='/' element={[<Navbar/>,<MainAdmin/>,<Footer/>]}/>
