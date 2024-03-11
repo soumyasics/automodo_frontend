@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import "./Viewsinglereq.css"
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import axiosInstance from '../../Baseurl'
 
 function Viewsinglereq() {
     const {id}=useParams()
+    const wid=localStorage.getItem("workshopid")
+
 
     const[data,setData]=useState({})
+    const[mechanic,setmechanic]=useState([])
+
+    const [selectedMechanic, setSelectedMechanic] = useState(""); 
 
     useEffect(()=>{
         axiosInstance.post(`viewbookigbyid/${id}`)
@@ -17,6 +22,18 @@ function Viewsinglereq() {
         .catch((err)=>{
             console.log(err);
         })
+    },[])
+
+    useEffect(()=>{
+        axiosInstance.post(`viewMechanicsByShopid/${wid}`)
+        .then((res)=>{
+            console.log(res);
+            setmechanic(res.data.data)
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+
     },[])
 
     const dateTime = new Date(data.bookingdate);
@@ -31,11 +48,30 @@ const approvefn=((b)=>{
     .then((res)=>{
         console.log(res);
         if(res.data.status==200){
-            alert("Request approved succesfully")
+            // alert("Request approved succesfully")
         }
         else{
             alert("something went wrong")
         }
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+})
+const navigate=useNavigate()
+
+const assignmech=((e)=>{
+    e.preventDefault()
+    axiosInstance.post(`assignMechForService/${id}`, { mechid: selectedMechanic })
+    .then((res)=>{
+        console.log(res);
+        if(res.data.status==200){
+             alert("Request approved and assign mechnaic succesfully")
+            navigate("/workshop-dashboard-viewrequest")
+        }
+    else{
+        alert("Please select a Mechanic")
+    }
     })
     .catch((err)=>{
         console.log(err);
@@ -83,10 +119,37 @@ const approvefn=((b)=>{
                 <span className="value">Paid</span>
             </div>
 
+            <div className="details">
+            <h4 style={{marginLeft:"140px",fontWeight:"600"}}> Assign Mechanic: </h4> 
+             <select style={{width:"200px",height:"40px",marginLeft:"100px",border:"2px solid black",borderRadius:"12px"}}
+             value={selectedMechanic} 
+             onChange={(e) => setSelectedMechanic(e.target.value)}
+             required 
+             >
+                <option >select</option>
+
+                {mechanic.length ?(
+              mechanic.map((a)=>{    
+             return( 
+                    <option key={a._id} value={a._id}>{a.firstname} {a.lastname}</option>
+                    )
+                })
+             ) : (
+               <div>No data available</div>
+             )}  
+            
+        
+
+                </select>
+            </div>
+
 
            <div className='row'>
             <div className='col-6'>
-                <button type='submit' className='btn btn-info' onClick={approvefn}>Approve Request</button>
+                <button type='submit' className='btn btn-info'  onClick={(e) => {
+                                        approvefn(e);
+                                        assignmech(e);
+                                      }}>Approve Request</button>
             </div>
             <div className='col-6'>
             <button type='submit' className='btn btn-danger' >Delete Request</button>

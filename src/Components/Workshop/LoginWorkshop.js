@@ -44,8 +44,7 @@ let signin=(a)=>{
 
   if (formIsValid) {
       console.log("data", data);
-
-      axiosInstance.post(`loginworkshops`,data)
+      axiosInstance.post(`/loginworkshops`,data)
       .then((result) => {
         console.log("data entered", result);
         if (result.data.status == 200) {
@@ -85,14 +84,14 @@ let signin=(a)=>{
         </div>
         <div>
           <label className='loginWorkshop-label'>Email</label>
-          <input className='loginWorkshop-input1' name='email' value={data.email} onChange={change}  type='text' placeholder='E-mail'/>
+          <input className='loginWorkshop-input1'  type='text' name='email' value={data.email} onChange={change}  placeholder='E-mail'/>
           {errors.email && (
                 <div className="text-danger input-validation">{errors.email}</div>
               )}
         </div>
         <div>
           <label className='loginWorkshop-label'>Password</label>
-          <input className='loginWorkshop-input'  name='password' value={data.password} onChange={change}  type='password' placeholder='Password'/>
+          <input className='loginWorkshop-input'  type='password'  name='password' value={data.password} onChange={change}  placeholder='Password'/>
           {errors.password && (
                 <div className="text-danger input-validation">{errors.password}</div>
               )}

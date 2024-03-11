@@ -8,7 +8,9 @@ import MechanicList from '../Mechanic/MechanicList';
 import WorkshopList from '../Workshop/WorkshopList';
 import Workshoprequest from './Workshoprequest';
 import AdminEmergencyRequest from './AdminEmergencyRequest';
-const url = "http://localhost:4010";
+// const url = "http://localhost:4010";
+const url= "http://hybrid.srishticampus.in:4006/"
+
 
 function AdminDashboard() {
 

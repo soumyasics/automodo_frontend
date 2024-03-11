@@ -27,6 +27,9 @@ function Userhomenav() {
           <li className='navbar-li'><Link className='nav-ahref'to='/Sparepartslist'>Spareparts</Link></li>
         </div>
         <div>
+          <li className='navbar-li'><Link className='nav-ahref'to='/emergency'>Emergeny Service</Link></li>
+        </div>
+        <div>
           <li className='navbar-li'><Link className='nav-ahref'to='/user-profile'>Profile</Link></li>
         </div>
        {/* <div>

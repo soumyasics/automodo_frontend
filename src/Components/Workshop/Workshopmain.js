@@ -17,7 +17,9 @@ import Viewsinglereq from './Viewsinglereq'
 
 
 
-const url = "http://localhost:4010";
+// const url = "http://localhost:4006";
+const url= "http://hybrid.srishticampus.in:4006/"
+
 
 
 function Workshopmain({data}) {

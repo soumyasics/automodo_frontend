@@ -3,6 +3,7 @@ import ProfileSidebar from './ProfileSidebar';
 import UserProfile from './UserProfile';
 import UserProfileEdit from './UserProfileEdit';
 import Userviewbookedservices from './Userviewbookedservices';
+import Viewmysparepartbookig from './Viewmysparepartbookig';
 // import "./Workshopmain.css"
 // import Adminsidebar from './Adminsidebar'
 // import Workshopdashboard from './Workshopdashboard'
@@ -10,7 +11,8 @@ import Userviewbookedservices from './Userviewbookedservices';
 // import Addservice from './Addservice'
 // import Viewmyservices from './Viewmyservices'
 
-const url = "http://localhost:4010";
+// const url = "http://localhost:4006";
+const url= "http://hybrid.srishticampus.in:4006/"
 
 
 function UserProfileMain({data}) {
@@ -25,6 +27,8 @@ function UserProfileMain({data}) {
           <UserProfileEdit/>
         ):data=="bookedservices"?(
           <Userviewbookedservices/>
+        ):data=="viewbookedsparepart"?(
+          <Viewmysparepartbookig url={url}/>
         )
         
         :'no data'

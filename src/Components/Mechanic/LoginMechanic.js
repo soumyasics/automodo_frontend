@@ -52,8 +52,8 @@ let signin=(a)=>{
           .then((result) => {
             console.log("data entered", result);
             if (result.data.status == 200) {
-              localStorage.setItem("shopid", result.data.data._id);
-              console.log("shopid", result.data.data._id);
+              localStorage.setItem("mechid", result.data.data._id);
+              console.log("mechid", result.data.data._id);
               alert("login Sucessfully...");
               navigate("/mechanic-dashboard-viewrequest")
              

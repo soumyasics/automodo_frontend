@@ -26,8 +26,13 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
 function MainAdmin() {
+
+  const userid=localStorage.getItem("userid")
+  console.log(userid);
+
   return (
     <div>
+     {userid && (
       <div className='Main-box'>
         <p className='main-heading'>Keep Your Car Running Smoothly with Easy,<br/> Convenient Service</p> 
         <div className='main-search'>
@@ -36,6 +41,9 @@ function MainAdmin() {
           <button  className='main-search-btn'>Search</button>
         </div>
       </div>
+     )}
+
+
       <div>
         <img className='main-img' src={imghome}  alt='mainimage'/>
       </div>

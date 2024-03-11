@@ -48,7 +48,7 @@ let signin=(a)=>{
         console.log(res)
         if(res.data.status==200){
             alert('password updated')
-            navigate("/user-login")
+            navigate("/workshop-login")
            }
            else if(res.data.status==500){
             alert("Customer not found")
