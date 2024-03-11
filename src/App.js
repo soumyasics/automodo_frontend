@@ -49,14 +49,16 @@ import AdminEmergencyRequest from './Components/Admin/AdminEmergencyRequest';
 import AdminEmergencyView from './Components/Admin/AdminEmergencyView';
 import ViewServicesMechanic from './Components/Mechanic/ViewServicesMechanic';
 import IndividualServicesMechanic from './Components/Mechanic/IndividualServicesMechanic';
+import Viewsparepartbooking from './Components/Workshop/Viewsparepartbooking';
+import Emergency from './Components/User/Emergency';
 
-const url = "http://localhost:4010";
-// const url= "http://hybrid.srishticampus.in:4006/"
+// const url = "http://localhost:4006";
+const url= "http://hybrid.srishticampus.in:4006/"
 
 function App() {
   return (
     <BrowserRouter
-    //  basename='/automodo_api'
+      basename='/automodo_api'
      >
     <Routes>
 
@@ -75,16 +77,18 @@ function App() {
       <Route path='/SparepartsInd/:id' element={[<Userhomenav/>,<SpareIndividualpage url={url}/>,<Footer/>]}/>
       <Route path='/bookservices/:id' element={[<Userhomenav/>,<Bookservice url={url}/>,<Footer/>]}/>
       <Route path='/user-profile' element={[<Userhomenav/>,<UserProfileMain  data="viewprof"/>,<Footer/>]}/>
-      <Route path='/user-viewbookedservices' element={[<Userhomenav/>,<UserProfileMain  data="bookedservices"/>,<Footer/>]}/>
+      <Route path='/user-viewbookedservices' element={[<Userhomenav/>,<UserProfileMain  data="bookedservices" url={url}/>,<Footer/>]}/>
+      <Route path='/user-viewbookedspareparts' element={[<Userhomenav/>,<UserProfileMain  data="viewbookedsparepart"/>,<Footer/>]}/>
 
       <Route path='/user-profile-edit/:id' element={[<Userhomenav/>,<UserProfileMain  data="editprof"/>,<Footer/>]}/>
       <Route path='/paymentservice/:id' element={[<Userhomenav/>,<Paymentservice url={url}/>,<Footer/>]}/>
+      <Route path='/emergency' element={[<Userhomenav/>,<Emergency />,<Footer/>]}/>
 
 
       {/* Mechanic */}
       <Route path='/mechanic-login' element={[<Loginnav/>,<LoginMechanic/>,<Footer/>]}/>
-      <Route path='/mechanic-dashboard-viewrequest' element={[<Loginnav/>,<MechanicMain data="mechanicdashboard"/>,<Footer/>]}/>
-      <Route path='/mechanic-editprofile/:id' element={[<Wnav/>,<MechanicMain data="profileedit"/>,<Footer/>]}/>
+      <Route path='/mechanic-dashboard-viewrequest' element={[<Adminnav/>,<MechanicMain data="mechanicdashboard"/>,<Footer/>]}/>
+      <Route path='/mechanic-editprofile/:id' element={[<Adminnav/>,<MechanicMain data="profileedit"/>,<Footer/>]}/>
       <Route path='/forgotpass-mechanic' element={[<Adminnav/>,<ForgotpassMechanic/>,<Footer/>]}/>
       <Route path='/view-services-mechanic' element={[<Adminnav/>,<ViewServicesMechanic/>,<Footer/>]}/>
       <Route path='/individual-services-mechanic' element={[<Adminnav/>,<IndividualServicesMechanic/>,<Footer/>]}/>
@@ -110,6 +114,7 @@ function App() {
       <Route path='/workshop-editservice/:id' element={[<Wnav/>,<Editservice/>,<Footer/>]}/>
       <Route path='/workshop-viewspareparts' element={[<Wnav/>,<Viewmyspareparts url={url}/>,<Footer/>]}/>
       <Route path='/workshop-editspareparts/:id' element={[<Wnav/>,<Editspareparts url={url}/>,<Footer/>]}/>
+      <Route path='/workshop-viewbookings' element={[<Wnav/>,<Viewsparepartbooking url={url}/>,<Footer/>]}/>
 
 
       {/* Admin */}

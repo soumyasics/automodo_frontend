@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./Viewsinglereq.css"
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import axiosInstance from '../../Baseurl'
 
 function Viewsinglereq() {
@@ -58,14 +58,23 @@ const approvefn=((b)=>{
         console.log(err);
     })
 })
+const navigate=useNavigate()
 
-const assignmech=(()=>{
+const assignmech=((e)=>{
+    e.preventDefault()
     axiosInstance.post(`assignMechForService/${id}`, { mechid: selectedMechanic })
     .then((res)=>{
         console.log(res);
         if(res.data.status==200){
              alert("Request approved and assign mechnaic succesfully")
+            navigate("/workshop-dashboard-viewrequest")
         }
+    else{
+        alert("Please select a Mechanic")
+    }
+    })
+    .catch((err)=>{
+        console.log(err);
     })
 })
 
@@ -115,8 +124,9 @@ const assignmech=(()=>{
              <select style={{width:"200px",height:"40px",marginLeft:"100px",border:"2px solid black",borderRadius:"12px"}}
              value={selectedMechanic} 
              onChange={(e) => setSelectedMechanic(e.target.value)}
+             required 
              >
-                <option>select</option>
+                <option >select</option>
 
                 {mechanic.length ?(
               mechanic.map((a)=>{    
@@ -141,9 +151,6 @@ const assignmech=(()=>{
                                         assignmech(e);
                                       }}>Approve Request</button>
             </div>
-            {/* <div className='col-6'>
-                    <button type='submit' className='btn btn-danger' onClick={assignmech}>Assign Mechanic</button>
-                </div> */}
             <div className='col-6'>
             <button type='submit' className='btn btn-danger' >Delete Request</button>
 </div>

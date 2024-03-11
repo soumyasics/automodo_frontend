@@ -76,12 +76,12 @@ function ProfileSidebar(){
 
 </div>
 
-{/* <div className="user_profile_sidebar_padding ">
-<Link to='/' >
+<div className="user_profile_sidebar_padding ">
+<Link to='/user-viewbookedspareparts' >
 <div className="user_profile_sidebar_account_info">
   <div className="d-flex mt-2 ">
     <i class="ri-advertisement-fill user_profile_sidebar_icons"></i>{" "}
-    <p>Null</p>
+    <p>View My Booked Spareparts</p>
   </div>
 
   <div className="mt-2">
@@ -90,7 +90,7 @@ function ProfileSidebar(){
 </div>
 </Link>
 
-</div> */}
+</div>
 {/* <div className="user_profile_sidebar_padding ">
 <Link to='/' >
 <div className="user_profile_sidebar_account_info">
@@ -166,7 +166,7 @@ function ProfileSidebar(){
 
 </div>
 <div className="user_profile_sidebar_padding ">
-<Link to='' >
+{/* <Link to='' >
 <div className="user_profile_sidebar_account_info">
   <div className="d-flex mt-2">
     <i class="ri-error-warning-fill user_profile_sidebar_icons"></i>
@@ -178,7 +178,7 @@ function ProfileSidebar(){
   </div>
 </div>
 </Link>
-
+ */}
 </div>
 <Link to='/' >
   <div className="user_profile_sidebar_logoybtn mt-4 mb-4">
