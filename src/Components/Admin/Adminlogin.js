@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Signin_image from '../../Assets/signin_image.png'
 import SignupLogo from'../../Assets/signUpbtnlogo.png'
+import './Adminlogin.css'
 import axiosInstance from '../../Baseurl'
 import { useNavigate } from 'react-router-dom'
 
@@ -39,25 +40,25 @@ const submitfn=((b)=>{
     <div>
     <form onSubmit={submitfn}>
     <div>
-      <img className="loginWorkshop-img"src={Signin_image} alt='Signin_image'/>
+      <img className="loginAdmin-img"src={Signin_image} alt='Signin_image'/>
     </div>
    
-    <div className='loginWorkshop-main'>
+    <div className='loginAdmin-main'>
       <div>
-        <h2 className='loginWorkshop-head'>Admin Sign In</h2>
+        <h2 className='loginAdmin-head'>Admin Sign In</h2>
       </div>
       <div>
-        <label className='loginWorkshop-label'>Username</label>
-        <input className='loginWorkshop-input1' name='username'  type='text' placeholder='Username' onChange={changefn}/>
+        <label className='loginAdmin-label'>Username</label>
+        <input className='loginAdmin-input' name='username'  type='text' placeholder='Username' onChange={changefn}/>
       </div>
       <div>
-        <label className='loginWorkshop-label'>Password</label>
-        <input className='loginWorkshop-input'  name='password'  type='password' placeholder='Password'onChange={changefn}/>
+        <label className='loginAdmin-label'>Password</label>
+        <input className='loginAdmin-input'  name='password'  type='password' placeholder='Password'onChange={changefn}/>
        
       </div>
      
       <div>
-        <button className='loginWorkshop-btn' type='submit'  style={{marginTop:"20px"}}>Sign In  <img className='signupLogo2' src={SignupLogo} /></button>
+        <button className='loginAdmin-btn' type='submit'  style={{marginTop:"20px"}}>Sign In  <img className='signupLogo2' src={SignupLogo} /></button>
 
       </div>
       </div>

@@ -52,13 +52,13 @@ import IndividualServicesMechanic from './Components/Mechanic/IndividualServices
 import Viewsparepartbooking from './Components/Workshop/Viewsparepartbooking';
 import Emergency from './Components/User/Emergency';
 
-// const url = "http://localhost:4006";
-const url= "http://hybrid.srishticampus.in:4006/"
+const url = "http://localhost:4006";
+// const url= "http://hybrid.srishticampus.in:4006/"
 
 function App() {
   return (
     <BrowserRouter
-      basename='/automodo_api'
+      // basename='/automodo_api'
      >
     <Routes>
 
