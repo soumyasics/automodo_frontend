@@ -42,7 +42,7 @@ function AdminEmergencyRequest({url}) {
 
          return( 
             <Link to={`/dashboard-emergency-request/${a?._id}`} style={{textDecoration:"none",color:"black"}}>
-            <div className='row' style={{padding:"10px"}}>
+            <div className='row workshop-emergency-request-main-box' style={{padding:"10px"}}>
                 <div className='admin_emergency_request' style={{ display: 'flex' }} >
 
                 {/* <img src={img}  alt='images' width='130px' height='100px'/> */}
