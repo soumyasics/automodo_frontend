@@ -3,6 +3,7 @@ import "./Workshoprequest.css"
 import img from "../../Assets/cat3.png"
 import axiosInstance from '../../Baseurl'
 import { Link } from 'react-router-dom'
+import AdminDashboard from './AdminDashboard'
 
 
 
@@ -25,6 +26,7 @@ function Workshoprequest({url}) {
   return (
     
     <div className='container'>
+
 <div className='col-8'>
             <div className='row' >
                 <div className='col'>
@@ -42,7 +44,8 @@ function Workshoprequest({url}) {
 
          return( 
             <Link to={`/dashboard-workshop-approval/${a?._id}`} style={{textDecoration:"none",color:"black"}}>
-            <div className='row' style={{padding:"10px"}}>
+            <div className='row workshop-request-main-box' style={{padding:"10px"}}>
+              
                 <div className='admin_advertiser_request' style={{ display: 'flex' }} >
 
                 {/* <img src={img}  alt='images' width='130px' height='100px'/> */}
