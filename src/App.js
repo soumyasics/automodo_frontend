@@ -58,7 +58,7 @@ const url= "http://hybrid.srishticampus.in:4006/"
 function App() {
   return (
     <BrowserRouter
-      basename='/automodo_api'
+      basename='/automodo'
      >
     <Routes>
 
