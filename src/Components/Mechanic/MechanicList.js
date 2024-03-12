@@ -16,7 +16,7 @@ function MechanicList() {
  },[])
  console.log(users)
   return (
-    <div>
+    <div className='mechanicList-main-box'>
       <div>
         <h3 className='MechanicList-heading'>MECHANIC LIST :</h3>
         {users && users.length ? (

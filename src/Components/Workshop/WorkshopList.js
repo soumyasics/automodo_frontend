@@ -16,7 +16,7 @@ function WorkshopList() {
  },[])
  console.log(users)
   return (
-    <div>
+    <div className='workshopList-main-box'>
       <div>
         <h3 className=' WorkshopList-heading'>WORKSHOP LIST :</h3>
         {users && users.length ? (

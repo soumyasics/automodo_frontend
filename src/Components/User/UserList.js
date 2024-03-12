@@ -17,7 +17,7 @@ function UserList() {
  console.log(users)
   return (
     <div>
-      <div>
+      <div className='usersList-main-box'>
         <h3 className='usersList-heading'>USERS LIST :</h3>
         {users && users.length ? (
           users.map((user) => ( // Changed the map function
