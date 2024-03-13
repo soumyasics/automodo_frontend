@@ -16,8 +16,8 @@ function MechanicList() {
  },[])
  console.log(users)
   return (
-    <div className='mechanicList-main-box'>
-      <div>
+    <div>
+      <div  className='mechanicList-main-box'>
         <h3 className='MechanicList-heading'>MECHANIC LIST :</h3>
         {users && users.length ? (
           users.map((user) => ( // Changed the map function

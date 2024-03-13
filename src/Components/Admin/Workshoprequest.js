@@ -28,25 +28,19 @@ function Workshoprequest({url}) {
     <div className='container'>
 
 <div className='col-8'>
-            <div className='row' >
-                <div className='col'>
-                    <h2>Workshop Requests</h2>
-                </div>
-
+<div className=' workshop-request-main-box' style={{padding:"10px"}}>
+            <h3 className=' Workshop-request-heading'>WORKSHOP LIST</h3>
+            <div>
             </div>
              {data.length ?(
           data.map((a)=>{
-
-           
             //   const dateTime = new  Date(a.date);
             //   const timeString = dateTime.toLocaleTimeString();
-
-
          return( 
-            <Link to={`/dashboard-workshop-approval/${a?._id}`} style={{textDecoration:"none",color:"black"}}>
-            <div className='row workshop-request-main-box' style={{padding:"10px"}}>
-              
-                <div className='admin_advertiser_request' style={{ display: 'flex' }} >
+          <div  >
+            <Link to={`/dashboard-workshop-approval/${a?._id}`}  style={{textDecoration:"none",color:"black"}}>
+          
+                <div className='admin_advertiser_request workshop-request-box' style={{ display: 'flex' }} >
 
                 {/* <img src={img}  alt='images' width='130px' height='100px'/> */}
 
@@ -55,7 +49,8 @@ function Workshoprequest({url}) {
 
                     <div>
                         
-                    <h4 className='row'>Shop Name : {a.name}</h4>
+                    <h4>Shop Name : {a.name}</h4>
+                    <hr/>
                     <div className='row'>
                             <div className='col-6 work-email'>
                             <p>Email :{a.email}</p>
@@ -69,10 +64,11 @@ function Workshoprequest({url}) {
                     
                     </div>
                     
-                </div>
-            </div>
+                    </div>
+         
             
             </Link>
+            </div>
       )
     })
  ) : (
@@ -83,7 +79,7 @@ function Workshoprequest({url}) {
 
 </div>
     </div>
-  )
+    </div>)
 
 }
 export default Workshoprequest
