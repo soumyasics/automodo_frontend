@@ -113,7 +113,7 @@ const showPassword=()=> {
         <Link className='loginMech-a' to='/forgotpass-mechanic'>Reset Password </Link>
         </div> 
          <div className='loginMech-Asignup'>
-          <a className='loginMech-a'  href='#'>Signup</a>
+          {/* <a className='loginMech-a'  href='#'>Signup</a> */}
         </div>
         <div>
           <button className='loginMech-btn' type='submit' style={{marginTop:"20px",}}>Sign In <img className='signupLogo' src={SignupLogo} /></button>

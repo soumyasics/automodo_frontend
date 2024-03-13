@@ -63,6 +63,7 @@ return (
   <div className="col-12">
   <div className="container">
     <div className="row singlecontributer-main">
+    <h3 className=' request-heading'>WORKSHOP REQUEST</h3>
 <div style={{padding:"20px"}}>
       <img src={`${url}/${state.image && state.image.filename}`} alt='image' width="530px" height="200px"/></div>
       <div className="col-4" >Name :</div>
@@ -95,8 +96,8 @@ return (
         <input type="text" value={state.district}/>
       </div>{" "}
       <div className="singlecontributer-button">
-      <button type="submit" className="col-3 btn btn-primary" onClick={acceptfn}>Accept</button>
-      <button type="submit" className="col-3 btn btn-danger" onClick={deletefn}>Delete</button>
+      <button type="submit" className="col-2 btn btn-warning" onClick={acceptfn}>Accept</button>
+      <button type="submit" className="col-2 btn btn-danger" onClick={deletefn}>Delete</button>
       </div>
     </div>
   </div>

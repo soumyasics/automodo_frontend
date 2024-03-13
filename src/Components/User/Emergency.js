@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Emergency.css"
 import axiosInstance from "../../Baseurl";
 
@@ -25,7 +25,7 @@ function Emergency() {
         .then((res)=>{
             console.log(res);
             if(res.data.status==200){
-                alert("Your request has been succesfully send and Mechanic will contact you shortly")
+                alert("Your request has been succesfully send , Mechanic will contact you shortly")
                 window.location.reload(false)
             }
         })
@@ -34,6 +34,18 @@ function Emergency() {
         })
 
     })
+
+const[name,setName]=useState({})
+    useEffect(()=>{
+      axiosInstance.post(`viewCustById/${userid}`)
+      .then((res)=>{
+        console.log(res);
+        setName(res.data.data)
+      })
+      .catch((err)=>{
+        console.log(err);
+    })
+    },[])
     
   return (
     <div>
@@ -44,7 +56,7 @@ function Emergency() {
             <div className="emergency-user-main-box">
                 <h2>Emergency Request</h2>
                 <div className="col-12">
-                    <p className="emergency-para">UserName:ekfhedfkjhdklfkld</p>
+                    <p className="emergency-para">UserName: {name.firstname} {name.lastname}</p>
 
                 </div>
                 <div className="District-emergecy">

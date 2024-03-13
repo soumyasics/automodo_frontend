@@ -10,7 +10,7 @@ function AdminEmergencyRequest({url}) {
 
     const[data,setData]=useState([])
     useEffect(()=>{
-        axiosInstance.post(`/viewWorkshopReqs`,data)
+        axiosInstance.post(`/adminApproveEmergencyReqs`,data)
         .then((res)=>{
             console.log(res.data);
             setData(res.data.data)
@@ -25,25 +25,21 @@ function AdminEmergencyRequest({url}) {
   return (
     
     <div className='container'>
-<div className='col-8'>
-            <div className='row' >
-                <div className='col'>
-                    <h2>Emergency Requests</h2>
-                </div>
 
+<div className='col-8'>
+<div className=' emergency-request-main-box' style={{padding:"10px"}}>
+            <h3 className=' emergency-request-heading'>EMERGENCY REQUEST</h3>
+            <div>
             </div>
              {data.length ?(
           data.map((a)=>{
-
-           
             //   const dateTime = new  Date(a.date);
             //   const timeString = dateTime.toLocaleTimeString();
-
-
          return( 
-            <Link to={`/dashboard-emergency-request/${a?._id}`} style={{textDecoration:"none",color:"black"}}>
-            <div className='row workshop-emergency-request-main-box' style={{padding:"10px"}}>
-                <div className='admin_emergency_request' style={{ display: 'flex' }} >
+          <div  >
+            <Link to={`/dashboard-workshop-emergency-approval/${a?._id}`}  style={{textDecoration:"none",color:"black"}}>
+          
+                <div className='emergency-admin_advertiser_request emergency-request-box' style={{ display: 'flex' }} >
 
                 {/* <img src={img}  alt='images' width='130px' height='100px'/> */}
 
@@ -52,13 +48,14 @@ function AdminEmergencyRequest({url}) {
 
                     <div>
                         
-                    <h4 className='row'>Name : {a.name}</h4>
+                    <h4>Shop Name : {a.name}</h4>
+                    <hr/>
                     <div className='row'>
-                            <div className='col-6 emergencywork-email'>
+                            <div className='col-6 emergency-work-email'>
                             <p>Email :{a.email}</p>
 
                             </div>
-                            <div className='col-6 emergencywork-reg'>
+                            <div className='col-6 emergency-work-reg'>
                             <p id='arrow'>Reg No :{a.regno}</p>
 
                             </div>
@@ -66,10 +63,11 @@ function AdminEmergencyRequest({url}) {
                     
                     </div>
                     
-                </div>
-            </div>
+                    </div>
+         
             
             </Link>
+            </div>
       )
     })
  ) : (
@@ -80,7 +78,7 @@ function AdminEmergencyRequest({url}) {
 
 </div>
     </div>
-  )
+    </div>)
 
 }
 export default AdminEmergencyRequest

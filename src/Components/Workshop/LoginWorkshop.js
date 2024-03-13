@@ -100,7 +100,7 @@ let signin=(a)=>{
         <Link className='loginUser-a' to='/forgotpass-workshop'>Reset Password </Link>
         </div>
         <div className='loginWorkshop-Asignup'>
-          <a className='loginWorkshop-a' href='/workshop-signup'>Signup</a>
+        <Link to="/workshop-signup"><a className='loginWorkshop-a' href=''>Signup</a></Link>
         </div>
         <div>
           <button className='loginWorkshop-btn' type='submit'>Sign In  <img className='signupLogo2' src={SignupLogo} /></button>

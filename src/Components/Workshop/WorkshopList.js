@@ -16,8 +16,8 @@ function WorkshopList() {
  },[])
  console.log(users)
   return (
-    <div className='workshopList-main-box'>
-      <div>
+    <div>
+      <div className='workshopList-main-box'>
         <h3 className=' WorkshopList-heading'>WORKSHOP LIST :</h3>
         {users && users.length ? (
           users.map((user) => ( // Changed the map function

@@ -31,6 +31,7 @@
   }
   .District-emergecy ::placeholder{
     color: black;
+    padding: 10px;
   }
   .District-emergecy textarea{
     width: 400px;
