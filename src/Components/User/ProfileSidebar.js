@@ -136,20 +136,6 @@ function ProfileSidebar(){
 </Link> */}
 
 </div>
-<div className="user_profile_sidebar_padding ">
-<Link to='' >
-<div className="user_profile_sidebar_account_info">
-  <div className="d-flex mt-2">
-    <i class="ri-mail-volume-line user_profile_sidebar_icons"></i>
-    <p> </p>
-  </div>
-
-  <div className="mt-2">
-    <i class="ri-arrow-right-s-line user_profile_sidebar_icons"></i>
-    <p></p>
-  </div>
-</div>
-</Link>
 {/* <Link to='' >
 <div className="admin_profile_sidebar_account_info">
   <div className="d-flex mt-2">
@@ -164,8 +150,7 @@ function ProfileSidebar(){
 </div>
 </Link> */}
 
-</div>
-<div className="user_profile_sidebar_padding ">
+{/* <div className="user_profile_sidebar_padding "> */}
 {/* <Link to='' >
 <div className="user_profile_sidebar_account_info">
   <div className="d-flex mt-2">
@@ -179,7 +164,7 @@ function ProfileSidebar(){
 </div>
 </Link>
  */}
-</div>
+{/* </div> */}
 <Link to='/' >
   <div className="user_profile_sidebar_logoybtn mt-4 mb-4">
 <button className="btn btn-secondary" onClick={handleLogout}>

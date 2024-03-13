@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import 'remixicon/fonts/remixicon.css'
+
 import Footer from './Components/Common/Footer';
 import Navbar from './Components/Common/Navbar';
 import MainAdmin from './Components/Admin/MainAdmin';
@@ -52,13 +54,18 @@ import IndividualServicesMechanic from './Components/Mechanic/IndividualServices
 import Viewsparepartbooking from './Components/Workshop/Viewsparepartbooking';
 import Emergency from './Components/User/Emergency';
 
-// const url = "http://localhost:4006";
-const url= "http://hybrid.srishticampus.in:4006/"
+
+
+
+import AdminDashboardMain from './Components/Admin/AdminDashboardMain'
+
+const url = "http://localhost:4006";
+// const url= "http://hybrid.srishticampus.in:4006/"
 
 function App() {
   return (
     <BrowserRouter
-      basename='/automodo'
+      // basename='/automodo'
      >
     <Routes>
 
@@ -119,15 +126,19 @@ function App() {
 
       {/* Admin */}
       <Route path='/admin-login' element={[<Loginnav/>,<Adminlogin/>,<Footer/>]}/>
-      <Route path='/admin-dashboard' element={[<Adminnav/>,<AdminDashboard/>,<Footer/>]}/>
+      {/* <Route path='/admin-dashboard' element={[<Adminnav/>,<AdminDashboard/>,<Footer/>]}/> */}
       <Route path='/req' element={<Workshopreuest/>}/>
       <Route path='/dashboard-workshop-approval/:id' element={[<Adminnav/>,<WorkshopRequestApproval url={url}/>,<Footer/>]}/>
       <Route path='/nav' element={<Loginnav/>}/>
       <Route path='/admin-emg' element={[<Adminnav/>,<Emergencyreq/>,<Footer/>]}/>
       <Route path='/dashboard-emergency-request/:id' element={[<Adminnav/>,<AdminEmergencyView url={url}/>,<Footer/>]}/>
-
-
-
+      <Route path='/admin-dashboard' element={[<Adminnav/>,<AdminDashboardMain  data="Admindashboard"/>,<Footer/>]}/>
+      <Route path='/admin-dashboard-userlist' element={[<Adminnav/>,<AdminDashboardMain  data="UserList"/>,<Footer/>]}/>
+      <Route path='/admin-dashboard-mechaniclist' element={[<Adminnav/>,<AdminDashboardMain  data="mechanic"/>,<Footer/>]}/>
+      <Route path='/admin-dashboard-workshoplist' element={[<Adminnav/>,<AdminDashboardMain  data="workshop"/>,<Footer/>]}/>
+      <Route path='/admin-dashboard-request' element={[<Adminnav/>,<AdminDashboardMain  data="request"/>,<Footer/>]}/>
+      <Route path='/admin-dashboard-emergency-request' element={[<Adminnav/>,<AdminDashboardMain  data="emergency"/>,<Footer/>]}/>
+      
      </Routes>
      </BrowserRouter>
    
