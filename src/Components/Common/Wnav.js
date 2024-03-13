@@ -31,6 +31,9 @@ function Wnav() {
         <div>
           <li className='navbar-li'><Link className='nav-ahref'to='/workshop-viewbookings'>View Bookings</Link></li>
         </div>
+        <div>
+          <li className='navbar-li'><Link className='nav-ahref' to='/workshop-emergencyrequest'>Emergency request</Link></li>
+        </div>
 
         <div>
           {/* <img className='dropdown_pic'src={drop_pic} alt='dropdown_pic'/> */}
@@ -39,6 +42,7 @@ function Wnav() {
         <div>
           <li className='navbar-li'><Link className='nav-ahref' to='/workshop-dashboard'>Profile</Link></li>
         </div>
+       
 
         </div>
 

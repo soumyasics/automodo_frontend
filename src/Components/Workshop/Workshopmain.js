@@ -13,6 +13,7 @@ import EditProfile from './EditWorkshopProfile'
 
 
 import Viewsinglereq from './Viewsinglereq'
+import WorkshopEmergencyrequest from './WorkshopEmergencyrequest'
 
 
 
@@ -40,7 +41,8 @@ function Workshopmain({data}) {
         ):data=="singlerequest"?(
           <Viewsinglereq/>
         )
-        :<SignupMech/> }
+        :<SignupMech/> 
+        }
     </div>
     </div>
   )

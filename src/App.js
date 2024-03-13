@@ -58,6 +58,7 @@ import Emergency from './Components/User/Emergency';
 
 
 import AdminDashboardMain from './Components/Admin/AdminDashboardMain'
+import WorkshopEmergencyrequest from './Components/Workshop/WorkshopEmergencyrequest';
 
 const url = "http://localhost:4006";
 // const url= "http://hybrid.srishticampus.in:4006/"
@@ -112,6 +113,7 @@ function App() {
       <Route path='/workshop-dashboard-myservices' element={[<Wnav/>,<Viewmyservices/>,<Footer/>]}/>
       <Route path='/workshop-dashboard-viewrequest' element={[<Wnav/>,<Workshopmain data="viewrequest"/>,<Footer/>]}/>
       
+      <Route path='/workshop-emergencyrequest' element={[<Wnav/>,<WorkshopEmergencyrequest url={url}/>,<Footer/>]}/>
       <Route path='/workshop-editprofile/:id' element={[<Wnav/>,<Workshopmain data="profileedit"/>,<Footer/>]}/>
       
 
