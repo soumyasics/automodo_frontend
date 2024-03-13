@@ -59,6 +59,7 @@ import Emergency from './Components/User/Emergency';
 
 import AdminDashboardMain from './Components/Admin/AdminDashboardMain'
 import WorkshopEmergencyrequest from './Components/Workshop/WorkshopEmergencyrequest';
+import Assignmechforemergency from './Components/Workshop/Assignmechforemergency';
 
 const url = "http://localhost:4006";
 // const url= "http://hybrid.srishticampus.in:4006/"
@@ -124,6 +125,7 @@ function App() {
       <Route path='/workshop-viewspareparts' element={[<Wnav/>,<Viewmyspareparts url={url}/>,<Footer/>]}/>
       <Route path='/workshop-editspareparts/:id' element={[<Wnav/>,<Editspareparts url={url}/>,<Footer/>]}/>
       <Route path='/workshop-viewbookings' element={[<Wnav/>,<Viewsparepartbooking url={url}/>,<Footer/>]}/>
+      <Route path='/workshop-assignmechemergencyreq/:id' element={[<Wnav/>,<Assignmechforemergency url={url}/>,<Footer/>]}/>
 
 
       {/* Admin */}
