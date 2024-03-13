@@ -8,9 +8,9 @@ import "./AdminEmergencyView.css"
 function AdminEmergencyView({url}) {
 
   const {id}=useParams()
-  const [state,setState]=useState([])
+  const [state,setState]=useState({})
   useEffect(()=>{
-      axiosInstance.post(`/viewWorkshopById/${id}`)
+      axiosInstance.post(`/viewEmergencyById/${id}`)
       .then((res)=>{
         console.log(res);
           setState(res.data.data)
@@ -26,7 +26,7 @@ function AdminEmergencyView({url}) {
 
   const acceptfn=((e)=>{
     e.preventDefault()
-    axiosInstance.post(`approveWorkshopById/${id}`)
+    axiosInstance.post(`adminApproveEmergencyReqs/${id}`)
     .then((res)=>{
       console.log(res);
       if(res.data.status==200){
@@ -40,57 +40,65 @@ function AdminEmergencyView({url}) {
     })
 
   })
-  const deletefn=((e)=>{
-    e.preventDefault()
-    axiosInstance.post(`deleteWorkshopById/${id}`)
-    .then((res)=>{
-      console.log(res);
-      if(res.data.status==200){
-      alert("Deleted successfully")
-       navigate("/admin-dashboard")
-      }
-    })
-    .catch((err)=>{
-        console.log(err)
+  // const deletefn=((e)=>{
+  //   e.preventDefault()
+  //   axiosInstance.post(`deleteWorkshopById/${id}`)
+  //   .then((res)=>{
+  //     console.log(res);
+  //     if(res.data.status==200){
+  //     alert("Deleted successfully")
+  //      navigate("/admin-dashboard")
+  //     }
+  //   })
+  //   .catch((err)=>{
+  //       console.log(err)
 
-    })
+  //   })
 
-  })
+  // })
 
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString();
+};
+const formatTime = (dateString) => {
+  const date = new Date(dateString);
+  return date.toLocaleTimeString();
+};
 
 
 return (
-  <div className="col-12">
+  <div className="col-8" >
   <div className="container">
     <div className="row emergencysinglecontributer-main">
     <h1>Emergency request</h1>
 <div style={{padding:"20px"}}>
  
-      <img src={`${url}/${state.image && state.image.filename}`} alt='image' width="530px" height="200px"/></div>
+      <img src={`${url}/${state.custid?.image.filename}`} alt='image' width="530px" height="200px"/></div>
       <div className="col-4" >Name :</div>
       <div className="col-8">
-        <input type="text" value={state.name} />
+        <input type="text" value={state.custid?.firstname} />
       </div>
       <div className="col-4">Email :</div>
       <div className="col-8">
-        <input type="text" value={state.email}
+        <input type="text" value={state.custid?.email}
         />
       </div>
-      <div className="col-4">Aadhar :</div>
+      <div className="col-4">Issue :</div>
       <div className="col-8">
-        <input type="text" value={state.aadhar} />
+        <textarea type="text" value={state.issues} />
       </div>{" "}
-      <div className="col-4">Reg No :</div>
+      <div className="col-4">Date :</div>
       <div className="col-8">
-        <input type="text" value={state.regno}/>
+        <input type="text" value={formatDate(state.date)}/>
+      </div>{" "}
+      <div className="col-4">Time :</div>
+      <div className="col-8">
+        <input type="text" value={formatTime(state.date)}/>
       </div>{" "}
       <div className="col-4">Contact :</div>
       <div className="col-8">
-        <input type="text" value={state.contact}/>
-      </div>{" "}
-      <div className="col-4">City :</div>
-      <div className="col-8">
-        <input type="text" value={state.city}/>
+        <input type="text" value={state.custid?.contact}/>
       </div>
       <div className="col-4">District :</div>
       <div className="col-8">
@@ -98,7 +106,7 @@ return (
       </div>{" "}
       <div className="emergencysinglecontributer-button">
       <button type="submit" className="col-3 btn btn-primary" onClick={acceptfn}>Accept</button>
-      <button type="submit" className="col-3 btn btn-danger" onClick={deletefn}>Delete</button>
+      {/* <button type="submit" className="col-3 btn btn-danger" onClick={deletefn}>Delete</button> */}
       </div>
     </div>
   </div>
