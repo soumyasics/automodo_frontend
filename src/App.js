@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import 'remixicon/fonts/remixicon.css'
+
 import Footer from './Components/Common/Footer';
 import Navbar from './Components/Common/Navbar';
 import MainAdmin from './Components/Admin/MainAdmin';
@@ -54,6 +56,7 @@ import Emergency from './Components/User/Emergency';
 
 
 
+
 import AdminDashboardMain from './Components/Admin/AdminDashboardMain'
 
 const url = "http://localhost:4006";
@@ -62,7 +65,7 @@ const url = "http://localhost:4006";
 function App() {
   return (
     <BrowserRouter
-      // basename='/automodo_api'
+      // basename='/automodo'
      >
     <Routes>
 

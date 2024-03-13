@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Bookservice.css";
 import img from "../../Assets/img2.png";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import axiosInstance from "../../Baseurl";
 import img2 from "../../Assets/rightarrow.png";
 
@@ -22,12 +22,16 @@ function Bookservice({url}) {
     },[])
     console.log(data._id);
 
+    const location = useLocation();
+    const prevPage = new URLSearchParams(location.search).get('prevPage');
+
+
   return (
     <div className=" contributer_addnews_main">
       <div className="container">
         <div className="row">
           <div className="col-2  contributer_arrow">
-            <Link to='/viewservices'> <img src={img2} alt='images' width='40px' height='40px' /></Link>
+            <Link to={prevPage || '/'}> <img src={img2} alt='images' width='40px' height='40px' /></Link>
           </div>
           <div className="col-6 contributer_arrow">
             <h2>Services</h2>

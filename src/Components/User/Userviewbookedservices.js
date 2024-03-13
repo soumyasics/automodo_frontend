@@ -19,8 +19,9 @@ function Userviewbookedservices() {
             console.log(err);
         })
     },[])
+
   return (
-    <div style={{display:"flex"}}>
+    <div style={{display:"flex",padding:"20px"}}>
                          {data.length ?(
               data.map((a)=>{
     
@@ -31,9 +32,23 @@ function Userviewbookedservices() {
                    const servicedate = new  Date(a.servicedate);
                    const sdate = servicedate.toISOString().split('T')[0];
 
-    
+                   const deletefn=(()=>{
+                    axiosInstance.post(`deleteservicebookingById/${a._id}`)
+                    .then((res)=>{
+                      console.log(res);
+                      if(res.data.status==200){
+                        alert("Service deleted succesfully")
+                        window.location.reload(false)
+                      }
+                  })
+                  .catch((err)=>{
+                      console.log(err);
+                  })
+                  })
+              
     console.log(a._id+"serviceid");
              return( 
+              <div>
 <Link to={`/bookservices/${a.serviceid._id}`} style={{textDecoration:"none",color:"black"}}>
     <div className="booked-service-container" >
       {/* <img src={img} alt="Service Image" className="service-image" /> */}
@@ -45,10 +60,13 @@ function Userviewbookedservices() {
         <p><strong>Service Center Contact:</strong>  {a.shopid?.contact}</p>
         <p><strong>Booking Status:</strong> {a.approvalstatus ? 'Approved' : 'Pending'}</p>
         <p>
-            <button type='submit' className='btn btn-danger'>Cancel Service</button>
         </p>
       </div>
-    </div></Link>
+    </div>
+    </Link>
+    <button type='submit' className='btn btn-danger' onClick={deletefn} style={{marginLeft:"90px"}}>Cancel Service</button>
+
+    </div>
               )
             })
          ) : (

@@ -28,7 +28,7 @@ html,body
 
 .main-input{
   margin: .4rem;
-  width: 13rem;
+  width: 18rem;
   height: 3rem;
   border: transparent;
   border-radius: 2px;
@@ -268,4 +268,53 @@ margin-top: -10rem;
   width: 70rem;
   margin-top: 3rem;
   row-gap: 2rem;
+}
+.user_prescription_link button{
+  margin-top: -30px;
+  float: right;
+  animation-name: shake;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+  cursor: pointer;
+  position: relative;
+}
+
+.user_prescription_link button:hover {
+  animation-name: shakeAnim;
+}
+
+@keyframes shakeAnim {
+  0% {left: 0}
+  1% {left: -3px}
+  2% {left: 5px}
+  3% {left: -8px}
+  4% {left: 8px}
+  5% {left: -5px}
+  6% {left: 3px}
+  7% {left: 0}
+}
+
+@keyframes shake {
+  0% {left: 0}
+  1% {left: -3px}
+  2% {left: 5px}
+  3% {left: -8px}
+  4% {left: 8px}
+  5% {left: -5px}
+  6% {left: 3px}
+  7% {left: 0}
+}
+
+.viewservices_search{
+  width: 290px;
+  height: 50px;
+  background-color: aliceblue;
+  padding: 10px;
+  
+}
+#service-search{
+  margin-left: 6px;
+  border-bottom-left-radius: 20px;
+
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Viewservices.css";
 import axiosInstance from "../../Baseurl";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Viewservices() {
   const [data, setdata] = useState([]);
@@ -16,17 +16,23 @@ function Viewservices() {
         console.log(err);
       });
   }, []);
+
+  const location = useLocation();
   return (
     <div>
       <div className="container">
-        {data.length ? (
-          data.map((a) => {
-            return (
-              <Link
-                to={"/bookservices/"+a._id}
-                style={{ textDecoration: "none" }}
-              >
-                <div className="row viewservices-box">
+        <div className="row">
+          {data.length ? (
+            data.map((a) => {
+              return (
+                <Link
+                  to={`/bookservices/${a._id}?prevPage=${encodeURIComponent(
+                    location.pathname
+                  )}`}
+                  style={{ textDecoration: "none" }}
+                  className="col-lg-4 col-md-4 col-sm-6 mb-4"
+                >
+                  {/* <div className="row viewservices-box">
                   <div className="row">
                     <div className="col">
                       <p id="clor">Service Name:</p>
@@ -59,13 +65,24 @@ function Viewservices() {
                       <p>{a.shopid.name}</p>
                     </div>
                   </div>
-                </div>
-              </Link>
-            );
-          })
-        ) : (
-          <div>No data available</div>
-        )}
+                </div> */}
+                  {/* <div className="col-3" style={{ display: "flex" }}> */}
+                    <div className="cards ">
+                      <div className="card-content ">
+                        <div className="service-name "> {a.serviceName}</div>
+                        <div className="price">{a.description}</div>
+                        <div className="description">Cost : {a.price}</div>
+                        <div className="shop-name">ShopName: {a.shopid?.name}</div>
+                      </div>
+                    {/* </div> */}
+                  </div>
+                </Link>
+              );
+            })
+          ) : (
+            <div>No data available</div>
+          )}
+        </div>
       </div>
     </div>
   );

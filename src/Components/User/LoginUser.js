@@ -99,7 +99,7 @@ console.log(formIsValid);
         <Link className='loginUser-a' to='/forgotpass-user'>Reset Password </Link>
         </div>
         <div className='loginUser-Asignup'>
-          <a className='loginUser-a' href='/user-signup' >Signup</a>
+         <Link to="/user-signup"><a className='loginUser-a' href='' >Signup</a></Link> 
         </div>
         <div>
           <button className='loginUser-btn' type='submit'>Sign In  <img className='signupLogo1' src={SignupLogo} /></button>
