@@ -10,7 +10,7 @@ function AdminEmergencyRequest({url}) {
 
     const[data,setData]=useState([])
     useEffect(()=>{
-        axiosInstance.post(`/adminApproveEmergencyReqs`,data)
+        axiosInstance.post(`/adminViewEmergencyReqs`,data)
         .then((res)=>{
             console.log(res.data);
             setData(res.data.data)
@@ -20,8 +20,15 @@ function AdminEmergencyRequest({url}) {
             console.log(err);
         })
     },[])
-    // console.log(data._id);
-    
+    const formatDate = (dateString) => {
+      const date = new Date(dateString);
+      return date.toLocaleDateString();
+  };
+
+  const formatTime = (dateString) => {
+      const date = new Date(dateString);
+      return date.toLocaleTimeString();
+  };
   return (
     
     <div className='container'>
@@ -33,8 +40,6 @@ function AdminEmergencyRequest({url}) {
             </div>
              {data.length ?(
           data.map((a)=>{
-            //   const dateTime = new  Date(a.date);
-            //   const timeString = dateTime.toLocaleTimeString();
          return( 
           <div  >
             <Link to={`/dashboard-workshop-emergency-approval/${a?._id}`}  style={{textDecoration:"none",color:"black"}}>
@@ -43,22 +48,32 @@ function AdminEmergencyRequest({url}) {
 
                 {/* <img src={img}  alt='images' width='130px' height='100px'/> */}
 
-                <img src={`${url}/${a.image?.filename}`}  alt='images' width='130px' height='100px'/>
+                <img src={`${url}/${a.custid?.image.filename}`}  alt='images' width='130px' height='100px'/>
 
 
                     <div>
                         
-                    <h4>Shop Name : {a.name}</h4>
+                    <h4 style={{ width: '600px', overflow: 'hidden', textOverflow: 'ellipsis', wordWrap: 'break-word' }}>Issue : {a.issues}flknrhgiurhgurbiurigvyufguygfiuhfhiufgriufhiurgfiurgiufgriugiurgfiurguirguirguiruvuirfgvbiufbuvifbvbfjvbjfvjk</h4>
                     <hr/>
                     <div className='row'>
                             <div className='col-6 emergency-work-email'>
-                            <p>Email :{a.email}</p>
+                            <p >Date :{formatDate(a.date)}</p>
 
                             </div>
                             <div className='col-6 emergency-work-reg'>
-                            <p id='arrow'>Reg No :{a.regno}</p>
+                            <p id='arrow'>Time :{formatTime(a.date)}</p>
 
                             </div>
+                            <div className='col-6 emergency-work-reg'>
+                            <p id='arrow'>District :{a.district}</p>
+
+                            </div>
+                            <div className='col-6 emergency-work-reg'>
+                            <p id='arrow'>Contact :{a.custid?.contact}</p>
+
+                            </div>
+
+
                     </div>
                     
                     </div>

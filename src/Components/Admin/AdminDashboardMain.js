@@ -31,11 +31,11 @@ function Workshopmain({data}) {
         ):data=="request"?(
          <Workshoprequest/>
          ):data=="emergency"?(
-          <AdminEmergencyRequest/>
+          <AdminEmergencyRequest url={url}/>
         ):data=='requestApproval'?(
-          <WorkshopRequestApproval/>
+          <WorkshopRequestApproval url={url}/>
         ):data=='emergencyRequestApproval'?(
-          <AdminEmergencyView/>
+          <AdminEmergencyView url={url}/>
         )
         :'No data' }
     </div>

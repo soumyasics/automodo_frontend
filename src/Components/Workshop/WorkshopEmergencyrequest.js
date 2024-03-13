@@ -8,10 +8,10 @@ import { Link } from 'react-router-dom'
 function WorkshopEmergencyrequest({url}) {
     const[data,setData]=useState([])
     useEffect(()=>{
-        axiosInstance.post(`/viewWorkshopReqs`,data)
+        axiosInstance.post(`/viewEmergencyForShops`)
         .then((res)=>{
             console.log(res.data);
-            setData(res.data.data)
+             setData(res.data.data)
         })
         .catch((err)=>{
 
@@ -20,6 +20,16 @@ function WorkshopEmergencyrequest({url}) {
     },[])
     // console.log(data._id);
     
+
+    const formatDate = (dateString) => {
+      const date = new Date(dateString);
+      return date.toLocaleDateString();
+  };
+  const formatTime = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleTimeString();
+};
+
   return (
     <div className='container'>
 
@@ -28,32 +38,32 @@ function WorkshopEmergencyrequest({url}) {
             <h3 className=' workshop-emergency-request-heading'>EMERGENCY REQUEST</h3>
             <div>
             </div>
-             {data.length ?(
-          data.map((a)=>{
+
+             
+            {data ? (
+  data.length ? (
+    data.map((a) => {
             //   const dateTime = new  Date(a.date);
             //   const timeString = dateTime.toLocaleTimeString();
          return( 
           <div  >
-            <Link to={`/workshop-dashboard-emergencyrequest/${a?._id}`}  style={{textDecoration:"none",color:"black"}}>
+            <Link to={`/workshop-assignmechemergencyreq/${a?._id}`}  style={{textDecoration:"none",color:"black"}}>
           
-                <div className='workshop-emergency-admin_advertiser_request workshop-emergency-request-box' style={{ display: 'flex' }} >
+                <div className='workshop-emergency-admin_advertiser_request workshop-emergency-request-box' style={{ display: 'flex' ,width:"60rem"}} >
 
-                {/* <img src={img}  alt='images' width='130px' height='100px'/> */}
-
-                <img src={`${url}/${a.image?.filename}`}  alt='images' width='130px' height='100px'/>
-
-
+                {/* <img src={`${url}/${a.custid?.image?.filename}`}  alt='images' width='130px' height='100px'/> */}
                     <div>
                         
-                    <h4>Shop Name : {a.name}</h4>
+                    <h4 style={{ width: '900px', overflow: 'hidden',
+                     textOverflow: 'ellipsis', wordWrap: 'break-word' }}>Issues : {a.issues}</h4>
                     <hr/>
                     <div className='row'>
                             <div className='col-6 workshop-emergency-work-email'>
-                            <p>Email :{a.email}</p>
+                            <p>Date&Time :{formatDate(a.date)} {formatTime(a.date)}</p>
 
                             </div>
                             <div className='col-6 workshop-emergency-work-reg'>
-                            <p id='arrow'>Reg No :{a.regno}</p>
+                            <p id='arrow'>District :{a.district}</p>
 
                             </div>
                     </div>
@@ -69,8 +79,10 @@ function WorkshopEmergencyrequest({url}) {
     })
  ) : (
    <div>No data available</div>
- )} 
-
+   )
+   ) : (
+     <div>No request is available</div>
+   )}
 
 
 </div>
