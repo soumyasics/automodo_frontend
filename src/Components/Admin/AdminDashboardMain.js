@@ -6,6 +6,7 @@ import MechanicList from '../Mechanic/MechanicList'
 import WorkshopList from '../Workshop/WorkshopList'
 import Workshoprequest from './Workshoprequest';
 import AdminEmergencyRequest from './AdminEmergencyRequest';
+import WorkshopRequestApproval from './WorkshopRequestApproval';
 
 
 const url = "http://localhost:4006";
@@ -29,6 +30,10 @@ function Workshopmain({data}) {
         ):data=="request"?(
          <Workshoprequest/>
          ):data=="emergency"?(
+          <AdminEmergencyRequest/>
+        ):data=='requestApproval'?(
+          <WorkshopRequestApproval/>
+        ):data=='emergencyRequestApproval'?(
           <AdminEmergencyRequest/>
         )
         :'No data' }

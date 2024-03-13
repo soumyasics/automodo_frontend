@@ -128,7 +128,7 @@ function App() {
       <Route path='/admin-login' element={[<Loginnav/>,<Adminlogin/>,<Footer/>]}/>
       {/* <Route path='/admin-dashboard' element={[<Adminnav/>,<AdminDashboard/>,<Footer/>]}/> */}
       <Route path='/req' element={<Workshopreuest/>}/>
-      <Route path='/dashboard-workshop-approval/:id' element={[<Adminnav/>,<WorkshopRequestApproval url={url}/>,<Footer/>]}/>
+     
       <Route path='/nav' element={<Loginnav/>}/>
       <Route path='/admin-emg' element={[<Adminnav/>,<Emergencyreq/>,<Footer/>]}/>
       <Route path='/dashboard-emergency-request/:id' element={[<Adminnav/>,<AdminEmergencyView url={url}/>,<Footer/>]}/>
@@ -138,7 +138,8 @@ function App() {
       <Route path='/admin-dashboard-workshoplist' element={[<Adminnav/>,<AdminDashboardMain  data="workshop"/>,<Footer/>]}/>
       <Route path='/admin-dashboard-request' element={[<Adminnav/>,<AdminDashboardMain  data="request"/>,<Footer/>]}/>
       <Route path='/admin-dashboard-emergency-request' element={[<Adminnav/>,<AdminDashboardMain  data="emergency"/>,<Footer/>]}/>
-      
+      <Route path='/dashboard-workshop-approval/:id' element={[<Adminnav/>,<AdminDashboardMain data="requestApproval" url={url}/>,<Footer/>]}/>
+      <Route path='/dashboard-workshop-emergency-approval/:id' element={[<Adminnav/>,<AdminDashboardMain data="emergencyRequestApproval" url={url}/>,<Footer/>]}/>
      </Routes>
      </BrowserRouter>
    
