@@ -17,12 +17,12 @@ function AdminDashboardSidebar() {
         <Link to='/admin-dashboard' >
           <div className="admin-dashboard-profile-sidebar">
             <div className="d-flex mt-2">
-              <i class="ri-dashboard-line admin_profile_sidebar_icons"></i>
+              <i class="admin_profile_sidebar_icons"></i>
               <p className='sidebar-dash-btn' >dashboard</p>
             </div>
 
             <div className="mt-2">
-              <i class="ri-arrow-right-s-line admin_profile_sidebar_icons"></i>
+              <i class=" admin_profile_sidebar_icons"></i>
             </div>
           </div>
         </Link>
@@ -34,12 +34,12 @@ function AdminDashboardSidebar() {
         <Link to='/admin-dashboard-userlist' >
           <div className="admin-dashboard-profile-sidebar">
             <div className="d-flex mt-2">
-              <i class="ri-dashboard-line admin_profile_sidebar_icons"></i>
+              <i class=" admin_profile_sidebar_icons"></i>
               <p className='sidebar-dash-btn' >Users</p>
             </div>
 
             <div className="mt-2">
-              <i class="ri-arrow-right-s-line admin_profile_sidebar_icons"></i>
+              <i class=" admin_profile_sidebar_icons"></i>
             </div>
           </div>
         </Link>
@@ -52,12 +52,12 @@ function AdminDashboardSidebar() {
         <Link to='/admin-dashboard-mechaniclist' >
           <div className="admin-dashboard-profile-sidebar">
             <div className="d-flex mt-2">
-              <i class="ri-dashboard-line admin_profile_sidebar_icons"></i>
+              <i class=" admin_profile_sidebar_icons"></i>
               <p className='sidebar-dash-btn' >Mechanic</p>
             </div>
 
             <div className="mt-2">
-              <i class="ri-arrow-right-s-line admin_profile_sidebar_icons"></i>
+              <i class=" admin_profile_sidebar_icons"></i>
             </div>
           </div>
         </Link>
@@ -69,12 +69,12 @@ function AdminDashboardSidebar() {
         <Link to='/admin-dashboard-workshoplist' >
           <div className="admin-dashboard-profile-sidebar">
             <div className="d-flex mt-2">
-              <i class="ri-dashboard-line admin_profile_sidebar_icons"></i>
+              <i class=" admin_profile_sidebar_icons"></i>
               <p className='sidebar-dash-btn' >Workshop</p>
             </div>
 
             <div className="mt-2">
-              <i class="ri-arrow-right-s-line admin_profile_sidebar_icons"></i>
+              <i class=" admin_profile_sidebar_icons"></i>
             </div>
           </div>
         </Link>
@@ -86,12 +86,12 @@ function AdminDashboardSidebar() {
         <Link to='/admin-dashboard-request' >
           <div className="admin-dashboard-profile-sidebar">
             <div className="d-flex mt-2">
-              <i class="ri-dashboard-line admin_profile_sidebar_icons"></i>
+              <i class=" admin_profile_sidebar_icons"></i>
               <p className='sidebar-dash-btn' >Request</p>
             </div>
 
             <div className="mt-2">
-              <i class="ri-arrow-right-s-line admin_profile_sidebar_icons"></i>
+              <i class=" admin_profile_sidebar_icons"></i>
             </div>
           </div>
         </Link>
@@ -103,12 +103,12 @@ function AdminDashboardSidebar() {
         <Link to='/admin-dashboard-emergency-request' >
           <div className="admin-dashboard-profile-sidebar">
             <div className="d-flex mt-2">
-              <i class="ri-dashboard-line admin_profile_sidebar_icons"></i>
+              <i class=" admin_profile_sidebar_icons"></i>
               <p className='sidebar-dash-btn' >Emergency request</p>
             </div>
 
             <div className="mt-2">
-              <i class="ri-arrow-right-s-line admin_profile_sidebar_icons"></i>
+              <i class=" admin_profile_sidebar_icons"></i>
             </div>
           </div>
         </Link>

@@ -7,6 +7,7 @@ import WorkshopList from '../Workshop/WorkshopList'
 import Workshoprequest from './Workshoprequest';
 import AdminEmergencyRequest from './AdminEmergencyRequest';
 import WorkshopRequestApproval from './WorkshopRequestApproval';
+import AdminEmergencyView from './AdminEmergencyView';
 
 
 const url = "http://localhost:4006";
@@ -34,7 +35,7 @@ function Workshopmain({data}) {
         ):data=='requestApproval'?(
           <WorkshopRequestApproval/>
         ):data=='emergencyRequestApproval'?(
-          <AdminEmergencyRequest/>
+          <AdminEmergencyView/>
         )
         :'No data' }
     </div>
