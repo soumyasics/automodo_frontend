@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 
 function MechanicDashboard({url}) {
-  const id=localStorage.getItem("shopid")
+  const id=localStorage.getItem("mechid")
   console.log(id);
   const [Users,SetUsers]=useState([]);
 
@@ -34,7 +34,7 @@ console.log(Users);
     
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p className="col-6">Name</p>
-                  <p>{Users.firstname} {Users.lastname}</p>
+                  <p>{Users?.firstname} {Users?.lastname}</p>
                 </div>
                 {/* <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p className="col-6">Owner Name</p>
@@ -42,16 +42,16 @@ console.log(Users);
                 </div> */}
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p className="col-4">Email</p>
-                  <p>{Users.email}</p>
+                  <p>{Users?.email}</p>
                 </div>
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p className="col-4">Aadhar</p>
-                  <p>{Users.aadhar}</p>
+                  <p>{Users?.aadhar}</p>
                 </div>
 
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p className="col-6">Contact</p>
-                  <p>{Users.contact}</p>
+                  <p>{Users?.contact}</p>
                 </div>
                 {/* <div className="reader_profile_account_info_fulldetails_box mb-3">
                   <p></p>

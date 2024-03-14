@@ -8,7 +8,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 function EditMechanicProfile() {
     const {id}=useParams()
-    const [data,SetData]=useState({name:'',contact:'',email:'',city:'',district:'',aadhar:'',password:'',image:'null',regno:''})
+    const [data,SetData]=useState({firstname:'',lastname:'',contact:'',email:'',city:'',district:'',aadhar:'',image:'null',regno:''})
 
 
 
@@ -51,7 +51,7 @@ const editfn = ((a) => {
     console.log(res)
     if (res.data.status == 200) {
       alert('Updated succesfully')
-      navigate("/workshop-dashboard")
+      navigate("/mechanic-dashboard-viewrequest")
     } else {
       alert('failed')
     }
@@ -73,12 +73,12 @@ const editfn = ((a) => {
     <div className='editMechanic-submain col-2'>
   <div>
     <label className='editMechanic-label'>First Name</label>
-    <input className='editMechanic-input' type='text' placeholder='Shop name' value={data.firstname} name='name' onChange={change}/>
+    <input className='editMechanic-input' type='text' placeholder='Shop name' value={data.firstname} name='firstname' onChange={change}/>
 
   </div>
   <div>
     <label className='editMechanic-label'>Last Name</label>
-    <input className='editMechanic-input' type='text' placeholder='Shop name' value={data.lastname} name='name' onChange={change}/>
+    <input className='editMechanic-input' type='text' placeholder='Shop name' value={data.lastname} name='lastname' onChange={change}/>
 
   </div>
  
@@ -118,14 +118,8 @@ const editfn = ((a) => {
   <label className='editMechanic-label' >Image</label><br/>
     <input  className='editMechanic-file' type='file' name='image'  onChange={change}/>
   </div>
- 
   <div>
-    <label className='editMechanic-label'>Password</label>
-    <input className='editMechanic-input' type='password' placeholder='Password' name='password' onChange={change}/>
-
-  </div>
-  <div>
-    <button className='editMechanic-btn' type='siubmit'>Submit</button>
+    <button className='editMechanic-btn' type='submit'>Submit</button>
   </div>
   </div>
   </div>

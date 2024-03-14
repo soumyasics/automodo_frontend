@@ -14,6 +14,7 @@ import EditProfile from './EditWorkshopProfile'
 
 import Viewsinglereq from './Viewsinglereq'
 import WorkshopEmergencyrequest from './WorkshopEmergencyrequest'
+import ViewMechaniclist from '../Mechanic/ViewMechaniclist'
 
 
 
@@ -38,6 +39,9 @@ function Workshopmain({data}) {
           <EditProfile/>
         ):data=="addspareparts"?(
           <SparepartsWorkshop/>
+        ):data=='viewmechlist'?(
+            <ViewMechaniclist/>
+        
         ):data=="singlerequest"?(
           <Viewsinglereq/>
         )
