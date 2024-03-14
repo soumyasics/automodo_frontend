@@ -8,7 +8,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 function EditProfile() {
   const {id}=useParams()
-    const [data,SetData]=useState({name:'',contact:'',email:'',city:'',district:'',aadhar:'',password:'',image:'null',regno:''})
+    const [data,SetData]=useState({name:'',contact:'',email:'',city:'',district:'',aadhar:'',image:'null',regno:''})
 
 
 
@@ -115,12 +115,6 @@ const editfn = ((a) => {
         <div>
         <label className='editWorkshop-label' >Image</label><br/>
           <input  className='editWorkshop-file' type='file' name='image'  onChange={change}/>
-        </div>
-       
-        <div>
-          <label className='editWorkshop-label'>Password</label>
-          <input className='editWorkshop-input' type='password' placeholder='Password' name='password' onChange={change}/>
-
         </div>
         <div>
           <button className='editWorkshop-btn' type='siubmit'>Submit</button>

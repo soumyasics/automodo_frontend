@@ -101,6 +101,7 @@ function App() {
       <Route path='/forgotpass-mechanic' element={[<Adminnav/>,<ForgotpassMechanic/>,<Footer/>]}/>
       <Route path='/view-services-mechanic' element={[<Adminnav/>,<ViewServicesMechanic/>,<Footer/>]}/>
       <Route path='/individual-services-mechanic' element={[<Adminnav/>,<IndividualServicesMechanic/>,<Footer/>]}/>
+      
 
       {/* Workshop */}
       <Route path='/workshop-login' element={[<Loginnav/>,<LoginWorkshop/>,<Footer/>]}/> 
@@ -126,6 +127,7 @@ function App() {
       <Route path='/workshop-editspareparts/:id' element={[<Wnav/>,<Editspareparts url={url}/>,<Footer/>]}/>
       <Route path='/workshop-viewbookings' element={[<Wnav/>,<Viewsparepartbooking url={url}/>,<Footer/>]}/>
       <Route path='/workshop-assignmechemergencyreq/:id' element={[<Wnav/>,<Assignmechforemergency url={url}/>,<Footer/>]}/>
+      <Route path='/view-mechaniclist' element={[<Wnav/>,<Workshopmain data="viewmechlist"/>,<Footer/>]}/>
 
 
       {/* Admin */}
