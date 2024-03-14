@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 
 function MechanicDashboard({url}) {
-  const id=localStorage.getItem("shopid")
+  const id=localStorage.getItem("mechid")
   console.log(id);
   const [Users,SetUsers]=useState([]);
 
