@@ -8,24 +8,14 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 function EditMechanicProfile() {
     const {id}=useParams()
-    const [data,SetData]=useState({firstname:'',lastname:'',contact:'',email:'',city:'',district:'',aadhar:'',image:'null',regno:''})
+    console.log(id);
+    const [data,SetData]=useState({firstname:'',lastname:'',email:'',aadhar:'',contact:'',image:null,certificate:null})
 
 
 
-  useEffect(()=>{
-    axiosInstance.post(`/viewMechById/${id}`,data)
-    .then((res)=>{
-      console.log(res);
-       SetData(res.data.data)
-    })
-    .catch((err)=>{
-      console.log(err)
-    })
-   },[])
-  
 
   const change=(b)=>{
-
+    const { name, value } = b.target;
     if(b.target.name === "image"){
       // handleImageUpload(e);
       SetData({...data,image:b.target.files[0]});
@@ -36,20 +26,33 @@ function EditMechanicProfile() {
 
 
 }
+
+
+useEffect(()=>{
+  axiosInstance.post(`/viewMechById/${id}`)
+  .then((res)=>{
+    console.log(res);
+     SetData(res.data.data)
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
+ },[])
+
   const navigate=useNavigate()
 
   
-const editfn = ((a) => {
+const editfn=(a)=> {
   a.preventDefault()
   console.log("data", data);
-  axiosInstance.post(`/editMechanicById/${id}`, data, {
+  axiosInstance.post(`/editMechanicById/${id}`,data,{
     headers: {
       "Content-Type": "multipart/form-data",
-    },
+    }
   })
   .then((res) => {
     console.log(res)
-    if (res.data.status == 200) {
+    if (res.status == 200) {
       alert('Updated succesfully')
       navigate("/mechanic-dashboard-viewrequest")
     } else {
@@ -59,7 +62,7 @@ const editfn = ((a) => {
   .catch((error) => {
     console.log(error)
   })
-})
+}
   return (
     <div>
          <form onSubmit={editfn}>
@@ -73,29 +76,29 @@ const editfn = ((a) => {
     <div className='editMechanic-submain col-2'>
   <div>
     <label className='editMechanic-label'>First Name</label>
-    <input className='editMechanic-input' type='text' placeholder='Shop name' value={data.firstname} name='firstname' onChange={change}/>
+    <input className='editMechanic-input' type='text'  value={data.firstname} name='firstname' onChange={change}/>
 
   </div>
   <div>
     <label className='editMechanic-label'>Last Name</label>
-    <input className='editMechanic-input' type='text' placeholder='Shop name' value={data.lastname} name='lastname' onChange={change}/>
+    <input className='editMechanic-input' type='text' value={data.lastname} name='lastname' onChange={change}/>
 
   </div>
  
   <div>
     <label className='editMechanic-label'>Email</label>
-    <input className='editMechanic-input' type='email' placeholder='Email' value={data.email} name='email' onChange={change}/>
+    <input className='editMechanic-input' type='email'  value={data.email} name='email' onChange={change}/>
 
    </div>
   <div>
     <label className='editMechanic-label'>Aadhar</label>
-    <input className='editMechanic-input' type='number' placeholder='Aadhar number'value={data.aadhar} name='aadhar' onChange={change}/>
+    <input className='editMechanic-input' type='number' value={data.aadhar} name='aadhar' onChange={change}/>
 
    
   </div>
   <div>
     <label className='editMechanic-label'>Contact Number</label>
-    <input className='editMechanic-input' type='number' placeholder='Contact Number' value={data.contact} name='contact' onChange={change}/>
+    <input className='editMechanic-input' type='number'  value={data.contact} name='contact' onChange={change}/>
 
   </div>
   <div>
@@ -116,7 +119,7 @@ const editfn = ((a) => {
   </div>
   <div>
   <label className='editMechanic-label' >Image</label><br/>
-    <input  className='editMechanic-file' type='file' name='image'  onChange={change}/>
+    <input  className='editMechanic-file' type='file' name='certificate'  onChange={change}/>
   </div>
   <div>
     <button className='editMechanic-btn' type='submit'>Submit</button>
