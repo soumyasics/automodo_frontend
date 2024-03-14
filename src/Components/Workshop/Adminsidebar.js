@@ -177,6 +177,21 @@ function Adminsidebar() {
 </Link>
 
 </div>
+<div className="admin_profile_sidebar_padding ">
+<Link to='/view-mechaniclist' >
+<div className="admin_profile_sidebar_account_info">
+  <div className="d-flex mt-2 ">
+    <i class="ri-sticky-note-line admin_profile_sidebar_icons"></i>{" "}
+    <p> Mechanic List</p>
+  </div>
+
+  <div className="mt-2">
+    <i class="ri-arrow-right-s-line admin_profile_sidebar_icons"></i>
+  </div>
+</div>
+</Link>
+
+</div>
 <Link to='/' ><div className="admin_profile_sidebar_logoybtn mt-4 mb-4">
 <button className="btn btn-secondary" onClick={handleLogout}>
   <i class="ri-logout-box-r-line"></i> logout
