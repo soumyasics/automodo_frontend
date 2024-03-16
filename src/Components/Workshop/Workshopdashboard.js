@@ -27,7 +27,7 @@ function Workshopdashboard({url}) {
       <div className="col-8" style={{ marginLeft: "50px" }}>
  
             
-            <div className="reader_profile_account_info" style={{width:"60rem" }}>
+            <div className="reader_profile_account_info" >
             <div className="reader_profile_account_info_details row">
               <div className="col-7  reader_profile_account_info_fulldetails ">
                 <p>Account Info</p>
