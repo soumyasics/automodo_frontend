@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 import "./Userviewbookedservices.css"
 import img from "../../Assets/cat2.png"
 import axiosInstance from '../../Baseurl';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Userviewbookedservices() {
     const id=localStorage.getItem("userid")
     console.log(id);
-
+const location=useLocation()
     const [data,setdata]=useState([])
     useEffect(()=>{
         axiosInstance.post(`viewBookingByCustid/${id}`)
@@ -49,7 +49,9 @@ function Userviewbookedservices() {
     console.log(a._id+"serviceid");
              return( 
               <div>
-<Link to={`/bookservices/${a.serviceid._id}`} style={{textDecoration:"none",color:"black"}}>
+<Link to={`/bookservices/${a.serviceid._id}?prevPage=${encodeURIComponent(
+                    location.pathname
+                  )}`} style={{textDecoration:"none",color:"black"}}>
     <div className="booked-service-container" >
       {/* <img src={img} alt="Service Image" className="service-image" /> */}
       <div className="booking-info">
