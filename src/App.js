@@ -60,6 +60,8 @@ import Emergency from './Components/User/Emergency';
 import AdminDashboardMain from './Components/Admin/AdminDashboardMain'
 import WorkshopEmergencyrequest from './Components/Workshop/WorkshopEmergencyrequest';
 import Assignmechforemergency from './Components/Workshop/Assignmechforemergency';
+import Mechnav from './Components/Common/Mechnav';
+import Mechemergencyreq from './Components/Mechanic/Mechemergencyreq';
 
 const url = "http://localhost:4006";
 // const url= "http://hybrid.srishticampus.in:4006/"
@@ -96,12 +98,14 @@ function App() {
 
       {/* Mechanic */}
       <Route path='/mechanic-login' element={[<Loginnav/>,<LoginMechanic/>,<Footer/>]}/>
-      <Route path='/mechanic-dashboard-viewrequest' element={[<Adminnav/>,<MechanicMain data="mechanicdashboard"/>,<Footer/>]}/>
-      <Route path='/mechanic-editprofile/:id' element={[<Adminnav/>,<MechanicMain data="profileedit"/>,<Footer/>]}/>
+      <Route path='/mechnav' element={[<Mechnav/>]}/>
+      <Route path='/mechanic-dashboard-viewrequest' element={[<Mechnav/>,<MechanicMain data="mechanicdashboard"/>,<Footer/>]}/>
+      <Route path='/mechanic-editprofile/:id' element={[<Mechnav/>,<MechanicMain data="profileedit"/>,<Footer/>]}/>
       <Route path='/forgotpass-mechanic' element={[<Adminnav/>,<ForgotpassMechanic/>,<Footer/>]}/>
-      <Route path='/view-services-mechanic' element={[<Adminnav/>,<ViewServicesMechanic/>,<Footer/>]}/>
-      <Route path='/individual-services-mechanic' element={[<Adminnav/>,<IndividualServicesMechanic/>,<Footer/>]}/>
-      
+      <Route path='/view-services-mechanic' element={[<Mechnav/>,<ViewServicesMechanic/>,<Footer/>]}/>
+      <Route path='/individual-services-mechanic' element={[<Mechnav/>,<IndividualServicesMechanic/>,<Footer/>]}/>
+      <Route path='/view-mechemergency' element={[<Mechnav/>,<Mechemergencyreq/>,<Footer/>]}/>
+
 
       {/* Workshop */}
       <Route path='/workshop-login' element={[<Loginnav/>,<LoginWorkshop/>,<Footer/>]}/> 
