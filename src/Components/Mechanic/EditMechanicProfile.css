@@ -1,5 +1,5 @@
 .editMechanic-head{
-    font-weight: 450;
+    font-weight: 500;
     font-size: 35px;
     text-align: center;
     margin-top: 5rem;
@@ -76,7 +76,9 @@
     margin-left: 5rem;
    }
   
-  
+  .editMechanic-submain{
+    padding-left: 6rem;
+  }
   
   
 

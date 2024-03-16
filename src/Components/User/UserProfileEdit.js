@@ -116,12 +116,6 @@ function UserProfileEdit()  {
         <label className='user-edit-label' >Image</label><br/>
           <input  className='user-edit-file' type='file' name='image'  onChange={change} />
         </div>
-       
-        <div>
-          <label className='user-edit-label'>Password</label>
-          <input className='user-edit-input' type='password' placeholder='Password' name='password' onChange={change} />
-        </div>
-    
         <div>
           <button className='user-edit-btn' type='submit'>Submit</button>
           <img className="user-edit-logo"src={signUp_logo} alt='signUp_logo'/>

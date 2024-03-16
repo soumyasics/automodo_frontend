@@ -1,6 +1,6 @@
 
   .editWorkshop-head{
-    font-weight: 450;
+    font-weight: 500;
     font-size: 35px;
     text-align: center;
     margin-top: 5rem;
@@ -67,7 +67,9 @@
   width: 30rem;
    }
   
-  
+  .editWorkshop-submain{
+    padding-left: 6rem;
+  }
   
 
   
