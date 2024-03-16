@@ -5,7 +5,7 @@ import './MechanicSidebar.css'
 
 
 function MechanicSidebar() {
-  const wid=localStorage.getItem("mechanicid")
+  const wid=localStorage.getItem("mechid")
   console.log(wid);
 
   const[data,setdata]=useState({})
@@ -22,7 +22,7 @@ function MechanicSidebar() {
   },[])
   const[readerid,setReaderid]=useState(null);
   const handleLogout = () => {
-    localStorage.removeItem("workshopid");
+    localStorage.removeItem("mechid");
     setReaderid(null);
   };
   
@@ -36,7 +36,7 @@ function MechanicSidebar() {
 </div>
 </div> */}
 <div className="mechanic_profile_sidebar_title">
-<p>{data?.name}</p>
+<p>{data?.firstname} {data?.lastname}</p>
 </div>
 {/* <div className="admin_profile_sidebar_settings admin_profile_sidebar_padding ">
 <i class="ri-settings-3-fill reader_profile_sidebar_icons"></i>
@@ -57,7 +57,7 @@ function MechanicSidebar() {
   </div>
 </Link>
 </div>
-<div className="mechanic_profile_sidebar_padding ">
+{/* <div className="mechanic_profile_sidebar_padding ">
 <Link to='/' >
 <div className="mechanic_profile_sidebar_account_info">
   <div className="d-flex mt-2 ">
@@ -71,9 +71,9 @@ function MechanicSidebar() {
 </div>
 </Link>
 
-</div>
+</div> */}
 
-<div className="mechanic_profile_sidebar_padding ">
+{/* <div className="mechanic_profile_sidebar_padding ">
 <Link to='/' >
 <div className="mechanic_profile_sidebar_account_info">
   <div className="d-flex mt-2 ">
@@ -87,8 +87,8 @@ function MechanicSidebar() {
 </div>
 </Link>
 
-</div>
-<div className="mechanic_profile_sidebar_padding ">
+</div> */}
+{/* <div className="mechanic_profile_sidebar_padding ">
 <Link to='/' >
 <div className="mechanic_profile_sidebar_account_info">
   <div className="d-flex mt-2 ">
@@ -102,7 +102,7 @@ function MechanicSidebar() {
 </div>
 </Link>
 
-</div>
+</div> */}
 <div className="mechanic_profile_sidebar_padding ">
 {/* <Link to='' >
 <div className="admin_profile_sidebar_account_info">
@@ -128,35 +128,6 @@ function MechanicSidebar() {
 
   <div className="mt-2">
     <i class="ri-arrow-right-s-line admin_profile_sidebar_icons"></i>
-  </div>
-</div>
-</Link> */}
-
-</div>
-<div className="mechanic_profile_sidebar_padding ">
-<Link to='/' >
-<div className="mechanic_profile_sidebar_account_info">
-  <div className="d-flex mt-2">
-    <i class="ri-mail-volume-line mechanic_profile_sidebar_icons"></i>
-    <p> Null</p>
-  </div>
-
-  <div className="mt-2">
-    <i class="ri-arrow-right-s-line mechanic_profile_sidebar_icons"></i>
-    <p></p>
-  </div>
-</div>
-</Link>
-{/* <Link to='' >
-<div className="admin_profile_sidebar_account_info">
-  <div className="d-flex mt-2">
-    <i class="ri-question-fill admin_profile_sidebar_icons"></i>
-    <p> About</p>
-  </div>
-
-  <div className="mt-2">
-    <i class="ri-arrow-right-s-line admin_profile_sidebar_icons"></i>
-    <p></p>
   </div>
 </div>
 </Link> */}

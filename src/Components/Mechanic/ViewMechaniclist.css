@@ -21,22 +21,22 @@
         font-size: small ;
         color: rgba(51, 49, 49, 0.812) !important;
         font-weight: bold;
-        width: 9rem;
-        height: 2.5rem;
+        /* width: 9rem;
+        height: 2.5rem; */
         overflow: hidden;
       }
       
       .viewmechanic-img{
-        width: 14rem;
-        height: 11rem;
-        object-fit: contain;
+        width: 15rem;
+        height: 10rem;
+        /* object-fit: contain;
         padding-top: .25rem;
-        margin: 0;
+        margin: 0; */
       }
       .viewmechanic-card {
         margin: .5rem; 
         width: 17rem !important;
-        height: 17rem;
+        /* height: 17rem; */
         background-color: hsla(0, 0%, 100%, 0.553);
       }
       .viewmechanic-main{
@@ -49,11 +49,11 @@
        }   
       
      .viewmechanic-deletebtn{
-    background-color: #1A728E;
+    background-color: rgb(255, 19, 19);
     width: 5rem;
     height: 30px;
     margin-left: 4.5rem;
-    margin-top:  3rem;
+    margin-top:  0rem;
     color: white;
     font-weight: 100;
     padding: 2px 4px 4px 2px;
