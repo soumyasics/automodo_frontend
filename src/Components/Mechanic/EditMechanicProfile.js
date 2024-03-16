@@ -42,27 +42,60 @@ useEffect(()=>{
   const navigate=useNavigate()
 
   
-const editfn=(a)=> {
-  a.preventDefault()
-  console.log("data", data);
-  axiosInstance.post(`/editMechanicById/${id}`,data,{
-    headers: {
-      "Content-Type": "multipart/form-data",
-    }
-  })
-  .then((res) => {
-    console.log(res)
-    if (res.status == 200) {
-      alert('Updated succesfully')
-      navigate("/mechanic-dashboard-viewrequest")
-    } else {
-      alert('failed')
-    }
-  })
-  .catch((error) => {
-    console.log(error)
-  })
-}
+// const editfn = ((a) => {
+//   a.preventDefault()
+//   console.log("data", data);
+//   axiosInstance.post(`/editMechanicById/${id}`, data, {
+//     headers: {
+//       "Content-Type": "multipart/form-data",
+//     },
+//   })
+//   .then((res) => {
+//     console.log(res)
+//     if (res.data.status == 200) {
+//       alert('Updated succesfully')
+//       navigate("/mechanic-dashboard-viewrequest")
+//     } else {
+//       alert('failed')
+//     }
+//   })
+//   .catch((error) => {
+//     console.log(error)
+//   })
+// })
+const editfn = (event) => {
+  event.preventDefault();
+
+  const formData = new FormData();
+  formData.append("firstname", data.firstname);
+  formData.append("lastname", data.lastname);
+  formData.append("contact", data.contact);
+  formData.append("email", data.email);
+  formData.append("city", data.city);
+  formData.append("district", data.district);
+  formData.append("aadhar", data.aadhar);
+  formData.append("image", data.image); // Append the image file
+
+  axiosInstance
+    .post(`/editMechanicById/${id}`, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    })
+    .then((res) => {
+      console.log(res);
+      if (res.data.status === 200) {
+        alert("Updated successfully");
+        navigate("/mechanic-dashboard-viewrequest");
+      } else {
+        alert("Failed to update");
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
   return (
     <div>
          <form onSubmit={editfn}>
@@ -111,10 +144,10 @@ const editfn=(a)=> {
         </div>
         </div>
   <div>
-  <div>
+  {/* <div>
   <label className='editMechanic-label' >Certificate</label><br/>
     <input  className='editMechanic-file' type='file' name='image'  onChange={change}/>
-  </div>
+  </div> */}
  
   </div>
   <div>

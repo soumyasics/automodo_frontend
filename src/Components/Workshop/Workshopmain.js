@@ -40,7 +40,7 @@ function Workshopmain({data}) {
         ):data=="addspareparts"?(
           <SparepartsWorkshop/>
         ):data=='viewmechlist'?(
-            <ViewMechaniclist/>
+            <ViewMechaniclist url={url}/>
         
         ):data=="singlerequest"?(
           <Viewsinglereq/>

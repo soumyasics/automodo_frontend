@@ -1,9 +1,17 @@
 .reader_profile_account_info {
     /* width: 70%; */
-    min-height: 790px;
-    background-color: #47a3be;
+    /* min-height: 790px;
+    background-color: #47a3be; */
     /* margin-left: 35%; */
-    margin: 20px 0;
+    /* margin: 20px 0; */
+    margin-top: 3rem;
+    margin-left: 3rem;
+     border: 1px solid rgb(180, 179, 179);
+     border-radius: .5rem;
+     background-color: #4daaece5;
+     box-shadow: 2px 2px 10px rgb(143, 144, 144);
+     padding: 1rem;
+     width: 60rem !important ;
     display: flex;
   flex-direction: column;
   justify-content: space-between;
