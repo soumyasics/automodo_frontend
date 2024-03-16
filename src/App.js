@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 import 'remixicon/fonts/remixicon.css'
-
 import Footer from './Components/Common/Footer';
 import Navbar from './Components/Common/Navbar';
 import MainAdmin from './Components/Admin/MainAdmin';
@@ -16,12 +15,10 @@ import SignupUser from './Components/User/SignupUser';
 import SignupWorkshop from './Components/Workshop/signupWorkshop'
 import ForgotpassUser from './Components/User/ForgotpassUser';
 import AdminDashboard from './Components/Admin/AdminDashboard';
-
 import Workshopsidebar from './Components/Workshop/Adminsidebar';
 import Workshopmain from './Components/Workshop/Workshopmain';
 import ForgotpassWorkshop from './Components/Workshop/ForgotpassWorkshop';
 import ForgotpassMechanic from './Components/Mechanic/ForgotpassMechanic';
-
 import Adminnav from './Components/Admin/Adminnav';
 import AboutUs from './Components/Common/AboutUs';
 import Workshopreuest from './Components/Admin/Workshoprequest';
@@ -30,14 +27,11 @@ import Loginnav from './Components/Common/Loginnav'
 import Userhomenav from './Components/Common/Userhomenav';
 import Viewservices from './Components/User/Viewservices';
 import Adminlogin from './Components/Admin/Adminlogin';
-
 import SparepartsList from './Components/User/SparepartsList';
 import SpareIndividualpage from './Components/User/SpareIndividualpage';
-
 import Bookservice from './Components/User/Bookservice';
 import SparepartsWorkshop from './Components/Workshop/SparepartsWorkshop';
 import UserProfileMain from './Components/User/UserProfileMain';
-
 import Paymentservice from './Components/User/Paymentservice';
 import Wnav from './Components/Common/Wnav';
 import Viewmyservices from './Components/Workshop/Viewmyservices';
@@ -53,11 +47,7 @@ import ViewServicesMechanic from './Components/Mechanic/ViewServicesMechanic';
 import IndividualServicesMechanic from './Components/Mechanic/IndividualServicesMechanic';
 import Viewsparepartbooking from './Components/Workshop/Viewsparepartbooking';
 import Emergency from './Components/User/Emergency';
-
-
-
-
-import AdminDashboardMain from './Components/Admin/AdminDashboardMain'
+import AdminDashboardMain from './Components/Admin/AdminDashboardMain';
 import WorkshopEmergencyrequest from './Components/Workshop/WorkshopEmergencyrequest';
 import Assignmechforemergency from './Components/Workshop/Assignmechforemergency';
 
@@ -88,7 +78,6 @@ function App() {
       <Route path='/user-profile' element={[<Userhomenav/>,<UserProfileMain  data="viewprof"/>,<Footer/>]}/>
       <Route path='/user-viewbookedservices' element={[<Userhomenav/>,<UserProfileMain  data="bookedservices" url={url}/>,<Footer/>]}/>
       <Route path='/user-viewbookedspareparts' element={[<Userhomenav/>,<UserProfileMain  data="viewbookedsparepart"/>,<Footer/>]}/>
-
       <Route path='/user-profile-edit/:id' element={[<Userhomenav/>,<UserProfileMain  data="editprof"/>,<Footer/>]}/>
       <Route path='/paymentservice/:id' element={[<Userhomenav/>,<Paymentservice url={url}/>,<Footer/>]}/>
       <Route path='/emergency' element={[<Userhomenav/>,<Emergency />,<Footer/>]}/>
@@ -107,21 +96,16 @@ function App() {
       <Route path='/workshop-login' element={[<Loginnav/>,<LoginWorkshop/>,<Footer/>]}/> 
       <Route path='/workshop-signup' element={[<Adminnav/>,<SignupWorkshop/>,<Footer/>]}/>
       <Route path='/forgotpass-workshop' element={[<Adminnav/>,<ForgotpassWorkshop/>,<Footer/>]}/>
-      
       <Route path='/workshop-sidebar' element={[<Wnav/>,<Workshopsidebar/>,<Footer/>]}/>
       <Route path='/workshop-dashboard' element={[<Wnav/>,<Workshopmain data="workshopdashboard"/>,<Footer/>]}/>
       <Route path='/workshop-dashboard-addMechanic' element={[<Wnav/>,<Workshopmain data="addmechanic"/>,<Footer/>]}/>
       <Route path='/workshop-dashboard-addservice' element={[<Wnav/>,<Workshopmain data="addservice"/>,<Footer/>]}/>
       <Route path='/workshop-dashboard-myservices' element={[<Wnav/>,<Viewmyservices/>,<Footer/>]}/>
       <Route path='/workshop-dashboard-viewrequest' element={[<Wnav/>,<Workshopmain data="viewrequest"/>,<Footer/>]}/>
-      
       <Route path='/workshop-emergencyrequest' element={[<Wnav/>,<WorkshopEmergencyrequest url={url}/>,<Footer/>]}/>
       <Route path='/workshop-editprofile/:id' element={[<Wnav/>,<Workshopmain data="profileedit"/>,<Footer/>]}/>
-      
-
       <Route path='/workshop-spareparts' element={[<Wnav/>,<Workshopmain data="addspareparts"/>,<Footer/>]}/>
       <Route path='/workshop-singlereq/:id' element={[<Wnav/>,<Workshopmain data="singlerequest"/>,<Footer/>]}/>
-
       <Route path='/workshop-editservice/:id' element={[<Wnav/>,<Editservice/>,<Footer/>]}/>
       <Route path='/workshop-viewspareparts' element={[<Wnav/>,<Viewmyspareparts url={url}/>,<Footer/>]}/>
       <Route path='/workshop-editspareparts/:id' element={[<Wnav/>,<Editspareparts url={url}/>,<Footer/>]}/>
@@ -134,7 +118,6 @@ function App() {
       <Route path='/admin-login' element={[<Loginnav/>,<Adminlogin/>,<Footer/>]}/>
       {/* <Route path='/admin-dashboard' element={[<Adminnav/>,<AdminDashboard/>,<Footer/>]}/> */}
       <Route path='/req' element={<Workshopreuest/>}/>
-     
       <Route path='/nav' element={<Loginnav/>}/>
       <Route path='/admin-emg' element={[<Adminnav/>,<Emergencyreq/>,<Footer/>]}/>
       <Route path='/dashboard-emergency-request/:id' element={[<Adminnav/>,<AdminEmergencyView url={url}/>,<Footer/>]}/>

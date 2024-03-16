@@ -7,11 +7,7 @@ import Addservice from './Addservice'
 import Viewmyservices from './Viewmyservices'
 import Viewservicerequest from './Viewservicerequest'
 import SparepartsWorkshop from './SparepartsWorkshop'
-
 import EditProfile from './EditWorkshopProfile'
-
-
-
 import Viewsinglereq from './Viewsinglereq'
 import WorkshopEmergencyrequest from './WorkshopEmergencyrequest'
 import ViewMechaniclist from '../Mechanic/ViewMechaniclist'
