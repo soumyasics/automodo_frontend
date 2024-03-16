@@ -12,7 +12,7 @@ function UserProfileEdit()  {
   // console.log(userid+"userid");
   const { id } = useParams()
 
-  const [data,SetData]=useState({firstname:'',lastname:'',email:'',contact:'',gender:'',image:null,password:''})
+  const [data,SetData]=useState({firstname:'',lastname:'',email:'',contact:'',gender:'',image:null})
 
 
   
@@ -116,6 +116,8 @@ function UserProfileEdit()  {
         <label className='user-edit-label' >Image</label><br/>
           <input  className='user-edit-file' type='file' name='image'  onChange={change} />
         </div>
+       
+     
         <div>
           <button className='user-edit-btn' type='submit'>Submit</button>
           <img className="user-edit-logo"src={signUp_logo} alt='signUp_logo'/>

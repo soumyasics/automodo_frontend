@@ -58,7 +58,7 @@ function ViewMechaniclist({ url }) {
                         <div className="card-body">
                           <hr />
                           <div className="viewmechanic-name">
-                            Name :{a?.firstname}
+                            Name :{a?.firstname} {a?.lastname}
                           </div>
                           Email :{a?.email}
                           <br />

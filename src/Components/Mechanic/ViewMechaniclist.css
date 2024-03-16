@@ -1,13 +1,13 @@
 
     .viewmechanic-main-box{
-        margin-top: 1.3rem;
-        margin-left: 1rem;
+        margin-top: 3rem;
+        margin-left: 5rem;
          border: 1px solid rgb(180, 179, 179);
          border-radius: .5rem;
          background-color: #4daaece5;
          box-shadow: 2px 2px 10px rgb(143, 144, 144);
          padding: 1rem;
-         width: 65rem;
+         width: 60rem;
          min-height: 49.4rem
       }
 
