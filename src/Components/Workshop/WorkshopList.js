@@ -35,7 +35,7 @@ function WorkshopList() {
               {'Ditrict : ' + user.district}
               </div>
               <div>
-              <button className='workshop-delete-btn'>Delete</button>
+              {/* <button className='workshop-delete-btn'>Delete</button> */}
               </div>
             </div>
           ))

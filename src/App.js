@@ -62,6 +62,7 @@ import WorkshopEmergencyrequest from './Components/Workshop/WorkshopEmergencyreq
 import Assignmechforemergency from './Components/Workshop/Assignmechforemergency';
 import Mechnav from './Components/Common/Mechnav';
 import Mechemergencyreq from './Components/Mechanic/Mechemergencyreq';
+import Emergencyfinal from './Components/Mechanic/Emergencyfinal';
 
 const url = "http://localhost:4006";
 // const url= "http://hybrid.srishticampus.in:4006/"
@@ -105,6 +106,8 @@ function App() {
       <Route path='/view-services-mechanic' element={[<Mechnav/>,<ViewServicesMechanic/>,<Footer/>]}/>
       <Route path='/individual-services-mechanic' element={[<Mechnav/>,<IndividualServicesMechanic/>,<Footer/>]}/>
       <Route path='/view-mechemergency' element={[<Mechnav/>,<Mechemergencyreq/>,<Footer/>]}/>
+      <Route path='/emergencyfinal/:id' element={[<Mechnav/>,<Emergencyfinal/>,<Footer/>]}/>
+
 
 
       {/* Workshop */}

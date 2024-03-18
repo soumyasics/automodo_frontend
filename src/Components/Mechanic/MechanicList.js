@@ -14,6 +14,21 @@ function MechanicList() {
     console.log(err)
   })
  },[])
+
+ const deletefn=((workshop)=>{
+  axiosInstance.post(`deleteMechanicById/${workshop}`)
+  .then((res)=>{
+    console.log(res);
+    if(res.data.status==200){
+      alert("deleted succesfully")
+      SetUsers(prevArray => prevArray.filter(item => item._id !== workshop));
+    }
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
+
+ })
  console.log(users)
   return (
     <div>
@@ -34,7 +49,7 @@ function MechanicList() {
               </div>
 
               <div>
-              <button className='mechanic-delete-btn'>Delete</button>
+              <button className='mechanic-delete-btn' type='submit'  onClick={() => deletefn(user._id)}>Delete</button>
               </div>
               </div>
            

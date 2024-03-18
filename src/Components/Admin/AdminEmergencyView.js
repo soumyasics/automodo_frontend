@@ -40,22 +40,22 @@ function AdminEmergencyView({url}) {
     })
 
   })
-  // const deletefn=((e)=>{
-  //   e.preventDefault()
-  //   axiosInstance.post(`deleteWorkshopById/${id}`)
-  //   .then((res)=>{
-  //     console.log(res);
-  //     if(res.data.status==200){
-  //     alert("Deleted successfully")
-  //      navigate("/admin-dashboard")
-  //     }
-  //   })
-  //   .catch((err)=>{
-  //       console.log(err)
+  const deletefn=((e)=>{
+    e.preventDefault()
+    axiosInstance.post(`adminRejectEmergencyReqs/${id}`)
+    .then((res)=>{
+      console.log(res);
+      if(res.data.status==200){
+      alert("Deleted successfully")
+       navigate("/admin-dashboard")
+      }
+    })
+    .catch((err)=>{
+        console.log(err)
 
-  //   })
+    })
 
-  // })
+  })
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -106,7 +106,7 @@ return (
       </div>{" "}
       <div className="emergencysinglecontributer-button">
       <button type="submit" className="col-3 btn btn-primary" onClick={acceptfn}>Accept</button>
-      {/* <button type="submit" className="col-3 btn btn-danger" onClick={deletefn}>Delete</button> */}
+      <button type="submit" className="col-3 btn btn-danger" onClick={deletefn}>Delete</button>
       </div>
     </div>
   </div>

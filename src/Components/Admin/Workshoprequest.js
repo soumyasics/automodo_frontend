@@ -25,11 +25,12 @@ function Workshoprequest({url}) {
     
   return (
     
-    <div className='container'>
 
 <div className='col-8'>
+<div className='container'>
+
 <div className=' workshop-request-main-box' style={{padding:"10px"}}>
-            <h3 className=' Workshop-request-heading'>WORKSHOP LIST</h3>
+            <h3 className=' Workshop-request-heading'>WORKSHOP Requests</h3>
             <div>
             </div>
              {data.length ?(
@@ -47,17 +48,17 @@ function Workshoprequest({url}) {
                 <img src={`${url}/${a.image?.filename}`}  alt='images' width='130px' height='100px'/>
 
 
-                    <div>
+                    <div className='col-12'>
                         
                     <h4>Shop Name : {a.name}</h4>
-                    <hr/>
+                    <hr style={{width:"700px"}}/>
                     <div className='row'>
-                            <div className='col-6 work-email'>
-                            <p>Email :{a.email}</p>
+                            <div className='col-6 work-email' >
+                            <p style={{paddingTop:"0px"}}>Email :{a.email}</p>
 
                             </div>
                             <div className='col-6 work-reg'>
-                            <p id='arrow'>Reg No :{a.regno}</p>
+                            <p id='arrow' style={{paddingTop:"0px"}}>Reg No :{a.regno}</p>
 
                             </div>
                     </div>

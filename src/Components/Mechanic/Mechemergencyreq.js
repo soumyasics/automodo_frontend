@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './ViewServicesMechanic.css'
 import axiosInstance from '../../Baseurl'
+import { Link } from 'react-router-dom';
 
 
 function Mechemergencyreq() {
@@ -60,12 +61,12 @@ function Mechemergencyreq() {
           <p>Contact : 
              {a.custid?.contact}
              </p>
-          <p>Payment Status : notpaid</p>
-          <p>Booking Date : 
-            {/* {dateOnly} */}
+             <p>Payment Status : {a.paymentstatus ? "paid" : "notpaid"}</p>
+          <p> Time : 
+          {formatTime(a.date)}
             </p>
           <p> Date : 
-          {formatDate(data.date)}
+          {formatDate(a.date)}
             </p>
         </div>
         {/* <div className='col-4'>
@@ -73,7 +74,7 @@ function Mechemergencyreq() {
         </div> */}
       </div>
     </div>
-    <button className='service-req-btn'>DONE</button>
+    <Link to={`/emergencyfinal/${a._id}`}><button className='service-req-btn'>DONE WORK</button></Link>
   </div>
   </div>
      )
