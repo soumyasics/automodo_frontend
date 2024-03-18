@@ -33,7 +33,7 @@ function Workshopdashboard({url}) {
                 <p>Account Info</p>
     
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
-                  <p className="col-6">Shop Name</p>
+                  <p className="col-4"> Name</p>
                   <p>{Users.name}</p>
                 </div>
                 {/* <div className="reader_profile_account_info_fulldetails_box mb-3">
@@ -57,7 +57,7 @@ function Workshopdashboard({url}) {
                   <p>{Users.district}</p>
                 </div>
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
-                  <p className="col-6">Contact</p>
+                  <p className="col-4">Contact</p>
                   <p>{Users.contact}</p>
                 </div>
               

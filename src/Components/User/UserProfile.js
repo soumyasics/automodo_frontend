@@ -34,7 +34,7 @@ function UserProfile({url}) {
                 <p>Account Info</p>
     
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
-                  <p className="col-6">Name</p>
+                  <p className="col-4">Name</p>
                   <p>{data?.firstname} {data?.lastname}</p>
                 </div>
                 {/* <div className="reader_profile_account_info_fulldetails_box mb-3">
@@ -51,7 +51,7 @@ function UserProfile({url}) {
                   <p>{data?.gender}</p>
                 </div>
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
-                  <p className="col-6">Contact</p>
+                  <p className="col-4">Contact</p>
                   <p>{data?.contact}</p>
                 </div>
               
