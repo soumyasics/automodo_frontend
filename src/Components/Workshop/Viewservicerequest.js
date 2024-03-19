@@ -21,11 +21,11 @@ function Viewservicerequest() {
       });
   }, []);
   return (
-    <div className="" style={{ margin: "20px" }}>
+    <div className="view-servicerequest-box" >
       <div className="col-9" style={{width:"100%"}}>
         <div className="row">
           {/* <div className='col'> */}
-          <h2>Service Requests</h2>
+          <h2 className=" view-servicerequest-title">Service Requests</h2>
           {/* </div> */}
         </div>
         {data.length ? (
@@ -57,7 +57,7 @@ function Viewservicerequest() {
                         </div>
                         <div className="col-6">
                           <h4>
-                            Service Name : {a.custid?.firstname}{" "}
+                            Customer Name : {a.custid?.firstname}{" "}
                             {a.custid?.lastname}
                           </h4>
                         </div>

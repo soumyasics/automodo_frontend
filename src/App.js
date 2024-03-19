@@ -52,6 +52,7 @@ import WorkshopEmergencyrequest from './Components/Workshop/WorkshopEmergencyreq
 import Assignmechforemergency from './Components/Workshop/Assignmechforemergency';
 import Mechnav from './Components/Common/Mechnav';
 import Mechemergencyreq from './Components/Mechanic/Mechemergencyreq';
+import ViewUpdatedservice from './Components/User/ViewUpdatedservice';
 import ViewIndividualServicesMechanic from './Components/Mechanic/ViewIndividualServicesMechanic';
 
 const url = "http://localhost:4006";
@@ -75,6 +76,7 @@ function App() {
       <Route path='/userhome' element={[<Userhomenav/>,<MainAdmin/>,<Footer/>]}/>
       <Route path='/forgotpass-user' element={[<Adminnav/>,<ForgotpassUser/>,<Footer/>]}/>
       <Route path='/viewservices' element={[<Userhomenav/>,<Viewservices/>,<Footer/>]}/>
+      <Route path='/viewserviceupdations' element={[<Userhomenav/>,<ViewUpdatedservice/>,<Footer/>]}/>
       <Route path='/Sparepartslist' element={[<Userhomenav/>,<SparepartsList url={url}/>,<Footer/>]}/>
       <Route path='/SparepartsInd/:id' element={[<Userhomenav/>,<SpareIndividualpage url={url}/>,<Footer/>]}/>
       <Route path='/bookservices/:id' element={[<Userhomenav/>,<Bookservice url={url}/>,<Footer/>]}/>
