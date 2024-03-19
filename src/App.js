@@ -52,6 +52,7 @@ import WorkshopEmergencyrequest from './Components/Workshop/WorkshopEmergencyreq
 import Assignmechforemergency from './Components/Workshop/Assignmechforemergency';
 import Mechnav from './Components/Common/Mechnav';
 import Mechemergencyreq from './Components/Mechanic/Mechemergencyreq';
+import ViewIndividualServicesMechanic from './Components/Mechanic/ViewIndividualServicesMechanic';
 
 const url = "http://localhost:4006";
 // const url= "http://hybrid.srishticampus.in:4006/"
@@ -92,6 +93,7 @@ function App() {
       <Route path='/mechanic-editprofile/:id' element={[<Mechnav/>,<MechanicMain data="profileedit"/>,<Footer/>]}/>
       <Route path='/forgotpass-mechanic' element={[<Adminnav/>,<ForgotpassMechanic/>,<Footer/>]}/>
       <Route path='/view-services-mechanic' element={[<Mechnav/>,<ViewServicesMechanic/>,<Footer/>]}/>
+      <Route path='/view-individual-services-mechanic' element={[<Mechnav/>,<ViewIndividualServicesMechanic/>,<Footer/>]}/>
       <Route path='/individual-services-mechanic' element={[<Mechnav/>,<IndividualServicesMechanic/>,<Footer/>]}/>
       <Route path='/view-mechemergency' element={[<Mechnav/>,<Mechemergencyreq/>,<Footer/>]}/>
 
