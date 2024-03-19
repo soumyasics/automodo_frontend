@@ -33,7 +33,7 @@ console.log(Users);
                 <p>Account Info</p>
     
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
-                  <p className="col-6">Name</p>
+                  <p className="col-4">Name</p>
                   <p>{Users?.firstname} {Users?.lastname}</p>
                 </div>
                 {/* <div className="reader_profile_account_info_fulldetails_box mb-3">
@@ -50,7 +50,7 @@ console.log(Users);
                 </div>
 
                 <div className="reader_profile_account_info_fulldetails_box mb-3">
-                  <p className="col-6">Contact</p>
+                  <p className="col-4">Contact</p>
                   <p>{Users?.contact}</p>
                 </div>
                 {/* <div className="reader_profile_account_info_fulldetails_box mb-3">
