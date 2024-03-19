@@ -1,0 +1,17 @@
+.emergencyststus-main{
+    width: 400px;
+    min-height: 400px; 
+    background-color: aqua;
+    margin: 20px;
+    border-radius: 20px;
+}
+.emergencystatus-head{
+    text-align: center;
+    padding: 20px;
+    color: red;
+}
+.emergencystatus-issue p{
+    width: 300px;
+    word-wrap: break-word;
+
+}
