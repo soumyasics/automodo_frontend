@@ -73,7 +73,7 @@ function App() {
      >
     <Routes>
 
-      <Route path='/' element={[<Navbar/>,<MainAdmin/>,<Footer/>]}/>
+      <Route path='/automodo' element={[<Navbar/>,<MainAdmin/>,<Footer/>]}/>
       <Route path='/table-format' element={[<Navbar/>,<AdminTable/>,<Footer/>]}/>
       <Route path='/page-heading' element={[<Navbar/>,<Pageheading/>,<Footer/>]}/>
       <Route path='/Aboutus' element={[<Userhomenav/>,<AboutUs/>,<Footer/>]}/>
