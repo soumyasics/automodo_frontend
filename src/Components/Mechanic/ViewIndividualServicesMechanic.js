@@ -3,8 +3,9 @@ import './ViewServicesMechanic.css'
 import CustImg from '../../Assets/cat3.png'
 import axiosInstance from '../../Baseurl';
 import { Link } from 'react-router-dom';
+import './ViewIndividualServicesMechanic.css'
 
-function ViewServicesMechanic() {
+function ViewIndividualServicesMechanic() {
   const mechid=localStorage.getItem("mechid")
   console.log(mechid+"mechid");
 const[data,setData]=useState([])
@@ -24,11 +25,11 @@ useEffect(()=>{
     <div>
 
 
-      <div className='service-req-title'>
-        <h1>SERVICE REQUESTS</h1>
+      <div className='ind-service-req-title'>
+        <h1>SERVICE REQUEST</h1>
       </div>
      
-<div  className="service-req-cards-container">
+<div  >
       {data.length ? (
           data.map((a) => {
             const dateTime = new Date(a.bookingdate);
@@ -38,15 +39,17 @@ useEffect(()=>{
             const sdate = servicedate.toISOString().split("T")[0];
 
             return (
-              <div className='col-4'>
-      <div className='row service-req-card' >
+              <div>
+      <div className='row' >
+        <div className='ind-service-req-description '>
         <h5 className='col-12 text-danger'>Service : {a.serviceid?.serviceName}</h5>
         {/* <h6 className='col-3 service-req-date'>Service Date : 03/06/2024</h6>
         <h6 className='col-3 service-req-date'>Booking Date : 03/06/2024</h6> */}
 
         <h6 className='text-success'>Service Description :{a.serviceid?.description} </h6>
-        <div className='service-req-customer'>
-          <h4 className='service-req-customer-title'>CUSTOMER DETAILS</h4>
+        </div>
+        <div className='ind-service-req-customer col-6'>
+          <h4 className='ind-service-req-customer-title'>CUSTOMER DETAILS</h4>
           <hr></hr>
           <div className='row'>
             <div className='col-12'>
@@ -61,7 +64,27 @@ useEffect(()=>{
             </div> */}
           </div>
         </div>
-       <Link to='/view-individual-services-mechanic'> <button className='service-req-btn'>Update</button></Link>
+
+        <div className='ind-service-req-customer col-6'>
+          <h4 className='ind-service-req-customer-title'>UPDATION</h4>
+          <hr></hr>
+          <div className='row'>
+            <div className='col-12'>
+              
+              <input type='text-box' className='ind-service-req-textbox' placeholder='updations...'></input>
+              <div className='ind-service-req-file'>
+              <input type='file'></input>
+              <input type='date'></input>
+              </div>
+              <button type='submit' className='ind-service-update-btn'>Update</button>
+            </div>
+            {/* <div className='col-4'>
+              <img className='service-req-customer-img' src={CustImg}></img>
+            </div> */}
+          </div>
+        </div>
+        
+      <button type='submit' className='ind-service-req-btn'>DONE</button>
       </div>
       </div>
         )
@@ -77,5 +100,4 @@ useEffect(()=>{
  
   )
 }
-
-export default ViewServicesMechanic
+export default ViewIndividualServicesMechanic
