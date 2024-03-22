@@ -72,7 +72,7 @@ function Viewservices() {
                         <div className="service-name "> {a.serviceName}</div>
                         <div className="price">{a.description}</div>
                         <div className="description">Cost : {a.price}</div>
-                        <div className="shop-name">ShopName: {a.shopid?.name}</div>
+                        <div className="shop-name" style={{color:"black"}}>ShopName: {a.shopid?.name}</div>
                       </div>
                     {/* </div> */}
                   </div>

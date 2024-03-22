@@ -32,7 +32,7 @@ function Wnav() {
           <li className='navbar-li'><Link className='nav-ahref'to='/workshop-viewbookings'>View Bookings</Link></li>
         </div>
         <div>
-          <li className='navbar-li'><Link className='nav-ahref' to='/workshop-emergencyrequest'>Emergency request</Link></li>
+          <li className='navbar-li'><Link className='nav-ahref' to='/workshop-emergencyrequest'><button type='submit' className='btn btn-danger'>Emergency request</button></Link></li>
         </div>
 
         <div>

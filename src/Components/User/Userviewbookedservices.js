@@ -48,7 +48,7 @@ const location=useLocation()
               
     console.log(a._id+"serviceid");
              return( 
-              <div>
+              <div className='view-userbooked-service'>
 <Link to={`/bookservices/${a.serviceid._id}?prevPage=${encodeURIComponent(
                     location.pathname
                   )}`} style={{textDecoration:"none",color:"black"}}>
@@ -66,8 +66,9 @@ const location=useLocation()
       </div>
     </div>
     </Link>
-    <button type='submit' className='btn btn-danger' onClick={deletefn} style={{marginLeft:"90px"}}>Cancel Service</button>
-
+    <button type='submit' className='btn btn-danger view-bookedservice-btn' onClick={deletefn}>Cancel Service</button>
+    <Link to={`/viewserviceupdations/${a._id}`}>
+    <button type='submit' className='btn btn-warning view-bookedservice-btn'>View Update</button></Link>
     </div>
               )
             })

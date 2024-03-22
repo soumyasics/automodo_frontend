@@ -31,7 +31,7 @@ function Emergencystatus() {
 
   return (
     <div>
-      <div className="container">
+      <div className="container uvcontainer">
         <div className="row">
           {data.length ? (
             data.map((a) => {
@@ -49,10 +49,20 @@ function Emergencystatus() {
                     <p className="col-6" style={{color:"black"}}>{a?.issues}</p>
                   </div>
                   {a?.shopid ? ( 
-                      <div>
-                        Mechanic Details<br />
-                        Shopname: {a.shopid.name} 
+                      <div className="shopnamdandcontact">
+                        <div className="contact-info">
+                        Shopname And Contact:<span className="shop-name"> {a.shopid?.name} {a.shopid?.contact}</span>
+                        </div>
+                        <div>
+                        MechanicName And Contact:<span className="mechanic-name"> {a.mechid?.firstname} {a.mechid?.contact}</span>
+                        </div>
+                      <div className="final-info">
+                        <h5 >Final Amount:<span style={{color:"black"}}>{a?.payment}</span></h5><br/>
+                        <h5>Service done by shop:<span style={{color:"black"}}>{a?.service}</span></h5>
+
                       </div>
+                      </div>
+                      
                     ):
                     //  : null
                     // }
@@ -64,7 +74,7 @@ function Emergencystatus() {
               );
             })
           ) : (
-            <div>No data available</div>
+            <div>No Emergency services you are requested </div>
           )}
         </div>
       </div>

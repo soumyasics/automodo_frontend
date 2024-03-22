@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Emergency.css"
 import axiosInstance from "../../Baseurl";
+import { Link } from "react-router-dom";
 
 function Emergency() {
     const userid=localStorage.getItem("userid")
@@ -51,6 +52,12 @@ const[name,setName]=useState({})
     <div>
       <div className="container">
         <div className="row">
+        <div className="col-10"></div>
+        <div className="col-2" style={{marginTop:"10px"}}>
+          <Link to="/emergency-status"><button type="submit" className="btn btn-danger">View Emergency Status</button></Link>
+        </div ></div>
+        <div className="row">
+          
           <div className="col">
             <form onSubmit={submitfn}>
             <div className="emergency-user-main-box">

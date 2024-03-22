@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './ViewServicesMechanic.css'
 import CustImg from '../../Assets/cat3.png'
 import axiosInstance from '../../Baseurl';
+import { Link } from 'react-router-dom';
 
 function ViewServicesMechanic() {
   const mechid=localStorage.getItem("mechid")
@@ -24,8 +25,14 @@ useEffect(()=>{
 
 
       <div className='service-req-title'>
-        <h1>SERVICE REQUESTS</h1>
+        <div className='row'>
+        <h1 className='col-9 '>SERVICE REQUESTS</h1>
+       <div className='col-3'>
+       <Link to="/viewupdations"><button type='submit'  className='col-2 btn btn-danger' style={{height:"40px",width:"200px" }}>View Service Updates</button></Link>
+        </div> 
+        </div>
       </div>
+     
 <div  className="service-req-cards-container">
       {data.length ? (
           data.map((a) => {
@@ -59,7 +66,7 @@ useEffect(()=>{
             </div> */}
           </div>
         </div>
-        <button className='service-req-btn'>DONE</button>
+       <Link to={`/view-individual-services-mechanic/${a._id}`}> <button className='service-req-btn'>Update Service</button></Link>
       </div>
       </div>
         )

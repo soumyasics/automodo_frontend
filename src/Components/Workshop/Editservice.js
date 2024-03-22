@@ -80,7 +80,7 @@ const deletefn=((e)=>{
     {/* <form > */}
      
       
-     <div className='signupMech-main' style={{margin:"30px"}}>
+     <div className='signupMech-main' style={{margin:"30px",width:"1350px"}}>
        <div>
          <h2 className='signupMech-head'>Edit Service</h2>
        </div>

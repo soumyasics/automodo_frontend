@@ -27,7 +27,7 @@ function Adminnav() {
         navigate('/workshop-login')
       }
       else if(selectedValue === 'admin'){
-        navigate('/admin')
+        navigate('/admin-login')
       }
       else if(selectedValue == 'readerlogin'){
         navigate('/readerlogin')
@@ -82,7 +82,7 @@ function Adminnav() {
 
                        <Link to='/mechanic-login' class="dropdown-item" style={{fontSize:"17px",fontWeight:"700"}}>Mechanic</Link>
                        <Link to='/workshop-login' class="dropdown-item"style={{fontSize:"17px",fontWeight:"700"}}>Workshop</Link>
-                       <Link to='' class="dropdown-item"style={{fontSize:"17px",fontWeight:"700"}}>Admin</Link>
+                       <Link to='/admin-login' class="dropdown-item"style={{fontSize:"17px",fontWeight:"700"}}>Admin</Link>
 
                    </div>
                </div>
