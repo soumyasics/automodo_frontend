@@ -14,6 +14,21 @@ function UserList() {
     console.log(err)
   })
  },[])
+
+ const deletefn=((userid)=>{
+  axiosInstance.post(`deleteCustomerById/${userid}`)
+  .then((res)=>{
+    console.log(res);
+    if(res.data.status==200){
+      alert("deleted succesfully")
+      SetUsers(prevArray => prevArray.filter(item => item._id !== userid));
+    }
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
+
+ })
  console.log(users)
   return (
     <div>
@@ -32,7 +47,7 @@ function UserList() {
               {'Email : ' + user.email}
               </div>
               <div>
-              <button className='user-delete-btn'>Delete</button>
+              <button className='user-delete-btn' type='submit' onClick={() => deletefn(user._id)}>Delete</button>
               </div>
             </div>
           ))

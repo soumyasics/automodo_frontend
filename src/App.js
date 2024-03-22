@@ -54,6 +54,9 @@ import Mechnav from './Components/Common/Mechnav';
 import Mechemergencyreq from './Components/Mechanic/Mechemergencyreq';
 import ViewUpdatedservice from './Components/User/ViewUpdatedservice';
 import ViewIndividualServicesMechanic from './Components/Mechanic/ViewIndividualServicesMechanic';
+import Emergencyfinal from './Components/Mechanic/Emergencyfinal';
+import Emergencystatus from './Components/User/Emergencystatus';
+import Viewupdations from './Components/Mechanic/Viewupdations';
 
 const url = "http://localhost:4006";
 // const url= "http://hybrid.srishticampus.in:4006/"
@@ -65,7 +68,7 @@ function App() {
      >
     <Routes>
 
-      <Route path='/automodo' element={[<Navbar/>,<MainAdmin/>,<Footer/>]}/>
+      <Route path='/' element={[<Navbar/>,<MainAdmin/>,<Footer/>]}/>
       <Route path='/table-format' element={[<Navbar/>,<AdminTable/>,<Footer/>]}/>
       <Route path='/page-heading' element={[<Navbar/>,<Pageheading/>,<Footer/>]}/>
       <Route path='/Aboutus' element={[<Userhomenav/>,<AboutUs/>,<Footer/>]}/>
@@ -76,7 +79,7 @@ function App() {
       <Route path='/userhome' element={[<Userhomenav/>,<MainAdmin/>,<Footer/>]}/>
       <Route path='/forgotpass-user' element={[<Adminnav/>,<ForgotpassUser/>,<Footer/>]}/>
       <Route path='/viewservices' element={[<Userhomenav/>,<Viewservices/>,<Footer/>]}/>
-      <Route path='/viewserviceupdations' element={[<Userhomenav/>,<ViewUpdatedservice/>,<Footer/>]}/>
+      <Route path='/viewserviceupdations/:id' element={[<Userhomenav/>,<ViewUpdatedservice url={url}/>,<Footer/>]}/>
       <Route path='/Sparepartslist' element={[<Userhomenav/>,<SparepartsList url={url}/>,<Footer/>]}/>
       <Route path='/SparepartsInd/:id' element={[<Userhomenav/>,<SpareIndividualpage url={url}/>,<Footer/>]}/>
       <Route path='/bookservices/:id' element={[<Userhomenav/>,<Bookservice url={url}/>,<Footer/>]}/>
@@ -86,6 +89,7 @@ function App() {
       <Route path='/user-profile-edit/:id' element={[<Userhomenav/>,<UserProfileMain  data="editprof"/>,<Footer/>]}/>
       <Route path='/paymentservice/:id' element={[<Userhomenav/>,<Paymentservice url={url}/>,<Footer/>]}/>
       <Route path='/emergency' element={[<Userhomenav/>,<Emergency />,<Footer/>]}/>
+      <Route path='/emergency-status' element={[<Userhomenav/>,<Emergencystatus />,<Footer/>]}/>
 
 
       {/* Mechanic */}
@@ -95,9 +99,13 @@ function App() {
       <Route path='/mechanic-editprofile/:id' element={[<Mechnav/>,<MechanicMain data="profileedit"/>,<Footer/>]}/>
       <Route path='/forgotpass-mechanic' element={[<Adminnav/>,<ForgotpassMechanic/>,<Footer/>]}/>
       <Route path='/view-services-mechanic' element={[<Mechnav/>,<ViewServicesMechanic/>,<Footer/>]}/>
-      <Route path='/view-individual-services-mechanic' element={[<Mechnav/>,<ViewIndividualServicesMechanic/>,<Footer/>]}/>
+      <Route path='/view-individual-services-mechanic/:id' element={[<Mechnav/>,<ViewIndividualServicesMechanic/>,<Footer/>]}/>
       <Route path='/individual-services-mechanic' element={[<Mechnav/>,<IndividualServicesMechanic/>,<Footer/>]}/>
       <Route path='/view-mechemergency' element={[<Mechnav/>,<Mechemergencyreq/>,<Footer/>]}/>
+      <Route path='/emergencyfinal/:id' element={[<Mechnav/>,<Emergencyfinal/>,<Footer/>]}/>
+      <Route path='/viewupdations' element={[<Mechnav/>,<Viewupdations url={url}/>,<Footer/>]}/>
+
+
 
 
       {/* Workshop */}

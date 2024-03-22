@@ -29,7 +29,7 @@ function Workshopmain({data}) {
         ):data=="workshop"?(
            <WorkshopList/>
         ):data=="request"?(
-         <Workshoprequest/>
+         <Workshoprequest url={url}/>
          ):data=="emergency"?(
           <AdminEmergencyRequest url={url}/>
         ):data=='requestApproval'?(

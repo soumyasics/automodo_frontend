@@ -148,7 +148,7 @@ const assignmech=((e)=>{
 
 
            <div className='row'>
-            <div className='col-6'>
+            <div className='col-12'>
                 <button type='submit' className='btn btn-info' 
                   onClick={(e) => {
                     approvebyshopid(e);
@@ -156,9 +156,6 @@ const assignmech=((e)=>{
                                        }}
                                       >Approve Request</button>
             </div>
-            <div className='col-6'>
-            <button type='submit' className='btn btn-danger' >Delete Request</button>
-</div>
 
         </div>
         </div> 

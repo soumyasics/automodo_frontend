@@ -25,7 +25,12 @@ useEffect(()=>{
 
 
       <div className='service-req-title'>
-        <h1>SERVICE REQUESTS</h1>
+        <div className='row'>
+        <h1 className='col-9 '>SERVICE REQUESTS</h1>
+       <div className='col-3'>
+       <Link to="/viewupdations"><button type='submit'  className='col-2 btn btn-danger' style={{height:"40px",width:"200px" }}>View Service Updates</button></Link>
+        </div> 
+        </div>
       </div>
      
 <div  className="service-req-cards-container">
@@ -61,7 +66,7 @@ useEffect(()=>{
             </div> */}
           </div>
         </div>
-       <Link to='/view-individual-services-mechanic'> <button className='service-req-btn'>Update</button></Link>
+       <Link to={`/view-individual-services-mechanic/${a._id}`}> <button className='service-req-btn'>Update Service</button></Link>
       </div>
       </div>
         )

@@ -4,7 +4,7 @@
   border-radius: .5rem;
   padding: 1.5rem;
   margin-top: 1rem;
-  width: 45rem;
+  width: 40rem;
   margin-left: 2rem;
 }
 
@@ -46,9 +46,9 @@
   margin-left: 2rem;
  }
  .ind-service-req-textbox{
-  width: 40rem;
+  width: 35rem;
   height: 5rem;
-  text-indent: 3rem;
+  text-indent: 1rem;
   font-size: larger;
   margin-bottom: 2rem;
  }

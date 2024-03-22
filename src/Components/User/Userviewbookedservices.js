@@ -67,7 +67,7 @@ const location=useLocation()
     </div>
     </Link>
     <button type='submit' className='btn btn-danger view-bookedservice-btn' onClick={deletefn}>Cancel Service</button>
-    <Link to='/viewserviceupdations'>
+    <Link to={`/viewserviceupdations/${a._id}`}>
     <button type='submit' className='btn btn-warning view-bookedservice-btn'>View Update</button></Link>
     </div>
               )

@@ -42,8 +42,8 @@ function SparepartsList({url}) {
             {a?.partName}
             </div> 
             <hr/>
-            <div className='spareList-price'>
-            {'Rs. '+a?.price+" "}
+            <div className='spareList-price' >
+            <h6 style={{textDecoration:"none",color:"black"}}>{'Rs. '+a?.price+" "}</h6>
             </div> 
             </div> 
           </div>
