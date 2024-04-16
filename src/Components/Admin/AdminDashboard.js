@@ -52,8 +52,7 @@ function AdminDashboard() {
         labels: ['Users', 'Mechanics', 'Workshops'],
         datasets: [{
           label: 'Count',
-          data: [users.length, mechanics.length, workshops.length],
-          backgroundColor: [
+          data: [users ? users.length : 0, mechanics ? mechanics.length : 0, workshops ? workshops.length : 0],          backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
             'rgba(255, 206, 86, 0.2)',
@@ -83,17 +82,17 @@ function AdminDashboard() {
           <div className='col-3 dashboard-box'>
             <p>Users</p>
             <hr/>
-            <h5>{users.length}</h5>
+            <h5>{users? users.length:0}</h5>
           </div>
           <div className='col-3 dashboard-box'>
             <p>Mechanics</p>
             <hr/>
-            <h5>{mechanics.length}</h5>
+            <h5>{mechanics?mechanics.length:0}</h5>
           </div>
           <div className='col-3 dashboard-box'>
             <p>Workshops</p>
             <hr/>
-            <h5>{workshops.length}</h5>
+            <h5>{workshops?workshops.length:0}</h5>
           </div>
         </div>
         <div className='row'>
