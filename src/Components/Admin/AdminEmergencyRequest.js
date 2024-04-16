@@ -48,7 +48,7 @@ function AdminEmergencyRequest({url}) {
 
                 {/* <img src={img}  alt='images' width='130px' height='100px'/> */}
 
-                <img src={`${url}/${a.custid?.image.filename}`}  alt='images' width='130px' height='100px'/>
+                <img src={`${url}/${a.custid?.image?.filename }`}  alt='images' width='130px' height='100px'/>
 
 
                     <div>
