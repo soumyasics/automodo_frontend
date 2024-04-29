@@ -69,7 +69,7 @@ function MainAdmin() {
             Keep Your Car Running Smoothly with Easy,
             <br /> Convenient Service
           </p>
-          <div className="main-search">
+          {/* <div className="main-search">
             <input
               className="main-input"
               type="search"
@@ -77,7 +77,6 @@ function MainAdmin() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            {/* <input  className='main-input' type='search' placeholder='Location'></input> */}
             <button className="main-search-btn" onClick={handleSearch}>
               Search
             </button>
@@ -88,8 +87,8 @@ function MainAdmin() {
                  <Link to={`/bookservices/${service._id}?prevPage=${encodeURIComponent(location.pathname)}`} style={{textDecoration:"none",color:"black"}}><p className="ri-search-line" >{service.serviceName}</p></Link> 
                 </div>
               ))}
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
         </div>
       )}
 
@@ -109,10 +108,10 @@ function MainAdmin() {
         <img src={Cat4} alt="mainimage" />
       </div>
       <div className="main-categorydiv2">
+        {/* <p className="category-service">Service Name</p>
         <p className="category-service">Service Name</p>
         <p className="category-service">Service Name</p>
-        <p className="category-service">Service Name</p>
-        <p className="category-service">Service Name</p>
+        <p className="category-service">Service Name</p> */}
       </div>
       <div className="popular-category-div">
         <h2 className="popular-category">Convenience</h2>
@@ -136,7 +135,7 @@ function MainAdmin() {
             and brakes to diagnostics and major repairs. Highlight any unique
             offerings like mobile mechanics or express services.
           </p>
-          <button className="schedule-btn">One-stop shop</button>
+          {/* <button className="schedule-btn">One-stop shop</button> */}
         </div>
         <div>
           <h3 className="trustworthy-title">Trustworthy network</h3>

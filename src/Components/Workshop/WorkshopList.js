@@ -32,7 +32,7 @@ function WorkshopList() {
               {'Email : ' + user.email}
               </div>
               <div>
-              {'Ditrict : ' + user.district}
+              {'District : ' + user.district}
               </div>
               <div>
               {/* <button className='workshop-delete-btn'>Delete</button> */}

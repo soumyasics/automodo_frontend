@@ -53,7 +53,7 @@ function AdminEmergencyRequest({url}) {
 
                     <div>
                         
-                    <h4 style={{ width: '600px', overflow: 'hidden', textOverflow: 'ellipsis', wordWrap: 'break-word' }}>Issue : {a.issues}flknrhgiurhgurbiurigvyufguygfiuhfhiufgriufhiurgfiurgiufgriugiurgfiurguirguirguiruvuirfgvbiufbuvifbvbfjvbjfvjk</h4>
+                    <h4 style={{ width: '600px', overflow: 'hidden', textOverflow: 'ellipsis', wordWrap: 'break-word' }}>Issue : {a.issues}</h4>
                     <hr/>
                     <div className='row'>
                             <div className='col-6 emergency-work-email'>

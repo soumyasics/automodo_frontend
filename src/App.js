@@ -71,7 +71,8 @@ function App() {
       <Route path='/' element={[<Navbar/>,<MainAdmin/>,<Footer/>]}/>
       <Route path='/table-format' element={[<Navbar/>,<AdminTable/>,<Footer/>]}/>
       <Route path='/page-heading' element={[<Navbar/>,<Pageheading/>,<Footer/>]}/>
-      <Route path='/Aboutus' element={[<Userhomenav/>,<AboutUs/>,<Footer/>]}/>
+      <Route path='/Aboutus' element={[<Navbar/>,<AboutUs/>,<Footer/>]}/>
+      <Route path='/Aboutusaft' element={[<Userhomenav/>,<AboutUs/>,<Footer/>]}/>
 
       {/* user */}
       <Route path='/user-login' element={[<Loginnav/>,<LoginUser/>,<Footer/>]}/>
