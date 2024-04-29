@@ -134,7 +134,7 @@ function MechanicSidebar() {
 
 </div>
 <div className="mechanic_profile_sidebar_padding ">
-<Link to='' >
+{/* <Link to='' >
 <div className="mechanic_profile_sidebar_account_info">
   <div className="d-flex mt-2">
     <i class="ri-error-warning-fill mechanic_profile_sidebar_icons"></i>
@@ -145,7 +145,7 @@ function MechanicSidebar() {
     <i class="ri-arrow-right-s-line mechanic_profile_sidebar_icons"></i>
   </div>
 </div>
-</Link>
+</Link> */}
 
 </div>
 <Link to='/' ><div className="mechanic_profile_sidebar_logoybtn mt-4 mb-4">

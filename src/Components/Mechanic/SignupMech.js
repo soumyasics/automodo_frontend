@@ -105,6 +105,18 @@ console.log(data);
   let signup = (a) => {
     a.preventDefault();
 
+    console.log(data.contact.length);
+
+    if(!data.contact || data.contact.length !== 10){
+      return alert("Contact must have 10 numbers");
+    }
+    if(!data.aadhar || data.aadhar.length !== 12){
+      return alert("Aadhar must have 12 numbers");
+    }    
+    if(!data.password <=8){
+      return alert("Password must contain 8 charecters");
+    }    
+
     let errors = {};
     let formIsValid = true;
 
@@ -146,6 +158,8 @@ console.log(data);
 
       console.log("data", data);
       if (formIsValid) {
+
+        console.log('hi');
         axiosInstance
           .post(`/addMechanic/${shopid}`, formData, {
             headers: {
@@ -185,6 +199,7 @@ console.log(data);
                   type="text"
                   placeholder="Firstname"
                   name="firstname"
+                  required
                   value={data.firstname}
                   onChange={change}
                 />{" "}
@@ -201,6 +216,7 @@ console.log(data);
                   type="text"
                   placeholder="Last name"
                   name="lastname"
+                  required
                   value={data.lastname}
                   onChange={change}
                 />{" "}
@@ -217,6 +233,7 @@ console.log(data);
                   type="email"
                   placeholder="Email"
                   name="email"
+                  required
                   value={data.email}
                   onChange={change}
                 />{" "}
@@ -234,6 +251,7 @@ console.log(data);
                   type="number"
                   placeholder="Contact Number"
                   name="contact"
+                  required
                   value={data.contact}
                   onChange={change}
                 />{" "}
@@ -250,6 +268,7 @@ console.log(data);
                   type="number"
                   placeholder="Aadhar Number"
                   name="aadhar"
+                  required
                   value={data.aadhar}
                   onChange={change}
                 />{" "}
@@ -268,6 +287,7 @@ console.log(data);
                     type="radio"
                     name="gender"
                     value="male"
+                    required
                     onChange={change}
                   />
                   <label className="genderMech-label" for="Idgender1">
@@ -278,6 +298,7 @@ console.log(data);
                     type="radio"
                     name="gender"
                     value="female"
+                    required
                     onChange={change}
                   />
                   <label className="genderMech-label" for="Idgender2">
@@ -291,6 +312,7 @@ console.log(data);
                 <input
                   className="fileMech-btn"
                   type="file"
+                  required
                   name="image"
                   onChange={handleFileChange}
                 />
@@ -301,6 +323,7 @@ console.log(data);
                 <input
                   className="fileMech-btn"
                   type="file"
+                  required
                   name="certificate"
                   onChange={handleFileChange}
                 />
@@ -310,6 +333,7 @@ console.log(data);
                 <input
                   className="signupMech-input"
                   type="password"
+                  required
                   placeholder="Password"
                   name="password"
                   value={data.password}

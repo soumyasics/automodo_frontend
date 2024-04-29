@@ -163,7 +163,7 @@ function Adminsidebar() {
 
 </div>
 <div className="admin_profile_sidebar_padding ">
-<Link to='' >
+{/* <Link to='' >
 <div className="admin_profile_sidebar_account_info">
   <div className="d-flex mt-2">
     <i class="ri-error-warning-fill admin_profile_sidebar_icons"></i>
@@ -174,7 +174,7 @@ function Adminsidebar() {
     <i class="ri-arrow-right-s-line admin_profile_sidebar_icons"></i>
   </div>
 </div>
-</Link>
+</Link> */}
 
 </div>
 <div className="admin_profile_sidebar_padding ">

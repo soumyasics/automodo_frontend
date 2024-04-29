@@ -23,18 +23,7 @@ function Navbar() {
             <div>
               <li className='navbar-li'><Link className='nav-ahref'to='/Aboutus'>About us</Link></li>
             </div>
-            <div>
-              {/* <li className='navbar-li'><Link className='nav-ahref'to='/'>Gallery</Link></li> */}
-            </div>
-            <div>
-              {/* <li className='navbar-li'><Link className='nav-ahref'to='/'>Jobs</Link></li> */}
-            </div>
-            <div>
-              <li className='navbar-li'><Link className='nav-ahref' to='/'>Contact us</Link></li>
-            </div>
-            <div>
-              {/* <img className='dropdown_pic'src={drop_pic} alt='dropdown_pic'/> */}
-            </div>
+            
             <div>
             <div>
               <li className='navbar-li'><Link className='nav-ahref' to='/user-login'>Login</Link></li>
