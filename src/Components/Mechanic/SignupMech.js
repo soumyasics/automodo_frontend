@@ -113,7 +113,7 @@ console.log(data);
     if(!data.aadhar || data.aadhar.length !== 12){
       return alert("Aadhar must have 12 numbers");
     }    
-    if(!data.password <=8){
+    if(!data.password|| data.password.length <8){
       return alert("Password must contain 8 charecters");
     }    
 
