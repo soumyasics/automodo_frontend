@@ -38,7 +38,7 @@ function AdminEmergencyRequest({url}) {
             <h3 className=' emergency-request-heading'>EMERGENCY REQUEST</h3>
             <div>
             </div>
-             {data.length ?(
+             {data && data.length ?(
           data.map((a)=>{
          return( 
           <div  >
