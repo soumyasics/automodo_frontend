@@ -69,7 +69,7 @@ function MainAdmin() {
             Keep Your Car Running Smoothly with Easy,
             <br /> Convenient Service
           </p>
-          {/* <div className="main-search">
+          <div className="main-search">
             <input
               className="main-input"
               type="search"
@@ -87,8 +87,8 @@ function MainAdmin() {
                  <Link to={`/bookservices/${service._id}?prevPage=${encodeURIComponent(location.pathname)}`} style={{textDecoration:"none",color:"black"}}><p className="ri-search-line" >{service.serviceName}</p></Link> 
                 </div>
               ))}
-            </div> */}
-          {/* </div> */}
+            </div>
+          </div>
         </div>
       )}
 

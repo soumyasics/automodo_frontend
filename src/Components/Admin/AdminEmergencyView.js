@@ -74,7 +74,7 @@ return (
     <h1>Emergency request</h1>
 <div style={{padding:"20px"}}>
  
-      <img src={`${url}/${state.custid?.image.filename}`} alt='image' width="530px" height="200px"/></div>
+      <img src={`${url}/${state.custid?.image?.filename}`} alt='image' width="530px" height="200px"/></div>
       <div className="col-4" >Name :</div>
       <div className="col-8">
         <input type="text" value={state.custid?.firstname} />
