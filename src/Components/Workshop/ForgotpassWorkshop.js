@@ -8,8 +8,8 @@ import { useNavigate } from 'react-router-dom'
 
 function ForgotpassWorkshop() {
   const navigate=useNavigate()
-    const [data,SetData]=useState({email:'',newpassword:'',confirmpassword:''})
-const [errors, setErrors] = useState({ email: '', newpassword: '',confirmpassword:'' });
+    const [data,SetData]=useState({email:'',password:'',confirmpassword:''})
+const [errors, setErrors] = useState({ email: '', password: '',confirmpassword:'' });
 
 const change=(b)=>{
   const { name, value } = b.target;
@@ -37,7 +37,7 @@ let signin=(a)=>{
   let formIsValid = true;
 
   errors.email= validateField('email', data.email);
-  errors.newpassword = validateField('newpassword', data.newpassword);
+  errors.password = validateField('password', data.password);
  
   setErrors(errors);
 
@@ -58,7 +58,7 @@ let signin=(a)=>{
         console.log(error)
        })
   }
- if(data.newpassword !==data.confirmpassword){
+ if(data.password !==data.confirmpassword){
   setErrors(prevErrors => ({
     ...prevErrors,
     confirmpassword: 'new password and confirm password should be same'
@@ -88,9 +88,9 @@ let signin=(a)=>{
         </div>
         <div>
           <label className='forgotWorkshop-label'>New Password</label>
-          <input className='forgotWorkshop-input' name='newpassword' value={data.newpassword} onChange={change} type='password' placeholder='New Password'/>
-          {errors.newpassword && (
-                <div className="text-danger input-validation">{errors.newpassword}</div>
+          <input className='forgotWorkshop-input' name='password' value={data.password} onChange={change} type='password' placeholder='New Password'/>
+          {errors.password && (
+                <div className="text-danger input-validation">{errors.password}</div>
               )}
         </div>
         <div>

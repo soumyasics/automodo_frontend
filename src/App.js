@@ -64,7 +64,7 @@ const url = "http://localhost:4006";
 function App() {
   return (
     <BrowserRouter
-      // basename='/automodo'
+       basename='/automodo'
      >
     <Routes>
 
